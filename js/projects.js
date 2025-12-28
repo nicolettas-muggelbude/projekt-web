@@ -60,17 +60,14 @@ class ProjectsManager {
     async loadOwnerAvatar() {
         if (this.projects.length === 0) return;
 
-        try {
-            const firstProject = this.projects[0];
-            const repoInfo = await getRepositoryInfo(firstProject.repo);
+        const avatarImg = document.getElementById('owner-avatar');
+        if (!avatarImg) return;
 
-            if (repoInfo && repoInfo.owner && repoInfo.owner.avatar_url) {
-                const avatarImg = document.getElementById('owner-avatar');
-                if (avatarImg) {
-                    avatarImg.src = repoInfo.owner.avatar_url;
-                    avatarImg.style.display = 'block';
-                }
-            }
+        try {
+            // Direkt von GitHub-User laden (kein API-Limit für Avatar-URLs)
+            const username = 'nicolettas-muggelbude';
+            avatarImg.src = `https://github.com/${username}.png?size=120`;
+            avatarImg.style.display = 'block';
         } catch (error) {
             console.error('Fehler beim Laden des Owner-Avatars:', error);
         }
