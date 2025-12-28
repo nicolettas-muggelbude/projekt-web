@@ -101,16 +101,12 @@ class ProjectsManager {
                 `;
             }
 
-            // Icon: Custom Icon oder Fallback
+            // Icon: Aus /assets/icons/ im Repository
             let iconHtml = '';
             if (project.icon) {
-                // Wenn Emoji oder Text
-                if (project.icon.length <= 4) {
-                    iconHtml = `<span class="project-icon-emoji">${project.icon}</span>`;
-                } else {
-                    // Wenn Bild-URL
-                    iconHtml = `<img src="${project.icon}" alt="${project.name}" class="project-icon">`;
-                }
+                // Baue URL zum Icon im Repository
+                const iconUrl = `https://raw.githubusercontent.com/${project.repo}/main/assets/icons/${project.icon}`;
+                iconHtml = `<img src="${iconUrl}" alt="${project.name}" class="project-icon">`;
             } else {
                 // Fallback: Generisches Icon
                 iconHtml = `<span class="project-icon-emoji">📦</span>`;
