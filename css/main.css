@@ -152,21 +152,28 @@ header {
 header .container {
     max-width: var(--max-width);
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
 }
 
 header h1 {
     font-size: 2.5rem;
-    margin-bottom: var(--spacing-sm);
+    margin: 0;
     background: linear-gradient(135deg, var(--accent), var(--accent-hover));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    order: 1;
 }
 
 nav {
     display: flex;
     gap: var(--spacing-md);
     flex-wrap: wrap;
+    order: 3;
 }
 
 nav a {
@@ -186,10 +193,7 @@ nav a:hover {
    ======================================== */
 
 .hamburger {
-    display: flex; /* Temporär immer sichtbar für Debug */
-    position: fixed;
-    top: 1rem;
-    right: 5rem;
+    display: none; /* Versteckt auf Desktop */
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
@@ -202,6 +206,7 @@ nav a:hover {
     z-index: 1001;
     box-shadow: 0 2px 8px var(--shadow);
     transition: all var(--transition);
+    order: 2; /* Nach h1, vor nav */
 }
 
 .hamburger:hover {
@@ -233,14 +238,24 @@ nav a:hover {
 
 /* Mobile & Tablet Navigation */
 @media (max-width: 1024px) {
+    header .container {
+        justify-content: space-between;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        flex: 1;
+    }
+
     .hamburger {
-        display: flex;
+        display: flex; /* Hamburger anzeigen */
+        margin-left: auto; /* Rechts positionieren */
     }
 
     nav {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: -100%; /* Versteckt außerhalb */
         height: 100vh;
         width: 70%;
         max-width: 300px;
@@ -251,10 +266,11 @@ nav a:hover {
         transition: right var(--transition);
         z-index: 999;
         overflow-y: auto;
+        order: 3;
     }
 
     nav.active {
-        right: 0;
+        right: 0; /* Slide in */
     }
 
     nav a {
