@@ -52,6 +52,28 @@ class ProjectsManager {
                 this.container.appendChild(card);
             }
         });
+
+        // Owner-Avatar laden und anzeigen
+        this.loadOwnerAvatar();
+    }
+
+    async loadOwnerAvatar() {
+        if (this.projects.length === 0) return;
+
+        try {
+            const firstProject = this.projects[0];
+            const repoInfo = await getRepositoryInfo(firstProject.repo);
+
+            if (repoInfo && repoInfo.owner && repoInfo.owner.avatar_url) {
+                const avatarImg = document.getElementById('owner-avatar');
+                if (avatarImg) {
+                    avatarImg.src = repoInfo.owner.avatar_url;
+                    avatarImg.style.display = 'block';
+                }
+            }
+        } catch (error) {
+            console.error('Fehler beim Laden des Owner-Avatars:', error);
+        }
     }
 
     async createProjectCard(project) {
@@ -80,7 +102,10 @@ class ProjectsManager {
             }
 
             card.innerHTML = `
-                <h3>${project.name}</h3>
+                <div class="project-header">
+                    <img src="${repoInfo.owner.avatar_url}" alt="${project.name}" class="project-icon">
+                    <h3>${project.name}</h3>
+                </div>
                 <p>${project.description || repoInfo.description || 'Keine Beschreibung verfügbar'}</p>
                 ${releaseHtml}
                 <div class="meta">
