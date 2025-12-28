@@ -1,0 +1,21 @@
+{
+  "repo": "nicolettas-muggelbude/myapps",
+  "name": "MyApps",
+  "description": "Tool zum Auflisten und Verwalten installierter Linux-Anwendungen",
+  "lastUpdate": "2025-12-28T22:47:16.121Z",
+  "repoInfo": {
+    "stars": 1,
+    "forks": 0,
+    "openIssues": 11,
+    "description": "Tool zum Auflisten und Verwalten installierter Linux-Anwendungen 🇩🇪 🇬🇧",
+    "homepage": "",
+    "topics": []
+  },
+  "latestRelease": {
+    "tagName": "v0.2.3",
+    "name": "MyApps v0.2.3 - Version/Changelog Fix",
+    "body": "# MyApps v0.2.3 - Version/Changelog Fix\n\n**Behebt \"Version 0.0.0\" und fehlende Changelog-Info in System-Installationen (OBS/AUR)**\n\n---\n\n## 🐛 Behobene Bugs\n\n### 1. Version 0.0.0 im About-Dialog\n- ✅ **Problem:** About-Dialog zeigte \"Version 0.0.0\" statt echter Version\n- ✅ **Ursache:** pyproject.toml wurde nicht mit OBS/AUR-Paketen installiert\n- ✅ **Lösung:** pyproject.toml wird jetzt nach `/usr/share/myapps/` installiert\n- ✅ **Betroffene Systeme:** Alle 11 OBS-Distributionen + AUR\n\n### 2. Keine Changelog-Information verfügbar\n- ✅ **Problem:** About-Dialog zeigte \"Keine Changelog-Information verfügbar\"\n- ✅ **Ursache:** WHATS_NEW.md wurde nicht mit Paketen installiert\n- ✅ **Lösung:** WHATS_NEW.md wird jetzt nach `/usr/share/myapps/` installiert\n- ✅ **Betroffene Systeme:** Alle 11 OBS-Distributionen + AUR\n\n**Behebt:** Fehlende Version/Changelog-Anzeige aus v0.2.1 und v0.2.2\n\n---\n\n## 🔧 Technische Details\n\n- `gui_gtk.py`: Sucht pyproject.toml und WHATS_NEW.md in:\n  1. `/usr/share/myapps/` (System-Installation)\n  2. Projekt-Root (Development)\n- `myapps.spec` (RPM): Installiert beide Dateien\n- `debian/myapps.install` (DEB): Installiert beide Dateien\n- `PKGBUILD` (AUR): Installiert beide Dateien\n\n---\n\n## 📦 Installation\n\n### **OBS-Pakete** - Empfohlen ✅\n\n<a href=\"https://software.opensuse.org//download.html?project=home%3Anicoletta%3Amyapps&package=myapps\"><img src=\"https://img.shields.io/badge/Download-OBS_Pakete-73BA25?style=for-the-badge&logo=opensuse&logoColor=white\" alt=\"OBS Download\"></a>\n\n**Nach OBS-Update verfügbar:**\n\n```bash\n# Debian/Ubuntu/Mint\nsudo apt update && sudo apt upgrade myapps\n\n# Fedora\nsudo dnf update myapps\n\n# openSUSE\nsudo zypper refresh && sudo zypper update myapps\n```\n\n---\n\n### **AUR-Paket** - Arch Linux ✅\n\n<a href=\"https://aur.archlinux.org/packages/myapps\"><img src=\"https://img.shields.io/badge/Download-AUR-1793D1?style=for-the-badge&logo=archlinux&logoColor=white\" alt=\"AUR Download\"></a>\n\n```bash\nyay -S myapps\n# oder\nparu -S myapps\n```\n\n---\n\n## 🙏 Danke\n\nGroßes Dankeschön an **@Gerbmouse** für das ausführliche Bug-Testing auf Debian 13! 👏\n\n---\n\n## 💝 MyApps unterstützen\n\nDieses Projekt ist **Open Source** (GPLv3) und wird von der Community entwickelt!\n\n<a href=\"https://www.paypal.com/ncp/payment/UYJ73YNEZ3KHL\"><img src=\"https://img.shields.io/badge/PayPal-Spenden-00457C?style=for-the-badge&logo=paypal&logoColor=white\" alt=\"Spenden via PayPal\"></a>\n\n**Spenden gehen an:** PC-Wittfoot UG (Spendenverwalter)\n**Verwendung:** Serverkosten, Hardware, Entwicklerzeit für MyApps\n\n**Hinweis:** Die Entwicklung erfolgt durch die Linux Guides DE Community (Open Source).\nPC-Wittfoot UG verwaltet nur die Spenden, ist aber NICHT der Entwickler.\n\n**Rechtliches:**\n[Impressum](https://nicolettas-muggelbude.github.io/myapps/impressum) | [Datenschutz](https://nicolettas-muggelbude.github.io/myapps/datenschutz)\n\n---\n\n**Changelog:** https://github.com/nicolettas-muggelbude/myapps/compare/v0.2.2...v0.2.3\n",
+    "publishedAt": "2025-12-28T17:07:11Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/myapps/releases/tag/v0.2.3"
+  }
+}

@@ -6,8 +6,14 @@
    Project Header
    ======================================== */
 
-.breadcrumb {
+.breadcrumb-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: var(--spacing-md);
+}
+
+.breadcrumb {
     font-size: 0.9rem;
 }
 
