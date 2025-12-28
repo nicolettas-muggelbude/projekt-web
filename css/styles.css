@@ -239,17 +239,19 @@ nav a:hover {
 /* Mobile & Tablet Navigation */
 @media (max-width: 1024px) {
     header .container {
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     header h1 {
         font-size: 2rem;
-        flex: 1;
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
     }
 
     .hamburger {
         display: flex; /* Hamburger anzeigen */
-        margin-left: auto; /* Rechts positionieren */
+        align-self: flex-start; /* Links positionieren */
     }
 
     nav {
