@@ -1,0 +1,26 @@
+{
+  "name": "projekt-web",
+  "version": "1.0.0",
+  "description": "Portfolio-Website mit automatischer GitHub-Integration",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build/build.js",
+    "serve": "npx serve .",
+    "dev": "npx serve . --watch"
+  },
+  "keywords": [
+    "portfolio",
+    "github",
+    "static-site",
+    "blog"
+  ],
+  "author": "Nicoletta",
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^11.1.1",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

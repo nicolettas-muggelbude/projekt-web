@@ -1,0 +1,488 @@
+/* ========================================
+   Project Page Specific Styles
+   ======================================== */
+
+/* ========================================
+   Project Header
+   ======================================== */
+
+.breadcrumb {
+    margin-bottom: var(--spacing-md);
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent);
+}
+
+.project-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.project-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.project-meta {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    color: var(--text-secondary);
+    flex-wrap: wrap;
+}
+
+.github-link a {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.stats {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+/* ========================================
+   Layout
+   ======================================== */
+
+.project-content {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: var(--spacing-lg);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+.project-nav {
+    position: sticky;
+    top: var(--spacing-md);
+    height: fit-content;
+}
+
+.project-nav nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm);
+}
+
+.project-nav a {
+    padding: var(--spacing-xs);
+    border-radius: 4px;
+    transition: all var(--transition);
+    text-decoration: none;
+    color: var(--text-secondary);
+}
+
+.project-nav a:hover {
+    background: var(--bg-secondary);
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.content-wrapper {
+    min-width: 0;
+}
+
+/* ========================================
+   Sections
+   ======================================== */
+
+section {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border);
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+section h2 {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+    font-size: 1.8rem;
+}
+
+/* ========================================
+   Latest Release Banner
+   ======================================== */
+
+.highlight-section {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    color: white;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border: none;
+    margin-bottom: var(--spacing-lg);
+}
+
+.highlight-section h2,
+.highlight-section h3 {
+    color: white;
+}
+
+.release-banner {
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+}
+
+.release-info {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.version-tag {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.release-date {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.release-banner h3 {
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.btn-secondary {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: all var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+}
+
+/* ========================================
+   README & Markdown Content
+   ======================================== */
+
+.markdown-body {
+    background: var(--bg-card);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border);
+    line-height: 1.7;
+}
+
+.markdown-body h1 {
+    font-size: 2rem;
+    margin: 1.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.markdown-body h2 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.markdown-body h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.markdown-body p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.markdown-body ul, .markdown-body ol {
+    margin-left: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.markdown-body li {
+    margin-bottom: 0.25rem;
+}
+
+.markdown-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin: var(--spacing-sm) 0;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.markdown-body a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition);
+}
+
+.markdown-body a:hover {
+    border-bottom-color: var(--accent);
+}
+
+.markdown-body blockquote {
+    border-left: 4px solid var(--accent);
+    padding-left: var(--spacing-sm);
+    margin: var(--spacing-sm) 0;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.markdown-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-sm) 0;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+    border: 1px solid var(--border);
+    padding: var(--spacing-xs);
+    text-align: left;
+}
+
+.markdown-body table th {
+    background: var(--bg-secondary);
+    font-weight: bold;
+}
+
+/* ========================================
+   Screenshots
+   ======================================== */
+
+.screenshots-section {
+    margin-top: var(--spacing-lg);
+}
+
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.screenshot-grid figure {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+    cursor: pointer;
+}
+
+.screenshot-grid figure:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.screenshot-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.screenshot-grid figcaption {
+    padding: var(--spacing-sm);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+}
+
+/* ========================================
+   Releases List
+   ======================================== */
+
+.releases-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.release-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    transition: all var(--transition);
+}
+
+.release-item:hover {
+    box-shadow: 0 4px 12px var(--shadow);
+    border-color: var(--accent);
+}
+
+.release-header {
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border);
+}
+
+.release-header h3 {
+    margin: var(--spacing-xs) 0;
+    font-size: 1.3rem;
+}
+
+.release-header time {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.release-body {
+    margin: var(--spacing-sm) 0;
+    color: var(--text-primary);
+}
+
+.release-body ul {
+    margin-left: 1.5rem;
+}
+
+.release-link {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.release-link:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   Community Links
+   ======================================== */
+
+.community-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.community-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    transition: all var(--transition);
+    display: block;
+    text-decoration: none;
+}
+
+.community-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px var(--shadow);
+    text-decoration: none;
+}
+
+.community-card h3 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+}
+
+.community-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* ========================================
+   Loading States
+   ======================================== */
+
+#readme-loading,
+#releases-loading,
+#changelog-loading {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: var(--spacing-lg);
+    font-style: italic;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+    .project-content {
+        grid-template-columns: 1fr;
+    }
+
+    .project-nav {
+        position: static;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .project-nav nav {
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .project-header h1 {
+        font-size: 2rem;
+    }
+
+    .screenshot-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .community-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .project-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+}

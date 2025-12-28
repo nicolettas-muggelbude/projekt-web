@@ -1,0 +1,72 @@
+name: Update Content
+
+on:
+  # Automatisch alle 6 Stunden
+  schedule:
+    - cron: '0 */6 * * *'
+
+  # Bei Push auf main branch
+  push:
+    branches: [main]
+    paths:
+      - 'blog/posts/**'
+      - 'data/projects.json'
+      - 'build/**'
+
+  # Manuell triggerbar
+  workflow_dispatch:
+
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: |
+          npm install marked js-yaml
+
+      - name: Run Build Script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node build/build.js
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions Bot"
+
+          git add data/cache blog/blog-index.json projects
+
+          # Nur committen wenn es Änderungen gibt
+          if git diff --staged --quiet; then
+            echo "Keine Änderungen zu committen"
+          else
+            git commit -m "🤖 Automatisches Content-Update [skip ci]"
+            git push
+          fi
+
+      - name: Deploy to GitHub Pages (optional)
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          exclude_assets: '.github,node_modules,build'

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projekt-Portfolio von Nicoletta - Übersicht meiner GitHub-Projekte und Blog">
+    <title>Meine Projekte | Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Theme Setup (verhindert Flackern) -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') ||
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nicolettas-Muggelbude</h1>
+            <nav>
+                <a href="#projekte">Projekte</a>
+                <a href="#blog">Blog</a>
+                <a href="https://github.com/nicolettas-muggelbude" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Projekte Sektion -->
+        <section id="projekte">
+            <h2>Willkommen auf meiner Projekt-Seite</h2>
+            <div id="project-grid" class="project-grid">
+                <p class="loading">Lade Projekte...</p>
+            </div>
+        </section>
+
+        <!-- Blog Sektion -->
+        <section id="blog">
+            <h2>Blog</h2>
+            <div id="blog-posts" class="blog-posts">
+                <p class="loading">Lade Blog-Posts...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nicoletta | <a href="https://github.com/nicolettas-muggelbude" target="_blank">GitHub</a></p>
+            <p>Automatisch aktualisiert via GitHub API</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="js/theme.js"></script>
+    <script type="module" src="js/projects.js"></script>
+    <script type="module" src="js/blog.js"></script>
+</body>
+</html>

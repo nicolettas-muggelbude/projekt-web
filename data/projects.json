@@ -1,0 +1,11 @@
+{
+  "projects": [
+    {
+      "id": "myapps",
+      "repo": "nicolettas-muggelbude/myapps",
+      "name": "MyApps",
+      "description": "Tool zum Auflisten und Verwalten installierter Linux-Anwendungen",
+      "featured": true
+    }
+  ]
+}

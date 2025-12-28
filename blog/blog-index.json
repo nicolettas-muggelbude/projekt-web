@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "slug": "2025-01-28-willkommen",
+      "title": "Willkommen auf meiner neuen Projekt-Website",
+      "date": "2025-01-28",
+      "author": "Nicole",
+      "tags": ["announcement", "web"],
+      "excerpt": "Meine neue Portfolio-Website ist jetzt live! Hier stelle ich meine Projekte vor und teile Gedanken zu Entwicklung und Technologie."
+    },
+    {
+      "slug": "2025-01-15-github-integration",
+      "title": "Automatische GitHub-Integration einrichten",
+      "date": "2025-01-15",
+      "author": "Nicole",
+      "tags": ["tutorial", "github", "automation"],
+      "excerpt": "Wie ich meine Portfolio-Website automatisch mit GitHub-Daten synchronisiere, ohne Backend oder Datenbank."
+    }
+  ]
+}
