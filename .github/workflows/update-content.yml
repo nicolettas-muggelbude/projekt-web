@@ -16,6 +16,9 @@ on:
   # Manuell triggerbar
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-content:
     runs-on: ubuntu-latest
