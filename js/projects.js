@@ -101,9 +101,24 @@ class ProjectsManager {
                 `;
             }
 
+            // Icon: Custom Icon oder Fallback
+            let iconHtml = '';
+            if (project.icon) {
+                // Wenn Emoji oder Text
+                if (project.icon.length <= 4) {
+                    iconHtml = `<span class="project-icon-emoji">${project.icon}</span>`;
+                } else {
+                    // Wenn Bild-URL
+                    iconHtml = `<img src="${project.icon}" alt="${project.name}" class="project-icon">`;
+                }
+            } else {
+                // Fallback: Generisches Icon
+                iconHtml = `<span class="project-icon-emoji">📦</span>`;
+            }
+
             card.innerHTML = `
                 <div class="project-header">
-                    <img src="${repoInfo.owner.avatar_url}" alt="${project.name}" class="project-icon">
+                    ${iconHtml}
                     <h3>${project.name}</h3>
                 </div>
                 <p>${project.description || repoInfo.description || 'Keine Beschreibung verfügbar'}</p>

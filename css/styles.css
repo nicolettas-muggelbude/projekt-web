@@ -378,6 +378,19 @@ section h2 {
     flex-shrink: 0;
 }
 
+.project-card .project-icon-emoji {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    flex-shrink: 0;
+}
+
 .project-card h3 {
     font-size: 1.5rem;
     margin: 0;

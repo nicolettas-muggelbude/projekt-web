@@ -5,6 +5,7 @@
       "repo": "nicolettas-muggelbude/myapps",
       "name": "MyApps",
       "description": "Tool zum Auflisten und Verwalten installierter Linux-Anwendungen",
+      "icon": "📱",
       "featured": true
     }
   ]
