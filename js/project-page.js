@@ -290,13 +290,14 @@ class ProjectPage {
         try {
             const releases = await getReleases(this.repo, 10);
             const releasesList = document.getElementById('releases-list');
+            const releasesSection = document.getElementById('releases');
 
-            if (!releases || releases.length === 0 || !releasesList) {
-                if (releasesList) {
-                    releasesList.innerHTML = '<p>Keine Releases verfügbar.</p>';
-                }
+            if (!releases || releases.length === 0) {
+                if (releasesSection) releasesSection.style.display = 'none';
                 return;
             }
+
+            if (!releasesList) return;
 
             releasesList.innerHTML = '';
 
@@ -324,6 +325,8 @@ class ProjectPage {
             });
         } catch (error) {
             console.error('Fehler beim Laden der Releases:', error);
+            const releasesSection = document.getElementById('releases');
+            if (releasesSection) releasesSection.style.display = 'none';
         }
     }
 
@@ -331,20 +334,20 @@ class ProjectPage {
         try {
             const changelog = await getChangelog(this.repo);
             const changelogContent = document.getElementById('changelog-content');
+            const changelogSection = document.getElementById('changelog');
 
-            if (!changelog || !changelogContent) {
-                if (changelogContent) {
-                    changelogContent.innerHTML = `
-                        <p>Kein CHANGELOG.md gefunden.</p>
-                        <p>Siehe <a href="#releases">Releases</a> für Versionshistorie.</p>
-                    `;
-                }
+            if (!changelog) {
+                if (changelogSection) changelogSection.style.display = 'none';
                 return;
             }
+
+            if (!changelogContent) return;
 
             changelogContent.innerHTML = markdownToHtml(changelog);
         } catch (error) {
             console.error('Fehler beim Laden des Changelog:', error);
+            const changelogSection = document.getElementById('changelog');
+            if (changelogSection) changelogSection.style.display = 'none';
         }
     }
 
@@ -352,23 +355,20 @@ class ProjectPage {
         try {
             const roadmap = await getRoadmap(this.repo);
             const roadmapContent = document.getElementById('roadmap-content');
-
-            if (!roadmapContent) return;
+            const roadmapSection = document.getElementById('roadmap');
 
             if (!roadmap) {
-                roadmapContent.innerHTML = `
-                    <p>Keine separate Roadmap verfügbar.</p>
-                    <p>Geplante Features findest du in den
-                    <a href="https://github.com/${this.repo}/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement" target="_blank">
-                        Enhancement-Issues
-                    </a>.</p>
-                `;
+                if (roadmapSection) roadmapSection.style.display = 'none';
                 return;
             }
+
+            if (!roadmapContent) return;
 
             roadmapContent.innerHTML = markdownToHtml(roadmap);
         } catch (error) {
             console.error('Fehler beim Laden der Roadmap:', error);
+            const roadmapSection = document.getElementById('roadmap');
+            if (roadmapSection) roadmapSection.style.display = 'none';
         }
     }
 }
