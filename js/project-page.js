@@ -80,11 +80,29 @@ class ProjectPage {
 
     async loadReadme() {
         try {
-            const readme = await getReadme(this.repo);
             const readmeContent = document.querySelector('.readme-content');
             const loadingEl = document.getElementById('readme-loading');
 
             if (loadingEl) loadingEl.style.display = 'none';
+
+            // Versuche zuerst Cache zu laden
+            let readme = null;
+            try {
+                const projectId = this.repo.split('/')[1].toLowerCase();
+                const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
+                if (cacheResponse.ok) {
+                    const cached = await cacheResponse.json();
+                    readme = cached.readme || null;
+                    console.log('README aus Cache geladen');
+                }
+            } catch (cacheError) {
+                console.log('Cache nicht verfügbar, lade von API...');
+            }
+
+            // Falls kein Cache, von API laden
+            if (!readme) {
+                readme = await getReadme(this.repo);
+            }
 
             if (!readme || !readmeContent) {
                 if (readmeContent) {
