@@ -1,6 +1,14 @@
 {
-  "repo": "Scrat-Backup",
-  "name": "Automatisiertes Update-Script fuer Linux",
+  "repo": "nicolettas-muggelbude/Scrat-Backup",
+  "name": "Scrat-Backup",
   "description": "Scrat-Backup ist ein Open-Source-Backup-Tool, das speziell für Windows-Privatnutzer entwickelt wurde. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups",
-  "lastUpdate": "2025-12-29T00:45:42.458Z"
+  "lastUpdate": "2025-12-29T00:50:19.228Z",
+  "repoInfo": {
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "description": "Scrat-Backup ist ein Open-Source-Backup-Tool, das speziell für Windows-Privatnutzer entwickelt wurde. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups. 🇩🇪 ",
+    "homepage": "",
+    "topics": []
+  }
 }

@@ -1,6 +1,14 @@
 {
-  "repo": "Mountrix",
+  "repo": "nicolettas-muggelbude/Mountrix",
   "name": "Mountrix",
   "description": "Benutzerfreundliches Mounten von Netzlaufwerken und lokalen Laufwerken unter Linux",
-  "lastUpdate": "2025-12-29T00:45:42.663Z"
+  "lastUpdate": "2025-12-29T00:50:19.498Z",
+  "repoInfo": {
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "description": "Benutzerfreundliches Mounten von Netzlaufwerken und lokalen Laufwerken unter Linux",
+    "homepage": null,
+    "topics": []
+  }
 }
