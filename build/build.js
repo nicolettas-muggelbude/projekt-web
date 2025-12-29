@@ -104,7 +104,14 @@ async function buildProjectCache(project) {
             });
             if (readmeResponse.ok) {
                 const { marked } = await import('marked');
-                const readmeMarkdown = await readmeResponse.text();
+                let readmeMarkdown = await readmeResponse.text();
+
+                // Relative Bild-Pfade in absolute GitHub URLs umwandeln
+                readmeMarkdown = readmeMarkdown.replace(
+                    /!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g,
+                    `![$1](https://raw.githubusercontent.com/${project.repo}/main/$2)`
+                );
+
                 // Als HTML cachen für bessere Performance und Konsistenz
                 cache.readmeHtml = marked(readmeMarkdown);
                 log(`  ✓ README geladen und in HTML konvertiert`, 'green');
