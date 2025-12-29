@@ -106,10 +106,16 @@ async function buildProjectCache(project) {
                 const { marked } = await import('marked');
                 let readmeMarkdown = await readmeResponse.text();
 
-                // Relative Bild-Pfade in absolute GitHub URLs umwandeln
+                // Relative Bild-Pfade in Markdown in absolute GitHub URLs umwandeln
                 readmeMarkdown = readmeMarkdown.replace(
                     /!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g,
                     `![$1](https://raw.githubusercontent.com/${project.repo}/main/$2)`
+                );
+
+                // Relative Bild-Pfade in HTML img Tags umwandeln
+                readmeMarkdown = readmeMarkdown.replace(
+                    /<img\s+([^>]*\s+)?src="(?!https?:\/\/)([^"]+)"([^>]*)>/g,
+                    `<img $1src="https://raw.githubusercontent.com/${project.repo}/main/$2"$3>`
                 );
 
                 // Als HTML cachen für bessere Performance und Konsistenz
