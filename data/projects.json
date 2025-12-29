@@ -37,7 +37,7 @@
       "repo": "nicolettas-muggelbude/Mountrix",
       "name": "Mountrix",
       "description": "Benutzerfreundliches Mounten von Netzlaufwerken und lokalen Laufwerken unter Linux",
-      "icon": "mountrix-logo.svg",
+      "icon": "mountrix-icon.svg",
       "featured": true
     },
     {
@@ -45,7 +45,7 @@
       "repo": "nicolettas-muggelbude/Tipels",
       "name": "Tipels",
       "description": "Einfache Einrichtung von Druckern und Scannern unter Linux 🇩🇪 🇬🇧",
-      "icon": "",
+      "icon": "tipels-icon.svg",
       "featured": true
     }
   ]
