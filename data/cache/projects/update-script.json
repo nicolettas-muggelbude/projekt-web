@@ -1,0 +1,31 @@
+{
+  "repo": "nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux",
+  "name": "Automatisiertes Update-Script fuer Linux",
+  "description": "Mehrsprachiges automatisiertes Update & Upgrade-Script fuer verschiedene Linux-Distributionen mit optionaler E-Mail-Benachrichtigung und detailliertem Logging. 🇩🇪 🇬🇧",
+  "lastUpdate": "2025-12-29T00:45:42.018Z",
+  "repoInfo": {
+    "stars": 3,
+    "forks": 1,
+    "openIssues": 0,
+    "description": "Mehrsprachiges automatisiertes Update & Upgrade-Script fuer verschiedene Linux-Distributionen mit optionaler E-Mail-Benachrichtigung und detailliertem Logging. 🇩🇪 🇬🇧",
+    "homepage": "",
+    "topics": [
+      "arch",
+      "automation",
+      "bash",
+      "debian",
+      "fedora",
+      "linux",
+      "opensuse",
+      "ubuntu",
+      "update-script"
+    ]
+  },
+  "latestRelease": {
+    "tagName": "v1.5.1",
+    "name": "v1.5.1 - Desktop-Benachrichtigungen & DMA",
+    "body": "# Release Notes - Version 1.5.1\n\n**Veröffentlicht am:** 2025-12-27\n**Typ:** Feature-Release (Minor)\n\n---\n\n## 🎉 Highlights\n\n### 🔔 Desktop-Benachrichtigungen\n\nDas Script zeigt jetzt **Popup-Benachrichtigungen** für wichtige Events!\n\n**Benachrichtigungen bei:**\n- ✅ Update erfolgreich abgeschlossen\n- ✅ Distribution-Upgrade verfügbar\n- ✅ Update fehlgeschlagen (kritisch)\n- ✅ Neustart erforderlich\n\n**Features:**\n- Funktioniert automatisch auch als `root` (zeigt Notification für aktuellen User)\n- Unterstützt alle gängigen Desktop-Umgebungen (GNOME, KDE, XFCE, Cinnamon, MATE, LXQt, Budgie)\n- Konfigurierbar über `ENABLE_DESKTOP_NOTIFICATION` und `NOTIFICATION_TIMEOUT`\n- Graceful Degradation: Kein Fehler wenn `notify-send` nicht verfügbar\n\n**Installation:**\n```bash\n# Debian/Ubuntu\nsudo apt-get install libnotify-bin\n\n# Fedora/RHEL\nsudo dnf install libnotify\n\n# Arch\nsudo pacman -S libnotify\n```\n\n### 📧 DMA - Empfohlene MTA-Lösung\n\nBasierend auf **Community-Feedback** ist jetzt **DMA (DragonFly Mail Agent)** die empfohlene Lösung für E-Mail-Benachrichtigungen!\n\n**Warum DMA?**\n- ✅ Keine Konfiguration nötig - einfach installieren und es funktioniert\n- ✅ Kein laufender Dienst im Hintergrund\n- ✅ Kein offener Port (25)\n- ✅ Keine Queue\n- ✅ Perfekt für lokale Mails (cron, mail)\n\n**Installation:**\n```bash\nsudo apt-get install dma\n# Das war's - DMA funktioniert sofort!\n```\n\n---\n\n## ✨ Neue Features\n\n### Desktop-Benachrichtigungen\n\n**Neue Funktion:**\n- `send_notification()` - Zentrale Funktion für Desktop-Notifications\n\n**Konfiguration:**\n```bash\n# In config.conf\nENABLE_DESKTOP_NOTIFICATION=true\nNOTIFICATION_TIMEOUT=5000  # Millisekunden\n```\n\n**Sprachmeldungen:**\n- 8 neue Messages in Deutsch und Englisch\n- NOTIFICATION_UPDATE_SUCCESS\n- NOTIFICATION_UPDATE_FAILED\n- NOTIFICATION_UPGRADE_AVAILABLE\n- NOTIFICATION_REBOOT_REQUIRED\n\n### E-Mail-Verbesserungen\n\n**Dokumentation:**\n- DMA als empfohlene Lösung prominent dokumentiert\n- Alternativen (ssmtp, postfix) weiterhin verfügbar\n- Einfachere Installationsanleitung\n\n---\n\n## 📝 Änderungen\n\n### Code\n\n**update.sh:**\n- `send_notification()` Funktion hinzugefügt\n- Notifications nach Update-Erfolg\n- Notifications bei verfügbarem Upgrade\n- Notifications bei Update-Fehler\n- Notifications bei erforderlichem Neustart\n- Automatische DISPLAY und DBUS_SESSION_BUS_ADDRESS Konfiguration für root\n\n**config.conf.example:**\n- `ENABLE_DESKTOP_NOTIFICATION` (default: true)\n- `NOTIFICATION_TIMEOUT` (default: 5000)\n\n**Sprachdateien:**\n- de.lang: 8 neue Meldungen\n- en.lang: 8 neue Meldungen\n\n### Dokumentation\n\n**README.md:**\n- Neue Sektion \"Desktop-Benachrichtigungen\"\n- DMA als empfohlene MTA-Lösung\n- Installationsanleitungen aktualisiert\n- Feature-Liste erweitert\n\n**CHANGELOG.md:**\n- Vollständiger Eintrag für v1.5.1\n- Technische Details dokumentiert\n\n---\n\n## 🔧 Technische Details\n\n### Desktop-Notifications\n\n- Verwendet `notify-send` (libnotify)\n- DISPLAY=:0 für graphische Anzeige\n- DBUS_SESSION_BUS_ADDRESS automatisch gesetzt\n- Icons: software-update-available, system-software-update, dialog-error, system-reboot\n- Urgency: normal für Updates/Upgrades, critical für Fehler\n\n### Kompatibilität\n\n- ✅ Abwärtskompatibel mit v1.5.0\n- ✅ Keine Breaking Changes\n- ✅ ShellCheck-konform (0 Warnungen)\n- ✅ Funktioniert auch ohne libnotify (Notifications werden dann übersprungen)\n\n---\n\n## 📊 Statistik\n\n**Code-Änderungen:**\n- 6 Dateien geändert\n- +244 / -19 Zeilen\n- 1 neue Funktion (`send_notification()`)\n- 2 neue Konfigurationsparameter\n- 8 neue Sprachmeldungen\n\n---\n\n## 🙏 Community\n\n- **DMA-Empfehlung** basierend auf User-Feedback\n- Einfachere Lösung für typische Use-Cases\n- Danke an @Community für den Vorschlag!\n\n---\n\n## 🚀 Upgrade von v1.5.0\n\n```bash\ncd ~/linux-update-script\ngit pull origin main\n\n# Optional: Neue Features in config.conf aktivieren\necho \"ENABLE_DESKTOP_NOTIFICATION=true\" >> config.conf\necho \"NOTIFICATION_TIMEOUT=5000\" >> config.conf\n\n# libnotify installieren (für Desktop-Notifications)\nsudo apt-get install libnotify-bin  # Debian/Ubuntu\n```\n\n---\n\n## 📦 Was kommt als Nächstes?\n\n**v1.6.0** (geplant):\n- Weitere Desktop-Notification-Verbesserungen\n- Zusätzliche Konfigurationsoptionen\n\n**v1.7.0** (geplant):\n- Pre/Post-Update Hooks\n- Custom Scripts vor und nach Updates\n\n**v2.0.0** (geplant):\n- Modulare Code-Architektur\n- Test-Framework\n- Container-Support\n\nSiehe [ROADMAP.md](ROADMAP.md) für Details.\n\n---\n\n## 🔗 Links\n\n- **GitHub Repository:** https://github.com/nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux\n- **Changelog:** [CHANGELOG.md](CHANGELOG.md)\n- **Roadmap:** [ROADMAP.md](ROADMAP.md)\n\n---\n\n**Viel Spaß mit v1.5.1! 🎉**\n\nBei Fragen oder Problemen bitte ein Issue auf GitHub öffnen.\n",
+    "publishedAt": "2025-12-28T09:22:39Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux/releases/tag/v1.5.1"
+  }
+}
