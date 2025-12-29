@@ -56,7 +56,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "GitHub Actions Bot"
 
-          git add data/cache blog/blog-index.json projects
+          git add data/cache blog/blog-index.json blog/posts/*.html projects
 
           # Nur committen wenn es Änderungen gibt
           if git diff --staged --quiet; then

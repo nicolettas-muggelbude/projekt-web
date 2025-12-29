@@ -198,7 +198,8 @@ async function buildBlogIndex() {
                 date: frontmatter.date || '',
                 author: frontmatter.author || '',
                 tags: frontmatter.tags || [],
-                excerpt: frontmatter.excerpt || ''
+                excerpt: frontmatter.excerpt || '',
+                content: content.replace(/^---\n[\s\S]*?\n---\n/, '') // Content ohne Frontmatter
             });
 
             log(`  ✓ ${frontmatter.title}`, 'green');
@@ -209,9 +210,76 @@ async function buildBlogIndex() {
 
         // Blog-Index speichern
         const indexPath = path.join(__dirname, '..', 'blog', 'blog-index.json');
-        await fs.writeFile(indexPath, JSON.stringify({ posts }, null, 2));
+        await fs.writeFile(indexPath, JSON.stringify({
+            posts: posts.map(p => ({ ...p, content: undefined })) // Content nicht im Index
+        }, null, 2));
 
         log(`  ✓ Blog-Index erstellt: ${posts.length} Posts`, 'green');
+
+        return posts; // Posts mit Content zurückgeben für HTML-Generierung
+    } catch (error) {
+        log(`  ✗ Fehler: ${error.message}`, 'red');
+        return [];
+    }
+}
+
+// Blog-Post HTML-Seiten generieren
+async function generateBlogPostPages(posts) {
+    if (!posts || posts.length === 0) {
+        log('  ⚠ Keine Posts zum Generieren', 'yellow');
+        return;
+    }
+
+    log(`\n📄 Generiere Blog-Post HTML-Seiten...`, 'blue');
+
+    try {
+        const { marked } = await import('marked');
+
+        // Template laden
+        const templatePath = path.join(__dirname, '..', 'blog-post-template.html');
+        const template = await fs.readFile(templatePath, 'utf-8');
+
+        for (const post of posts) {
+            let html = template;
+
+            // Datum formatieren
+            const date = new Date(post.date);
+            const formattedDate = date.toLocaleDateString('de-DE', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Tags HTML
+            let tagsHtml = '';
+            if (post.tags && post.tags.length > 0) {
+                const tagsList = post.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+                tagsHtml = `<div class="post-tags">${tagsList}</div>`;
+            }
+
+            // Author HTML
+            const authorHtml = post.author ? `<span>von ${post.author}</span>` : '';
+
+            // Markdown zu HTML
+            const contentHtml = marked(post.content || '');
+
+            // Platzhalter ersetzen
+            html = html.replace(/\{\{POST_TITLE\}\}/g, post.title);
+            html = html.replace(/\{\{POST_EXCERPT\}\}/g, post.excerpt || post.title);
+            html = html.replace(/\{\{POST_DATE\}\}/g, post.date);
+            html = html.replace(/\{\{POST_DATE_FORMATTED\}\}/g, formattedDate);
+            html = html.replace(/\{\{POST_AUTHOR\}\}/g, authorHtml);
+            html = html.replace(/\{\{POST_TAGS\}\}/g, tagsHtml);
+            html = html.replace(/\{\{POST_CONTENT\}\}/g, contentHtml);
+
+            // Speichern
+            const outputPath = path.join(__dirname, '..', 'blog', 'posts', `${post.slug}.html`);
+            await fs.writeFile(outputPath, html);
+
+            log(`  ✓ ${post.title}`, 'green');
+        }
+
+        log(`  ✓ ${posts.length} Blog-Post Seiten erstellt`, 'green');
     } catch (error) {
         log(`  ✗ Fehler: ${error.message}`, 'red');
     }
@@ -235,8 +303,9 @@ async function build() {
             await generateProjectPage(project);
         }
 
-        // Blog-Index erstellen
-        await buildBlogIndex();
+        // Blog-Index erstellen und HTML-Seiten generieren
+        const posts = await buildBlogIndex();
+        await generateBlogPostPages(posts);
 
         log('\n✅ Build erfolgreich abgeschlossen!\n', 'green');
     } catch (error) {
