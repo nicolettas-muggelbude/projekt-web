@@ -2,11 +2,7 @@
   "repo": "nicolettas-muggelbude/Scrat-Backup",
   "name": "Scrat-Backup",
   "description": "Scrat-Backup ist ein Open-Source-Backup-Tool, das speziell für Windows-Privatnutzer entwickelt wurde. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups",
-<<<<<<< HEAD
-  "lastUpdate": "2025-12-29T09:13:00.684Z",
-=======
-  "lastUpdate": "2025-12-29T08:51:14.193Z",
->>>>>>> 06222d3e6c0d70ccd1ecb7845be8a7f6eb553a5a
+  "lastUpdate": "2025-12-29T09:14:58.757Z",
   "repoInfo": {
     "stars": 0,
     "forks": 0,
