@@ -199,7 +199,9 @@ class ProjectPage {
         screenshots.forEach(img => {
             const figure = document.createElement('figure');
             figure.innerHTML = `
-                <img src="${img.src}" alt="${img.alt || 'Screenshot'}" loading="lazy">
+                <a href="${img.src}" target="_blank" rel="noopener noreferrer">
+                    <img src="${img.src}" alt="${img.alt || 'Screenshot'}" loading="lazy">
+                </a>
                 <figcaption>${img.alt || 'Screenshot'}</figcaption>
             `;
             screenshotGrid.appendChild(figure);

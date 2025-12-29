@@ -364,7 +364,6 @@ section h2 {
     border-radius: var(--border-radius);
     overflow: hidden;
     transition: transform var(--transition), box-shadow var(--transition);
-    cursor: pointer;
 }
 
 .screenshot-grid figure:hover {
@@ -372,10 +371,21 @@ section h2 {
     box-shadow: 0 4px 12px var(--shadow);
 }
 
+.screenshot-grid a {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .screenshot-grid img {
     width: 100%;
     height: auto;
     display: block;
+    transition: opacity var(--transition);
+}
+
+.screenshot-grid a:hover img {
+    opacity: 0.9;
 }
 
 .screenshot-grid figcaption {
