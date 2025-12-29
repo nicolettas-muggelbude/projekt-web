@@ -18,12 +18,22 @@
 }
 
 .breadcrumb a {
-    color: var(--text-secondary);
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--accent);
+    color: white;
     text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: all var(--transition);
+    box-shadow: 0 2px 4px var(--shadow);
 }
 
 .breadcrumb a:hover {
-    color: var(--accent);
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow);
+    text-decoration: none;
 }
 
 .project-header {
@@ -620,6 +630,29 @@ section h2 {
     border-radius: var(--border-radius);
     max-width: 80%;
     text-align: center;
+}
+
+/* ========================================
+   Footer Back Button
+   ======================================== */
+
+footer .container p:first-child a {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: all var(--transition);
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+footer .container p:first-child a:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow);
+    text-decoration: none;
 }
 
 /* ========================================
