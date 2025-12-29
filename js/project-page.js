@@ -50,8 +50,34 @@ class ProjectPage {
 
     async loadLatestRelease() {
         try {
-            const release = await getLatestRelease(this.repo);
             const section = document.getElementById('latest-release');
+
+            // Versuche zuerst Cache zu laden
+            let release = null;
+            try {
+                const projectId = this.repo.split('/')[1].toLowerCase();
+                const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
+                if (cacheResponse.ok) {
+                    const cached = await cacheResponse.json();
+                    if (cached.latestRelease) {
+                        release = {
+                            tag_name: cached.latestRelease.tagName,
+                            name: cached.latestRelease.name,
+                            body: cached.latestRelease.body,
+                            published_at: cached.latestRelease.publishedAt,
+                            html_url: cached.latestRelease.htmlUrl
+                        };
+                        console.log('Release aus Cache geladen');
+                    }
+                }
+            } catch (cacheError) {
+                console.log('Cache nicht verfügbar, lade von API...');
+            }
+
+            // Falls kein Cache, von API laden
+            if (!release) {
+                release = await getLatestRelease(this.repo);
+            }
 
             if (!release) {
                 if (section) section.style.display = 'none';
@@ -75,6 +101,8 @@ class ProjectPage {
             if (titleEl) titleEl.textContent = release.name || release.tag_name;
         } catch (error) {
             console.error('Fehler beim Laden des neuesten Releases:', error);
+            const section = document.getElementById('latest-release');
+            if (section) section.style.display = 'none';
         }
     }
 
