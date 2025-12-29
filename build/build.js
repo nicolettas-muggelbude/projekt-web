@@ -103,8 +103,11 @@ async function buildProjectCache(project) {
                 }
             });
             if (readmeResponse.ok) {
-                cache.readme = await readmeResponse.text();
-                log(`  ✓ README geladen`, 'green');
+                const { marked } = await import('marked');
+                const readmeMarkdown = await readmeResponse.text();
+                // Als HTML cachen für bessere Performance und Konsistenz
+                cache.readmeHtml = marked(readmeMarkdown);
+                log(`  ✓ README geladen und in HTML konvertiert`, 'green');
             } else {
                 log('  ⚠ Kein README gefunden', 'yellow');
             }
