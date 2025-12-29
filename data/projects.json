@@ -7,7 +7,7 @@
       "description": "Tool zum Auflisten und Verwalten installierter Linux-Anwendungen",
       "icon": "io.github.nicolettas-muggelbude.myapps.svg",
       "featured": true
-    }
+    },
     {
       "id": "rechnungsfee",
       "repo": "nicolettas-muggelbude/RechnungsFee",
