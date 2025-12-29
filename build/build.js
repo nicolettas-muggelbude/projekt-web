@@ -93,6 +93,25 @@ async function buildProjectCache(project) {
             log('  ⚠ Kein Release gefunden', 'yellow');
         }
 
+        // README
+        log('  ⬇️  Lade README...');
+        try {
+            const readmeResponse = await fetch(`${GITHUB_API}/repos/${project.repo}/readme`, {
+                headers: {
+                    'Accept': 'application/vnd.github.raw',
+                    ...(GITHUB_TOKEN ? { 'Authorization': `token ${GITHUB_TOKEN}` } : {})
+                }
+            });
+            if (readmeResponse.ok) {
+                cache.readme = await readmeResponse.text();
+                log(`  ✓ README geladen`, 'green');
+            } else {
+                log('  ⚠ Kein README gefunden', 'yellow');
+            }
+        } catch (error) {
+            log(`  ⚠ README konnte nicht geladen werden: ${error.message}`, 'yellow');
+        }
+
         // Speichere Cache
         const cacheDir = path.join(__dirname, '..', 'data', 'cache', 'projects');
         await fs.mkdir(cacheDir, { recursive: true });

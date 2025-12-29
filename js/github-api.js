@@ -58,6 +58,14 @@ class GitHubAPI {
     }
 
     async getReadme(repo) {
+        const cacheKey = `${GITHUB_API}/repos/${repo}/readme`;
+
+        // Prüfe Cache
+        const cached = this.cache.get(cacheKey);
+        if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
+            return cached.data;
+        }
+
         try {
             const response = await fetch(`${GITHUB_API}/repos/${repo}/readme`, {
                 headers: {
@@ -66,10 +74,21 @@ class GitHubAPI {
             });
 
             if (!response.ok) {
+                if (response.status === 403) {
+                    console.warn('GitHub API Rate Limit erreicht. Verwende gecachte Daten falls vorhanden.');
+                }
                 return null;
             }
 
-            return await response.text();
+            const data = await response.text();
+
+            // Cache speichern
+            this.cache.set(cacheKey, {
+                data,
+                timestamp: Date.now()
+            });
+
+            return data;
         } catch (error) {
             console.error('Fehler beim Laden des README:', error);
             return null;
