@@ -1,0 +1,35 @@
+{
+  "repo": "nicolettas-muggelbude/RechnungsFee",
+  "name": "RechnungsFee",
+  "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany",
+  "lastUpdate": "2025-12-29T00:26:18.197Z",
+  "repoInfo": {
+    "stars": 8,
+    "forks": 1,
+    "openIssues": 0,
+    "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
+    "homepage": "",
+    "topics": [
+      "accounting",
+      "buchhaltung",
+      "datev",
+      "elster",
+      "fastapi",
+      "freelance",
+      "germany",
+      "invoicing",
+      "offline-first",
+      "open-source",
+      "privacy",
+      "pwa",
+      "python",
+      "react",
+      "self-employed",
+      "small-business",
+      "sqlite",
+      "tauri",
+      "tax-compliance",
+      "typescript"
+    ]
+  }
+}
