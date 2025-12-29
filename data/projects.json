@@ -26,15 +26,15 @@
     },
     {
       "id": "scrat-backup",
-      "repo": "Scrat-Backup",
-      "name": "Automatisiertes Update-Script fuer Linux",
+      "repo": "nicolettas-muggelbude/Scrat-Backup",
+      "name": "Scrat-Backup",
       "description": "Scrat-Backup ist ein Open-Source-Backup-Tool, das speziell für Windows-Privatnutzer entwickelt wurde. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups",
       "icon": "scrat.svg",
       "featured": true
     },
     {
       "id": "mountrix",
-      "repo": "Mountrix",
+      "repo": "nicolettas-muggelbude/Mountrix",
       "name": "Mountrix",
       "description": "Benutzerfreundliches Mounten von Netzlaufwerken und lokalen Laufwerken unter Linux",
       "icon": "",
@@ -42,7 +42,7 @@
     },
     {
       "id": "tipels",
-      "repo": "Tipels",
+      "repo": "nicolettas-muggelbude/Tipels",
       "name": "Tipels",
       "description": "Einfache Einrichtung von Druckern und Scannern unter Linux 🇩🇪 🇬🇧",
       "icon": "",
