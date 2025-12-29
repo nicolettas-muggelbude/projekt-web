@@ -1,6 +1,23 @@
 {
-  "repo": "Tipels",
+  "repo": "nicolettas-muggelbude/Tipels",
   "name": "Tipels",
   "description": "Einfache Einrichtung von Druckern und Scannern unter Linux 🇩🇪 🇬🇧",
-  "lastUpdate": "2025-12-29T00:45:42.943Z"
+  "lastUpdate": "2025-12-29T00:50:19.786Z",
+  "repoInfo": {
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "description": "Einfache Einrichtung von Druckern und Scannern unter Linux 🇩🇪 🇬🇧",
+    "homepage": "",
+    "topics": [
+      "brother",
+      "cups",
+      "gtk",
+      "linux",
+      "printer",
+      "python",
+      "sane",
+      "scanner"
+    ]
+  }
 }
