@@ -7,6 +7,14 @@
       "description": "Tool zum Auflisten und Verwalten installierter Linux-Anwendungen",
       "icon": "io.github.nicolettas-muggelbude.myapps.svg",
       "featured": true
+    },
+    {
+      "id": "rechnungsfee",
+      "repo": "nicolettas-muggelbude/RechnungsFee",
+      "name": "RechnungsFee",
+      "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany",
+      "icon": "",
+      "featured": true
     }
   ]
 }

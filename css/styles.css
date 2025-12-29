@@ -373,8 +373,6 @@ section h2 {
 .project-card .project-icon {
     width: 48px;
     height: 48px;
-    border-radius: 50%;
-    border: 2px solid var(--accent);
     flex-shrink: 0;
 }
 
@@ -385,9 +383,6 @@ section h2 {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    background: var(--bg-secondary);
-    border-radius: 50%;
-    border: 2px solid var(--accent);
     flex-shrink: 0;
 }
 

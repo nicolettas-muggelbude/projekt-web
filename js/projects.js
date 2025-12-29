@@ -60,17 +60,14 @@ class ProjectsManager {
     async loadOwnerAvatar() {
         if (this.projects.length === 0) return;
 
-        try {
-            const firstProject = this.projects[0];
-            const repoInfo = await getRepositoryInfo(firstProject.repo);
+        const avatarImg = document.getElementById('owner-avatar');
+        if (!avatarImg) return;
 
-            if (repoInfo && repoInfo.owner && repoInfo.owner.avatar_url) {
-                const avatarImg = document.getElementById('owner-avatar');
-                if (avatarImg) {
-                    avatarImg.src = repoInfo.owner.avatar_url;
-                    avatarImg.style.display = 'block';
-                }
-            }
+        try {
+            // Direkt von GitHub-User laden (kein API-Limit für Avatar-URLs)
+            const username = 'nicolettas-muggelbude';
+            avatarImg.src = `https://github.com/${username}.png?size=120`;
+            avatarImg.style.display = 'block';
         } catch (error) {
             console.error('Fehler beim Laden des Owner-Avatars:', error);
         }
@@ -81,11 +78,37 @@ class ProjectsManager {
         card.className = 'project-card';
 
         try {
-            // GitHub Daten laden
-            const [repoInfo, latestRelease] = await Promise.all([
-                getRepositoryInfo(project.repo),
-                getLatestRelease(project.repo)
-            ]);
+            // Versuche zuerst gecachte Daten zu laden
+            let repoInfo = null;
+            let latestRelease = null;
+
+            try {
+                const cacheResponse = await fetch(`data/cache/projects/${project.id}.json`);
+                if (cacheResponse.ok) {
+                    const cached = await cacheResponse.json();
+                    repoInfo = cached.repoInfo ? {
+                        stargazers_count: cached.repoInfo.stars,
+                        forks_count: cached.repoInfo.forks,
+                        open_issues_count: cached.repoInfo.openIssues,
+                        description: cached.repoInfo.description,
+                        owner: { avatar_url: '' }
+                    } : null;
+                    latestRelease = cached.latestRelease ? {
+                        tag_name: cached.latestRelease.tagName,
+                        name: cached.latestRelease.name
+                    } : null;
+                }
+            } catch (cacheError) {
+                console.log('Cache nicht verfügbar, lade von API...');
+            }
+
+            // Falls Cache nicht funktioniert, von API laden
+            if (!repoInfo) {
+                [repoInfo, latestRelease] = await Promise.all([
+                    getRepositoryInfo(project.repo),
+                    getLatestRelease(project.repo)
+                ]);
+            }
 
             if (!repoInfo) {
                 console.warn(`Repository ${project.repo} nicht gefunden`);
