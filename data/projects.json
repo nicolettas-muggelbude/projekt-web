@@ -37,7 +37,7 @@
       "repo": "nicolettas-muggelbude/Mountrix",
       "name": "Mountrix",
       "description": "Benutzerfreundliches Mounten von Netzlaufwerken und lokalen Laufwerken unter Linux",
-      "icon": "",
+      "icon": "mountrix-icon.svg",
       "featured": true
     },
     {
