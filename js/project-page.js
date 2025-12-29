@@ -85,33 +85,35 @@ class ProjectPage {
 
             if (loadingEl) loadingEl.style.display = 'none';
 
-            // Versuche zuerst Cache zu laden
-            let readme = null;
+            // Versuche zuerst Cache zu laden (enthält bereits HTML)
+            let readmeHtml = null;
             try {
                 const projectId = this.repo.split('/')[1].toLowerCase();
                 const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
                 if (cacheResponse.ok) {
                     const cached = await cacheResponse.json();
-                    readme = cached.readme || null;
-                    console.log('README aus Cache geladen');
+                    readmeHtml = cached.readmeHtml || null;
+                    console.log('README HTML aus Cache geladen');
                 }
             } catch (cacheError) {
                 console.log('Cache nicht verfügbar, lade von API...');
             }
 
-            // Falls kein Cache, von API laden
-            if (!readme) {
-                readme = await getReadme(this.repo);
+            // Falls kein Cache, von API laden und parsen
+            if (!readmeHtml) {
+                const readme = await getReadme(this.repo);
+                if (readme) {
+                    readmeHtml = markdownToHtml(readme);
+                }
             }
 
-            if (!readme || !readmeContent) {
+            if (!readmeHtml || !readmeContent) {
                 if (readmeContent) {
                     readmeContent.innerHTML = '<p>README nicht verfügbar.</p>';
                 }
                 return;
             }
 
-            const readmeHtml = markdownToHtml(readme);
             readmeContent.innerHTML = readmeHtml;
 
             // Screenshots extrahieren
