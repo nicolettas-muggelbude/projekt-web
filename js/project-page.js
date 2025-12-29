@@ -163,14 +163,40 @@ class ProjectPage {
         const screenshotGrid = document.getElementById('screenshot-grid');
         const screenshotsSection = document.getElementById('screenshots');
 
-        if (!screenshotGrid || images.length === 0) {
+        // Filtere nur echte Screenshots (keine Badges, Logos, Icons)
+        const screenshots = Array.from(images).filter(img => {
+            const src = img.src.toLowerCase();
+            const alt = (img.alt || '').toLowerCase();
+
+            // Ausschließen: Badges von shields.io, GitHub Actions, etc.
+            if (src.includes('shields.io') || src.includes('badge')) return false;
+
+            // Ausschließen: Logos und Icons (klein oder im Namen)
+            if (alt.includes('logo') || alt.includes('icon') || src.includes('/icon')) return false;
+            if (alt.includes('badge') || alt === 'tipels') return false;
+
+            // Ausschließen: Sehr kleine Bilder (< 200px breit)
+            const width = parseInt(img.getAttribute('width')) || 999;
+            if (width < 200) return false;
+
+            // Einschließen: Explizite Screenshots
+            if (src.includes('screenshot') || alt.includes('screenshot')) return true;
+            if (src.includes('/docs/') || src.includes('/assets/screenshots/')) return true;
+
+            // Einschließen: Große Bilder (> 400px)
+            if (width > 400) return true;
+
+            return false;
+        });
+
+        if (!screenshotGrid || screenshots.length === 0) {
             if (screenshotsSection) screenshotsSection.style.display = 'none';
             return;
         }
 
         screenshotGrid.innerHTML = '';
 
-        images.forEach(img => {
+        screenshots.forEach(img => {
             const figure = document.createElement('figure');
             figure.innerHTML = `
                 <img src="${img.src}" alt="${img.alt || 'Screenshot'}" loading="lazy">
