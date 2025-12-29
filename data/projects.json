@@ -15,6 +15,38 @@
       "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany",
       "icon": "",
       "featured": true
+    },
+    {
+      "id": "update-script",
+      "repo": "nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux",
+      "name": "Automatisiertes Update-Script fuer Linux",
+      "description": "Mehrsprachiges automatisiertes Update & Upgrade-Script fuer verschiedene Linux-Distributionen mit optionaler E-Mail-Benachrichtigung und detailliertem Logging. 🇩🇪 🇬🇧",
+      "icon": "",
+      "featured": true
+    },
+    {
+      "id": "scrat-backup",
+      "repo": "Scrat-Backup",
+      "name": "Automatisiertes Update-Script fuer Linux",
+      "description": "Scrat-Backup ist ein Open-Source-Backup-Tool, das speziell für Windows-Privatnutzer entwickelt wurde. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups",
+      "icon": "scrat.svg",
+      "featured": true
+    },
+    {
+      "id": "mountrix",
+      "repo": "Mountrix",
+      "name": "Mountrix",
+      "description": "Benutzerfreundliches Mounten von Netzlaufwerken und lokalen Laufwerken unter Linux",
+      "icon": "",
+      "featured": true
+    },
+    {
+      "id": "tipels",
+      "repo": "Tipels",
+      "name": "Tipels",
+      "description": "Einfache Einrichtung von Druckern und Scannern unter Linux 🇩🇪 🇬🇧",
+      "icon": "",
+      "featured": true
     }
   ]
 }
