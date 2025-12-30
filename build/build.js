@@ -341,12 +341,23 @@ async function generateBlogPostPages(posts) {
             // Markdown zu HTML
             let contentHtml = marked(post.content || '');
 
+            // GitHub @mentions mit Avatar und Profil-Link
+            contentHtml = contentHtml.replace(
+                /@([a-zA-Z0-9_-]+)/g,
+                (match, username) => {
+                    // Überspringe wenn bereits in einem Link oder Code-Block
+                    return `<a href="https://github.com/${username}" target="_blank" rel="noopener noreferrer" class="user-mention"><img src="https://github.com/${username}.png" width="20" height="20" alt="@${username}" class="user-avatar" loading="lazy">@${username}</a>`;
+                }
+            );
+
             // Alle externen Links bekommen target="_blank"
             contentHtml = contentHtml.replace(
                 /<a href="(https?:\/\/[^"]+)"([^>]*)>/gi,
                 (match, url, rest) => {
                     // Wenn target schon gesetzt ist, nicht ändern
                     if (rest.includes('target=')) return match;
+                    // Überspringe user-mention Links
+                    if (rest.includes('user-mention')) return match;
                     return `<a href="${url}" target="_blank" rel="noopener noreferrer"${rest}>`;
                 }
             );

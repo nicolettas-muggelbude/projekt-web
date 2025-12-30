@@ -12,7 +12,7 @@ Eine interessante Frage aus der [Community-Diskussion](https://github.com/nicole
 
 ## Die Frage
 
-**mrtoadie** fragte am 9. November 2025:
+@mrtoadie fragte am 9. November 2025:
 
 > "Soweit ich weiß ist `apt-get` veraltet und wurde durch `apt` ersetzt. Kann das ein Ubuntu / Debian Versteher bestätigen?"
 
@@ -67,7 +67,7 @@ Unser [Automatisiertes Update-Script](https://github.com/nicolettas-muggelbude/A
 
 ## Community-Feedback
 
-**mrtoadie** antwortete:
+@mrtoadie antwortete:
 
 > "okay, **wow!** Danke für die ausführliche Erklärung. Dann habe ich nichts gesagt und alles ist gut."
 
