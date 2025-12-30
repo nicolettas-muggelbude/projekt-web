@@ -1,9 +1,19 @@
-// Simple Markdown to HTML Parser
-// Für Produktion: marked.js oder markdown-it verwenden
+// Markdown to HTML Parser using marked.js from CDN
+// Falls marked nicht verfügbar ist, Fallback auf simple Parser
 
 export function markdownToHtml(markdown) {
     if (!markdown) return '';
 
+    // Versuche marked.js zu verwenden (wird via CDN geladen)
+    if (typeof marked !== 'undefined') {
+        try {
+            return marked.parse(markdown);
+        } catch (e) {
+            console.warn('marked.parse failed, using fallback parser:', e);
+        }
+    }
+
+    // Fallback: Simple Parser
     let html = markdown;
 
     // Escaping für HTML (Sicherheit)

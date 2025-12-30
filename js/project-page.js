@@ -96,7 +96,32 @@ class ProjectPage {
 
     async loadRepositoryInfo() {
         try {
-            const info = await getRepositoryInfo(this.repo);
+            // Versuche zuerst Cache zu laden
+            let info = null;
+            try {
+                const container = document.querySelector('.project-content');
+                const projectId = container?.dataset.projectId || this.repo.split('/')[1].toLowerCase();
+                const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
+                if (cacheResponse.ok) {
+                    const cached = await cacheResponse.json();
+                    if (cached.repoInfo) {
+                        info = {
+                            stargazers_count: cached.repoInfo.stars,
+                            forks_count: cached.repoInfo.forks,
+                            open_issues_count: cached.repoInfo.openIssues
+                        };
+                        console.log('Repository-Info aus Cache geladen');
+                    }
+                }
+            } catch (cacheError) {
+                console.log('Cache nicht verfügbar, lade von API...');
+            }
+
+            // Falls kein Cache, von API laden
+            if (!info) {
+                info = await getRepositoryInfo(this.repo);
+            }
+
             if (!info) return;
 
             // Statistiken aktualisieren
@@ -149,7 +174,13 @@ class ProjectPage {
                 return;
             }
 
-            const notesHtml = markdownToHtml(release.body || 'Keine Release-Notes verfügbar.');
+            let notesHtml = markdownToHtml(release.body || 'Keine Release-Notes verfügbar.');
+
+            // Ersetze Repository-Datei-Links durch Seiten-Anker
+            notesHtml = notesHtml.replace(/href="[^"]*ROADMAP\.md"/gi, 'href="#roadmap"');
+            notesHtml = notesHtml.replace(/href="[^"]*CHANGELOG\.md"/gi, 'href="#changelog"');
+            notesHtml = notesHtml.replace(/href="[^"]*README\.md"/gi, 'href="#readme"');
+
             const notesEl = document.getElementById('latest-release-notes');
             if (notesEl) notesEl.innerHTML = notesHtml;
 

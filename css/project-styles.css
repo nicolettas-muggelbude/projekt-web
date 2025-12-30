@@ -152,7 +152,7 @@ section h2 {
 }
 
 .release-banner {
-    background: var(--bg-secondary);
+    background: var(--bg-card);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
     border: 1px solid var(--border);
@@ -447,41 +447,47 @@ section h2 {
     font-size: 0.9rem;
 }
 
-.release-body {
+.release-body,
+.release-notes {
     margin: var(--spacing-sm) 0;
     color: var(--text-primary);
     line-height: 1.8;
 }
 
-.release-body ul {
+.release-body ul,
+.release-notes ul {
     margin-left: 1.5rem;
     margin-bottom: var(--spacing-sm);
 }
 
-.release-body li {
+.release-body li,
+.release-notes li {
     margin-bottom: 0.4rem;
 }
 
-.release-body code {
+.release-body code,
+.release-notes code {
     background: var(--code-bg);
     padding: 0.2em 0.4em;
-    border-radius: 4px;
+    border-radius: 6px;
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-    font-size: 0.9em;
-    border: 1px solid var(--border);
+    font-size: 0.85em;
+    border: 1px solid rgba(240, 246, 252, 0.15);
     color: var(--text-primary);
 }
 
-.release-body pre {
+.release-body pre,
+.release-notes pre {
     background: var(--code-bg);
-    padding: 1rem;
-    border-radius: var(--border-radius);
+    padding: 16px;
+    border-radius: 6px;
     overflow-x: auto;
     margin: 1rem 0;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(240, 246, 252, 0.15);
 }
 
-.release-body pre code {
+.release-body pre code,
+.release-notes pre code {
     background: transparent;
     padding: 0;
     border: none;
@@ -489,12 +495,16 @@ section h2 {
 
 .release-body h2,
 .release-body h3,
-.release-body h4 {
+.release-body h4,
+.release-notes h2,
+.release-notes h3,
+.release-notes h4 {
     margin-top: 1.5rem;
     margin-bottom: 0.8rem;
 }
 
-.release-body strong {
+.release-body strong,
+.release-notes strong {
     font-weight: 600;
     color: var(--text-primary);
 }
