@@ -339,7 +339,17 @@ async function generateBlogPostPages(posts) {
             const authorHtml = post.author ? `<span>von ${post.author}</span>` : '';
 
             // Markdown zu HTML
-            const contentHtml = marked(post.content || '');
+            let contentHtml = marked(post.content || '');
+
+            // Alle externen Links bekommen target="_blank"
+            contentHtml = contentHtml.replace(
+                /<a href="(https?:\/\/[^"]+)"([^>]*)>/gi,
+                (match, url, rest) => {
+                    // Wenn target schon gesetzt ist, nicht ändern
+                    if (rest.includes('target=')) return match;
+                    return `<a href="${url}" target="_blank" rel="noopener noreferrer"${rest}>`;
+                }
+            );
 
             // Platzhalter ersetzen
             html = html.replace(/\{\{POST_TITLE\}\}/g, post.title);
