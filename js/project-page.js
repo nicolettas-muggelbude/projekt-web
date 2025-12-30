@@ -243,9 +243,12 @@ class ProjectPage {
             readmeHtml = readmeHtml.replace(/href="[^"]*ROADMAP\.md"/gi, 'href="#roadmap"');
             readmeHtml = readmeHtml.replace(/href="[^"]*CHANGELOG\.md"/gi, 'href="#changelog"');
 
-            // LICENSE führt zu GitHub (keine Sektion auf der Seite)
+            // LICENSE und CONTRIBUTING führen zu GitHub (keine Sektion auf der Seite)
             const licenseUrl = `https://github.com/${this.repo}/blob/main/LICENSE`;
             readmeHtml = readmeHtml.replace(/href="[^"]*LICENSE[^"]*"/gi, `href="${licenseUrl}" target="_blank"`);
+
+            const contributingUrl = `https://github.com/${this.repo}/blob/main/CONTRIBUTING.md`;
+            readmeHtml = readmeHtml.replace(/href="[^"]*CONTRIBUTING\.md"/gi, `href="${contributingUrl}" target="_blank"`);
 
             // README Language variants (README.en.md, README.de.md, etc.) führen zu GitHub
             readmeHtml = readmeHtml.replace(/href="(README\.[a-z]{2}\.md)"/gi, (match, filename) => {
