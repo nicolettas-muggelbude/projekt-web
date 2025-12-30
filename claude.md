@@ -145,6 +145,10 @@ Noch nicht definiert - nach Bedarf hinzufügen.
 - **Lightbox Navigation**: Verbesserte Sichtbarkeit der Prev/Next-Buttons mit dunkleren Hintergründen
 - **CONTRIBUTING.md Links**: Korrekte Verlinkung zu GitHub
 - **Changelog/Roadmap Version-Links**: Version-Tags (v0.2.0-beta, etc.) verlinken zu GitHub Releases statt 404
+- **Cache-First Loading für Changelog/Roadmap**: Build-Script cached jetzt auch CHANGELOG.md und ROADMAP.md als HTML
+  - Keine API Rate-Limit-Probleme beim lokalen Testen
+  - Schnellere Ladezeiten
+  - Konsistent mit README-Caching-Strategie
 
 ### 2025-12-29 - UTF-8 & Markdown-Parser Upgrade
 - **UTF-8 Encoding Fix**: Korrekte Dekodierung von Base64-Inhalten (✓ statt â)
