@@ -449,9 +449,8 @@ class ProjectPage {
             if (!changelogHtml) {
                 const changelog = await getChangelog(this.repo);
                 if (!changelog) {
-                    if (changelogContent) {
-                        changelogContent.innerHTML = '<p class="info">Kein Changelog verfügbar. <a href="https://github.com/' + this.repo + '/blob/main/CHANGELOG.md" target="_blank">Auf GitHub ansehen</a></p>';
-                    }
+                    // Kein Changelog vorhanden - Sektion verstecken
+                    if (changelogSection) changelogSection.style.display = 'none';
                     return;
                 }
                 changelogHtml = markdownToHtml(changelog);
@@ -501,10 +500,8 @@ class ProjectPage {
             changelogContent.innerHTML = changelogHtml;
         } catch (error) {
             console.error('Fehler beim Laden des Changelog:', error);
-            const changelogContent = document.getElementById('changelog-content');
-            if (changelogContent) {
-                changelogContent.innerHTML = '<p class="error">Changelog konnte nicht geladen werden (API Rate Limit). <a href="https://github.com/' + this.repo + '/blob/main/CHANGELOG.md" target="_blank">Auf GitHub ansehen</a></p>';
-            }
+            const changelogSection = document.getElementById('changelog');
+            if (changelogSection) changelogSection.style.display = 'none';
         }
     }
 
@@ -534,9 +531,8 @@ class ProjectPage {
             if (!roadmapHtml) {
                 const roadmap = await getRoadmap(this.repo);
                 if (!roadmap) {
-                    if (roadmapContent) {
-                        roadmapContent.innerHTML = '<p class="info">Keine Roadmap verfügbar. <a href="https://github.com/' + this.repo + '/blob/main/ROADMAP.md" target="_blank">Auf GitHub ansehen</a></p>';
-                    }
+                    // Keine Roadmap vorhanden - Sektion verstecken
+                    if (roadmapSection) roadmapSection.style.display = 'none';
                     return;
                 }
                 roadmapHtml = markdownToHtml(roadmap);
@@ -584,10 +580,8 @@ class ProjectPage {
             roadmapContent.innerHTML = roadmapHtml;
         } catch (error) {
             console.error('Fehler beim Laden der Roadmap:', error);
-            const roadmapContent = document.getElementById('roadmap-content');
-            if (roadmapContent) {
-                roadmapContent.innerHTML = '<p class="error">Roadmap konnte nicht geladen werden (API Rate Limit). <a href="https://github.com/' + this.repo + '/blob/main/ROADMAP.md" target="_blank">Auf GitHub ansehen</a></p>';
-            }
+            const roadmapSection = document.getElementById('roadmap');
+            if (roadmapSection) roadmapSection.style.display = 'none';
         }
     }
 }
