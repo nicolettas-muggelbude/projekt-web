@@ -128,6 +128,48 @@ async function buildProjectCache(project) {
             log(`  ⚠ README konnte nicht geladen werden: ${error.message}`, 'yellow');
         }
 
+        // CHANGELOG
+        log('  ⬇️  Lade CHANGELOG...');
+        try {
+            const changelogResponse = await fetch(`${GITHUB_API}/repos/${project.repo}/contents/CHANGELOG.md`, {
+                headers: {
+                    'Accept': 'application/vnd.github.raw',
+                    ...(GITHUB_TOKEN ? { 'Authorization': `token ${GITHUB_TOKEN}` } : {})
+                }
+            });
+            if (changelogResponse.ok) {
+                const { marked } = await import('marked');
+                const changelogMarkdown = await changelogResponse.text();
+                cache.changelogHtml = marked(changelogMarkdown);
+                log(`  ✓ CHANGELOG geladen und in HTML konvertiert`, 'green');
+            } else {
+                log('  ⚠ Kein CHANGELOG gefunden', 'yellow');
+            }
+        } catch (error) {
+            log(`  ⚠ CHANGELOG konnte nicht geladen werden: ${error.message}`, 'yellow');
+        }
+
+        // ROADMAP
+        log('  ⬇️  Lade ROADMAP...');
+        try {
+            const roadmapResponse = await fetch(`${GITHUB_API}/repos/${project.repo}/contents/ROADMAP.md`, {
+                headers: {
+                    'Accept': 'application/vnd.github.raw',
+                    ...(GITHUB_TOKEN ? { 'Authorization': `token ${GITHUB_TOKEN}` } : {})
+                }
+            });
+            if (roadmapResponse.ok) {
+                const { marked } = await import('marked');
+                const roadmapMarkdown = await roadmapResponse.text();
+                cache.roadmapHtml = marked(roadmapMarkdown);
+                log(`  ✓ ROADMAP geladen und in HTML konvertiert`, 'green');
+            } else {
+                log('  ⚠ Kein ROADMAP gefunden', 'yellow');
+            }
+        } catch (error) {
+            log(`  ⚠ ROADMAP konnte nicht geladen werden: ${error.message}`, 'yellow');
+        }
+
         // Speichere Cache
         const cacheDir = path.join(__dirname, '..', 'data', 'cache', 'projects');
         await fs.mkdir(cacheDir, { recursive: true });

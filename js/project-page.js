@@ -425,20 +425,39 @@ class ProjectPage {
 
     async loadChangelog() {
         try {
-            const changelog = await getChangelog(this.repo);
             const changelogContent = document.getElementById('changelog-content');
             const changelogSection = document.getElementById('changelog');
 
-            if (!changelog) {
-                if (changelogContent) {
-                    changelogContent.innerHTML = '<p class="info">Kein Changelog verfügbar. <a href="https://github.com/' + this.repo + '/blob/main/CHANGELOG.md" target="_blank">Auf GitHub ansehen</a></p>';
+            // Versuche zuerst Cache zu laden (enthält bereits HTML)
+            let changelogHtml = null;
+            try {
+                const container = document.querySelector('.project-content');
+                const projectId = container?.dataset.projectId || this.repo.split('/')[1].toLowerCase();
+                const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
+                if (cacheResponse.ok) {
+                    const cached = await cacheResponse.json();
+                    changelogHtml = cached.changelogHtml || null;
+                    if (changelogHtml) {
+                        console.log('CHANGELOG HTML aus Cache geladen');
+                    }
                 }
-                return;
+            } catch (cacheError) {
+                console.log('Cache nicht verfügbar, lade von API...');
+            }
+
+            // Falls kein Cache, von API laden und parsen
+            if (!changelogHtml) {
+                const changelog = await getChangelog(this.repo);
+                if (!changelog) {
+                    if (changelogContent) {
+                        changelogContent.innerHTML = '<p class="info">Kein Changelog verfügbar. <a href="https://github.com/' + this.repo + '/blob/main/CHANGELOG.md" target="_blank">Auf GitHub ansehen</a></p>';
+                    }
+                    return;
+                }
+                changelogHtml = markdownToHtml(changelog);
             }
 
             if (!changelogContent) return;
-
-            let changelogHtml = markdownToHtml(changelog);
 
             // Link-Replacements für Changelog
             // 1. Version-Tags (z.B. v0.2.0-beta, 0.2.0) zu GitHub Releases
@@ -475,20 +494,39 @@ class ProjectPage {
 
     async loadRoadmap() {
         try {
-            const roadmap = await getRoadmap(this.repo);
             const roadmapContent = document.getElementById('roadmap-content');
             const roadmapSection = document.getElementById('roadmap');
 
-            if (!roadmap) {
-                if (roadmapContent) {
-                    roadmapContent.innerHTML = '<p class="info">Keine Roadmap verfügbar. <a href="https://github.com/' + this.repo + '/blob/main/ROADMAP.md" target="_blank">Auf GitHub ansehen</a></p>';
+            // Versuche zuerst Cache zu laden (enthält bereits HTML)
+            let roadmapHtml = null;
+            try {
+                const container = document.querySelector('.project-content');
+                const projectId = container?.dataset.projectId || this.repo.split('/')[1].toLowerCase();
+                const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
+                if (cacheResponse.ok) {
+                    const cached = await cacheResponse.json();
+                    roadmapHtml = cached.roadmapHtml || null;
+                    if (roadmapHtml) {
+                        console.log('ROADMAP HTML aus Cache geladen');
+                    }
                 }
-                return;
+            } catch (cacheError) {
+                console.log('Cache nicht verfügbar, lade von API...');
+            }
+
+            // Falls kein Cache, von API laden und parsen
+            if (!roadmapHtml) {
+                const roadmap = await getRoadmap(this.repo);
+                if (!roadmap) {
+                    if (roadmapContent) {
+                        roadmapContent.innerHTML = '<p class="info">Keine Roadmap verfügbar. <a href="https://github.com/' + this.repo + '/blob/main/ROADMAP.md" target="_blank">Auf GitHub ansehen</a></p>';
+                    }
+                    return;
+                }
+                roadmapHtml = markdownToHtml(roadmap);
             }
 
             if (!roadmapContent) return;
-
-            let roadmapHtml = markdownToHtml(roadmap);
 
             // Link-Replacements für Roadmap
             // 1. Version-Tags zu GitHub Releases
