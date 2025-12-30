@@ -673,6 +673,20 @@ pre code {
     font-style: italic;
 }
 
+/* Zurück-Button oben (nur Desktop) */
+.post-nav-top {
+    display: none;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 1024px) {
+    .post-nav-top {
+        display: block;
+    }
+}
+
 .blog-post-full .post-footer {
     margin-top: var(--spacing-lg);
     padding-top: var(--spacing-md);
