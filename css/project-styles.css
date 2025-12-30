@@ -152,7 +152,7 @@ section h2 {
 }
 
 .release-banner {
-    background: var(--bg-secondary);
+    background: var(--bg-card);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
     border: 1px solid var(--border);
