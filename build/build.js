@@ -157,6 +157,7 @@ async function generateProjectPage(project) {
         template = template.replace(/\{\{PROJECT_NAME\}\}/g, project.name);
         template = template.replace(/\{\{PROJECT_DESCRIPTION\}\}/g, project.description || '');
         template = template.replace(/\{\{REPO_NAME\}\}/g, project.repo);
+        template = template.replace(/\{\{PROJECT_ID\}\}/g, project.id);
 
         // Speichere Projektseite
         const projectsDir = path.join(__dirname, '..', 'projects');

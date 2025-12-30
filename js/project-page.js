@@ -119,7 +119,8 @@ class ProjectPage {
             // Versuche zuerst Cache zu laden
             let release = null;
             try {
-                const projectId = this.repo.split('/')[1].toLowerCase();
+                const container = document.querySelector('.project-content');
+                const projectId = container?.dataset.projectId || this.repo.split('/')[1].toLowerCase();
                 const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
                 if (cacheResponse.ok) {
                     const cached = await cacheResponse.json();
@@ -180,7 +181,8 @@ class ProjectPage {
             // Versuche zuerst Cache zu laden (enthält bereits HTML)
             let readmeHtml = null;
             try {
-                const projectId = this.repo.split('/')[1].toLowerCase();
+                const container = document.querySelector('.project-content');
+                const projectId = container?.dataset.projectId || this.repo.split('/')[1].toLowerCase();
                 const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
                 if (cacheResponse.ok) {
                     const cached = await cacheResponse.json();
