@@ -440,6 +440,136 @@ async function generateSitemap(projects, posts) {
     }
 }
 
+// HTML-Sitemap generieren für Besucher
+async function generateHtmlSitemap(projects, posts) {
+    log(`\n📄 Generiere HTML-Sitemap...`, 'blue');
+
+    try {
+        let html = `<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sitemap - Übersicht aller Seiten auf Nicolettas-Muggelbude">
+    <title>Sitemap | Nicolettas-Muggelbude</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Theme Setup -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') ||
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nicolettas-Muggelbude</h1>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <a href="index.html#projekte">Projekte</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="https://github.com/nicolettas-muggelbude" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="nav-overlay"></div>
+
+    <main>
+        <div class="container">
+            <h1>Sitemap</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Übersicht aller Seiten auf dieser Website</p>
+
+            <section style="margin-bottom: 3rem;">
+                <h2 style="margin-bottom: 1rem;">Hauptseite</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;">
+                        <a href="index.html" style="color: var(--accent); text-decoration: none; font-weight: 500;">
+                            🏠 Startseite - Portfolio & Blog
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 3rem;">
+                <h2 style="margin-bottom: 1rem;">Blog-Beiträge (${posts?.length || 0})</h2>
+                <ul style="list-style: none; padding: 0;">`;
+
+        // Blog-Posts
+        if (posts && posts.length > 0) {
+            for (const post of posts) {
+                const date = new Date(post.date).toLocaleDateString('de-DE', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                html += `
+                    <li style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);">
+                        <a href="blog/posts/${post.slug}.html" style="color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                            📝 ${post.title}
+                        </a>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem;">
+                            ${date}
+                        </div>
+                        ${post.excerpt ? `<div style="color: var(--text-secondary); margin-top: 0.5rem;">${post.excerpt}</div>` : ''}
+                    </li>`;
+            }
+        }
+
+        html += `
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 3rem;">
+                <h2 style="margin-bottom: 1rem;">Projekte (${projects?.length || 0})</h2>
+                <ul style="list-style: none; padding: 0;">`;
+
+        // Projekte
+        if (projects && projects.length > 0) {
+            for (const project of projects) {
+                html += `
+                    <li style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);">
+                        <a href="projects/${project.id}.html" style="color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                            🚀 ${project.name}
+                        </a>
+                        ${project.description ? `<div style="color: var(--text-secondary); margin-top: 0.5rem;">${project.description}</div>` : ''}
+                    </li>`;
+            }
+        }
+
+        html += `
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nicoletta | <a href="https://github.com/nicolettas-muggelbude" target="_blank">GitHub</a></p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/theme.js"></script>
+    <script type="module" src="js/navigation.js"></script>
+</body>
+</html>`;
+
+        const htmlSitemapPath = path.join(__dirname, '..', 'sitemap.html');
+        await fs.writeFile(htmlSitemapPath, html);
+
+        log(`  ✓ HTML-Sitemap erstellt mit ${1 + (posts?.length || 0) + (projects?.length || 0)} Seiten`, 'green');
+    } catch (error) {
+        log(`  ✗ Fehler: ${error.message}`, 'red');
+    }
+}
+
 // Main Build Funktion
 async function build() {
     log('\n🚀 Starte Build-Prozess...\n', 'blue');
@@ -464,6 +594,9 @@ async function build() {
 
         // Sitemap.xml generieren
         await generateSitemap(projects, posts);
+
+        // HTML-Sitemap generieren
+        await generateHtmlSitemap(projects, posts);
 
         log('\n✅ Build erfolgreich abgeschlossen!\n', 'green');
     } catch (error) {
