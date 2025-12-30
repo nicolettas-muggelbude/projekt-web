@@ -460,7 +460,17 @@ class ProjectPage {
             if (!changelogContent) return;
 
             // Link-Replacements für Changelog
-            // 1. Version-Tags (z.B. v0.2.0-beta, 0.2.0) zu GitHub Releases
+            // 1. Compare-Links zu Release-Links umwandeln (z.B. /compare/v1.4.0...v1.5.0 -> /releases/tag/v1.5.0)
+            changelogHtml = changelogHtml.replace(
+                /href="https:\/\/github\.com\/([^\/]+\/[^\/]+)\/compare\/[^"]+\.\.\.v?(\d+\.\d+\.\d+[^"]*)"/gi,
+                (match, repo, version) => {
+                    // Füge 'v' hinzu falls nicht vorhanden
+                    const versionTag = version.startsWith('v') ? version : 'v' + version;
+                    return `href="https://github.com/${repo}/releases/tag/${versionTag}" target="_blank"`;
+                }
+            );
+
+            // 2. Relative Version-Tags (z.B. v0.2.0-beta, 0.2.0) zu GitHub Releases
             changelogHtml = changelogHtml.replace(/href="(v?\d+\.\d+\.\d+[^"]*)"/gi, (match, version) => {
                 // Überspringe bereits vollständige URLs
                 if (version.startsWith('http')) return match;
@@ -529,7 +539,16 @@ class ProjectPage {
             if (!roadmapContent) return;
 
             // Link-Replacements für Roadmap
-            // 1. Version-Tags zu GitHub Releases
+            // 1. Compare-Links zu Release-Links umwandeln
+            roadmapHtml = roadmapHtml.replace(
+                /href="https:\/\/github\.com\/([^\/]+\/[^\/]+)\/compare\/[^"]+\.\.\.v?(\d+\.\d+\.\d+[^"]*)"/gi,
+                (match, repo, version) => {
+                    const versionTag = version.startsWith('v') ? version : 'v' + version;
+                    return `href="https://github.com/${repo}/releases/tag/${versionTag}" target="_blank"`;
+                }
+            );
+
+            // 2. Relative Version-Tags zu GitHub Releases
             roadmapHtml = roadmapHtml.replace(/href="(v?\d+\.\d+\.\d+[^"]*)"/gi, (match, version) => {
                 if (version.startsWith('http')) return match;
                 if (version.startsWith('#')) return match;
