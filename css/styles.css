@@ -704,13 +704,15 @@ footer a {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    padding: 0.125rem 0.375rem;
+    padding: 0.0625rem 0.375rem;
     background: var(--bg-secondary);
-    border-radius: 4px;
+    border-radius: 3px;
     text-decoration: none;
     color: var(--accent);
     font-weight: 500;
     transition: var(--transition);
+    line-height: 1.2;
+    vertical-align: middle;
 }
 
 .user-mention:hover {
