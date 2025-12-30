@@ -18,12 +18,22 @@
 }
 
 .breadcrumb a {
-    color: var(--text-secondary);
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--accent);
+    color: white;
     text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: all var(--transition);
+    box-shadow: 0 2px 4px var(--shadow);
 }
 
 .breadcrumb a:hover {
-    color: var(--accent);
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow);
+    text-decoration: none;
 }
 
 .project-header {
@@ -129,24 +139,23 @@ section h2 {
    ======================================== */
 
 .highlight-section {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-    color: white;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
-    border: none;
     margin-bottom: var(--spacing-lg);
 }
 
-.highlight-section h2,
-.highlight-section h3 {
-    color: white;
+.highlight-section h2 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
 }
 
 .release-banner {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--bg-secondary);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
-    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
 }
 
 .release-info {
@@ -158,7 +167,8 @@ section h2 {
 }
 
 .version-tag {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--accent);
+    color: white;
     padding: 4px 12px;
     border-radius: 16px;
     font-weight: bold;
@@ -168,28 +178,29 @@ section h2 {
 
 .release-date {
     font-size: 0.9rem;
-    opacity: 0.9;
+    color: var(--text-secondary);
 }
 
 .release-banner h3 {
     font-size: 1.3rem;
     margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
 }
 
 .btn-secondary {
     display: inline-block;
     margin-top: var(--spacing-sm);
     padding: var(--spacing-xs) var(--spacing-sm);
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--accent);
     color: white;
     border-radius: var(--border-radius);
     text-decoration: none;
     transition: all var(--transition);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: none;
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--accent-hover);
     text-decoration: none;
 }
 
@@ -269,6 +280,7 @@ section h2 {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     font-size: 0.9em;
     border: 1px solid var(--border);
+    color: var(--text-primary);
 }
 
 .markdown-body pre {
@@ -364,7 +376,6 @@ section h2 {
     border-radius: var(--border-radius);
     overflow: hidden;
     transition: transform var(--transition), box-shadow var(--transition);
-    cursor: pointer;
 }
 
 .screenshot-grid figure:hover {
@@ -372,10 +383,21 @@ section h2 {
     box-shadow: 0 4px 12px var(--shadow);
 }
 
+.screenshot-grid a {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .screenshot-grid img {
     width: 100%;
     height: auto;
     display: block;
+    transition: opacity var(--transition);
+}
+
+.screenshot-grid a:hover img {
+    opacity: 0.9;
 }
 
 .screenshot-grid figcaption {
@@ -428,10 +450,53 @@ section h2 {
 .release-body {
     margin: var(--spacing-sm) 0;
     color: var(--text-primary);
+    line-height: 1.8;
 }
 
 .release-body ul {
     margin-left: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.release-body li {
+    margin-bottom: 0.4rem;
+}
+
+.release-body code {
+    background: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+}
+
+.release-body pre {
+    background: var(--code-bg);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 1px solid var(--border);
+}
+
+.release-body pre code {
+    background: transparent;
+    padding: 0;
+    border: none;
+}
+
+.release-body h2,
+.release-body h3,
+.release-body h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.release-body strong {
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 .release-link {
@@ -506,6 +571,133 @@ section h2 {
     color: var(--text-secondary);
     padding: var(--spacing-lg);
     font-style: italic;
+}
+
+/* ========================================
+   Lightbox Gallery
+   ======================================== */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    max-width: 80%;
+    text-align: center;
+}
+
+/* ========================================
+   Footer Back Button
+   ======================================== */
+
+footer .container p:first-child a {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: all var(--transition);
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+footer .container p:first-child a:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow);
+    text-decoration: none;
 }
 
 /* ========================================

@@ -12,11 +12,14 @@ import { markdownToHtml } from './markdown-parser.js';
 class ProjectPage {
     constructor(repoName) {
         this.repo = repoName;
+        this.screenshots = [];
+        this.currentScreenshot = 0;
         this.init();
     }
 
     async init() {
         try {
+            this.createLightbox();
             await Promise.all([
                 this.loadRepositoryInfo(),
                 this.loadLatestRelease(),
@@ -28,6 +31,67 @@ class ProjectPage {
         } catch (error) {
             console.error('Fehler beim Laden der Projekt-Daten:', error);
         }
+    }
+
+    createLightbox() {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.id = 'screenshot-lightbox';
+        lightbox.innerHTML = `
+            <div class="lightbox-content">
+                <button class="lightbox-close" aria-label="Schließen">×</button>
+                <button class="lightbox-prev" aria-label="Vorheriges">‹</button>
+                <img src="" alt="">
+                <button class="lightbox-next" aria-label="Nächstes">›</button>
+                <div class="lightbox-caption"></div>
+            </div>
+        `;
+        document.body.appendChild(lightbox);
+
+        // Event Listeners
+        lightbox.querySelector('.lightbox-close').addEventListener('click', () => this.closeLightbox());
+        lightbox.querySelector('.lightbox-prev').addEventListener('click', () => this.prevScreenshot());
+        lightbox.querySelector('.lightbox-next').addEventListener('click', () => this.nextScreenshot());
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) this.closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') this.closeLightbox();
+            if (e.key === 'ArrowLeft') this.prevScreenshot();
+            if (e.key === 'ArrowRight') this.nextScreenshot();
+        });
+    }
+
+    openLightbox(index) {
+        this.currentScreenshot = index;
+        const lightbox = document.getElementById('screenshot-lightbox');
+        const img = lightbox.querySelector('img');
+        const caption = lightbox.querySelector('.lightbox-caption');
+
+        img.src = this.screenshots[index].src;
+        img.alt = this.screenshots[index].alt;
+        caption.textContent = this.screenshots[index].alt || 'Screenshot';
+
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeLightbox() {
+        const lightbox = document.getElementById('screenshot-lightbox');
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    prevScreenshot() {
+        if (this.screenshots.length === 0) return;
+        this.currentScreenshot = (this.currentScreenshot - 1 + this.screenshots.length) % this.screenshots.length;
+        this.openLightbox(this.currentScreenshot);
+    }
+
+    nextScreenshot() {
+        if (this.screenshots.length === 0) return;
+        this.currentScreenshot = (this.currentScreenshot + 1) % this.screenshots.length;
+        this.openLightbox(this.currentScreenshot);
     }
 
     async loadRepositoryInfo() {
@@ -50,8 +114,35 @@ class ProjectPage {
 
     async loadLatestRelease() {
         try {
-            const release = await getLatestRelease(this.repo);
             const section = document.getElementById('latest-release');
+
+            // Versuche zuerst Cache zu laden
+            let release = null;
+            try {
+                const container = document.querySelector('.project-content');
+                const projectId = container?.dataset.projectId || this.repo.split('/')[1].toLowerCase();
+                const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
+                if (cacheResponse.ok) {
+                    const cached = await cacheResponse.json();
+                    if (cached.latestRelease) {
+                        release = {
+                            tag_name: cached.latestRelease.tagName,
+                            name: cached.latestRelease.name,
+                            body: cached.latestRelease.body,
+                            published_at: cached.latestRelease.publishedAt,
+                            html_url: cached.latestRelease.htmlUrl
+                        };
+                        console.log('Release aus Cache geladen');
+                    }
+                }
+            } catch (cacheError) {
+                console.log('Cache nicht verfügbar, lade von API...');
+            }
+
+            // Falls kein Cache, von API laden
+            if (!release) {
+                release = await getLatestRelease(this.repo);
+            }
 
             if (!release) {
                 if (section) section.style.display = 'none';
@@ -75,6 +166,8 @@ class ProjectPage {
             if (titleEl) titleEl.textContent = release.name || release.tag_name;
         } catch (error) {
             console.error('Fehler beim Laden des neuesten Releases:', error);
+            const section = document.getElementById('latest-release');
+            if (section) section.style.display = 'none';
         }
     }
 
@@ -88,7 +181,8 @@ class ProjectPage {
             // Versuche zuerst Cache zu laden (enthält bereits HTML)
             let readmeHtml = null;
             try {
-                const projectId = this.repo.split('/')[1].toLowerCase();
+                const container = document.querySelector('.project-content');
+                const projectId = container?.dataset.projectId || this.repo.split('/')[1].toLowerCase();
                 const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
                 if (cacheResponse.ok) {
                     const cached = await cacheResponse.json();
@@ -135,19 +229,61 @@ class ProjectPage {
         const screenshotGrid = document.getElementById('screenshot-grid');
         const screenshotsSection = document.getElementById('screenshots');
 
-        if (!screenshotGrid || images.length === 0) {
+        // Filtere nur echte Screenshots (keine Badges, Logos, Icons)
+        const screenshots = Array.from(images).filter(img => {
+            const src = img.src.toLowerCase();
+            const alt = (img.alt || '').toLowerCase();
+
+            // Ausschließen: Badges von shields.io, GitHub Actions, etc.
+            if (src.includes('shields.io') || src.includes('badge')) return false;
+
+            // Ausschließen: Logos und Icons (klein oder im Namen)
+            if (alt.includes('logo') || alt.includes('icon') || src.includes('/icon')) return false;
+            if (alt.includes('badge') || alt === 'tipels') return false;
+
+            // Ausschließen: Sehr kleine Bilder (< 200px breit)
+            const width = parseInt(img.getAttribute('width')) || 999;
+            if (width < 200) return false;
+
+            // Einschließen: Explizite Screenshots
+            if (src.includes('screenshot') || alt.includes('screenshot')) return true;
+            if (src.includes('/docs/') || src.includes('/assets/screenshots/')) return true;
+
+            // Einschließen: Große Bilder (> 400px)
+            if (width > 400) return true;
+
+            return false;
+        });
+
+        if (!screenshotGrid || screenshots.length === 0) {
             if (screenshotsSection) screenshotsSection.style.display = 'none';
             return;
         }
 
         screenshotGrid.innerHTML = '';
 
-        images.forEach(img => {
+        // Screenshots für Lightbox speichern
+        this.screenshots = screenshots.map(img => ({
+            src: img.src,
+            alt: img.alt || 'Screenshot'
+        }));
+
+        screenshots.forEach((img, index) => {
             const figure = document.createElement('figure');
             figure.innerHTML = `
-                <img src="${img.src}" alt="${img.alt || 'Screenshot'}" loading="lazy">
+                <a href="#" data-screenshot-index="${index}">
+                    <img src="${img.src}" alt="${img.alt || 'Screenshot'}" loading="lazy">
+                </a>
                 <figcaption>${img.alt || 'Screenshot'}</figcaption>
             `;
+
+            // Click-Handler für Lightbox
+            const link = figure.querySelector('a');
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.openLightbox(index);
+            });
+
             screenshotGrid.appendChild(figure);
         });
     }
@@ -156,13 +292,14 @@ class ProjectPage {
         try {
             const releases = await getReleases(this.repo, 10);
             const releasesList = document.getElementById('releases-list');
+            const releasesSection = document.getElementById('releases');
 
-            if (!releases || releases.length === 0 || !releasesList) {
-                if (releasesList) {
-                    releasesList.innerHTML = '<p>Keine Releases verfügbar.</p>';
-                }
+            if (!releases || releases.length === 0) {
+                if (releasesSection) releasesSection.style.display = 'none';
                 return;
             }
+
+            if (!releasesList) return;
 
             releasesList.innerHTML = '';
 
@@ -190,6 +327,8 @@ class ProjectPage {
             });
         } catch (error) {
             console.error('Fehler beim Laden der Releases:', error);
+            const releasesSection = document.getElementById('releases');
+            if (releasesSection) releasesSection.style.display = 'none';
         }
     }
 
@@ -197,20 +336,20 @@ class ProjectPage {
         try {
             const changelog = await getChangelog(this.repo);
             const changelogContent = document.getElementById('changelog-content');
+            const changelogSection = document.getElementById('changelog');
 
-            if (!changelog || !changelogContent) {
-                if (changelogContent) {
-                    changelogContent.innerHTML = `
-                        <p>Kein CHANGELOG.md gefunden.</p>
-                        <p>Siehe <a href="#releases">Releases</a> für Versionshistorie.</p>
-                    `;
-                }
+            if (!changelog) {
+                if (changelogSection) changelogSection.style.display = 'none';
                 return;
             }
+
+            if (!changelogContent) return;
 
             changelogContent.innerHTML = markdownToHtml(changelog);
         } catch (error) {
             console.error('Fehler beim Laden des Changelog:', error);
+            const changelogSection = document.getElementById('changelog');
+            if (changelogSection) changelogSection.style.display = 'none';
         }
     }
 
@@ -218,23 +357,20 @@ class ProjectPage {
         try {
             const roadmap = await getRoadmap(this.repo);
             const roadmapContent = document.getElementById('roadmap-content');
-
-            if (!roadmapContent) return;
+            const roadmapSection = document.getElementById('roadmap');
 
             if (!roadmap) {
-                roadmapContent.innerHTML = `
-                    <p>Keine separate Roadmap verfügbar.</p>
-                    <p>Geplante Features findest du in den
-                    <a href="https://github.com/${this.repo}/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement" target="_blank">
-                        Enhancement-Issues
-                    </a>.</p>
-                `;
+                if (roadmapSection) roadmapSection.style.display = 'none';
                 return;
             }
+
+            if (!roadmapContent) return;
 
             roadmapContent.innerHTML = markdownToHtml(roadmap);
         } catch (error) {
             console.error('Fehler beim Laden der Roadmap:', error);
+            const roadmapSection = document.getElementById('roadmap');
+            if (roadmapSection) roadmapSection.style.display = 'none';
         }
     }
 }
