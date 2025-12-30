@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "slug": "2025-12-30-apt-get-vs-apt",
+      "title": "apt-get vs. apt - Welches Kommando für Scripts?",
+      "date": "2025-12-30",
+      "author": "Nicoletta",
+      "tags": [
+        "linux",
+        "debian",
+        "ubuntu",
+        "best-practices"
+      ],
+      "excerpt": "Eine häufige Frage: Ist apt-get veraltet? Warum nutzen wir es im Update-Script statt apt?"
+    },
+    {
       "slug": "2025-01-28-willkommen",
       "title": "Willkommen auf meiner neuen Projekt-Website",
       "date": "2025-01-28",
