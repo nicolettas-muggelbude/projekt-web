@@ -346,7 +346,7 @@ async function generateBlogPostPages(posts) {
                 /@([a-zA-Z0-9_-]+)/g,
                 (match, username) => {
                     // Überspringe wenn bereits in einem Link oder Code-Block
-                    return `<a href="https://github.com/${username}" target="_blank" rel="noopener noreferrer" class="user-mention"><img src="https://github.com/${username}.png" width="20" height="20" alt="@${username}" class="user-avatar" loading="lazy">@${username}</a>`;
+                    return `<a href="https://github.com/${username}" target="_blank" rel="noopener noreferrer" class="user-mention"><img src="https://github.com/${username}.png" width="16" height="16" alt="@${username}" class="user-avatar" loading="lazy">@${username}</a>`;
                 }
             );
 
