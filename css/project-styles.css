@@ -472,7 +472,7 @@ section h2 {
     border-radius: 6px;
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     font-size: 0.85em;
-    border: 1px solid rgba(127, 127, 127, 0.2);
+    border: 1px solid rgba(240, 246, 252, 0.15);
     color: var(--text-primary);
 }
 
@@ -483,7 +483,7 @@ section h2 {
     border-radius: 6px;
     overflow-x: auto;
     margin: 1rem 0;
-    border: 1px solid rgba(127, 127, 127, 0.2);
+    border: 1px solid rgba(240, 246, 252, 0.15);
 }
 
 .release-body pre code,
