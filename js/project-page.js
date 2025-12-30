@@ -239,6 +239,14 @@ class ProjectPage {
                 return;
             }
 
+            // Ersetze Repository-Datei-Links durch Seiten-Anker oder GitHub-Links
+            readmeHtml = readmeHtml.replace(/href="[^"]*ROADMAP\.md"/gi, 'href="#roadmap"');
+            readmeHtml = readmeHtml.replace(/href="[^"]*CHANGELOG\.md"/gi, 'href="#changelog"');
+
+            // LICENSE führt zu GitHub (keine Sektion auf der Seite)
+            const licenseUrl = `https://github.com/${this.repo}/blob/main/LICENSE`;
+            readmeHtml = readmeHtml.replace(/href="[^"]*LICENSE[^"]*"/gi, `href="${licenseUrl}" target="_blank"`);
+
             readmeContent.innerHTML = readmeHtml;
 
             // Screenshots extrahieren
