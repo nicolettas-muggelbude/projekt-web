@@ -436,7 +436,32 @@ class ProjectPage {
 
             if (!changelogContent) return;
 
-            changelogContent.innerHTML = markdownToHtml(changelog);
+            let changelogHtml = markdownToHtml(changelog);
+
+            // Link-Replacements für Changelog
+            // 1. Version-Tags (z.B. v0.2.0-beta, 0.2.0) zu GitHub Releases
+            changelogHtml = changelogHtml.replace(/href="(v?\d+\.\d+\.\d+[^"]*)"/gi, (match, version) => {
+                // Überspringe bereits vollständige URLs
+                if (version.startsWith('http')) return match;
+                if (version.startsWith('#')) return match;
+                return `href="https://github.com/${this.repo}/releases/tag/${version}" target="_blank"`;
+            });
+
+            // 2. Alle .md Dateien zu GitHub
+            changelogHtml = changelogHtml.replace(/href="([^"#]*\.(md|MD))"/gi, (match, filename) => {
+                if (filename.startsWith('#')) return match;
+                if (filename.startsWith('http')) return match;
+                const cleanFilename = filename.replace(/^\.\.?\//, '');
+                return `href="https://github.com/${this.repo}/blob/main/${cleanFilename}" target="_blank"`;
+            });
+
+            // 3. Alle externen Links bekommen target="_blank"
+            changelogHtml = changelogHtml.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
+                if (match.includes('target=')) return match;
+                return `href="${url}" target="_blank" rel="noopener noreferrer"`;
+            });
+
+            changelogContent.innerHTML = changelogHtml;
         } catch (error) {
             console.error('Fehler beim Laden des Changelog:', error);
             const changelogSection = document.getElementById('changelog');
@@ -457,7 +482,31 @@ class ProjectPage {
 
             if (!roadmapContent) return;
 
-            roadmapContent.innerHTML = markdownToHtml(roadmap);
+            let roadmapHtml = markdownToHtml(roadmap);
+
+            // Link-Replacements für Roadmap
+            // 1. Version-Tags zu GitHub Releases
+            roadmapHtml = roadmapHtml.replace(/href="(v?\d+\.\d+\.\d+[^"]*)"/gi, (match, version) => {
+                if (version.startsWith('http')) return match;
+                if (version.startsWith('#')) return match;
+                return `href="https://github.com/${this.repo}/releases/tag/${version}" target="_blank"`;
+            });
+
+            // 2. Alle .md Dateien zu GitHub
+            roadmapHtml = roadmapHtml.replace(/href="([^"#]*\.(md|MD))"/gi, (match, filename) => {
+                if (filename.startsWith('#')) return match;
+                if (filename.startsWith('http')) return match;
+                const cleanFilename = filename.replace(/^\.\.?\//, '');
+                return `href="https://github.com/${this.repo}/blob/main/${cleanFilename}" target="_blank"`;
+            });
+
+            // 3. Alle externen Links bekommen target="_blank"
+            roadmapHtml = roadmapHtml.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
+                if (match.includes('target=')) return match;
+                return `href="${url}" target="_blank" rel="noopener noreferrer"`;
+            });
+
+            roadmapContent.innerHTML = roadmapHtml;
         } catch (error) {
             console.error('Fehler beim Laden der Roadmap:', error);
             const roadmapSection = document.getElementById('roadmap');
