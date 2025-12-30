@@ -176,10 +176,23 @@ class ProjectPage {
 
             let notesHtml = markdownToHtml(release.body || 'Keine Release-Notes verfügbar.');
 
-            // Ersetze Repository-Datei-Links durch Seiten-Anker
+            // Seiten-Anker
             notesHtml = notesHtml.replace(/href="[^"]*ROADMAP\.md"/gi, 'href="#roadmap"');
             notesHtml = notesHtml.replace(/href="[^"]*CHANGELOG\.md"/gi, 'href="#changelog"');
             notesHtml = notesHtml.replace(/href="[^"]*README\.md"/gi, 'href="#readme"');
+
+            // Alle anderen .md Dateien → GitHub
+            notesHtml = notesHtml.replace(/href="([^"#]*\.(md|MD))"/gi, (match, filename) => {
+                if (filename.startsWith('#')) return match;
+                const cleanFilename = filename.replace(/^\.\.?\//, '');
+                return `href="https://github.com/${this.repo}/blob/main/${cleanFilename}" target="_blank"`;
+            });
+
+            // Externe Links → neuer Tab
+            notesHtml = notesHtml.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
+                if (match.includes('target=')) return match;
+                return `href="${url}" target="_blank" rel="noopener noreferrer"`;
+            });
 
             const notesEl = document.getElementById('latest-release-notes');
             if (notesEl) notesEl.innerHTML = notesHtml;
@@ -238,6 +251,32 @@ class ProjectPage {
                 }
                 return;
             }
+
+            // 1. Ersetze Seiten-Ankerpunkte (bleiben auf der Seite)
+            readmeHtml = readmeHtml.replace(/href="[^"]*ROADMAP\.md"/gi, 'href="#roadmap"');
+            readmeHtml = readmeHtml.replace(/href="[^"]*CHANGELOG\.md"/gi, 'href="#changelog"');
+
+            // 2. Alle anderen .md Dateien und LICENSE führen zu GitHub
+            readmeHtml = readmeHtml.replace(/href="([^"#]*\.(md|MD))"/gi, (match, filename) => {
+                // Überspringe bereits ersetzte Anker-Links
+                if (filename.startsWith('#')) return match;
+                // Entferne ./ oder ../ am Anfang
+                const cleanFilename = filename.replace(/^\.\.?\//, '');
+                return `href="https://github.com/${this.repo}/blob/main/${cleanFilename}" target="_blank"`;
+            });
+
+            // LICENSE (ohne .md Endung)
+            const licenseUrl = `https://github.com/${this.repo}/blob/main/LICENSE`;
+            readmeHtml = readmeHtml.replace(/href="[^"#]*LICENSE[^"]*"/gi, (match) => {
+                if (match.includes('target=')) return match; // bereits ersetzt
+                return `href="${licenseUrl}" target="_blank"`;
+            });
+
+            // 3. Alle verbleibenden externen Links (http/https) bekommen target="_blank"
+            readmeHtml = readmeHtml.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
+                if (match.includes('target=')) return match; // bereits ersetzt
+                return `href="${url}" target="_blank" rel="noopener noreferrer"`;
+            });
 
             readmeContent.innerHTML = readmeHtml;
 
@@ -341,6 +380,27 @@ class ProjectPage {
                 const date = new Date(release.published_at);
                 const formattedDate = date.toLocaleDateString('de-DE');
 
+                // Markdown parsen und Links ersetzen
+                let bodyHtml = markdownToHtml(release.body || 'Keine Release-Notes');
+
+                // Seiten-Anker
+                bodyHtml = bodyHtml.replace(/href="[^"]*ROADMAP\.md"/gi, 'href="#roadmap"');
+                bodyHtml = bodyHtml.replace(/href="[^"]*CHANGELOG\.md"/gi, 'href="#changelog"');
+                bodyHtml = bodyHtml.replace(/href="[^"]*README\.md"/gi, 'href="#readme"');
+
+                // Alle anderen .md Dateien → GitHub
+                bodyHtml = bodyHtml.replace(/href="([^"#]*\.(md|MD))"/gi, (match, filename) => {
+                    if (filename.startsWith('#')) return match;
+                    const cleanFilename = filename.replace(/^\.\.?\//, '');
+                    return `href="https://github.com/${this.repo}/blob/main/${cleanFilename}" target="_blank"`;
+                });
+
+                // Externe Links → neuer Tab
+                bodyHtml = bodyHtml.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
+                    if (match.includes('target=')) return match;
+                    return `href="${url}" target="_blank" rel="noopener noreferrer"`;
+                });
+
                 releaseEl.innerHTML = `
                     <div class="release-header">
                         <span class="version-tag">${release.tag_name}</span>
@@ -348,7 +408,7 @@ class ProjectPage {
                         <time datetime="${release.published_at}">${formattedDate}</time>
                     </div>
                     <div class="release-body">
-                        ${markdownToHtml(release.body || 'Keine Release-Notes')}
+                        ${bodyHtml}
                     </div>
                     <a href="${release.html_url}" target="_blank" class="release-link">
                         Auf GitHub ansehen →
@@ -365,43 +425,138 @@ class ProjectPage {
 
     async loadChangelog() {
         try {
-            const changelog = await getChangelog(this.repo);
             const changelogContent = document.getElementById('changelog-content');
             const changelogSection = document.getElementById('changelog');
 
-            if (!changelog) {
-                if (changelogSection) changelogSection.style.display = 'none';
-                return;
+            // Versuche zuerst Cache zu laden (enthält bereits HTML)
+            let changelogHtml = null;
+            try {
+                const container = document.querySelector('.project-content');
+                const projectId = container?.dataset.projectId || this.repo.split('/')[1].toLowerCase();
+                const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
+                if (cacheResponse.ok) {
+                    const cached = await cacheResponse.json();
+                    changelogHtml = cached.changelogHtml || null;
+                    if (changelogHtml) {
+                        console.log('CHANGELOG HTML aus Cache geladen');
+                    }
+                }
+            } catch (cacheError) {
+                console.log('Cache nicht verfügbar, lade von API...');
+            }
+
+            // Falls kein Cache, von API laden und parsen
+            if (!changelogHtml) {
+                const changelog = await getChangelog(this.repo);
+                if (!changelog) {
+                    if (changelogContent) {
+                        changelogContent.innerHTML = '<p class="info">Kein Changelog verfügbar. <a href="https://github.com/' + this.repo + '/blob/main/CHANGELOG.md" target="_blank">Auf GitHub ansehen</a></p>';
+                    }
+                    return;
+                }
+                changelogHtml = markdownToHtml(changelog);
             }
 
             if (!changelogContent) return;
 
-            changelogContent.innerHTML = markdownToHtml(changelog);
+            // Link-Replacements für Changelog
+            // 1. Version-Tags (z.B. v0.2.0-beta, 0.2.0) zu GitHub Releases
+            changelogHtml = changelogHtml.replace(/href="(v?\d+\.\d+\.\d+[^"]*)"/gi, (match, version) => {
+                // Überspringe bereits vollständige URLs
+                if (version.startsWith('http')) return match;
+                if (version.startsWith('#')) return match;
+                return `href="https://github.com/${this.repo}/releases/tag/${version}" target="_blank"`;
+            });
+
+            // 2. Alle .md Dateien zu GitHub
+            changelogHtml = changelogHtml.replace(/href="([^"#]*\.(md|MD))"/gi, (match, filename) => {
+                if (filename.startsWith('#')) return match;
+                if (filename.startsWith('http')) return match;
+                const cleanFilename = filename.replace(/^\.\.?\//, '');
+                return `href="https://github.com/${this.repo}/blob/main/${cleanFilename}" target="_blank"`;
+            });
+
+            // 3. Alle externen Links bekommen target="_blank"
+            changelogHtml = changelogHtml.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
+                if (match.includes('target=')) return match;
+                return `href="${url}" target="_blank" rel="noopener noreferrer"`;
+            });
+
+            changelogContent.innerHTML = changelogHtml;
         } catch (error) {
             console.error('Fehler beim Laden des Changelog:', error);
-            const changelogSection = document.getElementById('changelog');
-            if (changelogSection) changelogSection.style.display = 'none';
+            const changelogContent = document.getElementById('changelog-content');
+            if (changelogContent) {
+                changelogContent.innerHTML = '<p class="error">Changelog konnte nicht geladen werden (API Rate Limit). <a href="https://github.com/' + this.repo + '/blob/main/CHANGELOG.md" target="_blank">Auf GitHub ansehen</a></p>';
+            }
         }
     }
 
     async loadRoadmap() {
         try {
-            const roadmap = await getRoadmap(this.repo);
             const roadmapContent = document.getElementById('roadmap-content');
             const roadmapSection = document.getElementById('roadmap');
 
-            if (!roadmap) {
-                if (roadmapSection) roadmapSection.style.display = 'none';
-                return;
+            // Versuche zuerst Cache zu laden (enthält bereits HTML)
+            let roadmapHtml = null;
+            try {
+                const container = document.querySelector('.project-content');
+                const projectId = container?.dataset.projectId || this.repo.split('/')[1].toLowerCase();
+                const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
+                if (cacheResponse.ok) {
+                    const cached = await cacheResponse.json();
+                    roadmapHtml = cached.roadmapHtml || null;
+                    if (roadmapHtml) {
+                        console.log('ROADMAP HTML aus Cache geladen');
+                    }
+                }
+            } catch (cacheError) {
+                console.log('Cache nicht verfügbar, lade von API...');
+            }
+
+            // Falls kein Cache, von API laden und parsen
+            if (!roadmapHtml) {
+                const roadmap = await getRoadmap(this.repo);
+                if (!roadmap) {
+                    if (roadmapContent) {
+                        roadmapContent.innerHTML = '<p class="info">Keine Roadmap verfügbar. <a href="https://github.com/' + this.repo + '/blob/main/ROADMAP.md" target="_blank">Auf GitHub ansehen</a></p>';
+                    }
+                    return;
+                }
+                roadmapHtml = markdownToHtml(roadmap);
             }
 
             if (!roadmapContent) return;
 
-            roadmapContent.innerHTML = markdownToHtml(roadmap);
+            // Link-Replacements für Roadmap
+            // 1. Version-Tags zu GitHub Releases
+            roadmapHtml = roadmapHtml.replace(/href="(v?\d+\.\d+\.\d+[^"]*)"/gi, (match, version) => {
+                if (version.startsWith('http')) return match;
+                if (version.startsWith('#')) return match;
+                return `href="https://github.com/${this.repo}/releases/tag/${version}" target="_blank"`;
+            });
+
+            // 2. Alle .md Dateien zu GitHub
+            roadmapHtml = roadmapHtml.replace(/href="([^"#]*\.(md|MD))"/gi, (match, filename) => {
+                if (filename.startsWith('#')) return match;
+                if (filename.startsWith('http')) return match;
+                const cleanFilename = filename.replace(/^\.\.?\//, '');
+                return `href="https://github.com/${this.repo}/blob/main/${cleanFilename}" target="_blank"`;
+            });
+
+            // 3. Alle externen Links bekommen target="_blank"
+            roadmapHtml = roadmapHtml.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
+                if (match.includes('target=')) return match;
+                return `href="${url}" target="_blank" rel="noopener noreferrer"`;
+            });
+
+            roadmapContent.innerHTML = roadmapHtml;
         } catch (error) {
             console.error('Fehler beim Laden der Roadmap:', error);
-            const roadmapSection = document.getElementById('roadmap');
-            if (roadmapSection) roadmapSection.style.display = 'none';
+            const roadmapContent = document.getElementById('roadmap-content');
+            if (roadmapContent) {
+                roadmapContent.innerHTML = '<p class="error">Roadmap konnte nicht geladen werden (API Rate Limit). <a href="https://github.com/' + this.repo + '/blob/main/ROADMAP.md" target="_blank">Auf GitHub ansehen</a></p>';
+            }
         }
     }
 }
