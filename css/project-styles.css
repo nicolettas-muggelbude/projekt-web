@@ -280,6 +280,7 @@ section h2 {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     font-size: 0.9em;
     border: 1px solid var(--border);
+    color: var(--text-primary);
 }
 
 .markdown-body pre {
