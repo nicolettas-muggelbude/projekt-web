@@ -174,7 +174,13 @@ class ProjectPage {
                 return;
             }
 
-            const notesHtml = markdownToHtml(release.body || 'Keine Release-Notes verfügbar.');
+            let notesHtml = markdownToHtml(release.body || 'Keine Release-Notes verfügbar.');
+
+            // Ersetze Repository-Datei-Links durch Seiten-Anker
+            notesHtml = notesHtml.replace(/href="[^"]*ROADMAP\.md"/gi, 'href="#roadmap"');
+            notesHtml = notesHtml.replace(/href="[^"]*CHANGELOG\.md"/gi, 'href="#changelog"');
+            notesHtml = notesHtml.replace(/href="[^"]*README\.md"/gi, 'href="#readme"');
+
             const notesEl = document.getElementById('latest-release-notes');
             if (notesEl) notesEl.innerHTML = notesHtml;
 
