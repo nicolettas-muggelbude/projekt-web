@@ -247,6 +247,11 @@ class ProjectPage {
             const licenseUrl = `https://github.com/${this.repo}/blob/main/LICENSE`;
             readmeHtml = readmeHtml.replace(/href="[^"]*LICENSE[^"]*"/gi, `href="${licenseUrl}" target="_blank"`);
 
+            // README Language variants (README.en.md, README.de.md, etc.) führen zu GitHub
+            readmeHtml = readmeHtml.replace(/href="(README\.[a-z]{2}\.md)"/gi, (match, filename) => {
+                return `href="https://github.com/${this.repo}/blob/main/${filename}" target="_blank"`;
+            });
+
             readmeContent.innerHTML = readmeHtml;
 
             // Screenshots extrahieren
