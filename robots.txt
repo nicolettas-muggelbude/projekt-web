@@ -1,0 +1,18 @@
+# robots.txt für muggelbude.it
+
+# Alle Crawler erlauben
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://muggelbude.it/sitemap.xml
+
+# Verhindern, dass Cache-Ordner indexiert wird
+Disallow: /data/cache/
+
+# Node modules und Build-Ordner nicht indexieren
+Disallow: /node_modules/
+Disallow: /build/
+
+# Temporäre Dateien nicht indexieren
+Disallow: *.log
