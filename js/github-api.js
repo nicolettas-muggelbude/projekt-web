@@ -101,8 +101,15 @@ class GitHubAPI {
             if (!response || !response.content) {
                 return null;
             }
-            // Base64 dekodieren
-            return atob(response.content);
+            // Base64 dekodieren mit UTF-8 Support
+            const base64 = response.content.replace(/\s/g, '');
+            const binaryString = atob(base64);
+            const bytes = new Uint8Array(binaryString.length);
+            for (let i = 0; i < binaryString.length; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            const decoder = new TextDecoder('utf-8');
+            return decoder.decode(bytes);
         } catch (error) {
             console.error(`Fehler beim Laden von ${path}:`, error);
             return null;
