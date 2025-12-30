@@ -370,6 +370,7 @@ async function generateBlogPostPages(posts) {
             html = html.replace(/\{\{POST_AUTHOR\}\}/g, authorHtml);
             html = html.replace(/\{\{POST_TAGS\}\}/g, tagsHtml);
             html = html.replace(/\{\{POST_CONTENT\}\}/g, contentHtml);
+            html = html.replace(/\{\{POST_SLUG\}\}/g, post.slug);
 
             // Speichern
             const outputPath = path.join(__dirname, '..', 'blog', 'posts', `${post.slug}.html`);
@@ -379,6 +380,61 @@ async function generateBlogPostPages(posts) {
         }
 
         log(`  ✓ ${posts.length} Blog-Post Seiten erstellt`, 'green');
+    } catch (error) {
+        log(`  ✗ Fehler: ${error.message}`, 'red');
+    }
+}
+
+// Sitemap.xml generieren für SEO
+async function generateSitemap(projects, posts) {
+    log(`\n🗺️  Generiere Sitemap.xml...`, 'blue');
+
+    try {
+        const baseUrl = 'https://muggelbude.it';
+        const now = new Date().toISOString().split('T')[0];
+
+        let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
+        sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+
+        // Hauptseite
+        sitemap += '  <url>\n';
+        sitemap += `    <loc>${baseUrl}/</loc>\n`;
+        sitemap += `    <lastmod>${now}</lastmod>\n`;
+        sitemap += '    <changefreq>weekly</changefreq>\n';
+        sitemap += '    <priority>1.0</priority>\n';
+        sitemap += '  </url>\n';
+
+        // Blog-Posts
+        if (posts && posts.length > 0) {
+            for (const post of posts) {
+                sitemap += '  <url>\n';
+                sitemap += `    <loc>${baseUrl}/blog/posts/${post.slug}.html</loc>\n`;
+                sitemap += `    <lastmod>${post.date || now}</lastmod>\n`;
+                sitemap += '    <changefreq>monthly</changefreq>\n';
+                sitemap += '    <priority>0.8</priority>\n';
+                sitemap += '  </url>\n';
+            }
+        }
+
+        // Projekt-Seiten
+        if (projects && projects.length > 0) {
+            for (const project of projects) {
+                sitemap += '  <url>\n';
+                sitemap += `    <loc>${baseUrl}/projects/${project.id}.html</loc>\n`;
+                sitemap += `    <lastmod>${now}</lastmod>\n`;
+                sitemap += '    <changefreq>monthly</changefreq>\n';
+                sitemap += '    <priority>0.7</priority>\n';
+                sitemap += '  </url>\n';
+            }
+        }
+
+        sitemap += '</urlset>';
+
+        // Sitemap speichern
+        const sitemapPath = path.join(__dirname, '..', 'sitemap.xml');
+        await fs.writeFile(sitemapPath, sitemap);
+
+        log(`  ✓ Sitemap.xml erstellt mit ${1 + (posts?.length || 0) + (projects?.length || 0)} URLs`, 'green');
     } catch (error) {
         log(`  ✗ Fehler: ${error.message}`, 'red');
     }
@@ -405,6 +461,9 @@ async function build() {
         // Blog-Index erstellen und HTML-Seiten generieren
         const posts = await buildBlogIndex();
         await generateBlogPostPages(posts);
+
+        // Sitemap.xml generieren
+        await generateSitemap(projects, posts);
 
         log('\n✅ Build erfolgreich abgeschlossen!\n', 'green');
     } catch (error) {
