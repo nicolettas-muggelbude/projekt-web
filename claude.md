@@ -144,6 +144,7 @@ Noch nicht definiert - nach Bedarf hinzufügen.
 - **External Links**: Alle externen Links öffnen in neuem Tab mit `target="_blank"`
 - **Lightbox Navigation**: Verbesserte Sichtbarkeit der Prev/Next-Buttons mit dunkleren Hintergründen
 - **CONTRIBUTING.md Links**: Korrekte Verlinkung zu GitHub
+- **Changelog/Roadmap Version-Links**: Version-Tags (v0.2.0-beta, etc.) verlinken zu GitHub Releases statt 404
 
 ### 2025-12-29 - UTF-8 & Markdown-Parser Upgrade
 - **UTF-8 Encoding Fix**: Korrekte Dekodierung von Base64-Inhalten (✓ statt â)
