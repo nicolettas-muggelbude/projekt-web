@@ -176,10 +176,23 @@ class ProjectPage {
 
             let notesHtml = markdownToHtml(release.body || 'Keine Release-Notes verfügbar.');
 
-            // Ersetze Repository-Datei-Links durch Seiten-Anker
+            // Seiten-Anker
             notesHtml = notesHtml.replace(/href="[^"]*ROADMAP\.md"/gi, 'href="#roadmap"');
             notesHtml = notesHtml.replace(/href="[^"]*CHANGELOG\.md"/gi, 'href="#changelog"');
             notesHtml = notesHtml.replace(/href="[^"]*README\.md"/gi, 'href="#readme"');
+
+            // Alle anderen .md Dateien → GitHub
+            notesHtml = notesHtml.replace(/href="([^"#]*\.(md|MD))"/gi, (match, filename) => {
+                if (filename.startsWith('#')) return match;
+                const cleanFilename = filename.replace(/^\.\.?\//, '');
+                return `href="https://github.com/${this.repo}/blob/main/${cleanFilename}" target="_blank"`;
+            });
+
+            // Externe Links → neuer Tab
+            notesHtml = notesHtml.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
+                if (match.includes('target=')) return match;
+                return `href="${url}" target="_blank" rel="noopener noreferrer"`;
+            });
 
             const notesEl = document.getElementById('latest-release-notes');
             if (notesEl) notesEl.innerHTML = notesHtml;
@@ -239,20 +252,30 @@ class ProjectPage {
                 return;
             }
 
-            // Ersetze Repository-Datei-Links durch Seiten-Anker oder GitHub-Links
+            // 1. Ersetze Seiten-Ankerpunkte (bleiben auf der Seite)
             readmeHtml = readmeHtml.replace(/href="[^"]*ROADMAP\.md"/gi, 'href="#roadmap"');
             readmeHtml = readmeHtml.replace(/href="[^"]*CHANGELOG\.md"/gi, 'href="#changelog"');
 
-            // LICENSE und CONTRIBUTING führen zu GitHub (keine Sektion auf der Seite)
+            // 2. Alle anderen .md Dateien und LICENSE führen zu GitHub
+            readmeHtml = readmeHtml.replace(/href="([^"#]*\.(md|MD))"/gi, (match, filename) => {
+                // Überspringe bereits ersetzte Anker-Links
+                if (filename.startsWith('#')) return match;
+                // Entferne ./ oder ../ am Anfang
+                const cleanFilename = filename.replace(/^\.\.?\//, '');
+                return `href="https://github.com/${this.repo}/blob/main/${cleanFilename}" target="_blank"`;
+            });
+
+            // LICENSE (ohne .md Endung)
             const licenseUrl = `https://github.com/${this.repo}/blob/main/LICENSE`;
-            readmeHtml = readmeHtml.replace(/href="[^"]*LICENSE[^"]*"/gi, `href="${licenseUrl}" target="_blank"`);
+            readmeHtml = readmeHtml.replace(/href="[^"#]*LICENSE[^"]*"/gi, (match) => {
+                if (match.includes('target=')) return match; // bereits ersetzt
+                return `href="${licenseUrl}" target="_blank"`;
+            });
 
-            const contributingUrl = `https://github.com/${this.repo}/blob/main/CONTRIBUTING.md`;
-            readmeHtml = readmeHtml.replace(/href="[^"]*CONTRIBUTING\.md"/gi, `href="${contributingUrl}" target="_blank"`);
-
-            // README Language variants (README.en.md, README.de.md, etc.) führen zu GitHub
-            readmeHtml = readmeHtml.replace(/href="(README\.[a-z]{2}\.md)"/gi, (match, filename) => {
-                return `href="https://github.com/${this.repo}/blob/main/${filename}" target="_blank"`;
+            // 3. Alle verbleibenden externen Links (http/https) bekommen target="_blank"
+            readmeHtml = readmeHtml.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
+                if (match.includes('target=')) return match; // bereits ersetzt
+                return `href="${url}" target="_blank" rel="noopener noreferrer"`;
             });
 
             readmeContent.innerHTML = readmeHtml;
@@ -359,9 +382,24 @@ class ProjectPage {
 
                 // Markdown parsen und Links ersetzen
                 let bodyHtml = markdownToHtml(release.body || 'Keine Release-Notes');
+
+                // Seiten-Anker
                 bodyHtml = bodyHtml.replace(/href="[^"]*ROADMAP\.md"/gi, 'href="#roadmap"');
                 bodyHtml = bodyHtml.replace(/href="[^"]*CHANGELOG\.md"/gi, 'href="#changelog"');
                 bodyHtml = bodyHtml.replace(/href="[^"]*README\.md"/gi, 'href="#readme"');
+
+                // Alle anderen .md Dateien → GitHub
+                bodyHtml = bodyHtml.replace(/href="([^"#]*\.(md|MD))"/gi, (match, filename) => {
+                    if (filename.startsWith('#')) return match;
+                    const cleanFilename = filename.replace(/^\.\.?\//, '');
+                    return `href="https://github.com/${this.repo}/blob/main/${cleanFilename}" target="_blank"`;
+                });
+
+                // Externe Links → neuer Tab
+                bodyHtml = bodyHtml.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
+                    if (match.includes('target=')) return match;
+                    return `href="${url}" target="_blank" rel="noopener noreferrer"`;
+                });
 
                 releaseEl.innerHTML = `
                     <div class="release-header">
