@@ -460,7 +460,13 @@ class ProjectPage {
             if (!changelogContent) return;
 
             // Link-Replacements für Changelog
-            // 1. Compare-Links zu Release-Links umwandeln (z.B. /compare/v1.4.0...v1.5.0 -> /releases/tag/v1.5.0)
+            // 1a. Compare-Links mit HEAD zu Commits umwandeln (z.B. /compare/v0.2.0...HEAD -> /commits/main)
+            changelogHtml = changelogHtml.replace(
+                /href="https:\/\/github\.com\/([^\/]+\/[^\/]+)\/compare\/[^"]+\.\.\.HEAD"/gi,
+                (match, repo) => `href="https://github.com/${repo}/commits/main" target="_blank"`
+            );
+
+            // 1b. Compare-Links zu Release-Links umwandeln (z.B. /compare/v1.4.0...v1.5.0 -> /releases/tag/v1.5.0)
             changelogHtml = changelogHtml.replace(
                 /href="https:\/\/github\.com\/([^\/]+\/[^\/]+)\/compare\/[^"]+\.\.\.v?(\d+\.\d+\.\d+[^"]*)"/gi,
                 (match, repo, version) => {
@@ -539,7 +545,13 @@ class ProjectPage {
             if (!roadmapContent) return;
 
             // Link-Replacements für Roadmap
-            // 1. Compare-Links zu Release-Links umwandeln
+            // 1a. Compare-Links mit HEAD zu Commits umwandeln
+            roadmapHtml = roadmapHtml.replace(
+                /href="https:\/\/github\.com\/([^\/]+\/[^\/]+)\/compare\/[^"]+\.\.\.HEAD"/gi,
+                (match, repo) => `href="https://github.com/${repo}/commits/main" target="_blank"`
+            );
+
+            // 1b. Compare-Links zu Release-Links umwandeln
             roadmapHtml = roadmapHtml.replace(
                 /href="https:\/\/github\.com\/([^\/]+\/[^\/]+)\/compare\/[^"]+\.\.\.v?(\d+\.\d+\.\d+[^"]*)"/gi,
                 (match, repo, version) => {
