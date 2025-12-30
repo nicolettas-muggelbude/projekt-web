@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>OG Image</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1200px;
+            height: 630px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #8A2BE2 0%, #A855F7 100%);
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        .circle1 {
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .circle2 {
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .content {
+            text-align: center;
+            z-index: 10;
+            color: white;
+        }
+        h1 {
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        p {
+            font-size: 28px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="content">
+        <h1>Nicolettas-Muggelbude</h1>
+        <h2>Portfolio &amp; Blog</h2>
+        <p>muggelbude.it</p>
+    </div>
+
+    <script>
+        // Info für Benutzer
+        console.log('📸 Screenshot-Anleitung:');
+        console.log('1. Fenster auf 100% Zoom setzen (Strg+0)');
+        console.log('2. F12 drücken → Device Toolbar (Strg+Shift+M)');
+        console.log('3. Responsive → 1200x630 eingeben');
+        console.log('4. Screenshot machen (Browser-Tool oder Strg+Shift+S)');
+        console.log('5. Als og-image.png speichern');
+    </script>
+</body>
+</html>
