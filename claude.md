@@ -152,6 +152,7 @@ Noch nicht definiert - nach Bedarf hinzufügen.
   - Keine API Rate-Limit-Probleme beim lokalen Testen
   - Schnellere Ladezeiten
   - Konsistent mit README-Caching-Strategie
+  - Sektionen werden automatisch versteckt, wenn keine Dateien vorhanden sind
 
 ### 2025-12-29 - UTF-8 & Markdown-Parser Upgrade
 - **UTF-8 Encoding Fix**: Korrekte Dekodierung von Base64-Inhalten (✓ statt â)
