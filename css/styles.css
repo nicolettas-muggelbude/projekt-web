@@ -695,3 +695,36 @@ footer {
 footer a {
     color: var(--accent);
 }
+
+/* ========================================
+   User Mentions (GitHub @username)
+   ======================================== */
+
+.user-mention {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.125rem 0.375rem;
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.user-mention:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.user-mention .user-avatar {
+    border-radius: 50%;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+.user-mention:hover .user-avatar {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
