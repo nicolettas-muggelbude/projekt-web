@@ -700,34 +700,39 @@ footer a {
    User Mentions (GitHub @username)
    ======================================== */
 
+/* Avatar-Link (nur das Bild) */
+.user-avatar-link {
+    display: inline-block;
+    margin-right: 0.15rem;
+    vertical-align: middle;
+    line-height: 0;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    vertical-align: middle;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.user-avatar-link:hover .user-avatar {
+    transform: scale(1.15);
+}
+
+/* Username-Link (nur der Text) */
 .user-mention {
     display: inline;
-    padding: 0.05rem 0.35rem;
+    padding: 0.1rem 0.4rem;
     background: var(--bg-secondary);
-    border-radius: 2px;
+    border-radius: 3px;
     text-decoration: none;
     color: var(--accent);
     font-weight: 500;
     transition: var(--transition);
-    line-height: inherit;
-    vertical-align: baseline;
-    font-size: 1em;
     white-space: nowrap;
 }
 
 .user-mention:hover {
     background: var(--accent);
     color: white;
-}
-
-.user-mention .user-avatar {
-    border-radius: 50%;
-    vertical-align: text-bottom;
-    margin-right: 0.2rem;
-    display: inline-block;
-}
-
-.user-mention:hover .user-avatar {
-    transform: scale(1.1);
-    transition: transform 0.2s ease;
 }
