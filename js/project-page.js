@@ -449,9 +449,8 @@ class ProjectPage {
             if (!changelogHtml) {
                 const changelog = await getChangelog(this.repo);
                 if (!changelog) {
-                    if (changelogContent) {
-                        changelogContent.innerHTML = '<p class="info">Kein Changelog verfügbar. <a href="https://github.com/' + this.repo + '/blob/main/CHANGELOG.md" target="_blank">Auf GitHub ansehen</a></p>';
-                    }
+                    // Kein Changelog vorhanden - Sektion verstecken
+                    if (changelogSection) changelogSection.style.display = 'none';
                     return;
                 }
                 changelogHtml = markdownToHtml(changelog);
@@ -460,7 +459,23 @@ class ProjectPage {
             if (!changelogContent) return;
 
             // Link-Replacements für Changelog
-            // 1. Version-Tags (z.B. v0.2.0-beta, 0.2.0) zu GitHub Releases
+            // 1a. Compare-Links mit HEAD zu Commits umwandeln (z.B. /compare/v0.2.0...HEAD -> /commits/main)
+            changelogHtml = changelogHtml.replace(
+                /href="https:\/\/github\.com\/([^\/]+\/[^\/]+)\/compare\/[^"]+\.\.\.HEAD"/gi,
+                (match, repo) => `href="https://github.com/${repo}/commits/main" target="_blank"`
+            );
+
+            // 1b. Compare-Links zu Release-Links umwandeln (z.B. /compare/v1.4.0...v1.5.0 -> /releases/tag/v1.5.0)
+            changelogHtml = changelogHtml.replace(
+                /href="https:\/\/github\.com\/([^\/]+\/[^\/]+)\/compare\/[^"]+\.\.\.v?(\d+\.\d+\.\d+[^"]*)"/gi,
+                (match, repo, version) => {
+                    // Füge 'v' hinzu falls nicht vorhanden
+                    const versionTag = version.startsWith('v') ? version : 'v' + version;
+                    return `href="https://github.com/${repo}/releases/tag/${versionTag}" target="_blank"`;
+                }
+            );
+
+            // 2. Relative Version-Tags (z.B. v0.2.0-beta, 0.2.0) zu GitHub Releases
             changelogHtml = changelogHtml.replace(/href="(v?\d+\.\d+\.\d+[^"]*)"/gi, (match, version) => {
                 // Überspringe bereits vollständige URLs
                 if (version.startsWith('http')) return match;
@@ -485,10 +500,8 @@ class ProjectPage {
             changelogContent.innerHTML = changelogHtml;
         } catch (error) {
             console.error('Fehler beim Laden des Changelog:', error);
-            const changelogContent = document.getElementById('changelog-content');
-            if (changelogContent) {
-                changelogContent.innerHTML = '<p class="error">Changelog konnte nicht geladen werden (API Rate Limit). <a href="https://github.com/' + this.repo + '/blob/main/CHANGELOG.md" target="_blank">Auf GitHub ansehen</a></p>';
-            }
+            const changelogSection = document.getElementById('changelog');
+            if (changelogSection) changelogSection.style.display = 'none';
         }
     }
 
@@ -518,9 +531,8 @@ class ProjectPage {
             if (!roadmapHtml) {
                 const roadmap = await getRoadmap(this.repo);
                 if (!roadmap) {
-                    if (roadmapContent) {
-                        roadmapContent.innerHTML = '<p class="info">Keine Roadmap verfügbar. <a href="https://github.com/' + this.repo + '/blob/main/ROADMAP.md" target="_blank">Auf GitHub ansehen</a></p>';
-                    }
+                    // Keine Roadmap vorhanden - Sektion verstecken
+                    if (roadmapSection) roadmapSection.style.display = 'none';
                     return;
                 }
                 roadmapHtml = markdownToHtml(roadmap);
@@ -529,7 +541,22 @@ class ProjectPage {
             if (!roadmapContent) return;
 
             // Link-Replacements für Roadmap
-            // 1. Version-Tags zu GitHub Releases
+            // 1a. Compare-Links mit HEAD zu Commits umwandeln
+            roadmapHtml = roadmapHtml.replace(
+                /href="https:\/\/github\.com\/([^\/]+\/[^\/]+)\/compare\/[^"]+\.\.\.HEAD"/gi,
+                (match, repo) => `href="https://github.com/${repo}/commits/main" target="_blank"`
+            );
+
+            // 1b. Compare-Links zu Release-Links umwandeln
+            roadmapHtml = roadmapHtml.replace(
+                /href="https:\/\/github\.com\/([^\/]+\/[^\/]+)\/compare\/[^"]+\.\.\.v?(\d+\.\d+\.\d+[^"]*)"/gi,
+                (match, repo, version) => {
+                    const versionTag = version.startsWith('v') ? version : 'v' + version;
+                    return `href="https://github.com/${repo}/releases/tag/${versionTag}" target="_blank"`;
+                }
+            );
+
+            // 2. Relative Version-Tags zu GitHub Releases
             roadmapHtml = roadmapHtml.replace(/href="(v?\d+\.\d+\.\d+[^"]*)"/gi, (match, version) => {
                 if (version.startsWith('http')) return match;
                 if (version.startsWith('#')) return match;
@@ -553,10 +580,8 @@ class ProjectPage {
             roadmapContent.innerHTML = roadmapHtml;
         } catch (error) {
             console.error('Fehler beim Laden der Roadmap:', error);
-            const roadmapContent = document.getElementById('roadmap-content');
-            if (roadmapContent) {
-                roadmapContent.innerHTML = '<p class="error">Roadmap konnte nicht geladen werden (API Rate Limit). <a href="https://github.com/' + this.repo + '/blob/main/ROADMAP.md" target="_blank">Auf GitHub ansehen</a></p>';
-            }
+            const roadmapSection = document.getElementById('roadmap');
+            if (roadmapSection) roadmapSection.style.display = 'none';
         }
     }
 }
