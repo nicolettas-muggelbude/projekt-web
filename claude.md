@@ -145,6 +145,8 @@ Noch nicht definiert - nach Bedarf hinzufügen.
 - **Lightbox Navigation**: Verbesserte Sichtbarkeit der Prev/Next-Buttons mit dunkleren Hintergründen
 - **CONTRIBUTING.md Links**: Korrekte Verlinkung zu GitHub
 - **Changelog/Roadmap Version-Links**: Version-Tags (v0.2.0-beta, etc.) verlinken zu GitHub Releases statt 404
+  - Compare-Links (`/compare/v1.4.0...v1.5.0`) werden zu Release-Links (`/releases/tag/v1.5.0`) umgewandelt
+  - Behebt 404-Fehler bei Keep a Changelog Format
 - **Cache-First Loading für Changelog/Roadmap**: Build-Script cached jetzt auch CHANGELOG.md und ROADMAP.md als HTML
   - Keine API Rate-Limit-Probleme beim lokalen Testen
   - Schnellere Ladezeiten
