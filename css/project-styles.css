@@ -449,10 +449,53 @@ section h2 {
 .release-body {
     margin: var(--spacing-sm) 0;
     color: var(--text-primary);
+    line-height: 1.8;
 }
 
 .release-body ul {
     margin-left: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.release-body li {
+    margin-bottom: 0.4rem;
+}
+
+.release-body code {
+    background: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+}
+
+.release-body pre {
+    background: var(--code-bg);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 1px solid var(--border);
+}
+
+.release-body pre code {
+    background: transparent;
+    padding: 0;
+    border: none;
+}
+
+.release-body h2,
+.release-body h3,
+.release-body h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.release-body strong {
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 .release-link {
