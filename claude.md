@@ -138,6 +138,30 @@ Noch nicht definiert - nach Bedarf hinzufügen.
 
 ## Changelog
 
+### 2025-12-30 - Link-Handling & Code-Block-Fixes
+- **Comprehensive Link-Handling**: Alle Repository-Datei-Links (claude.md, fragen.md, etc.) verlinken jetzt zu GitHub
+- **Page Anchors**: ROADMAP.md und CHANGELOG.md verlinken zu Seiten-Ankerpunkten (#roadmap, #changelog)
+- **External Links**: Alle externen Links öffnen in neuem Tab mit `target="_blank"`
+- **Lightbox Navigation**: Verbesserte Sichtbarkeit der Prev/Next-Buttons mit dunkleren Hintergründen
+- **CONTRIBUTING.md Links**: Korrekte Verlinkung zu GitHub
+
+### 2025-12-29 - UTF-8 & Markdown-Parser Upgrade
+- **UTF-8 Encoding Fix**: Korrekte Dekodierung von Base64-Inhalten (✓ statt â)
+- **marked.js Integration**: Professioneller Markdown-Parser via CDN statt Simple-Parser
+- **TextDecoder**: Implementierung für korrekte UTF-8-Dekodierung in `github-api.js`
+- **README Language Variants**: Links zu README.en.md, README.de.md führen zu GitHub
+
+### 2025-12-28 - Cache & Styling-Verbesserungen
+- **Cache-First Loading**: Repository-Info, Releases und README aus Cache laden
+- **data-project-id**: Fixer Projekt-ID-Identifier statt Extraktion aus Repo-Namen
+- **Code-Block CSS-Fixes**:
+  - `color: var(--text-primary)` für korrekte Textfarbe (statt lila)
+  - Konsistente Border-Farbe `rgba(240, 246, 252, 0.15)` für bessere Sichtbarkeit
+  - Release-Banner Background auf `var(--bg-card)` (statt `--bg-secondary`)
+  - `.release-notes` bekommt alle `.release-body` Styles
+- **Build-Script**: PROJECT_ID Platzhalter-Ersetzung
+- **Template Updates**: Alle Projektseiten mit neuen Features regeneriert
+
 ### 2025-01-28 - Initial Setup
 - Grundstruktur erstellt
 - Dark/Light Mode implementiert
