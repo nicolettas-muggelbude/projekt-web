@@ -349,6 +349,12 @@ class ProjectPage {
                 const date = new Date(release.published_at);
                 const formattedDate = date.toLocaleDateString('de-DE');
 
+                // Markdown parsen und Links ersetzen
+                let bodyHtml = markdownToHtml(release.body || 'Keine Release-Notes');
+                bodyHtml = bodyHtml.replace(/href="[^"]*ROADMAP\.md"/gi, 'href="#roadmap"');
+                bodyHtml = bodyHtml.replace(/href="[^"]*CHANGELOG\.md"/gi, 'href="#changelog"');
+                bodyHtml = bodyHtml.replace(/href="[^"]*README\.md"/gi, 'href="#readme"');
+
                 releaseEl.innerHTML = `
                     <div class="release-header">
                         <span class="version-tag">${release.tag_name}</span>
@@ -356,7 +362,7 @@ class ProjectPage {
                         <time datetime="${release.published_at}">${formattedDate}</time>
                     </div>
                     <div class="release-body">
-                        ${markdownToHtml(release.body || 'Keine Release-Notes')}
+                        ${bodyHtml}
                     </div>
                     <a href="${release.html_url}" target="_blank" class="release-link">
                         Auf GitHub ansehen →
