@@ -5,8 +5,19 @@
     <link>https://muggelbude.it/</link>
     <description>Portfolio &amp; Blog von Nicoletta - Linux, Automation, Entwicklung</description>
     <language>de</language>
-    <lastBuildDate>Wed, 31 Dec 2025 03:17:01 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 31 Dec 2025 03:19:26 GMT</lastBuildDate>
     <atom:link href="https://muggelbude.it/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Neu: Blog per RSS abonnieren - So bleibst du auf dem Laufenden</title>
+      <link>https://muggelbude.it/blog/posts/2025-12-31-rss-feed-verfuegbar.html</link>
+      <guid>https://muggelbude.it/blog/posts/2025-12-31-rss-feed-verfuegbar.html</guid>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 GMT</pubDate>
+      <author>noreply@muggelbude.it (Nicoletta)</author>
+      <description>Ab sofort kannst du meinen Blog per RSS-Feed abonnieren und verpasst keinen neuen Beitrag mehr. Hier erfährst du, wie&apos;s geht!</description>
+      <category>announcement</category>
+      <category>rss</category>
+      <category>tutorial</category>
+    </item>
     <item>
       <title>apt-get vs. apt - Welches Kommando für Scripts?</title>
       <link>https://muggelbude.it/blog/posts/2025-12-30-apt-get-vs-apt.html</link>
