@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "slug": "2025-12-31-rss-feed-verfuegbar",
+      "title": "Neu: Blog per RSS abonnieren - So bleibst du auf dem Laufenden",
+      "date": "2025-12-31",
+      "author": "Nicoletta",
+      "tags": [
+        "announcement",
+        "rss",
+        "tutorial"
+      ],
+      "excerpt": "Ab sofort kannst du meinen Blog per RSS-Feed abonnieren und verpasst keinen neuen Beitrag mehr. Hier erfährst du, wie's geht!"
+    },
+    {
       "slug": "2025-12-30-apt-get-vs-apt",
       "title": "apt-get vs. apt - Welches Kommando für Scripts?",
       "date": "2025-12-30",
