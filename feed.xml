@@ -3,9 +3,9 @@
   <channel>
     <title>Nicolettas-Muggelbude Blog</title>
     <link>https://muggelbude.it/</link>
-    <description>Portfolio & Blog von Nicoletta - Linux, Automation, Entwicklung</description>
+    <description>Portfolio &amp; Blog von Nicoletta - Linux, Automation, Entwicklung</description>
     <language>de</language>
-    <lastBuildDate>Wed, 31 Dec 2025 03:07:43 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 31 Dec 2025 03:09:36 GMT</lastBuildDate>
     <atom:link href="https://muggelbude.it/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>apt-get vs. apt - Welches Kommando für Scripts?</title>
