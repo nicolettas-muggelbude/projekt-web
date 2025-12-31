@@ -440,6 +440,74 @@ async function generateSitemap(projects, posts) {
     }
 }
 
+// RSS Feed generieren für Blog
+async function generateRssFeed(posts) {
+    log(`\n📡 Generiere RSS Feed...`, 'blue');
+
+    try {
+        const baseUrl = 'https://muggelbude.it';
+        const now = new Date().toUTCString();
+
+        let rss = '<?xml version="1.0" encoding="UTF-8"?>\n';
+        rss += '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n';
+        rss += '  <channel>\n';
+        rss += '    <title>Nicolettas-Muggelbude Blog</title>\n';
+        rss += '    <link>https://muggelbude.it/</link>\n';
+        rss += '    <description>Portfolio & Blog von Nicoletta - Linux, Automation, Entwicklung</description>\n';
+        rss += '    <language>de</language>\n';
+        rss += `    <lastBuildDate>${now}</lastBuildDate>\n`;
+        rss += `    <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml"/>\n`;
+
+        // Blog-Posts
+        if (posts && posts.length > 0) {
+            for (const post of posts) {
+                const pubDate = new Date(post.date).toUTCString();
+                const link = `${baseUrl}/blog/posts/${post.slug}.html`;
+
+                rss += '    <item>\n';
+                rss += `      <title>${escapeXml(post.title)}</title>\n`;
+                rss += `      <link>${link}</link>\n`;
+                rss += `      <guid>${link}</guid>\n`;
+                rss += `      <pubDate>${pubDate}</pubDate>\n`;
+                if (post.author) {
+                    rss += `      <author>noreply@muggelbude.it (${post.author})</author>\n`;
+                }
+                if (post.excerpt) {
+                    rss += `      <description>${escapeXml(post.excerpt)}</description>\n`;
+                }
+                // Tags als categories
+                if (post.tags && post.tags.length > 0) {
+                    post.tags.forEach(tag => {
+                        rss += `      <category>${escapeXml(tag)}</category>\n`;
+                    });
+                }
+                rss += '    </item>\n';
+            }
+        }
+
+        rss += '  </channel>\n';
+        rss += '</rss>';
+
+        const feedPath = path.join(__dirname, '..', 'feed.xml');
+        await fs.writeFile(feedPath, rss);
+
+        log(`  ✓ RSS Feed erstellt mit ${posts?.length || 0} Posts`, 'green');
+    } catch (error) {
+        log(`  ✗ Fehler: ${error.message}`, 'red');
+    }
+}
+
+// XML Escape Helper
+function escapeXml(unsafe) {
+    if (!unsafe) return '';
+    return unsafe.toString()
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
+}
+
 // HTML-Sitemap generieren für Besucher
 async function generateHtmlSitemap(projects, posts) {
     log(`\n📄 Generiere HTML-Sitemap...`, 'blue');
@@ -597,6 +665,9 @@ async function build() {
 
         // HTML-Sitemap generieren
         await generateHtmlSitemap(projects, posts);
+
+        // RSS Feed generieren
+        await generateRssFeed(posts);
 
         log('\n✅ Build erfolgreich abgeschlossen!\n', 'green');
     } catch (error) {
