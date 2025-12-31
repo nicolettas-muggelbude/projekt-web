@@ -453,7 +453,7 @@ async function generateRssFeed(posts) {
         rss += '  <channel>\n';
         rss += '    <title>Nicolettas-Muggelbude Blog</title>\n';
         rss += '    <link>https://muggelbude.it/</link>\n';
-        rss += '    <description>Portfolio & Blog von Nicoletta - Linux, Automation, Entwicklung</description>\n';
+        rss += '    <description>Portfolio &amp; Blog von Nicoletta - Linux, Automation, Entwicklung</description>\n';
         rss += '    <language>de</language>\n';
         rss += `    <lastBuildDate>${now}</lastBuildDate>\n`;
         rss += `    <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml"/>\n`;
