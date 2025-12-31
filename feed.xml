@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nicolettas-Muggelbude Blog</title>
+    <link>https://muggelbude.it/</link>
+    <description>Portfolio & Blog von Nicoletta - Linux, Automation, Entwicklung</description>
+    <language>de</language>
+    <lastBuildDate>Wed, 31 Dec 2025 03:07:43 GMT</lastBuildDate>
+    <atom:link href="https://muggelbude.it/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>apt-get vs. apt - Welches Kommando für Scripts?</title>
+      <link>https://muggelbude.it/blog/posts/2025-12-30-apt-get-vs-apt.html</link>
+      <guid>https://muggelbude.it/blog/posts/2025-12-30-apt-get-vs-apt.html</guid>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 GMT</pubDate>
+      <author>noreply@muggelbude.it (Nicoletta)</author>
+      <description>Eine häufige Frage: Ist apt-get veraltet? Warum nutzen wir es im Update-Script statt apt?</description>
+      <category>linux</category>
+      <category>debian</category>
+      <category>ubuntu</category>
+      <category>best-practices</category>
+    </item>
+    <item>
+      <title>Willkommen auf meiner neuen Projekt-Website</title>
+      <link>https://muggelbude.it/blog/posts/2025-01-28-willkommen.html</link>
+      <guid>https://muggelbude.it/blog/posts/2025-01-28-willkommen.html</guid>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 GMT</pubDate>
+      <author>noreply@muggelbude.it (Nicoletta)</author>
+      <description>Meine neue Portfolio-Website ist jetzt live! Hier stelle ich meine Projekte vor und teile Gedanken zu Entwicklung und Technologie.</description>
+      <category>announcement</category>
+      <category>web</category>
+    </item>
+    <item>
+      <title>Automatische GitHub-Integration einrichten</title>
+      <link>https://muggelbude.it/blog/posts/2025-01-15-github-integration.html</link>
+      <guid>https://muggelbude.it/blog/posts/2025-01-15-github-integration.html</guid>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <author>noreply@muggelbude.it (Nicole)</author>
+      <description>Wie ich meine Portfolio-Website automatisch mit GitHub-Daten synchronisiere, ohne Backend oder Datenbank.</description>
+      <category>tutorial</category>
+      <category>github</category>
+      <category>automation</category>
+    </item>
+  </channel>
+</rss>
