@@ -3,10 +3,9 @@ VERSION:3.0
 FN:Nicoletta
 N:Nicoletta;;;
 ORG:Nicolettas Muggelbude
-TITLE:Entwicklerin ;& Autorin
+TITLE:Entwicklerin & Autorin
 EMAIL;TYPE=INTERNET;TYPE=WORK:nicoletta@muggelbude.it
-TEL;TYPE=WORK:+49-441-40576020
-ADR;TYPE=WORK:;;Melkbrink 61;Oldenburg;;26121;Deutschland
 URL:https://muggelbude.it/
-NOTE:Digitale Visitenkarte von Nicolettas Muggelbude
+NOTE:Digitale Visitenkarte von Nicolettas Muggelbude. Kontakt für It-Projekte
+PHOTO;TYPE=URL:https://forum.linuxguides.de/core/images/avatars/b5/12-b543ce1e90fbb741263e41bdc0daad3968d51ecb.webp
 END:VCARD
