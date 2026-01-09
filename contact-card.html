@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kontakt — Nicolettas Muggelbude</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto;display:flex;align-items:center;justify-content:center;padding:2rem;background:#e9d4d4}
+    .card{background:black;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.08);width:720px;max-width:100%;overflow:hidden}
+    .card-inner{display:flex;gap:1rem;padding:1.25rem}
+    .meta{flex:1}
+    .meta h1{margin:.1rem 0;font-size:1.25rem}
+    .meta p{margin:.25rem 0;color:white}
+    .actions{display:flex;gap:.5rem;margin-top:.75rem}
+    .btn{background:#A855F7;color:#fff;padding:.5rem .8rem;border-radius:6px;text-decoration:none}
+    .qr{width:180px;flex:0 0 180px;text-align:center;padding:.5rem}
+    .small{font-size:.85rem;color:white}
+    .btn:hover {
+        background: #9333ea; /* Dunklerer Lila-Ton */
+        cursor: pointer;     /* Zeigt an, dass der Button klickbar ist */
+}
+
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="card-inner">
+      <div class="meta">
+        <h1>Nicoletta</h1>
+        <p class="small">Entwicklerin — Nicolettas Muggelbude</p>
+        <div class="actions">
+          <a class="btn" href="/contact.vcf" download="Nicoletta-Kontakt.vcf">vCard herunterladen</a>
+        </div>
+        <p class="small" style="margin-top:1rem"><strong>QR-Code scannen:</strong> vCard direkt ins Handy importieren.</p>
+      </div>
+      <div class="qr">
+        <img alt="QR Code vCard" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&amp;data=https://muggelbude.it/contact.vcf" width="180" height="180">
+      </div>
+    </div>
+  </main>
+</body>
+</html>
