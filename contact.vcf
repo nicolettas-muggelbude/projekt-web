@@ -1,11 +1,12 @@
 BEGIN:VCARD
-VERSION:3.0
+VERSION:4.0
+N:;Nicoletta;;;
 FN:Nicoletta
-N:Nicoletta;;;
 ORG:Nicolettas Muggelbude
 TITLE:Entwicklerin & Autorin
-EMAIL;TYPE=INTERNET;TYPE=WORK:nicoletta@muggelbude.it
-URL:https://muggelbude.it/
-NOTE:Digitale Visitenkarte von Nicolettas Muggelbude. Kontakt für It-Projekte
+EMAIL;PREF=1;TYPE=home:nicoletta@muggelbude.it
+URL;TYPE=home:https://muggelbude.it
+NOTE:Entwicklerin & Autorin\nKontakt für IT-Projekte
 PHOTO;TYPE=URL:https://github.com/nicolettas-muggelbude.png
+TZ:Europe/Berlin
 END:VCARD
