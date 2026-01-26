@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zwei neue Major-Releases des Linux-Update-Scripts bringen XDG-Konformität, NVIDIA Secure Boot Support, kritische Bugfixes und ein revolutionäres Hybrid-Config-System. Endlich: AUTO_REBOOT funktioniert!">
+    <meta name="author" content="Nicoletta">
+    <title>Automatisiertes Linux-Update-Script v1.6.0 & v1.6.1 - Sicherer, smarter, benutzerfreundlicher | Blog</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://muggelbude.it/blog/posts/2026-01-26-update-script-v16.html">
+    <meta property="og:title" content="Automatisiertes Linux-Update-Script v1.6.0 & v1.6.1 - Sicherer, smarter, benutzerfreundlicher">
+    <meta property="og:description" content="Zwei neue Major-Releases des Linux-Update-Scripts bringen XDG-Konformität, NVIDIA Secure Boot Support, kritische Bugfixes und ein revolutionäres Hybrid-Config-System. Endlich: AUTO_REBOOT funktioniert!">
+    <meta property="og:image" content="https://muggelbude.it/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Nicolettas-Muggelbude">
+    <meta property="article:published_time" content="2026-01-26">
+    <meta property="article:author" content="Nicoletta">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://muggelbude.it/blog/posts/2026-01-26-update-script-v16.html">
+    <meta name="twitter:title" content="Automatisiertes Linux-Update-Script v1.6.0 & v1.6.1 - Sicherer, smarter, benutzerfreundlicher">
+    <meta name="twitter:description" content="Zwei neue Major-Releases des Linux-Update-Scripts bringen XDG-Konformität, NVIDIA Secure Boot Support, kritische Bugfixes und ein revolutionäres Hybrid-Config-System. Endlich: AUTO_REBOOT funktioniert!">
+    <meta name="twitter:image" content="https://muggelbude.it/images/og-image.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://muggelbude.it/blog/posts/2026-01-26-update-script-v16.html">
+
+    <link rel="stylesheet" href="../../css/styles.css">
+
+    <!-- Theme Setup (verhindert Flackern) -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') ||
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
+    <!-- Strukturierte Daten (JSON-LD) für SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Automatisiertes Linux-Update-Script v1.6.0 & v1.6.1 - Sicherer, smarter, benutzerfreundlicher",
+        "description": "Zwei neue Major-Releases des Linux-Update-Scripts bringen XDG-Konformität, NVIDIA Secure Boot Support, kritische Bugfixes und ein revolutionäres Hybrid-Config-System. Endlich: AUTO_REBOOT funktioniert!",
+        "author": {
+            "@type": "Person",
+            "name": "Nicoletta",
+            "url": "https://github.com/nicolettas-muggelbude"
+        },
+        "datePublished": "2026-01-26",
+        "dateModified": "2026-01-26",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Nicolettas-Muggelbude",
+            "url": "https://muggelbude.it"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://muggelbude.it/blog/posts/2026-01-26-update-script-v16.html"
+        },
+        "inLanguage": "de"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nicolettas-Muggelbude</h1>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <a href="../../index.html#projekte">Projekte</a>
+                <a href="../../index.html#blog">Blog</a>
+                <a href="https://github.com/nicolettas-muggelbude" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-overlay"></div>
+
+    <main>
+        <article class="blog-post-full">
+            <header class="post-header">
+                <h1>Automatisiertes Linux-Update-Script v1.6.0 & v1.6.1 - Sicherer, smarter, benutzerfreundlicher</h1>
+                <div class="post-meta">
+                    <time datetime="2026-01-26">26. Januar 2026</time>
+                    <span>von Nicoletta</span>
+                </div>
+                <div class="post-tags"><span class="tag">release</span><span class="tag">linux</span><span class="tag">automation</span><span class="tag">update-script</span></div>
+            </header>
+
+            <!-- Zurück-Button oben (nur Desktop) -->
+            <div class="post-nav-top">
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-between;">
+                    <a href="../../index.html#blog" class="btn">← Zurück zum Blog</a>
+                    <a href="../../feed.xml" class="btn" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        📡 Blog abonnieren (RSS)
+                    </a>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h1>Linux-Update-Script v1.6.0 &amp; v1.6.1: Sicherer, smarter, benutzerfreundlicher</h1>
+<p><strong>Große Neuigkeiten!</strong> 🎉 Das automatisierte Linux-Update-Script hat gleich <strong>zwei neue Versionen</strong> erhalten: v1.6.0 mit grundlegenden Verbesserungen und v1.6.1 als kritisches Bugfix-Release.</p>
+<p>Zusammen bilden diese Releases das <strong>größte Update seit v1.5.0</strong> - mit Fokus auf <strong>Sicherheit</strong>, <strong>Benutzerfreundlichkeit</strong> und <strong>Zuverlässigkeit</strong>.</p>
+<hr>
+<h2>🚀 v1.6.0 - XDG-Konformität &amp; NVIDIA Secure Boot</h2>
+<p><strong>Release-Datum:</strong> 25. Januar 2026
+<strong>Codename:</strong> &quot;Safe &amp; Sound&quot;</p>
+<p>Version 1.6.0 bringt fundamentale Verbesserungen für alle Linux-User - besonders für <strong>NVIDIA-Grafikkarten-Besitzer</strong> und alle, die <strong>Standards</strong> lieben.</p>
+<h3>Die wichtigsten Features:</h3>
+<h4>1. ✅ XDG-Konformität - Config-Dateien am richtigen Ort</h4>
+<p><strong>Endlich!</strong> Die Config-Datei liegt jetzt dort, wo sie nach Linux-Standards hingehört:</p>
+<pre><code>Neu: ~/.config/linux-update-script/config.conf
+Alt: ~/linux-update-script/config.conf (deprecated)
+</code></pre>
+<p><strong>Features:</strong></p>
+<ul>
+<li>✅ Automatische Migration beim ersten Start</li>
+<li>✅ Alte Config wird als <code>.migrated</code> gesichert</li>
+<li>✅ Keine manuelle Aktion nötig</li>
+</ul>
+<p><strong>Warum ist das wichtig?</strong>
+XDG Base Directory ist der <strong>Linux-Standard</strong> für User-Configs. Deine <code>.config/</code> wird automatisch von Backup-Tools mitgesichert, und alles ist an einem zentralen Ort.</p>
+<h4>2. 🖥️ NVIDIA-Kernel-Kompatibilitätsprüfung</h4>
+<p><strong>Schluss mit dem &quot;schwarzen Bildschirm&quot; nach Kernel-Updates!</strong></p>
+<p>Das Script prüft <strong>vor</strong> jedem Kernel-Update, ob deine NVIDIA-Treiber kompatibel sind.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>✅ Automatische NVIDIA-Treiber-Erkennung</li>
+<li>✅ DKMS-Status-Prüfung vor dem Update</li>
+<li>✅ <strong>Secure Boot Support</strong> mit MOK-Signierung</li>
+<li>✅ <strong>Kernel-Hold-Mechanismus</strong> (sicherer Default)</li>
+<li>✅ <strong>Power-User-Modus</strong> für Experten</li>
+</ul>
+<p><strong>Wie funktioniert&#39;s?</strong></p>
+<p>Wenn ein neuer Kernel verfügbar ist:</p>
+<ol>
+<li>Script prüft, ob NVIDIA-Treiber installiert sind</li>
+<li>Prüft DKMS-Modul-Kompatibilität</li>
+<li>Bei Secure Boot: Prüft MOK-Signierung</li>
+<li>Bei Problemen: <strong>Hält Kernel zurück</strong> oder warnt den User</li>
+</ol>
+<p><strong>Für NVIDIA-User ein Game-Changer!</strong></p>
+<h4>3. 📧 Benutzerfreundliche Defaults</h4>
+<p><strong>&quot;Einfach Enter drücken = alles funktioniert&quot;</strong></p>
+<p>Das Install-Script ist jetzt <strong>noch einfacher</strong>:</p>
+<ul>
+<li>E-Mail-Benachrichtigung: <strong>JA</strong> (Default)</li>
+<li><code>mailutils</code> &amp; <code>dma</code> werden automatisch installiert</li>
+<li>Test-Benachrichtigungen direkt nach Installation</li>
+<li>Kein Rätselraten mehr!</li>
+</ul>
+<hr>
+<h2>🐛 v1.6.1 - Kritische Bugfixes &amp; Hybrid-Config</h2>
+<p><strong>Release-Datum:</strong> 25. Januar 2026
+<strong>Codename:</strong> &quot;Actually Working Now&quot;</p>
+<p>Kurz nach v1.6.0 folgte ein <strong>kritisches Bugfix-Release</strong>, das drei gravierende Probleme behebt - und ein revolutionäres Config-System einführt.</p>
+<h3>Die wichtigsten Fixes:</h3>
+<h4>1. 🔧 AUTO_REBOOT funktioniert jetzt endlich!</h4>
+<p><strong>Das Problem:</strong></p>
+<ul>
+<li><code>AUTO_REBOOT=true</code> in config.conf wurde ignoriert</li>
+<li>System startete nie automatisch neu, trotz Konfiguration</li>
+<li>Log zeigte: <code>AUTO_REBOOT ist deaktiviert (aktueller Wert: false)</code></li>
+</ul>
+<p><strong>Die Ursache:</strong></p>
+<ul>
+<li>Config-Datei wurde nicht geladen (falsche Pfade bei sudo)</li>
+<li>XDG-Pfad <code>~/.config/</code> zeigte bei sudo auf <code>/root/.config/</code> statt <code>/home/user/.config/</code></li>
+<li>Cron-Jobs hatten keine <code>$SUDO_USER</code> Variable → Config nicht gefunden</li>
+</ul>
+<p><strong>Die Lösung:</strong>
+→ <strong>Hybrid-Config-System</strong> (siehe unten)</p>
+<p><strong>Betroffene User:</strong>
+Alle, die <code>AUTO_REBOOT=true</code> gesetzt hatten oder Cron-Jobs nutzen.</p>
+<h4>2. 🐧 Linux Mint Upgrade Support</h4>
+<p><strong>Das Problem:</strong></p>
+<ul>
+<li>Linux Mint nutzt <code>mintupgrade</code> statt <code>do-release-upgrade</code></li>
+<li>Script versuchte falsche Upgrade-Methode</li>
+<li>Upgrade-Check schlug fehl</li>
+</ul>
+<p><strong>Die Lösung:</strong></p>
+<p>Neuer 4-Schritt-Workflow für Mint:</p>
+<ol>
+<li><code>mintupgrade check</code> - Prüfung auf neue Version</li>
+<li><code>mintupgrade --dry-run</code> - Abhängigkeiten prüfen</li>
+<li><code>mintupgrade download</code> - Pakete herunterladen</li>
+<li><code>mintupgrade upgrade</code> - Upgrade durchführen</li>
+</ol>
+<p><strong>Betroffene User:</strong>
+Alle Linux Mint Benutzer.</p>
+<h4>3. ✅ Dry-Run für alle Distributionen</h4>
+<p><strong>Das Problem:</strong></p>
+<ul>
+<li>Nur Mint hatte Dry-Run-Checks vor Upgrades</li>
+<li>Andere Distributionen upgradeten ohne Konflikt-Prüfung</li>
+</ul>
+<p><strong>Die Lösung:</strong></p>
+<p>Dry-Run implementiert für:</p>
+<ul>
+<li><strong>Linux Mint:</strong> <code>mintupgrade --dry-run</code></li>
+<li><strong>Debian/Ubuntu:</strong> <code>do-release-upgrade -c -f DistUpgradeViewNonInteractive</code></li>
+<li><strong>Fedora:</strong> <code>dnf system-upgrade download --assumeno</code></li>
+<li><strong>openSUSE:</strong> <code>zypper dup --dry-run --no-confirm</code></li>
+<li><strong>Arch/Solus:</strong> N/A (Rolling Release)</li>
+</ul>
+<p><strong>Vorteil:</strong>
+Upgrade-Konflikte werden <strong>vor</strong> dem Upgrade erkannt!</p>
+<hr>
+<h2>🔀 Das neue Hybrid-Config-System</h2>
+<p><strong>Das war das größte Problem von v1.6.0</strong> - und v1.6.1 löst es elegant.</p>
+<h3>Das Problem:</h3>
+<p><strong>Situation 1: Cron-Jobs</strong></p>
+<ul>
+<li>Cron läuft als root → keine <code>$SUDO_USER</code> Variable</li>
+<li>Config in <code>~/.config/</code> nicht erreichbar</li>
+<li>→ Script lief mit Defaults, ignorierte Config</li>
+</ul>
+<p><strong>Situation 2: Multi-User</strong></p>
+<ul>
+<li>Verschiedene User brauchen verschiedene Präferenzen</li>
+<li>Eine globale Config = alle gleich</li>
+<li>→ Power-User unzufrieden</li>
+</ul>
+<p><strong>Situation 3: XDG vs. System</strong></p>
+<ul>
+<li>XDG-Standard (<code>~/.config/</code>) vs. System-Config (<code>/etc/</code>)</li>
+<li>→ Kompromiss nötig</li>
+</ul>
+<h3>Die Lösung: Hybrid-Ansatz</h3>
+<pre><code>Priorität 1: System-Config
+  → /etc/linux-update-script/config.conf
+  → Funktioniert immer (auch Cron)
+  → Standard für alle User
+
+Priorität 2: User-Override (optional)
+  → ~/.config/linux-update-script/config.conf
+  → Nur bei manuellem sudo-Aufruf
+  → Überschreibt System-Config
+
+Priorität 3: Legacy-Fallback
+  → ./config.conf (Script-Verzeichnis)
+  → Deprecated, wird in v2.0.0 entfernt
+</code></pre>
+<h3>Verwendung:</h3>
+<p><strong>Cron-Job (als root):</strong></p>
+<pre><code class="language-bash">0 3 * * * /pfad/zu/update.sh
+→ Verwendet: /etc/linux-update-script/config.conf
+</code></pre>
+<p><strong>Manueller Aufruf (mit sudo):</strong></p>
+<pre><code class="language-bash">sudo ./update.sh
+→ Verwendet: /etc/... + ~/.config/... Override
+</code></pre>
+<h3>Multi-User Beispiel:</h3>
+<p><strong>User1 mit persönlichen Präferenzen:</strong></p>
+<pre><code class="language-bash">sudo ./update.sh
+→ /etc/config.conf (AUTO_REBOOT=false)
+→ ~/.config/override (AUTO_REBOOT=true)
+→ Ergebnis: AUTO_REBOOT=true ✅
+</code></pre>
+<p><strong>User2 ohne Override:</strong></p>
+<pre><code class="language-bash">sudo ./update.sh
+→ /etc/config.conf (AUTO_REBOOT=false)
+→ Ergebnis: AUTO_REBOOT=false ✅
+</code></pre>
+<h3>Vorteile:</h3>
+<p>✅ <strong>Cron-sicher</strong> - Funktioniert ohne <code>$SUDO_USER</code>
+✅ <strong>Multi-User</strong> - Jeder User eigene Präferenzen
+✅ <strong>Power-User</strong> - Persönliche Overrides möglich
+✅ <strong>Automatisch</strong> - install.sh macht alles
+✅ <strong>Abwärtskompatibel</strong> - Legacy-Config als Fallback</p>
+<p><strong>Das ist genial!</strong> 🚀</p>
+<hr>
+<h2>📊 Statistik</h2>
+<p><strong>Version 1.6.0:</strong></p>
+<ul>
+<li>Neue XDG-Config-Location</li>
+<li>NVIDIA Secure Boot Support</li>
+<li>Kernel-Hold-Mechanismus</li>
+<li>Bessere Defaults im Installer</li>
+</ul>
+<p><strong>Version 1.6.1:</strong></p>
+<ul>
+<li>2 Dateien geändert (update.sh, install.sh)</li>
+<li>+150 / -80 Zeilen Code</li>
+<li>1 neue Funktion (<code>load_config()</code>)</li>
+<li>19 neue Sprachmeldungen</li>
+<li>ShellCheck: 0 Fehler, 0 Warnungen</li>
+</ul>
+<p><strong>Zusammen:</strong></p>
+<ul>
+<li>3 kritische Bugs gefixt</li>
+<li>1 neues Config-System</li>
+<li>100% benutzerfreundlicher</li>
+</ul>
+<hr>
+<h2>🆙 Upgrade-Anleitung</h2>
+<h3>Von älteren Versionen:</h3>
+<pre><code class="language-bash">cd ~/linux-update-script
+git pull origin main
+
+# Config neu erstellen (empfohlen!)
+sudo ./install.sh
+</code></pre>
+<p><strong>Wichtig:</strong></p>
+<ul>
+<li><code>install.sh</code> erstellt automatisch <code>/etc/linux-update-script/config.conf</code></li>
+<li>Deine alte Config wird automatisch migriert</li>
+<li>Optional: User-Override in <code>~/.config/linux-update-script/config.conf</code></li>
+</ul>
+<h3>Erste Installation:</h3>
+<pre><code class="language-bash">git clone https://github.com/nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux.git
+cd Automatisiertes-Update-Script-fuer-Linux
+sudo ./install.sh
+</code></pre>
+<p><strong>Fertig!</strong> ✅</p>
+<hr>
+<h2>🧪 Testing erwünscht</h2>
+<p>Bitte testet diese Features und meldet Bugs:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Linux Mint Upgrade-Check</li>
+<li><input disabled="" type="checkbox"> AUTO_REBOOT mit Kernel-Update</li>
+<li><input disabled="" type="checkbox"> Cron-Job Ausführung</li>
+<li><input disabled="" type="checkbox"> Multi-User Szenarien</li>
+<li><input disabled="" type="checkbox"> NVIDIA Secure Boot Workflow</li>
+</ul>
+<p>→ <a href="https://github.com/nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux/issues" target="_blank" rel="noopener noreferrer">Issues &amp; Bug Reports</a></p>
+<hr>
+<h2>🎯 Fazit</h2>
+<p>Version 1.6.0 und 1.6.1 sind <strong>Meilenstein-Releases</strong>:</p>
+<p>✅ <strong>Sicherer</strong> - NVIDIA Secure Boot, Dry-Run-Checks
+✅ <strong>Smarter</strong> - Hybrid-Config-System, XDG-Standard
+✅ <strong>Benutzerfreundlicher</strong> - Automatische Migration, bessere Defaults
+✅ <strong>Zuverlässiger</strong> - AUTO_REBOOT funktioniert endlich!</p>
+<p><strong>Probiert es aus und gebt Feedback!</strong> 💬</p>
+<hr>
+<h2>🔗 Links</h2>
+<ul>
+<li><a href="https://github.com/nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+<li><a href="https://github.com/nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Vollständiges Changelog</a></li>
+<li><a href="https://github.com/nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux/blob/main/README.md" target="_blank" rel="noopener noreferrer">Dokumentation</a></li>
+</ul>
+<hr>
+<p><strong>Viel Erfolg mit v1.6.1!</strong> 🚀</p>
+<p><strong>P.S.:</strong> Wenn ihr Bugs findet, bitte <a href="https://github.com/nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux/issues" target="_blank" rel="noopener noreferrer">Issue erstellen</a>!</p>
+
+            </div>
+
+            <footer class="post-footer">
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-between;">
+                    <a href="../../index.html#blog" class="btn">← Zurück zum Blog</a>
+                    <a href="../../feed.xml" class="btn" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        📡 Blog abonnieren (RSS)
+                    </a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><a href="contact-card.html" target="_blank">Nicolettas-Visitenkarte</a></p>
+            <p>&copy; 2025 Nicoletta | <a href="https://github.com/nicolettas-muggelbude" target="_blank">GitHub</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/navigation.js"></script>
+</body>
+</html>

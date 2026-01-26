@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "slug": "2026-01-26-update-script-v16",
+      "title": "Automatisiertes Linux-Update-Script v1.6.0 & v1.6.1 - Sicherer, smarter, benutzerfreundlicher",
+      "date": "2026-01-26",
+      "author": "Nicoletta",
+      "tags": [
+        "release",
+        "linux",
+        "automation",
+        "update-script"
+      ],
+      "excerpt": "Zwei neue Major-Releases des Linux-Update-Scripts bringen XDG-Konformität, NVIDIA Secure Boot Support, kritische Bugfixes und ein revolutionäres Hybrid-Config-System. Endlich: AUTO_REBOOT funktioniert!"
+    },
+    {
       "slug": "2025-12-31-rss-feed-verfuegbar",
       "title": "Neu: Blog per RSS abonnieren - So bleibst du auf dem Laufenden",
       "date": "2025-12-31",
