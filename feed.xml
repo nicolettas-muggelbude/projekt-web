@@ -5,8 +5,20 @@
     <link>https://muggelbude.it/</link>
     <description>Portfolio &amp; Blog von Nicoletta - Linux, Automation, Entwicklung</description>
     <language>de</language>
-    <lastBuildDate>Wed, 31 Dec 2025 03:19:26 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 01:33:25 GMT</lastBuildDate>
     <atom:link href="https://muggelbude.it/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Automatisiertes Linux-Update-Script v1.6.0 &amp; v1.6.1 - Sicherer, smarter, benutzerfreundlicher</title>
+      <link>https://muggelbude.it/blog/posts/2026-01-26-update-script-v16.html</link>
+      <guid>https://muggelbude.it/blog/posts/2026-01-26-update-script-v16.html</guid>
+      <pubDate>Mon, 26 Jan 2026 00:00:00 GMT</pubDate>
+      <author>noreply@muggelbude.it (Nicoletta)</author>
+      <description>Zwei neue Major-Releases des Linux-Update-Scripts bringen XDG-Konformität, NVIDIA Secure Boot Support, kritische Bugfixes und ein revolutionäres Hybrid-Config-System. Endlich: AUTO_REBOOT funktioniert!</description>
+      <category>release</category>
+      <category>linux</category>
+      <category>automation</category>
+      <category>update-script</category>
+    </item>
     <item>
       <title>Neu: Blog per RSS abonnieren - So bleibst du auf dem Laufenden</title>
       <link>https://muggelbude.it/blog/posts/2025-12-31-rss-feed-verfuegbar.html</link>
