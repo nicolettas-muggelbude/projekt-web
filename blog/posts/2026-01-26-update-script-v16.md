@@ -264,8 +264,8 @@ sudo ./install.sh
 ### Erste Installation:
 
 ```bash
-git clone https://github.com/nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux.git
-cd Automatisiertes-Update-Script-fuer-Linux
+git clone https://github.com/nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux.git linux-update-script
+cd linux-update-script
 sudo ./install.sh
 ```
 
