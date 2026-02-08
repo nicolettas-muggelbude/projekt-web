@@ -1,6 +1,19 @@
 {
   "posts": [
     {
+      "slug": "2026-02-08-myapps-v024",
+      "title": "MyApps v0.2.4 - Endlich schnell! Das Performance-Update",
+      "date": "2026-02-08",
+      "author": "Nicoletta",
+      "tags": [
+        "release",
+        "linux",
+        "myapps",
+        "performance"
+      ],
+      "excerpt": "Kennst du das? Du klickst auf 'Nächste Seite' und... wartest. Und wartest. Mit v0.2.4 ist Schluss damit - MyApps ist jetzt bis zu 100x schneller!"
+    },
+    {
       "slug": "2026-02-07-myapps-v023",
       "title": "MyApps v0.2.3 - Dein Überblick über installierte Linux-Apps",
       "date": "2026-02-07",
@@ -12,19 +25,6 @@
         "gtk4"
       ],
       "excerpt": "MyApps zeigt dir auf einen Blick, welche Anwendungen auf deinem Linux-System installiert sind - ohne System-Clutter. Version 0.2.3 behebt wichtige Bugs für OBS- und AUR-Installationen."
-    },
-    {
-      "slug": "2026-02-07-myapps-v024",
-      "title": "MyApps v0.2.4 - Endlich schnell! Das Performance-Update",
-      "date": "2026-02-07",
-      "author": "Nicoletta",
-      "tags": [
-        "release",
-        "linux",
-        "myapps",
-        "performance"
-      ],
-      "excerpt": "Kennst du das? Du klickst auf 'Nächste Seite' und... wartest. Und wartest. Mit v0.2.4 ist Schluss damit - MyApps ist jetzt bis zu 100x schneller!"
     },
     {
       "slug": "2026-01-26-update-script-v16",
