@@ -5,8 +5,20 @@
     <link>https://muggelbude.it/</link>
     <description>Portfolio &amp; Blog von Nicoletta - Linux, Automation, Entwicklung</description>
     <language>de</language>
-    <lastBuildDate>Sun, 08 Feb 2026 01:11:39 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Feb 2026 01:11:56 GMT</lastBuildDate>
     <atom:link href="https://muggelbude.it/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>MyApps v0.2.4 - Endlich schnell! Das Performance-Update</title>
+      <link>https://muggelbude.it/blog/posts/2026-02-08-myapps-v024.html</link>
+      <guid>https://muggelbude.it/blog/posts/2026-02-08-myapps-v024.html</guid>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 GMT</pubDate>
+      <author>noreply@muggelbude.it (Nicoletta)</author>
+      <description>Kennst du das? Du klickst auf &apos;Nächste Seite&apos; und... wartest. Und wartest. Mit v0.2.4 ist Schluss damit - MyApps ist jetzt bis zu 100x schneller!</description>
+      <category>release</category>
+      <category>linux</category>
+      <category>myapps</category>
+      <category>performance</category>
+    </item>
     <item>
       <title>MyApps v0.2.3 - Dein Überblick über installierte Linux-Apps</title>
       <link>https://muggelbude.it/blog/posts/2026-02-07-myapps-v023.html</link>
@@ -18,18 +30,6 @@
       <category>linux</category>
       <category>myapps</category>
       <category>gtk4</category>
-    </item>
-    <item>
-      <title>MyApps v0.2.4 - Endlich schnell! Das Performance-Update</title>
-      <link>https://muggelbude.it/blog/posts/2026-02-07-myapps-v024.html</link>
-      <guid>https://muggelbude.it/blog/posts/2026-02-07-myapps-v024.html</guid>
-      <pubDate>Sat, 07 Feb 2026 00:00:00 GMT</pubDate>
-      <author>noreply@muggelbude.it (Nicoletta)</author>
-      <description>Kennst du das? Du klickst auf &apos;Nächste Seite&apos; und... wartest. Und wartest. Mit v0.2.4 ist Schluss damit - MyApps ist jetzt bis zu 100x schneller!</description>
-      <category>release</category>
-      <category>linux</category>
-      <category>myapps</category>
-      <category>performance</category>
     </item>
     <item>
       <title>Automatisiertes Linux-Update-Script v1.6.0 &amp; v1.6.1 - Sicherer, smarter, benutzerfreundlicher</title>

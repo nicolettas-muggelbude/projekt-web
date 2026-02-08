@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kennst du das? Du klickst auf 'Nächste Seite' und... wartest. Und wartest. Mit v0.2.4 ist Schluss damit - MyApps ist jetzt bis zu 100x schneller!">
+    <meta name="author" content="Nicoletta">
+    <title>MyApps v0.2.4 - Endlich schnell! Das Performance-Update | Blog</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://muggelbude.it/blog/posts/2026-02-08-myapps-v024.html">
+    <meta property="og:title" content="MyApps v0.2.4 - Endlich schnell! Das Performance-Update">
+    <meta property="og:description" content="Kennst du das? Du klickst auf 'Nächste Seite' und... wartest. Und wartest. Mit v0.2.4 ist Schluss damit - MyApps ist jetzt bis zu 100x schneller!">
+    <meta property="og:image" content="https://muggelbude.it/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Nicolettas-Muggelbude">
+    <meta property="article:published_time" content="2026-02-08">
+    <meta property="article:author" content="Nicoletta">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://muggelbude.it/blog/posts/2026-02-08-myapps-v024.html">
+    <meta name="twitter:title" content="MyApps v0.2.4 - Endlich schnell! Das Performance-Update">
+    <meta name="twitter:description" content="Kennst du das? Du klickst auf 'Nächste Seite' und... wartest. Und wartest. Mit v0.2.4 ist Schluss damit - MyApps ist jetzt bis zu 100x schneller!">
+    <meta name="twitter:image" content="https://muggelbude.it/images/og-image.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://muggelbude.it/blog/posts/2026-02-08-myapps-v024.html">
+
+    <link rel="stylesheet" href="../../css/styles.css">
+
+    <!-- Theme Setup (verhindert Flackern) -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') ||
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
+    <!-- Strukturierte Daten (JSON-LD) für SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "MyApps v0.2.4 - Endlich schnell! Das Performance-Update",
+        "description": "Kennst du das? Du klickst auf 'Nächste Seite' und... wartest. Und wartest. Mit v0.2.4 ist Schluss damit - MyApps ist jetzt bis zu 100x schneller!",
+        "author": {
+            "@type": "Person",
+            "name": "Nicoletta",
+            "url": "https://github.com/nicolettas-muggelbude"
+        },
+        "datePublished": "2026-02-08",
+        "dateModified": "2026-02-08",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Nicolettas-Muggelbude",
+            "url": "https://muggelbude.it"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://muggelbude.it/blog/posts/2026-02-08-myapps-v024.html"
+        },
+        "inLanguage": "de"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nicolettas-Muggelbude</h1>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <a href="../../index.html#projekte">Projekte</a>
+                <a href="../../index.html#blog">Blog</a>
+                <a href="https://github.com/nicolettas-muggelbude" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-overlay"></div>
+
+    <main>
+        <article class="blog-post-full">
+            <header class="post-header">
+                <h1>MyApps v0.2.4 - Endlich schnell! Das Performance-Update</h1>
+                <div class="post-meta">
+                    <time datetime="2026-02-08">8. Februar 2026</time>
+                    <span>von Nicoletta</span>
+                </div>
+                <div class="post-tags"><span class="tag">release</span><span class="tag">linux</span><span class="tag">myapps</span><span class="tag">performance</span></div>
+            </header>
+
+            <!-- Zurück-Button oben (nur Desktop) -->
+            <div class="post-nav-top">
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-between;">
+                    <a href="../../index.html#blog" class="btn">← Zurück zum Blog</a>
+                    <a href="../../feed.xml" class="btn" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        📡 Blog abonnieren (RSS)
+                    </a>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h1>MyApps v0.2.4 - Wenn aus Schnecke plötzlich Rakete wird ⚡</h1>
+<p><strong>27. Januar 2026</strong></p>
+<p>Kennst du das Gefühl, wenn eine App einfach <strong>zäh</strong> ist? Du klickst auf &quot;Nächste Seite&quot; und die App denkt erst mal nach. Bei 400 installierten Apps wurde MyApps genau so - träge und langsam.</p>
+<p><strong>Das hat sich jetzt geändert.</strong></p>
+<hr>
+<h2>Was macht ein Performance-Update?</h2>
+<p>Version 0.2.4 bringt keine bunten neuen Features. Stattdessen haben wir unter die Haube geschaut und <strong>drei gravierende Performance-Probleme</strong> behoben, die MyApps bei vielen installierten Apps ausgebremst haben.</p>
+<p><strong>Das Ergebnis?</strong> Seitenwechsel sind jetzt <strong>bis zu 100x schneller</strong>. Kein Witz.</p>
+<hr>
+<h2>Die drei großen Verbesserungen</h2>
+<p><strong>1. Icons werden gecacht</strong></p>
+<p>Früher: Jeder Seitenwechsel = 100 Icons neu laden. Bei 4 Seiten wurde das gleiche Icon 400x geladen. 🤦</p>
+<p>Jetzt: Icons werden einmal geladen und gecacht. Fertig.</p>
+<p><strong>2. Smarte Sortierung</strong></p>
+<p>Früher: Jeder Klick auf &quot;Nächste Seite&quot; sortierte alle Apps neu.</p>
+<p>Jetzt: Sortierung passiert einmal nach der Suche. Danach bleibt&#39;s sortiert.</p>
+<p><strong>3. Memory Leak behoben</strong></p>
+<p>Früher: Je länger du MyApps benutzt hast, desto langsamer wurde es.</p>
+<p>Jetzt: Speicher bleibt stabil, egal wie oft du zwischen Seiten wechselst.</p>
+<hr>
+<h2>Was heißt das für dich?</h2>
+<p>Wenn du <strong>wenige Apps</strong> installiert hast (~50-100), wirst du kaum einen Unterschied merken. MyApps war schon schnell.</p>
+<p>Wenn du aber ein <strong>App-Sammler</strong> bist (400+ Apps), ist v0.2.4 ein Game-Changer:</p>
+<ul>
+<li>App-Start: 3 Sekunden → 1 Sekunde</li>
+<li>Seitenwechsel: Fast instant statt spürbar träge</li>
+<li>Kein Speicher-Aufblasen mehr nach längerem Benutzen</li>
+</ul>
+<p><strong>Bonus:</strong> Der Export-Button funktioniert jetzt auch richtig - CSV wird als CSV gespeichert, nicht mehr als TXT. 😅</p>
+<hr>
+<h2>Für wen ist das wichtig?</h2>
+<p>Dieses Update war <strong>Voraussetzung</strong> für die nächste große Version (v0.3.0), die ein &quot;Alle Pakete durchsuchen&quot;-Feature bringt. Das bedeutet: 2000+ Pakete statt nur 400 Apps.</p>
+<p>Ohne diese Performance-Fixes? Unbenutzbar.</p>
+<p>Mit v0.2.4? Bereit für die Zukunft.</p>
+<hr>
+<h2>Update in 10 Sekunden</h2>
+<pre><code class="language-bash"># Debian/Ubuntu/Mint
+sudo apt update &amp;&amp; sudo apt upgrade myapps
+
+# Arch Linux
+yay -Syu myapps
+
+# Fedora
+sudo dnf update myapps
+</code></pre>
+<p>Fertig. Dein MyApps ist jetzt schnell.</p>
+<hr>
+<h2>Was kommt als Nächstes?</h2>
+<p><strong>v0.3.0</strong> bringt einen Such-Scope, mit dem du nicht nur deine Apps, sondern <strong>alle installierten Pakete</strong> durchsuchen kannst. Für die ganz Neugierigen unter uns. 😊</p>
+<p>Langfristig geplant: Desktop Apps View, Größen-Informationen, und irgendwann sogar eine Deinstallations-Funktion.</p>
+<hr>
+<p><strong>MyApps ist Open Source</strong> (GPLv3) und wird von der Community entwickelt. Wenn dir das Projekt hilft, kannst du es <a href="https://www.paypal.com/ncp/payment/UYJ73YNEZ3KHL" target="_blank" rel="noopener noreferrer">hier unterstützen</a>.</p>
+<p><strong>Mehr Infos:</strong> <a href="https://github.com/nicolettas-muggelbude/myapps/releases/tag/v0.2.4" target="_blank" rel="noopener noreferrer">GitHub Release</a> | <a href="https://nicolettas-muggelbude.github.io/myapps/" target="_blank" rel="noopener noreferrer">Projektseite</a></p>
+
+            </div>
+
+            <footer class="post-footer">
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-between;">
+                    <a href="../../index.html#blog" class="btn">← Zurück zum Blog</a>
+                    <a href="../../feed.xml" class="btn" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        📡 Blog abonnieren (RSS)
+                    </a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><a href="contact-card.html" target="_blank">Nicolettas-Visitenkarte</a></p>
+            <p>&copy; 2025 Nicoletta | <a href="https://github.com/nicolettas-muggelbude" target="_blank">GitHub</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="../../js/theme.js"></script>
+    <script type="module" src="../../js/navigation.js"></script>
+</body>
+</html>
