@@ -8,7 +8,7 @@
     <meta name="keywords" content="Portfolio, GitHub, Projekte, Blog, Linux, Automation, Entwicklung">
 
     <!-- Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://api.github.com; base-uri 'none'; form-action 'self'; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://api.github.com; base-uri 'none'; form-action 'self'; frame-ancestors 'none';">
 
     <!-- Referrer Policy -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -67,7 +67,7 @@
         <!-- Projekte Sektion -->
         <section id="projekte">
             <div class="section-header">
-                <img id="owner-avatar" class="owner-avatar" src="" alt="Profile" style="display:none;">
+                <img id="owner-avatar" class="owner-avatar" src="" alt="Profile" class="hidden">
                 <h2>Willkommen auf meiner Projekt-Seite</h2>
             </div>
             <div id="project-grid" class="project-grid">
@@ -77,9 +77,9 @@
 
         <!-- Blog Sektion -->
         <section id="blog">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
-                <h2 style="margin: 0;">Blog</h2>
-                <a href="feed.xml" class="btn" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.6rem 1.2rem;">
+            <div class="section-header">
+                <h2 class="no-margin">Blog</h2>
+                <a href="feed.xml" class="btn inline-flex-btn small-btn">
                     📡 Blog abonnieren (RSS)
                 </a>
             </div>
