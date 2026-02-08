@@ -780,3 +780,38 @@ footer a {
     background: var(--accent);
     color: white;
 }
+/* Utility Classes (ersetzt inline-Styles) */
+.flex-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inline-flex-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.small-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+}
