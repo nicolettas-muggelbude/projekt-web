@@ -121,7 +121,7 @@ class GitHubAPI {
     }
 
     async getRoadmap(repo) {
-        return await this.getFileContent(repo, 'ROADMAP.md');
+        return await this.getFileContent(repo, 'docs/ROADMAP.md');
     }
 
     async getIssueCount(repo) {
