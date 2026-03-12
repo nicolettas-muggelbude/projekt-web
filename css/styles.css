@@ -376,6 +376,11 @@ section h2 {
     flex-shrink: 0;
 }
 
+.project-card .project-icon--logo {
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+}
+
 .project-card .project-icon-emoji {
     width: 48px;
     height: 48px;
