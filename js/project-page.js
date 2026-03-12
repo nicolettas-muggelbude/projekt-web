@@ -260,10 +260,10 @@ class ProjectPage {
             }
 
             const getPlatform = (name) => {
-                if (name.endsWith('.exe'))      return { icon: '🪟', label: 'Windows',        sub: 'Setup-Installer',             order: 1 };
-                if (name.endsWith('.AppImage')) return { icon: '🐧', label: 'Linux',           sub: 'AppImage (portabel)',          order: 2 };
-                if (name.endsWith('.dmg'))      return { icon: '🍎', label: 'macOS',           sub: 'Disk Image',                  order: 3 };
-                if (name === 'install-linux.sh') return { icon: '🔧', label: 'Menü-Integration', sub: 'Starter ins Anwendungsmenü', order: 4, secondary: true };
+                if (name.endsWith('.AppImage')) return { icon: '🐧', label: 'Linux',             sub: 'AppImage (portabel)',          order: 1 };
+                if (name.endsWith('.exe'))      return { icon: '🪟', label: 'Windows',           sub: 'Setup-Installer',             order: 2 };
+                if (name.endsWith('.dmg'))      return { icon: '🍎', label: 'macOS',             sub: 'Disk Image',                  order: 3 };
+                if (name === 'install-linux.sh') return { icon: '🔧', label: 'Linux: Menü-Integration', sub: 'Starter ins Anwendungsmenü', order: 4, secondary: true };
                 return null;
             };
 
@@ -305,7 +305,7 @@ class ProjectPage {
             const secondaryHtml = secondaryButtons ? `
                 <div class="download-secondary">
                     ${secondaryButtons}
-                    <p class="download-secondary-note">Einmalig nach dem Download der AppImage-Datei ausführen – richtet Icon und Starter im Anwendungsmenü ein.</p>
+                    <p class="download-secondary-note">Nur für Linux – einmalig nach dem Download der AppImage-Datei ausführen, um Icon und Starter im Anwendungsmenü einzurichten.</p>
                 </div>` : '';
 
             container.innerHTML = `<div class="download-grid">${mainButtons}</div>${secondaryHtml}`;

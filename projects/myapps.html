@@ -75,6 +75,7 @@
         <!-- Sidebar Navigation -->
         <aside class="project-nav">
             <nav>
+                <a href="#overview">Auf einen Blick</a>
                 <a href="#latest-release">Neueste Version</a>
                 <a href="#readme">README</a>
                 <a href="#screenshots">Screenshots</a>
@@ -87,6 +88,70 @@
 
         <!-- Main Content -->
         <div class="content-wrapper">
+
+            <!-- Auf einen Blick: Journalisten-Prinzip -->
+            <section id="overview" class="journalist-overview">
+                <img src="https://raw.githubusercontent.com/nicolettas-muggelbude/myapps/main/assets/icons/io.github.nicolettas-muggelbude.myapps.svg"
+                     alt="MyApps Logo" class="project-logo">
+                <h2>Auf einen Blick</h2>
+
+                <!-- Was ist es? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📌 Was ist es?</span>
+                    <p>MyApps ist ein <strong>grafisches Tool für Linux</strong>, das alle installierten Anwendungen übersichtlich auflistet und verwaltet – egal ob Flatpak, Snap, AppImage, .deb oder native Pakete. Gebaut mit GTK4 und Libadwaita für ein modernes GNOME-Erlebnis.</p>
+                    <p class="feature-intro">Bereits jetzt möglich:</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">📋 Alle installierten Apps auf einen Blick</div>
+                        <div class="feature-item">🔍 Suche &amp; Filterung nach Name, Typ, Quelle</div>
+                        <div class="feature-item">📦 Flatpak, Snap, AppImage, .deb, native</div>
+                        <div class="feature-item">⚡ Virtual Scrolling – auch bei tausenden Einträgen flüssig</div>
+                        <div class="feature-item">📤 Export als CSV, JSON oder Textliste</div>
+                        <div class="feature-item">🎨 GTK4 + Libadwaita – modernes GNOME-Design</div>
+                        <div class="feature-item">🌍 Mehrsprachig – Deutsch &amp; Englisch</div>
+                        <div class="feature-item">🐧 Multi-Distro – Ubuntu, Fedora, Arch u.v.m.</div>
+                    </div>
+                </div>
+
+                <!-- Wo bekomme ich es? -->
+                <div class="journalist-row journalist-row--download">
+                    <span class="journalist-label">📥 Wo bekomme ich es?</span>
+                    <p>Als <strong>Linux AppImage</strong> – einfach herunterladen und starten, keine Installation nötig.</p>
+                    <div id="download-links">
+                        <p class="loading">Lade Download-Links…</p>
+                    </div>
+                    <a href="https://github.com/nicolettas-muggelbude/myapps/releases" target="_blank" class="btn-secondary">Alle Releases auf GitHub →</a>
+                </div>
+
+                <!-- Screenshot -->
+                <div class="journalist-row" id="overview-screenshot-row" style="display: none;">
+                    <span class="journalist-label">📸 Einblick</span>
+                    <div id="overview-screenshot"></div>
+                </div>
+
+                <!-- Wie ist die Entwicklung? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📈 Wie ist die Entwicklung?</span>
+                    <p>Aktiv in Entwicklung. Stabile Releases ab v0.3.0 – das Tool ist täglich nutzbar.</p>
+                    <div class="roadmap-mini">
+                        <div class="roadmap-mini-item roadmap-mini-item--done">
+                            <span class="roadmap-mini-version">v0.3.x</span>
+                            <span class="roadmap-mini-title">App-Listing, Suche, Filter, Export</span>
+                            <span class="roadmap-mini-status">✅ aktuell</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v0.4</span>
+                            <span class="roadmap-mini-title">Deinstallation direkt aus der App</span>
+                            <span class="roadmap-mini-status">🔲 geplant</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v1.0</span>
+                            <span class="roadmap-mini-title">Flatpak-Paketierung, GNOME-Extensions-Support</span>
+                            <span class="roadmap-mini-status">🔲 geplant</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
 
             <!-- Latest Release Banner -->
             <section id="latest-release" class="highlight-section">
@@ -178,7 +243,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.2.0/marked.min.js"></script>
+    <script src="../js/marked.min.js"></script>
     <script type="module" src="../js/theme.js"></script>
     <script type="module" src="../js/navigation.js"></script>
     <script type="module" src="../js/project-page.js"></script>
