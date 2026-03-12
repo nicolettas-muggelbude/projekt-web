@@ -119,9 +119,14 @@ class ProjectsManager {
             let releaseHtml = '';
             if (latestRelease) {
                 releaseHtml = `
-                    <span class="version-tag">${latestRelease.tag_name}</span>
-                    <p><strong>Neueste Version:</strong> ${latestRelease.name || latestRelease.tag_name}</p>
+                    <div class="card-release">
+                        <span class="version-tag">${latestRelease.tag_name}</span>
+                        <span class="card-release-name">${latestRelease.name || latestRelease.tag_name}</span>
+                    </div>
+                    <a href="https://github.com/${project.repo}/releases/latest" target="_blank" class="card-release-link">Releases auf GitHub →</a>
                 `;
+            } else {
+                releaseHtml = '<p>Noch kein Release veröffentlicht</p>';
             }
 
             // Icon: Aus /assets/icons/ im Repository
@@ -140,12 +145,21 @@ class ProjectsManager {
                     ${iconHtml}
                     <h3>${project.name}</h3>
                 </div>
-                <p>${project.description || repoInfo.description || 'Keine Beschreibung verfügbar'}</p>
-                ${releaseHtml}
-                <div class="meta">
-                    <span>⭐ ${repoInfo.stargazers_count}</span>
-                    <span>🍴 ${repoInfo.forks_count}</span>
-                    <span>📝 ${repoInfo.open_issues_count} Issues</span>
+                <div class="card-section">
+                    <span class="card-section-label">📌 Was ist es?</span>
+                    <p>${project.description || repoInfo.description || 'Keine Beschreibung verfügbar'}</p>
+                </div>
+                <div class="card-section">
+                    <span class="card-section-label">📥 Wo bekomme ich es?</span>
+                    ${releaseHtml}
+                </div>
+                <div class="card-section">
+                    <span class="card-section-label">📈 Wie ist die Entwicklung?</span>
+                    <div class="meta">
+                        <span>⭐ ${repoInfo.stargazers_count}</span>
+                        <span>🍴 ${repoInfo.forks_count}</span>
+                        <span>📝 ${repoInfo.open_issues_count} Issues</span>
+                    </div>
                 </div>
                 <a href="projects/${project.id}.html" class="btn">Mehr Details →</a>
             `;

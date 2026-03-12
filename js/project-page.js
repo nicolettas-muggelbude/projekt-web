@@ -23,6 +23,7 @@ class ProjectPage {
             await Promise.all([
                 this.loadRepositoryInfo(),
                 this.loadLatestRelease(),
+                this.loadDownloadLinks(),
                 this.loadReadme(),
                 this.loadReleases(),
                 this.loadChangelog(),
@@ -215,6 +216,82 @@ class ProjectPage {
         }
     }
 
+    async loadDownloadLinks() {
+        const container = document.getElementById('download-links');
+        if (!container) return;
+
+        try {
+            let assets = null;
+
+            // Versuche zuerst Cache zu laden
+            try {
+                const projectId = document.querySelector('.project-content')?.dataset.projectId
+                    || this.repo.split('/')[1].toLowerCase();
+                const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
+                if (cacheResponse.ok) {
+                    const cached = await cacheResponse.json();
+                    if (cached.latestRelease?.assets?.length > 0) {
+                        assets = cached.latestRelease.assets.map(a => ({
+                            name: a.name,
+                            browser_download_url: a.url,
+                            size: a.size
+                        }));
+                    }
+                }
+            } catch (_) {}
+
+            // Falls kein Cache, direkt von API laden
+            if (!assets) {
+                const release = await getLatestRelease(this.repo);
+                if (release?.assets) {
+                    const skipExts = ['.sig', '.tar.gz', '.nsis.zip'];
+                    const keepExts = ['.exe', '.AppImage', '.dmg', '.sh'];
+                    assets = release.assets.filter(a =>
+                        keepExts.some(ext => a.name.endsWith(ext)) &&
+                        !skipExts.some(ext => a.name.endsWith(ext)) &&
+                        !/^[A-Za-z]+_amd64\.AppImage$/.test(a.name)
+                    );
+                }
+            }
+
+            if (!assets || assets.length === 0) {
+                container.innerHTML = '';
+                return;
+            }
+
+            const getPlatform = (name) => {
+                if (name.endsWith('.exe')) return { icon: '🪟', label: 'Windows', sub: 'Setup-Installer' };
+                if (name.endsWith('.AppImage')) return { icon: '🐧', label: 'Linux', sub: 'AppImage (portabel)' };
+                if (name === 'install-linux.sh') return { icon: '🐧', label: 'Linux', sub: 'Install-Script' };
+                if (name.endsWith('.dmg')) return { icon: '🍎', label: 'macOS', sub: 'Disk Image' };
+                return null;
+            };
+
+            const sizeMB = (bytes) => bytes > 1024 * 1024
+                ? `${(bytes / 1024 / 1024).toFixed(1)} MB`
+                : bytes > 0 ? `${(bytes / 1024).toFixed(0)} KB` : '';
+
+            const buttons = assets.map(asset => {
+                const info = getPlatform(asset.name);
+                if (!info) return '';
+                const url = asset.browser_download_url || asset.url;
+                const size = sizeMB(asset.size || 0);
+                return `
+                    <a href="${url}" class="download-btn" target="_blank" rel="noopener noreferrer">
+                        <span class="download-btn-icon">${info.icon}</span>
+                        <span class="download-btn-name">${info.label}</span>
+                        <span class="download-btn-sub">${info.sub}</span>
+                        ${size ? `<span class="download-btn-size">${size}</span>` : ''}
+                    </a>`;
+            }).filter(Boolean).join('');
+
+            container.innerHTML = `<div class="download-grid">${buttons}</div>`;
+        } catch (error) {
+            console.error('Fehler beim Laden der Download-Links:', error);
+            container.innerHTML = '';
+        }
+    }
+
     async loadReadme() {
         try {
             const readmeContent = document.querySelector('.readme-content');
@@ -328,6 +405,20 @@ class ProjectPage {
         if (!screenshotGrid || screenshots.length === 0) {
             if (screenshotsSection) screenshotsSection.style.display = 'none';
             return;
+        }
+
+        // Ersten Screenshot in die Übersicht einfügen
+        const overviewRow = document.getElementById('overview-screenshot-row');
+        const overviewSlot = document.getElementById('overview-screenshot');
+        if (overviewRow && overviewSlot && screenshots.length > 0) {
+            const first = screenshots[0];
+            const img = document.createElement('img');
+            img.src = first.src;
+            img.alt = first.alt || 'Screenshot';
+            img.loading = 'lazy';
+            img.addEventListener('click', () => this.openLightbox(0));
+            overviewSlot.appendChild(img);
+            overviewRow.style.display = 'block';
         }
 
         screenshotGrid.innerHTML = '';

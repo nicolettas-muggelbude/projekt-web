@@ -435,6 +435,52 @@ section h2 {
     text-decoration: none;
 }
 
+/* Journalist-Prinzip Karten-Sektionen */
+.card-section {
+    border-top: 1px solid var(--border);
+    padding-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.card-section-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 0.35rem;
+}
+
+.card-section p {
+    margin-bottom: 0.4rem;
+    color: var(--text-secondary);
+}
+
+.card-release {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+    margin-bottom: 0.4rem;
+}
+
+.card-release-name {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.card-release-link {
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.card-release-link:hover {
+    text-decoration: underline;
+}
+
 /* ========================================
    Blog Section
    ======================================== */
