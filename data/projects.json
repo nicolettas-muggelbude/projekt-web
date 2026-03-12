@@ -14,7 +14,8 @@
       "name": "RechnungsFee",
       "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
       "icon": "",
-      "featured": true
+      "featured": true,
+      "customPage": true
     },
     {
       "id": "update-script",

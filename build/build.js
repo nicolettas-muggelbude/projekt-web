@@ -203,6 +203,12 @@ async function buildProjectCache(project) {
 
 // Projekt-HTML-Seite generieren
 async function generateProjectPage(project) {
+    // Manuell gepflegte Seiten nicht überschreiben
+    if (project.customPage) {
+        log(`\n⏭️  Überspringe ${project.name} (customPage = true)`, 'yellow');
+        return;
+    }
+
     log(`\n🔨 Generiere HTML-Seite für: ${project.name}`, 'blue');
 
     try {
