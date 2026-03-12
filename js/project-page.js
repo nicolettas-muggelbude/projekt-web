@@ -260,10 +260,10 @@ class ProjectPage {
             }
 
             const getPlatform = (name) => {
-                if (name.endsWith('.exe')) return { icon: '🪟', label: 'Windows', sub: 'Setup-Installer' };
-                if (name.endsWith('.AppImage')) return { icon: '🐧', label: 'Linux', sub: 'AppImage (portabel)' };
-                if (name === 'install-linux.sh') return { icon: '🐧', label: 'Linux', sub: 'Install-Script' };
-                if (name.endsWith('.dmg')) return { icon: '🍎', label: 'macOS', sub: 'Disk Image' };
+                if (name.endsWith('.exe'))      return { icon: '🪟', label: 'Windows',        sub: 'Setup-Installer',             order: 1 };
+                if (name.endsWith('.AppImage')) return { icon: '🐧', label: 'Linux',           sub: 'AppImage (portabel)',          order: 2 };
+                if (name.endsWith('.dmg'))      return { icon: '🍎', label: 'macOS',           sub: 'Disk Image',                  order: 3 };
+                if (name === 'install-linux.sh') return { icon: '🔧', label: 'Menü-Integration', sub: 'Starter ins Anwendungsmenü', order: 4, secondary: true };
                 return null;
             };
 
@@ -271,21 +271,44 @@ class ProjectPage {
                 ? `${(bytes / 1024 / 1024).toFixed(1)} MB`
                 : bytes > 0 ? `${(bytes / 1024).toFixed(0)} KB` : '';
 
-            const buttons = assets.map(asset => {
-                const info = getPlatform(asset.name);
-                if (!info) return '';
-                const url = asset.browser_download_url || asset.url;
-                const size = sizeMB(asset.size || 0);
-                return `
+            const mapped = assets
+                .map(asset => ({ asset, info: getPlatform(asset.name) }))
+                .filter(({ info }) => info)
+                .sort((a, b) => a.info.order - b.info.order);
+
+            const mainButtons = mapped
+                .filter(({ info }) => !info.secondary)
+                .map(({ asset, info }) => {
+                    const url = asset.browser_download_url || asset.url;
+                    const size = sizeMB(asset.size || 0);
+                    return `
                     <a href="${url}" class="download-btn" target="_blank" rel="noopener noreferrer">
                         <span class="download-btn-icon">${info.icon}</span>
                         <span class="download-btn-name">${info.label}</span>
                         <span class="download-btn-sub">${info.sub}</span>
                         ${size ? `<span class="download-btn-size">${size}</span>` : ''}
                     </a>`;
-            }).filter(Boolean).join('');
+                }).join('');
 
-            container.innerHTML = `<div class="download-grid">${buttons}</div>`;
+            const secondaryButtons = mapped
+                .filter(({ info }) => info.secondary)
+                .map(({ asset, info }) => {
+                    const url = asset.browser_download_url || asset.url;
+                    return `
+                    <a href="${url}" class="download-btn download-btn--secondary" target="_blank" rel="noopener noreferrer">
+                        <span class="download-btn-icon">${info.icon}</span>
+                        <span class="download-btn-name">${info.label}</span>
+                        <span class="download-btn-sub">${info.sub}</span>
+                    </a>`;
+                }).join('');
+
+            const secondaryHtml = secondaryButtons ? `
+                <div class="download-secondary">
+                    ${secondaryButtons}
+                    <p class="download-secondary-note">Einmalig nach dem Download der AppImage-Datei ausführen – richtet Icon und Starter im Anwendungsmenü ein.</p>
+                </div>` : '';
+
+            container.innerHTML = `<div class="download-grid">${mainButtons}</div>${secondaryHtml}`;
         } catch (error) {
             console.error('Fehler beim Laden der Download-Links:', error);
             container.innerHTML = '';
