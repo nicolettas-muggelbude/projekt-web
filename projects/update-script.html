@@ -75,6 +75,7 @@
         <!-- Sidebar Navigation -->
         <aside class="project-nav">
             <nav>
+                <a href="#overview">Auf einen Blick</a>
                 <a href="#latest-release">Neueste Version</a>
                 <a href="#readme">README</a>
                 <a href="#screenshots">Screenshots</a>
@@ -87,6 +88,70 @@
 
         <!-- Main Content -->
         <div class="content-wrapper">
+
+            <!-- Auf einen Blick: Journalisten-Prinzip -->
+            <section id="overview" class="journalist-overview">
+                <h2>Auf einen Blick</h2>
+
+                <!-- Was ist es? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📌 Was ist es?</span>
+                    <p>Ein <strong>Bash-Script für Linux</strong>, das System-Updates automatisiert – für alle gängigen Distributionen. Mit optionaler E-Mail-Benachrichtigung, detailliertem Logging und Dry-Run-Modus. Einfach einrichten, per Cron automatisch laufen lassen.</p>
+                    <p class="feature-intro">Bereits jetzt möglich:</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">🔄 Automatisches Update &amp; Upgrade</div>
+                        <div class="feature-item">🐧 Multi-Distro: Debian, Ubuntu, Fedora, Arch, openSUSE u.v.m.</div>
+                        <div class="feature-item">📦 apt, dnf, yum, pacman, zypper, emerge</div>
+                        <div class="feature-item">📧 E-Mail-Benachrichtigung nach Update</div>
+                        <div class="feature-item">📋 Detailliertes Log-File</div>
+                        <div class="feature-item">🧪 Dry-Run-Modus – simuliert ohne zu installieren</div>
+                        <div class="feature-item">⏰ Cron-Integration – vollautomatisch planbar</div>
+                        <div class="feature-item">🌍 Mehrsprachig – Deutsch &amp; Englisch</div>
+                        <div class="feature-item">🔧 Konfigurierbar über Config-Datei</div>
+                        <div class="feature-item">🛡️ Sicherheitsupdates bevorzugt behandelbar</div>
+                    </div>
+                </div>
+
+                <!-- Wo bekomme ich es? -->
+                <div class="journalist-row journalist-row--download">
+                    <span class="journalist-label">📥 Wo bekomme ich es?</span>
+                    <p>Das Script wird direkt als <strong>Shell-Script</strong> heruntergeladen – kein Installer nötig.</p>
+                    <div id="download-links">
+                        <p class="loading">Lade Download-Links…</p>
+                    </div>
+                    <a href="https://github.com/nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux/releases" target="_blank" class="btn-secondary">Alle Releases auf GitHub →</a>
+                </div>
+
+                <!-- Screenshot -->
+                <div class="journalist-row" id="overview-screenshot-row" style="display: none;">
+                    <span class="journalist-label">📸 Einblick</span>
+                    <div id="overview-screenshot"></div>
+                </div>
+
+                <!-- Wie ist die Entwicklung? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📈 Wie ist die Entwicklung?</span>
+                    <p>Stabil und produktionsreif seit v1.0. Aktuell bei v1.6.1 – regelmäßige Bugfixes und Distro-Erweiterungen.</p>
+                    <div class="roadmap-mini">
+                        <div class="roadmap-mini-item roadmap-mini-item--done">
+                            <span class="roadmap-mini-version">v1.6.x</span>
+                            <span class="roadmap-mini-title">Multi-Distro, E-Mail, Logging, Dry-Run</span>
+                            <span class="roadmap-mini-status">✅ aktuell</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v1.7</span>
+                            <span class="roadmap-mini-title">Weitere Paketmanager &amp; Distros</span>
+                            <span class="roadmap-mini-status">🔲 geplant</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v2.0</span>
+                            <span class="roadmap-mini-title">Interaktives Setup-Wizard</span>
+                            <span class="roadmap-mini-status">🔲 geplant</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
 
             <!-- Latest Release Banner -->
             <section id="latest-release" class="highlight-section">
@@ -178,7 +243,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.2.0/marked.min.js"></script>
+    <script src="../js/marked.min.js"></script>
     <script type="module" src="../js/theme.js"></script>
     <script type="module" src="../js/navigation.js"></script>
     <script type="module" src="../js/project-page.js"></script>

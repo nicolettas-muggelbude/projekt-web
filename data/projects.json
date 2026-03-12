@@ -6,7 +6,8 @@
       "name": "MyApps",
       "description": "Tool zum Auflisten und Verwalten installierter Linux-Anwendungen",
       "icon": "io.github.nicolettas-muggelbude.myapps.svg",
-      "featured": true
+      "featured": true,
+      "customPage": true
     },
     {
       "id": "rechnungsfee",
@@ -23,7 +24,8 @@
       "name": "Automatisiertes Update-Script fuer Linux",
       "description": "Mehrsprachiges automatisiertes Update & Upgrade-Script fuer verschiedene Linux-Distributionen mit optionaler E-Mail-Benachrichtigung und detailliertem Logging. 🇩🇪 🇬🇧",
       "icon": "",
-      "featured": true
+      "featured": true,
+      "customPage": true
     },
     {
       "id": "scrat-backup",
@@ -31,7 +33,8 @@
       "name": "Scrat-Backup",
       "description": "Scrat-Backup ist ein Open-Source-Backup-Tool für Linux und Windows. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups. 🇩🇪",
       "icon": "scrat.svg",
-      "featured": true
+      "featured": true,
+      "customPage": true
     },
     {
       "id": "mountrix",
@@ -39,7 +42,8 @@
       "name": "Mountrix",
       "description": "Benutzerfreundliches Mounten von Netzlaufwerken und lokalen Laufwerken unter Linux",
       "icon": "mountrix-icon.svg",
-      "featured": true
+      "featured": true,
+      "customPage": true
     },
     {
       "id": "tipels",
@@ -47,7 +51,8 @@
       "name": "Tipels",
       "description": "Einfache Einrichtung von Druckern und Scannern unter Linux 🇩🇪 🇬🇧",
       "icon": "tipels-icon.svg",
-      "featured": true
+      "featured": true,
+      "customPage": true
     }
   ]
 }

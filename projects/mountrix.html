@@ -75,6 +75,7 @@
         <!-- Sidebar Navigation -->
         <aside class="project-nav">
             <nav>
+                <a href="#overview">Auf einen Blick</a>
                 <a href="#latest-release">Neueste Version</a>
                 <a href="#readme">README</a>
                 <a href="#screenshots">Screenshots</a>
@@ -87,6 +88,70 @@
 
         <!-- Main Content -->
         <div class="content-wrapper">
+
+            <!-- Auf einen Blick: Journalisten-Prinzip -->
+            <section id="overview" class="journalist-overview">
+                <img src="https://raw.githubusercontent.com/nicolettas-muggelbude/Mountrix/main/assets/icons/mountrix-icon.svg"
+                     alt="Mountrix Logo" class="project-logo">
+                <h2>Auf einen Blick</h2>
+
+                <!-- Was ist es? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📌 Was ist es?</span>
+                    <p>Mountrix ist eine <strong>grafische Anwendung für Linux</strong>, die das Einbinden von Netzlaufwerken und lokalen Laufwerken vereinfacht. Mit vorgefertigten Vorlagen für gängige NAS-Systeme und einer adaptiven Oberfläche (PyQt6/GTK4) ist Mountrix auch für Linux-Einsteiger geeignet.</p>
+                    <p class="feature-intro">Bereits jetzt möglich:</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">🌐 Netzlaufwerke einbinden: SMB/CIFS, NFS, SSHFS, WebDAV</div>
+                        <div class="feature-item">💾 Lokale Laufwerke &amp; Partitionen verwalten</div>
+                        <div class="feature-item">🏠 NAS-Vorlagen: Synology, QNAP, FritzBox u.v.m.</div>
+                        <div class="feature-item">🎨 Adaptive GUI – PyQt6 &amp; GTK4</div>
+                        <div class="feature-item">💾 Verbindungen speichern &amp; wiederverwenden</div>
+                        <div class="feature-item">🔐 Passwort-Integration (Keyring)</div>
+                        <div class="feature-item">⚡ Autostart-Einträge erstellen</div>
+                        <div class="feature-item">🧪 176 Tests – hohe Qualitätssicherung</div>
+                    </div>
+                </div>
+
+                <!-- Wo bekomme ich es? -->
+                <div class="journalist-row journalist-row--download">
+                    <span class="journalist-label">📥 Wo bekomme ich es?</span>
+                    <p>Mountrix befindet sich in aktiver Entwicklung. Ein erstes Release wird in Kürze verfügbar sein.</p>
+                    <div id="download-links">
+                        <p class="loading">Lade Download-Links…</p>
+                    </div>
+                    <a href="https://github.com/nicolettas-muggelbude/Mountrix/releases" target="_blank" class="btn-secondary">Alle Releases auf GitHub →</a>
+                </div>
+
+                <!-- Screenshot -->
+                <div class="journalist-row" id="overview-screenshot-row" style="display: none;">
+                    <span class="journalist-label">📸 Einblick</span>
+                    <div id="overview-screenshot"></div>
+                </div>
+
+                <!-- Wie ist die Entwicklung? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📈 Wie ist die Entwicklung?</span>
+                    <p>In aktiver Entwicklung mit starker Testabdeckung. Das erste öffentliche Release steht kurz bevor.</p>
+                    <div class="roadmap-mini">
+                        <div class="roadmap-mini-item roadmap-mini-item--done">
+                            <span class="roadmap-mini-version">Dev</span>
+                            <span class="roadmap-mini-title">SMB/NFS/SSHFS, NAS-Vorlagen, GUI, 176 Tests</span>
+                            <span class="roadmap-mini-status">✅ aktuell</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v0.1</span>
+                            <span class="roadmap-mini-title">Erstes öffentliches Release</span>
+                            <span class="roadmap-mini-status">🔲 bald</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v1.0</span>
+                            <span class="roadmap-mini-title">Flatpak-Paketierung &amp; GNOME-Integration</span>
+                            <span class="roadmap-mini-status">🔲 geplant</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
 
             <!-- Latest Release Banner -->
             <section id="latest-release" class="highlight-section">
@@ -178,7 +243,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.2.0/marked.min.js"></script>
+    <script src="../js/marked.min.js"></script>
     <script type="module" src="../js/theme.js"></script>
     <script type="module" src="../js/navigation.js"></script>
     <script type="module" src="../js/project-page.js"></script>

@@ -75,6 +75,7 @@
         <!-- Sidebar Navigation -->
         <aside class="project-nav">
             <nav>
+                <a href="#overview">Auf einen Blick</a>
                 <a href="#latest-release">Neueste Version</a>
                 <a href="#readme">README</a>
                 <a href="#screenshots">Screenshots</a>
@@ -87,6 +88,72 @@
 
         <!-- Main Content -->
         <div class="content-wrapper">
+
+            <!-- Auf einen Blick: Journalisten-Prinzip -->
+            <section id="overview" class="journalist-overview">
+                <img src="https://raw.githubusercontent.com/nicolettas-muggelbude/Scrat-Backup/main/assets/icons/scrat.svg"
+                     alt="Scrat-Backup Logo" class="project-logo">
+                <h2>Auf einen Blick</h2>
+
+                <!-- Was ist es? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📌 Was ist es?</span>
+                    <p>Scrat-Backup ist ein <strong>Open-Source-Backup-Tool für Linux und Windows</strong> mit grafischer Oberfläche (PySide6). Wie ein Eichhörnchen seine Eicheln sichert, schützt Scrat-Backup deine Daten – verschlüsselt, komprimiert und zuverlässig auf mehreren Backends.</p>
+                    <p class="feature-intro">Bereits jetzt möglich:</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">🔐 AES-256-GCM Verschlüsselung</div>
+                        <div class="feature-item">📦 Komprimierung (zstd, gzip, bzip2)</div>
+                        <div class="feature-item">💾 5 Backup-Backends: Lokal, SSH/SFTP, S3, WebDAV, Rclone</div>
+                        <div class="feature-item">🖥️ Grafische Oberfläche mit PySide6</div>
+                        <div class="feature-item">🐧 Linux &amp; 🪟 Windows</div>
+                        <div class="feature-item">⏰ Geplante automatische Backups</div>
+                        <div class="feature-item">🔄 Inkrementelle Backups</div>
+                        <div class="feature-item">🔍 Backup-Verifikation &amp; Integrität</div>
+                        <div class="feature-item">📋 Detailliertes Logging</div>
+                        <div class="feature-item">🗂️ Flexible Ausschluss-Regeln</div>
+                    </div>
+                </div>
+
+                <!-- Wo bekomme ich es? -->
+                <div class="journalist-row journalist-row--download">
+                    <span class="journalist-label">📥 Wo bekomme ich es?</span>
+                    <p>Scrat-Backup befindet sich in aktiver Entwicklung. Ein erstes Release wird in Kürze verfügbar sein.</p>
+                    <div id="download-links">
+                        <p class="loading">Lade Download-Links…</p>
+                    </div>
+                    <a href="https://github.com/nicolettas-muggelbude/Scrat-Backup/releases" target="_blank" class="btn-secondary">Alle Releases auf GitHub →</a>
+                </div>
+
+                <!-- Screenshot -->
+                <div class="journalist-row" id="overview-screenshot-row" style="display: none;">
+                    <span class="journalist-label">📸 Einblick</span>
+                    <div id="overview-screenshot"></div>
+                </div>
+
+                <!-- Wie ist die Entwicklung? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📈 Wie ist die Entwicklung?</span>
+                    <p>In aktiver Beta-Entwicklung. Kern-Funktionen (Verschlüsselung, Backends, GUI) sind implementiert.</p>
+                    <div class="roadmap-mini">
+                        <div class="roadmap-mini-item roadmap-mini-item--done">
+                            <span class="roadmap-mini-version">Beta</span>
+                            <span class="roadmap-mini-title">AES-256, 5 Backends, PySide6 GUI</span>
+                            <span class="roadmap-mini-status">✅ aktuell</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v0.1</span>
+                            <span class="roadmap-mini-title">Erstes öffentliches Release</span>
+                            <span class="roadmap-mini-status">🔲 bald</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v1.0</span>
+                            <span class="roadmap-mini-title">Stabiles Release mit Installer</span>
+                            <span class="roadmap-mini-status">🔲 geplant</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
 
             <!-- Latest Release Banner -->
             <section id="latest-release" class="highlight-section">
@@ -178,7 +245,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.2.0/marked.min.js"></script>
+    <script src="../js/marked.min.js"></script>
     <script type="module" src="../js/theme.js"></script>
     <script type="module" src="../js/navigation.js"></script>
     <script type="module" src="../js/project-page.js"></script>
