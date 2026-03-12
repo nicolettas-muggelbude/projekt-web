@@ -123,10 +123,7 @@ class ProjectsManager {
                         <span class="version-tag">${latestRelease.tag_name}</span>
                         <span class="card-release-name">${latestRelease.name || latestRelease.tag_name}</span>
                     </div>
-                    <a href="https://github.com/${project.repo}/releases/latest" target="_blank" class="card-release-link">Releases auf GitHub →</a>
                 `;
-            } else {
-                releaseHtml = '<p>Noch kein Release veröffentlicht</p>';
             }
 
             // Icon: Aus /assets/icons/ im Repository
@@ -150,7 +147,6 @@ class ProjectsManager {
                     <p>${project.description || repoInfo.description || 'Keine Beschreibung verfügbar'}</p>
                 </div>
                 <div class="card-section">
-                    <span class="card-section-label">📥 Wo bekomme ich es?</span>
                     ${releaseHtml}
                 </div>
                 <div class="card-section">
