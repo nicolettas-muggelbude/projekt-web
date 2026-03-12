@@ -15,6 +15,7 @@
       "name": "RechnungsFee",
       "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
       "icon": "",
+      "logoUrl": "https://raw.githubusercontent.com/nicolettas-muggelbude/RechnungsFee/main/src/frontend/public/logo.svg",
       "featured": true,
       "customPage": true
     },
