@@ -81,14 +81,29 @@ async function buildProjectCache(project) {
         log('  ⬇️  Lade neuestes Release...');
         const latestRelease = await githubFetch(`${GITHUB_API}/repos/${project.repo}/releases/latest`);
         if (latestRelease) {
+            const skipExts = ['.sig', '.tar.gz', '.nsis.zip'];
+            const keepExts = ['.exe', '.AppImage', '.dmg', '.sh'];
             cache.latestRelease = {
                 tagName: latestRelease.tag_name,
                 name: latestRelease.name,
                 body: latestRelease.body,
                 publishedAt: latestRelease.published_at,
-                htmlUrl: latestRelease.html_url
+                htmlUrl: latestRelease.html_url,
+                assets: (latestRelease.assets || [])
+                    .filter(a =>
+                        keepExts.some(ext => a.name.endsWith(ext)) &&
+                        !skipExts.some(ext => a.name.endsWith(ext))
+                    )
+                    .reduce((acc, a) => {
+                        // Versionierten AppImage bevorzugen, unversionierten überspringen
+                        const isUnversionedAppImage = a.name.endsWith('.AppImage') && !/\d+\.\d+/.test(a.name);
+                        if (!isUnversionedAppImage) {
+                            acc.push({ name: a.name, url: a.browser_download_url, size: a.size });
+                        }
+                        return acc;
+                    }, [])
             };
-            log(`  ✓ Version: ${latestRelease.tag_name}`, 'green');
+            log(`  ✓ Version: ${latestRelease.tag_name} (${cache.latestRelease.assets.length} Assets)`, 'green');
         } else {
             log('  ⚠ Kein Release gefunden', 'yellow');
         }

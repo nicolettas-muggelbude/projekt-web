@@ -75,6 +75,7 @@
         <!-- Sidebar Navigation -->
         <aside class="project-nav">
             <nav>
+                <a href="#overview">Auf einen Blick</a>
                 <a href="#latest-release">Neueste Version</a>
                 <a href="#readme">README</a>
                 <a href="#screenshots">Screenshots</a>
@@ -87,6 +88,80 @@
 
         <!-- Main Content -->
         <div class="content-wrapper">
+
+            <!-- Auf einen Blick: Journalisten-Prinzip -->
+            <section id="overview" class="journalist-overview">
+                <h2>Auf einen Blick</h2>
+
+                <!-- Was ist es? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📌 Was ist es?</span>
+                    <p>RechnungsFee ist eine plattformunabhängige, <strong>offline-first Buchhaltungssoftware</strong> für Freiberufler, Selbstständige und Kleinunternehmer. Alle Daten bleiben lokal auf deinem Rechner – kein Cloud-Zwang, keine Abos, kein Datenschutzrisiko.</p>
+                    <p class="feature-intro">Bereits jetzt möglich:</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">📒 GoBD-konformes Kassenbuch</div>
+                        <div class="feature-item">🔢 Automatische Belegnummern</div>
+                        <div class="feature-item">💶 USt-Berechnung (§19 UStG automatisch)</div>
+                        <div class="feature-item">📅 Tagesabschluss mit Soll/Ist-Vergleich</div>
+                        <div class="feature-item">👤 Kunden- &amp; Lieferantenverwaltung</div>
+                        <div class="feature-item">📊 Dashboard mit Monatsstatistik</div>
+                        <div class="feature-item">🗂️ 31 Kategorien (SKR03/04/49, EÜR)</div>
+                        <div class="feature-item">🪙 Offene Ladenkasse – retrograde Tageseinnahmen</div>
+                        <div class="feature-item">📦 Artikelstamm – Produkte &amp; Dienstleistungen</div>
+                        <div class="feature-item">🔒 100% offline – keine Cloud, kein Abo</div>
+                    </div>
+                </div>
+
+                <!-- Wo bekomme ich es? -->
+                <div class="journalist-row journalist-row--download">
+                    <span class="journalist-label">📥 Wo bekomme ich es?</span>
+                    <p>Installatoren für <strong>Windows</strong> und <strong>Linux</strong> stehen direkt zum Download bereit.</p>
+                    <div id="download-links">
+                        <p class="loading">Lade Download-Links…</p>
+                    </div>
+                    <a href="https://github.com/nicolettas-muggelbude/RechnungsFee/releases" target="_blank" class="btn-secondary">Alle Releases auf GitHub →</a>
+                </div>
+
+                <!-- Screenshot -->
+                <div class="journalist-row" id="overview-screenshot-row" style="display: none;">
+                    <span class="journalist-label">📸 Einblick</span>
+                    <div id="overview-screenshot"></div>
+                </div>
+
+                <!-- Wie ist die Entwicklung? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📈 Wie ist die Entwicklung?</span>
+                    <p>Aktiv in Entwicklung seit Februar 2026. Die Software wächst schrittweise – jedes Release fügt einen vollständigen Funktionsbereich hinzu.</p>
+                    <div class="roadmap-mini">
+                        <div class="roadmap-mini-item roadmap-mini-item--done">
+                            <span class="roadmap-mini-version">v0.1</span>
+                            <span class="roadmap-mini-title">GoBD-konformes Kassenbuch</span>
+                            <span class="roadmap-mini-status">✅ Feb 2026</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v0.2</span>
+                            <span class="roadmap-mini-title">Bank-CSV Import (Postbank, Sparkasse …)</span>
+                            <span class="roadmap-mini-status">🔲 Jun 2026</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v0.3</span>
+                            <span class="roadmap-mini-title">EÜR, UStVA, DATEV-Export</span>
+                            <span class="roadmap-mini-status">🔲 Aug 2026</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v1.0</span>
+                            <span class="roadmap-mini-title">Tauri-Installer, Backup, Dokumentation</span>
+                            <span class="roadmap-mini-status">🔲 Okt 2026</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v1.1</span>
+                            <span class="roadmap-mini-title">Rechnungsmodul, ZUGFeRD</span>
+                            <span class="roadmap-mini-status">🔲 Dez 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
 
             <!-- Latest Release Banner -->
             <section id="latest-release" class="highlight-section">
