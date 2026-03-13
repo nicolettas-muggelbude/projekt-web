@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "slug": "2026-03-13-update-script-v170",
+      "title": "Automatisiertes Linux-Update-Script v1.7.0 - Hooks & Automation",
+      "date": "2026-03-13",
+      "author": "Nicoletta",
+      "tags": [
+        "release",
+        "linux",
+        "automation",
+        "update-script",
+        "hooks"
+      ],
+      "excerpt": "v1.7.0 bringt ein vollständiges Hooks-System: Eigene Skripte vor und nach dem Update ausführen – automatisch, konfigurierbar."
+    },
+    {
       "slug": "2026-02-08-myapps-v024",
       "title": "MyApps v0.2.4 - Endlich schnell! Das Performance-Update",
       "date": "2026-02-08",
