@@ -5,8 +5,21 @@
     <link>https://muggelbude.it/</link>
     <description>Portfolio &amp; Blog von Nicoletta - Linux, Automation, Entwicklung</description>
     <language>de</language>
-    <lastBuildDate>Fri, 13 Mar 2026 06:41:53 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2026 07:52:25 GMT</lastBuildDate>
     <atom:link href="https://muggelbude.it/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Automatisiertes Linux-Update-Script v1.7.0 - Hooks &amp; Automation</title>
+      <link>https://muggelbude.it/blog/posts/2026-03-13-update-script-v170.html</link>
+      <guid>https://muggelbude.it/blog/posts/2026-03-13-update-script-v170.html</guid>
+      <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
+      <author>noreply@muggelbude.it (Nicoletta)</author>
+      <description>v1.7.0 bringt ein vollständiges Hooks-System: Eigene Skripte vor und nach dem Update ausführen – automatisch, konfigurierbar.</description>
+      <category>release</category>
+      <category>linux</category>
+      <category>automation</category>
+      <category>update-script</category>
+      <category>hooks</category>
+    </item>
     <item>
       <title>MyApps v0.2.4 - Endlich schnell! Das Performance-Update</title>
       <link>https://muggelbude.it/blog/posts/2026-02-08-myapps-v024.html</link>
