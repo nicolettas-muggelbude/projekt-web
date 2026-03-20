@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alle Blog-Beiträge von Nicolettas-Muggelbude - Linux, Automation, Entwicklung">
+    <meta name="author" content="Nicoletta">
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://api.github.com; object-src 'none'; media-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none';">
+
+    <!-- Referrer Policy -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Blog | Nicolettas-Muggelbude</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://muggelbude.it/blog.html">
+    <meta property="og:title" content="Blog | Nicolettas-Muggelbude">
+    <meta property="og:description" content="Alle Blog-Beiträge von Nicolettas-Muggelbude - Linux, Automation, Entwicklung">
+    <meta property="og:image" content="https://muggelbude.it/images/og-image.png">
+    <meta property="og:site_name" content="Nicolettas-Muggelbude">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://muggelbude.it/blog.html">
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Nicolettas-Muggelbude Blog" href="https://muggelbude.it/feed.xml">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/theme.js"></script>
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nicolettas-Muggelbude</h1>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <a href="index.html#projekte">Projekte</a>
+                <a href="index.html#blog">Blog</a>
+                <a href="https://github.com/nicolettas-muggelbude" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="nav-overlay"></div>
+
+    <main>
+        <section id="blog">
+            <div class="section-header">
+                <h2 class="no-margin">Alle Blog-Beiträge</h2>
+                <a href="feed.xml" class="btn inline-flex-btn small-btn">
+                    Blog abonnieren (RSS)
+                </a>
+            </div>
+            <div id="blog-posts" class="blog-posts">
+                <p class="loading">Lade Blog-Posts...</p>
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-md);">
+                <a href="index.html#blog" class="btn">← Zurück zur Startseite</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><a href="contact-card.html" target="_blank">Nicolettas-Visitenkarte</a></p>
+            <p>&copy; 2025 Nicoletta | <a href="https://github.com/nicolettas-muggelbude" target="_blank">GitHub</a> | <a href="sitemap.html">Sitemap</a></p>
+            <p>Automatisch aktualisiert via GitHub API</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/theme.js"></script>
+    <script type="module" src="js/navigation.js"></script>
+    <script type="module">
+        async function loadAllPosts() {
+            const container = document.getElementById('blog-posts');
+            try {
+                const response = await fetch('blog/blog-index.json');
+                if (!response.ok) throw new Error('blog-index.json nicht gefunden');
+                const data = await response.json();
+
+                const posts = data.posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                if (posts.length === 0) {
+                    container.innerHTML = '<p>Noch keine Blog-Posts vorhanden.</p>';
+                    return;
+                }
+
+                container.innerHTML = '';
+                posts.forEach(post => {
+                    const date = new Date(post.date);
+                    const formattedDate = date.toLocaleDateString('de-DE', {
+                        year: 'numeric', month: 'long', day: 'numeric'
+                    });
+                    const tagsHtml = post.tags && post.tags.length > 0
+                        ? `<div class="post-tags">${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`
+                        : '';
+
+                    const article = document.createElement('article');
+                    article.className = 'blog-post';
+                    article.innerHTML = `
+                        <h3><a href="blog/posts/${post.slug}.html">${post.title}</a></h3>
+                        <div class="post-meta">
+                            <time datetime="${post.date}">${formattedDate}</time>
+                            ${post.author ? `<span>von ${post.author}</span>` : ''}
+                        </div>
+                        ${post.excerpt ? `<p class="excerpt">${post.excerpt}</p>` : ''}
+                        ${tagsHtml}
+                        <a href="blog/posts/${post.slug}.html" class="read-more">Weiterlesen &rarr;</a>
+                    `;
+                    container.appendChild(article);
+                });
+            } catch (error) {
+                container.innerHTML = '<p class="error">Blog-Posts konnten nicht geladen werden.</p>';
+                console.error(error);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadAllPosts);
+        } else {
+            loadAllPosts();
+        }
+    </script>
+</body>
+</html>
