@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kostenloser, werbefreier QR-Code-Generator als Desktop-App für Linux und Windows">
+    <meta name="author" content="Nicoletta">
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://api.github.com; object-src 'none'; media-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none';">
+
+    <!-- Referrer Policy -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Quark | Meine Projekte</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://muggelbude.it/projects/quark.html">
+    <meta property="og:title" content="Quark | Meine Projekte">
+    <meta property="og:description" content="Kostenloser, werbefreier QR-Code-Generator als Desktop-App für Linux und Windows">
+    <meta property="og:image" content="https://muggelbude.it/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Nicolettas-Muggelbude">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://muggelbude.it/projects/quark.html">
+    <meta name="twitter:title" content="Quark | Meine Projekte">
+    <meta name="twitter:description" content="Kostenloser, werbefreier QR-Code-Generator als Desktop-App für Linux und Windows">
+    <meta name="twitter:image" content="https://muggelbude.it/images/og-image.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://muggelbude.it/projects/quark.html">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/project-styles.css">
+
+    <!-- Theme Setup -->
+    <script src="../js/theme.js"></script>
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<body>
+    <header>
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb">
+                <a href="../index.html">← Zurück zu allen Projekten</a>
+            </nav>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="project-header">
+            <h1>Quark</h1>
+            <div class="project-meta">
+                <span class="github-link">
+                    <a href="https://github.com/nicolettas-muggelbude/quark" target="_blank">
+                        🔗 GitHub Repository
+                    </a>
+                </span>
+                <span class="stats">
+                    ⭐ <span id="stars">-</span>
+                    🍴 <span id="forks">-</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-overlay"></div>
+
+    <main class="project-content" data-repo="nicolettas-muggelbude/quark" data-project-id="quark">
+        <!-- Sidebar Navigation -->
+        <aside class="project-nav">
+            <nav>
+                <a href="#overview">Auf einen Blick</a>
+                <a href="#latest-release">Neueste Version</a>
+                <a href="#readme">README</a>
+                <a href="#screenshots">Screenshots</a>
+                <a href="#releases">Releases</a>
+                <a href="#changelog">Changelog</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#community">Community</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+
+            <!-- Auf einen Blick: Journalisten-Prinzip -->
+            <section id="overview" class="journalist-overview">
+                <img src="https://raw.githubusercontent.com/nicolettas-muggelbude/quark/main/src/frontend/public/quark-frog.svg"
+                     alt="Quark Logo" class="project-logo">
+                <h2>Auf einen Blick</h2>
+
+                <!-- Was ist es? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📌 Was ist es?</span>
+                    <p>Quark ist ein <strong>kostenloser, werbefreier QR-Code-Generator als Desktop-App</strong> für Linux und Windows. URL eingeben, QR-Code live vorschauen, als PNG exportieren – ohne Tracking, ohne Werbung, ohne Cloud.</p>
+                    <p class="feature-intro">Bereits jetzt möglich:</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">🔗 URL eingeben, QR-Code live vorschauen</div>
+                        <div class="feature-item">📷 PNG-Export in 256 / 512 / 1024 px</div>
+                        <div class="feature-item">🐧 Linux – AppImage, keine Installation nötig</div>
+                        <div class="feature-item">🪟 Windows – EXE-Installer</div>
+                        <div class="feature-item">🚫 Kein Tracking, keine Werbung</div>
+                        <div class="feature-item">🔒 Alles lokal – keine Cloud, kein Internet nötig</div>
+                    </div>
+                </div>
+
+                <!-- Wo bekomme ich es? -->
+                <div class="journalist-row journalist-row--download">
+                    <span class="journalist-label">📥 Wo bekomme ich es?</span>
+                    <p>Als <strong>AppImage</strong> (Linux) oder <strong>EXE</strong> (Windows) – direkt von GitHub Releases herunterladen.</p>
+                    <div id="download-links">
+                        <p class="loading">Lade Download-Links…</p>
+                    </div>
+                    <a href="https://github.com/nicolettas-muggelbude/quark/releases" target="_blank" class="btn-secondary">Alle Releases auf GitHub →</a>
+                </div>
+
+                <!-- Screenshot -->
+                <div class="journalist-row" id="overview-screenshot-row" style="display: none;">
+                    <span class="journalist-label">📸 Einblick</span>
+                    <div id="overview-screenshot"></div>
+                </div>
+
+                <!-- Wie ist die Entwicklung? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📈 Wie ist die Entwicklung?</span>
+                    <p>Frisch gestartet mit v0.1.0 – die Grundfunktionen sind da, viele Features sind bereits geplant.</p>
+                    <div class="roadmap-mini">
+                        <div class="roadmap-mini-item roadmap-mini-item--done">
+                            <span class="roadmap-mini-version">v0.1</span>
+                            <span class="roadmap-mini-title">URL → QR-Code, PNG-Export</span>
+                            <span class="roadmap-mini-status">✅ aktuell</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v0.2</span>
+                            <span class="roadmap-mini-title">Farben, Stile, Logo in QR einbetten</span>
+                            <span class="roadmap-mini-status">🔲 geplant</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v1.0</span>
+                            <span class="roadmap-mini-title">SVG/PDF-Export, Batch-Generierung, Rahmen</span>
+                            <span class="roadmap-mini-status">🔲 geplant</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Latest Release Banner -->
+            <section id="latest-release" class="highlight-section">
+                <h2>🚀 Neueste Version</h2>
+                <div class="release-banner">
+                    <div class="release-info">
+                        <span class="version-tag">Lädt...</span>
+                        <span class="release-date">Lädt...</span>
+                    </div>
+                    <h3>Lädt Release-Informationen...</h3>
+                    <div class="release-notes" id="latest-release-notes">
+                        <p>Lade Release-Notes...</p>
+                    </div>
+                    <a href="#releases" class="btn-secondary">Alle Releases anzeigen →</a>
+                </div>
+            </section>
+
+            <!-- README Section -->
+            <section id="readme">
+                <h2>📖 README</h2>
+                <div class="readme-content markdown-body">
+                    <div id="readme-loading">Lade README...</div>
+                </div>
+            </section>
+
+            <!-- Screenshots -->
+            <section id="screenshots" class="screenshots-section">
+                <h2>📸 Screenshots</h2>
+                <div class="screenshot-grid" id="screenshot-grid">
+                    <!-- Wird automatisch aus README-Images extrahiert -->
+                </div>
+            </section>
+
+            <!-- All Releases -->
+            <section id="releases">
+                <h2>📦 Release History</h2>
+                <div class="releases-list" id="releases-list">
+                    <p class="loading">Lade Releases...</p>
+                </div>
+            </section>
+
+            <!-- Changelog -->
+            <section id="changelog">
+                <h2>📝 Changelog</h2>
+                <div class="changelog-content markdown-body" id="changelog-content">
+                    <p class="loading">Lade Changelog...</p>
+                </div>
+            </section>
+
+            <!-- Roadmap -->
+            <section id="roadmap">
+                <h2>🗺️ Roadmap</h2>
+                <div class="roadmap-content markdown-body" id="roadmap-content">
+                    <p class="loading">Lade Roadmap...</p>
+                </div>
+            </section>
+
+            <!-- Community Links -->
+            <section id="community">
+                <h2>💬 Community & Support</h2>
+                <div class="community-links">
+                    <a href="https://github.com/nicolettas-muggelbude/quark/issues"
+                       class="community-card" target="_blank">
+                        <h3>🐛 Issues</h3>
+                        <p>Bugs melden oder Feature-Requests stellen</p>
+                        <span class="badge" id="open-issues">- offen</span>
+                    </a>
+                    <a href="https://github.com/nicolettas-muggelbude/quark/discussions"
+                       class="community-card" target="_blank">
+                        <h3>💭 Discussions</h3>
+                        <p>Fragen stellen und mit anderen austauschen</p>
+                    </a>
+                    <a href="https://github.com/nicolettas-muggelbude/quark/pulls"
+                       class="community-card" target="_blank">
+                        <h3>🔀 Pull Requests</h3>
+                        <p>Code-Beiträge ansehen und diskutieren</p>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><a href="../index.html">← Zurück zur Übersicht</a></p>
+            <p>&copy; 2025 Nicoletta | <a href="https://github.com/nicolettas-muggelbude/quark" target="_blank">Auf GitHub ansehen</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/marked.min.js"></script>
+    <script type="module" src="../js/theme.js"></script>
+    <script type="module" src="../js/navigation.js"></script>
+    <script type="module" src="../js/project-page.js"></script>
+</body>
+</html>
