@@ -54,6 +54,15 @@
       "icon": "tipels-icon.svg",
       "featured": true,
       "customPage": true
+    },
+    {
+      "id": "quark",
+      "repo": "nicolettas-muggelbude/quark",
+      "name": "Quark",
+      "description": "Kostenloser, werbefreier QR-Code-Generator als Desktop-App für Linux und Windows",
+      "logoUrl": "https://raw.githubusercontent.com/nicolettas-muggelbude/quark/main/src/frontend/public/quark-frog.svg",
+      "featured": true,
+      "customPage": true
     }
   ]
 }

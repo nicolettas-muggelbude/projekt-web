@@ -1,0 +1,39 @@
+{
+  "repo": "nicolettas-muggelbude/quark",
+  "name": "Quark",
+  "description": "Kostenloser, werbefreier QR-Code-Generator als Desktop-App für Linux und Windows",
+  "lastUpdate": "2026-03-25T22:03:21.058Z",
+  "repoInfo": {
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "description": "Kostenloser, werbefreier QR-Code-Generator für Linux und Windows",
+    "homepage": null,
+    "topics": []
+  },
+  "latestRelease": {
+    "tagName": "v0.1.0",
+    "name": "Quark v0.1.0",
+    "body": "Quark ist da! 🐸\n\nDer erste Release eines einfachen, kostenlosen und werbefreien QR-Code-Generators für Linux und Windows. Kein Account, keine Cloud, keine versteckten Kosten – einfach runterladen und loslegen.\n\n## Was kann Quark v0.1.0?\n\n- 🔗 URL eingeben → QR-Code wird live generiert\n- 👀 Sofortvorschau direkt in der App\n- 💾 PNG-Export in 256 / 512 / 1024 px\n- 🔄 Automatische Update-Benachrichtigung beim App-Start\n\nDas ist erst der Anfang. Farben, Logos, SVG-Export, Rahmen und mehr kommen in den nächsten Versionen.\n\n---\n\n## Download & Installation\n\n| Betriebssystem | Download | Hinweis |\n|---|---|---|\n| **Windows** | [⬇ Quark_0.1.0_x64-setup.exe](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.1.0/Quark_0.1.0_x64-setup.exe) | NSIS-Installer, einfach ausführen |\n| **Linux** | [⬇ Quark_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.1.0/Quark_amd64.AppImage) | **Empfohlen** – stabiler Download-Link für alle Versionen |\n| **Linux (versioniert)** | [⬇ Quark_0.1.0_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.1.0/Quark_0.1.0_amd64.AppImage) | Alternative mit Versionsnummer im Dateinamen |\n| **Linux: Menü-Integration** | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.1.0/install-linux.sh) | Einmalig ausführen → Icon + Starter im Anwendungsmenü |\n\n### Linux: Starter ins Anwendungsmenü integrieren\n\n```bash\nchmod +x Quark_amd64.AppImage\nwget -qO install-linux.sh https://github.com/nicolettas-muggelbude/quark/releases/download/v0.1.0/install-linux.sh\nchmod +x install-linux.sh\n./install-linux.sh ./Quark_amd64.AppImage\n```\n\n> Die Dateien `.tar.gz`, `.nsis.zip` und `.sig` sind für den eingebauten Auto-Updater – nicht manuell herunterladen.\n\n---\n\n## Mitwirken\n\nFehler gefunden oder Feature-Wunsch? → [Issue erstellen](https://github.com/nicolettas-muggelbude/quark/issues/new)",
+    "publishedAt": "2026-03-25T21:42:15Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/quark/releases/tag/v0.1.0",
+    "assets": [
+      {
+        "name": "install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.1.0/install-linux.sh",
+        "size": 9946
+      },
+      {
+        "name": "Quark_0.1.0_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.1.0/Quark_0.1.0_amd64.AppImage",
+        "size": 5055680
+      },
+      {
+        "name": "Quark_0.1.0_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.1.0/Quark_0.1.0_x64-setup.exe",
+        "size": 3046517
+      }
+    ]
+  },
+  "readmeHtml": "<h1>Quark — QR-Code-Generator</h1>\n<img src=\"https://raw.githubusercontent.com/nicolettas-muggelbude/quark/main/src/frontend/public/quark-frog.svg\" width=\"140\" alt=\"Quark Logo\" />\n\n<p>Quark ist ein kostenloser, werbefreier QR-Code-Generator als Desktop-App für Linux und Windows.</p>\n<h2>Features (v0.1)</h2>\n<ul>\n<li>URL eingeben, QR-Code live vorschauen</li>\n<li>PNG-Export in 256 / 512 / 1024 px</li>\n</ul>\n<h2>Geplante Features</h2>\n<ul>\n<li>Farben, Verläufe, Dot-Stile</li>\n<li>Logo in QR einbetten</li>\n<li>SVG / PDF Export</li>\n<li>Rahmen + Text</li>\n<li>Batch-Generierung</li>\n</ul>\n<h2>Build</h2>\n<pre><code class=\"language-bash\">npm install\ncd src/frontend &amp;&amp; npm install\nnpm run dev       # Entwicklungsmodus\nnpm run build     # Produktion (AppImage / EXE)\n</code></pre>\n<h2>Lizenz</h2>\n<p>AGPLv3 — siehe <a href=\"LICENSE\">LICENSE</a></p>\n"
+}
