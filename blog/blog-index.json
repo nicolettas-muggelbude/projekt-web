@@ -1,6 +1,14 @@
 {
   "posts": [
     {
+      "slug": "2026-03-25-quark-v010",
+      "title": "Quark – QR-Codes ohne Werbung, ohne Tracking, ohne Bullshit",
+      "date": "2026-03-25",
+      "author": "Nicoletta",
+      "tags": ["release", "linux", "windows", "quark", "qr-code"],
+      "excerpt": "QR-Code-Generatoren im Web sind voll mit Werbung, Tracking und nervigen Registrierungen. Quark macht das anders: kostenlos, offline, Open Source."
+    },
+    {
       "slug": "2026-03-13-update-script-v170",
       "title": "Automatisiertes Linux-Update-Script v1.7.0 - Hooks & Automation",
       "date": "2026-03-13",
