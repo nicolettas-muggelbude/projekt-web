@@ -69,7 +69,7 @@
       "repo": "nicolettas-muggelbude/Kater",
       "name": "Kater",
       "description": "Linux-Adressbuch mit vollständiger vCard 4.0-Unterstützung – lokal, ohne Cloud, ohne Konten",
-      "logoUrl": "https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/main/assets/kater-logo.svg",
+      "logoUrl": "https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/assets/kater-logo.svg",
       "featured": true,
       "customPage": true
     }
