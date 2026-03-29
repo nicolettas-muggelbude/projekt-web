@@ -2,14 +2,15 @@
   "repo": "nicolettas-muggelbude/quark",
   "name": "Quark",
   "description": "Kostenloser, werbefreier QR-Code-Generator als Desktop-App für Linux und Windows",
-  "lastUpdate": "2026-03-29T10:16:12.219Z",
+  "lastUpdate": "2026-03-29T10:22:42.742Z",
   "repoInfo": {
     "stars": 0,
     "forks": 0,
     "openIssues": 0,
     "description": "Kostenloser, werbefreier QR-Code-Generator für Linux und Windows",
     "homepage": null,
-    "topics": []
+    "topics": [],
+    "defaultBranch": "main"
   },
   "latestRelease": {
     "tagName": "v0.1.7",
