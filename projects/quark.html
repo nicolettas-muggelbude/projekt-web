@@ -114,9 +114,31 @@
                 <!-- Wo bekomme ich es? -->
                 <div class="journalist-row journalist-row--download">
                     <span class="journalist-label">📥 Wo bekomme ich es?</span>
-                    <p>Als <strong>AppImage</strong> (Linux) oder <strong>EXE</strong> (Windows) – direkt von GitHub Releases herunterladen.</p>
-                    <div id="download-links">
-                        <p class="loading">Lade Download-Links…</p>
+                    <p>Als <strong>AppImage</strong> (Linux) oder <strong>EXE</strong> (Windows) – direkt herunterladen. Optional mit <code>install-linux.sh</code> für Desktop-Integration.</p>
+                    <div class="download-grid">
+                        <a href="https://github.com/nicolettas-muggelbude/quark/releases/latest/download/Quark_amd64.AppImage"
+                           class="download-btn">
+                            <span class="download-icon">📦</span>
+                            <span class="download-label">Linux – AppImage herunterladen</span>
+                            <span class="download-sub">x86_64 · Keine Installation</span>
+                        </a>
+                        <a href="https://github.com/nicolettas-muggelbude/quark/releases/latest"
+                           target="_blank" class="download-btn">
+                            <span class="download-icon">🪟</span>
+                            <span class="download-label">Windows – EXE herunterladen</span>
+                            <span class="download-sub">x64 · Setup-Installer</span>
+                        </a>
+                    </div>
+                    <div class="install-instructions">
+                        <p><strong>Desktop-Integration für Linux (empfohlen):</strong></p>
+                        <p>AppImage und <code>install-linux.sh</code> herunterladen, dann:</p>
+                        <pre><code>chmod +x install-linux.sh
+./install-linux.sh Quark_amd64.AppImage</code></pre>
+                        <p>Das Script kopiert das AppImage in einen stabilen Pfad, prüft Abhängigkeiten und erstellt einen Starter für GNOME, KDE, XFCE und weitere Desktop-Umgebungen.</p>
+                        <p>
+                            <a href="https://github.com/nicolettas-muggelbude/quark/releases/latest/download/install-linux.sh"
+                               class="btn-secondary">install-linux.sh herunterladen →</a>
+                        </p>
                     </div>
                     <a href="https://github.com/nicolettas-muggelbude/quark/releases" target="_blank" class="btn-secondary">Alle Releases auf GitHub →</a>
                 </div>
