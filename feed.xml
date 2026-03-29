@@ -5,8 +5,21 @@
     <link>https://muggelbude.it/</link>
     <description>Portfolio &amp; Blog von Nicoletta - Linux, Automation, Entwicklung</description>
     <language>de</language>
-    <lastBuildDate>Sun, 29 Mar 2026 10:22:43 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2026 10:29:36 GMT</lastBuildDate>
     <atom:link href="https://muggelbude.it/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Kater – Adressbuch für Linux, das einfach funktioniert</title>
+      <link>https://muggelbude.it/blog/posts/2026-03-29-kater-v100.html</link>
+      <guid>https://muggelbude.it/blog/posts/2026-03-29-kater-v100.html</guid>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 GMT</pubDate>
+      <author>noreply@muggelbude.it (Nicoletta)</author>
+      <description>Kontakte verwalten unter Linux? Entweder Cloud-Zwang oder veraltete Tools. Kater macht es anders: lokal, vollständig, vCard 4.0 – ohne Kompromisse.</description>
+      <category>release</category>
+      <category>linux</category>
+      <category>kater</category>
+      <category>kontakte</category>
+      <category>vcard</category>
+    </item>
     <item>
       <title>Quark – QR-Codes ohne Werbung, ohne Tracking, ohne Bullshit</title>
       <link>https://muggelbude.it/blog/posts/2026-03-25-quark-v010.html</link>
