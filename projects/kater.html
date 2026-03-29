@@ -116,9 +116,22 @@
                 <!-- Wo bekomme ich es? -->
                 <div class="journalist-row journalist-row--download">
                     <span class="journalist-label">📥 Wo bekomme ich es?</span>
-                    <p>Als <strong>AppImage</strong> – einfach herunterladen, ausführbar machen und starten. Keine Installation, keine Abhängigkeiten.</p>
+                    <p>Als <strong>AppImage</strong> – herunterladen, ausführbar machen, starten. Optional mit <code>install.sh</code> für Desktop-Integration (Starter, Menüeintrag).</p>
                     <div id="download-links">
                         <p class="loading">Lade Download-Links…</p>
+                    </div>
+                    <div class="install-instructions">
+                        <p><strong>Desktop-Integration (empfohlen):</strong></p>
+                        <p>AppImage und <code>install.sh</code> herunterladen, dann:</p>
+                        <pre><code>chmod +x install.sh
+./install.sh Kater-x86_64.AppImage</code></pre>
+                        <p>Das Script kopiert das AppImage nach <code>~/.local/bin/</code>, prüft Abhängigkeiten und erstellt einen Starter für GNOME, KDE, XFCE und MATE.</p>
+                        <p><strong>Startet Kater nicht?</strong></p>
+                        <pre><code>./install.sh --repair</code></pre>
+                        <p>
+                            <a href="https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/install.sh"
+                               target="_blank" class="btn-secondary">install.sh herunterladen →</a>
+                        </p>
                     </div>
                     <a href="https://github.com/nicolettas-muggelbude/Kater/releases" target="_blank" class="btn-secondary">Alle Releases auf GitHub →</a>
                 </div>
