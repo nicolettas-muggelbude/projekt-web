@@ -5,7 +5,13 @@
       "title": "Kater – Adressbuch für Linux, das einfach funktioniert",
       "date": "2026-03-29",
       "author": "Nicoletta",
-      "tags": ["release", "linux", "kater", "kontakte", "vcard"],
+      "tags": [
+        "release",
+        "linux",
+        "kater",
+        "kontakte",
+        "vcard"
+      ],
       "excerpt": "Kontakte verwalten unter Linux? Entweder Cloud-Zwang oder veraltete Tools. Kater macht es anders: lokal, vollständig, vCard 4.0 – ohne Kompromisse."
     },
     {
