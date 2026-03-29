@@ -72,9 +72,10 @@ async function buildProjectCache(project) {
                 openIssues: repoInfo.open_issues_count,
                 description: repoInfo.description,
                 homepage: repoInfo.homepage,
-                topics: repoInfo.topics
+                topics: repoInfo.topics,
+                defaultBranch: repoInfo.default_branch || 'main'
             };
-            log(`  ✓ Stars: ${repoInfo.stargazers_count}, Forks: ${repoInfo.forks_count}`, 'green');
+            log(`  ✓ Stars: ${repoInfo.stargazers_count}, Forks: ${repoInfo.forks_count}, Branch: ${repoInfo.default_branch}`, 'green');
         }
 
         // Latest Release
@@ -121,16 +122,17 @@ async function buildProjectCache(project) {
                 const { marked } = await import('marked');
                 let readmeMarkdown = await readmeResponse.text();
 
-                // Relative Bild-Pfade in Markdown in absolute GitHub URLs umwandeln
+                // Relative Bild-Pfade in absolute GitHub URLs umwandeln (korrekter Branch)
+                const defaultBranch = cache.repoInfo?.defaultBranch || 'main';
                 readmeMarkdown = readmeMarkdown.replace(
                     /!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g,
-                    `![$1](https://raw.githubusercontent.com/${project.repo}/main/$2)`
+                    `![$1](https://raw.githubusercontent.com/${project.repo}/${defaultBranch}/$2)`
                 );
 
                 // Relative Bild-Pfade in HTML img Tags umwandeln
                 readmeMarkdown = readmeMarkdown.replace(
                     /<img\s+([^>]*\s+)?src="(?!https?:\/\/)([^"]+)"([^>]*)>/g,
-                    `<img $1src="https://raw.githubusercontent.com/${project.repo}/main/$2"$3>`
+                    `<img $1src="https://raw.githubusercontent.com/${project.repo}/${defaultBranch}/$2"$3>`
                 );
 
                 // Als HTML cachen für bessere Performance und Konsistenz
