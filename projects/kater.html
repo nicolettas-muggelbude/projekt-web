@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Linux-Adressbuch mit vollständiger vCard 4.0-Unterstützung – lokal, ohne Cloud, ohne Konten">
+    <meta name="author" content="Nicoletta">
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; font-src 'self'; connect-src 'self' https://api.github.com; object-src 'none'; media-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none';">
+
+    <!-- Referrer Policy -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Kater | Meine Projekte</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://muggelbude.it/projects/kater.html">
+    <meta property="og:title" content="Kater | Meine Projekte">
+    <meta property="og:description" content="Linux-Adressbuch mit vollständiger vCard 4.0-Unterstützung – lokal, ohne Cloud, ohne Konten">
+    <meta property="og:image" content="https://muggelbude.it/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Nicolettas-Muggelbude">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://muggelbude.it/projects/kater.html">
+    <meta name="twitter:title" content="Kater | Meine Projekte">
+    <meta name="twitter:description" content="Linux-Adressbuch mit vollständiger vCard 4.0-Unterstützung – lokal, ohne Cloud, ohne Konten">
+    <meta name="twitter:image" content="https://muggelbude.it/images/og-image.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://muggelbude.it/projects/kater.html">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/project-styles.css">
+
+    <!-- Theme Setup -->
+    <script src="../js/theme.js"></script>
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<body>
+    <header>
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb">
+                <a href="../index.html">← Zurück zu allen Projekten</a>
+            </nav>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="project-header">
+            <h1>Kater</h1>
+            <div class="project-meta">
+                <span class="github-link">
+                    <a href="https://github.com/nicolettas-muggelbude/Kater" target="_blank">
+                        🔗 GitHub Repository
+                    </a>
+                </span>
+                <span class="stats">
+                    ⭐ <span id="stars">-</span>
+                    🍴 <span id="forks">-</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-overlay"></div>
+
+    <main class="project-content" data-repo="nicolettas-muggelbude/Kater" data-project-id="kater">
+        <!-- Sidebar Navigation -->
+        <aside class="project-nav">
+            <nav>
+                <a href="#overview">Auf einen Blick</a>
+                <a href="#latest-release">Neueste Version</a>
+                <a href="#readme">README</a>
+                <a href="#screenshots">Screenshots</a>
+                <a href="#releases">Releases</a>
+                <a href="#changelog">Changelog</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#community">Community</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+
+            <!-- Auf einen Blick: Journalisten-Prinzip -->
+            <section id="overview" class="journalist-overview">
+                <img src="https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/main/assets/kater-logo.svg"
+                     alt="Kater Logo" class="project-logo">
+                <h2>Auf einen Blick</h2>
+
+                <!-- Was ist es? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📌 Was ist es?</span>
+                    <p>Kater ist ein <strong>Linux-Adressbuch mit vollständiger vCard 4.0-Unterstützung</strong>. Kontakte verwalten, importieren und exportieren – komplett lokal in einer SQLite-Datenbank, ohne Cloud, ohne Konten, ohne Tracking. Gebaut mit Python 3 und tkinter.</p>
+                    <p class="feature-intro">Bereits jetzt möglich:</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">👤 Kontakte erstellen, bearbeiten und löschen</div>
+                        <div class="feature-item">📇 vCard Import &amp; Export (3.0 und 4.0)</div>
+                        <div class="feature-item">📦 Einzel- und Sammelexport</div>
+                        <div class="feature-item">📷 QR-Code – Kontakt direkt teilen</div>
+                        <div class="feature-item">🔍 Volltextsuche mit sofortiger Filterung</div>
+                        <div class="feature-item">🗄️ Lokale SQLite-Datenbank – keine Cloud</div>
+                        <div class="feature-item">🔄 Auto-Updater via GitHub Releases</div>
+                        <div class="feature-item">🐧 Linux – AppImage, keine Installation nötig</div>
+                    </div>
+                </div>
+
+                <!-- Wo bekomme ich es? -->
+                <div class="journalist-row journalist-row--download">
+                    <span class="journalist-label">📥 Wo bekomme ich es?</span>
+                    <p>Als <strong>AppImage</strong> – einfach herunterladen, ausführbar machen und starten. Keine Installation, keine Abhängigkeiten.</p>
+                    <div id="download-links">
+                        <p class="loading">Lade Download-Links…</p>
+                    </div>
+                    <a href="https://github.com/nicolettas-muggelbude/Kater/releases" target="_blank" class="btn-secondary">Alle Releases auf GitHub →</a>
+                </div>
+
+                <!-- Screenshot -->
+                <div class="journalist-row" id="overview-screenshot-row" style="display: none;">
+                    <span class="journalist-label">📸 Einblick</span>
+                    <div id="overview-screenshot"></div>
+                </div>
+
+                <!-- Wie ist die Entwicklung? -->
+                <div class="journalist-row">
+                    <span class="journalist-label">📈 Wie ist die Entwicklung?</span>
+                    <p>Stabiler Start mit v1.0.0 – alle Grundfunktionen sind vorhanden und produktionsreif.</p>
+                    <div class="roadmap-mini">
+                        <div class="roadmap-mini-item roadmap-mini-item--done">
+                            <span class="roadmap-mini-version">v1.0</span>
+                            <span class="roadmap-mini-title">Kontaktverwaltung, vCard Import/Export, QR-Code</span>
+                            <span class="roadmap-mini-status">✅ aktuell</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v1.1</span>
+                            <span class="roadmap-mini-title">Gruppen, Kategorien, erweiterte Suche</span>
+                            <span class="roadmap-mini-status">🔲 geplant</span>
+                        </div>
+                        <div class="roadmap-mini-item">
+                            <span class="roadmap-mini-version">v2.0</span>
+                            <span class="roadmap-mini-title">CardDAV-Sync, GTK4-Migration</span>
+                            <span class="roadmap-mini-status">🔲 geplant</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Latest Release Banner -->
+            <section id="latest-release" class="highlight-section">
+                <h2>🚀 Neueste Version</h2>
+                <div class="release-banner">
+                    <div class="release-info">
+                        <span class="version-tag">Lädt...</span>
+                        <span class="release-date">Lädt...</span>
+                    </div>
+                    <h3>Lädt Release-Informationen...</h3>
+                    <div class="release-notes" id="latest-release-notes">
+                        <p>Lade Release-Notes...</p>
+                    </div>
+                    <a href="#releases" class="btn-secondary">Alle Releases anzeigen →</a>
+                </div>
+            </section>
+
+            <!-- README Section -->
+            <section id="readme">
+                <h2>📖 README</h2>
+                <div class="readme-content markdown-body">
+                    <div id="readme-loading">Lade README...</div>
+                </div>
+            </section>
+
+            <!-- Screenshots -->
+            <section id="screenshots" class="screenshots-section">
+                <h2>📸 Screenshots</h2>
+                <div class="screenshot-grid" id="screenshot-grid">
+                    <!-- Wird automatisch aus README-Images extrahiert -->
+                </div>
+            </section>
+
+            <!-- All Releases -->
+            <section id="releases">
+                <h2>📦 Release History</h2>
+                <div class="releases-list" id="releases-list">
+                    <p class="loading">Lade Releases...</p>
+                </div>
+            </section>
+
+            <!-- Changelog -->
+            <section id="changelog">
+                <h2>📝 Changelog</h2>
+                <div class="changelog-content markdown-body" id="changelog-content">
+                    <p class="loading">Lade Changelog...</p>
+                </div>
+            </section>
+
+            <!-- Roadmap -->
+            <section id="roadmap">
+                <h2>🗺️ Roadmap</h2>
+                <div class="roadmap-content markdown-body" id="roadmap-content">
+                    <p class="loading">Lade Roadmap...</p>
+                </div>
+            </section>
+
+            <!-- Community Links -->
+            <section id="community">
+                <h2>💬 Community & Support</h2>
+                <div class="community-links">
+                    <a href="https://github.com/nicolettas-muggelbude/Kater/issues"
+                       class="community-card" target="_blank">
+                        <h3>🐛 Issues</h3>
+                        <p>Bugs melden oder Feature-Requests stellen</p>
+                        <span class="badge" id="open-issues">- offen</span>
+                    </a>
+                    <a href="https://github.com/nicolettas-muggelbude/Kater/discussions"
+                       class="community-card" target="_blank">
+                        <h3>💭 Discussions</h3>
+                        <p>Fragen stellen und mit anderen austauschen</p>
+                    </a>
+                    <a href="https://github.com/nicolettas-muggelbude/Kater/pulls"
+                       class="community-card" target="_blank">
+                        <h3>🔀 Pull Requests</h3>
+                        <p>Code-Beiträge ansehen und diskutieren</p>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><a href="../index.html">← Zurück zur Übersicht</a></p>
+            <p>&copy; 2025 Nicoletta | <a href="https://github.com/nicolettas-muggelbude/Kater" target="_blank">Auf GitHub ansehen</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/marked.min.js"></script>
+    <script type="module" src="../js/theme.js"></script>
+    <script type="module" src="../js/navigation.js"></script>
+    <script type="module" src="../js/project-page.js"></script>
+</body>
+</html>
