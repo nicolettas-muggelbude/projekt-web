@@ -2,27 +2,27 @@
   "repo": "nicolettas-muggelbude/Kater",
   "name": "Kater",
   "description": "Linux-Adressbuch mit vollständiger vCard 4.0-Unterstützung – lokal, ohne Cloud, ohne Konten",
-  "lastUpdate": "2026-03-31T18:51:53.826Z",
+  "lastUpdate": "2026-04-01T01:53:31.000Z",
   "repoInfo": {
     "stars": 1,
     "forks": 0,
-    "openIssues": 3,
+    "openIssues": 0,
     "description": "Linux-Adressbuch mit vCard 4.0 Support",
     "homepage": null,
     "topics": [],
     "defaultBranch": "master"
   },
   "latestRelease": {
-    "tagName": "v1.0.0",
-    "name": "Kater v1.0.0",
-    "body": "## Kater v1.0.0 – Erste Veröffentlichung\n\n<img src=\"https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/assets/kater-logo.svg\" width=\"80\" align=\"right\"/>\n\nErster stabiler Release des Linux-Adressbuchs **Kater** mit vollständiger vCard 4.0-Unterstützung.\n\n### Features\n\n- **Kontaktverwaltung** – Erstellen, bearbeiten und löschen mit allen vCard 4.0-Feldern inkl. DEATHDATE\n- **vCard Import / Export** – kompatibel mit vCard 3.0 und 4.0\n- **QR-Code** – Kontakt als QR-Code anzeigen und teilen\n- **Volltextsuche** – sofortige Filterung der Kontaktliste\n- **Lokale SQLite-Datenbank** – keine Cloud, keine Konten\n- **Auto-Updater** – prüft beim Start auf neue Versionen\n\n### Downloads\n\n| Datei | Beschreibung |\n|-------|-------------|\n| [Kater-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.0.0/Kater-x86_64.AppImage) | Aktuelle Version (empfohlen) |\n| [Kater-1.0.0-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.0.0/Kater-1.0.0-x86_64.AppImage) | Versioniert |\n| [install.sh](https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/install.sh) | Desktop-Integration |\n\n### Installation\n\n**1. AppImage und install.sh herunterladen** (Links oben) oder per Terminal:\n\n```bash\nwget https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.0.0/Kater-x86_64.AppImage\nwget https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/install.sh\n```\n\n**2. Desktop-Integration ausführen**\n\n```bash\nchmod +x install.sh\n./install.sh Kater-x86_64.AppImage\n```\n\nDas Skript kopiert das AppImage nach `~/.local/bin/`, prüft Abhängigkeiten (`libfuse2`) und erstellt einen Starter für GNOME, KDE, XFCE und MATE.\n\n**Kater startet nicht?**\n\n```bash\n./install.sh --repair\n```\n\n> **Voraussetzung:** Linux x86\\_64\n\n### Lizenz\n\nGNU General Public License v3.0",
-    "publishedAt": "2026-03-29T10:06:13Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/Kater/releases/tag/v1.0.0",
+    "tagName": "v1.1.0",
+    "name": "Kater v1.1.0",
+    "body": "## Kater v1.1.0\n\n<img src=\"https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/assets/kater-logo.svg\" width=\"80\" align=\"right\"/>\n\n## Neues Feature\n\n- **In-App-Update** – Kater aktualisiert sich jetzt selbst. Beim Start wird automatisch geprüft, ob eine neue Version verfügbar ist. Bei Bestätigung wird das neue AppImage direkt heruntergeladen und installiert – mit Fortschrittsanzeige. Ein Neustart genügt.\n\n## Fehlerbehebungen\n\n- **Entf-Taste in Eingabefeldern** – Die Entf-Taste löste bisher fälschlicherweise den Lösch-Dialog aus, wenn ein Eingabefeld fokussiert war. In Eingabefeldern löscht die Taste jetzt wie gewohnt einzelne Zeichen. (#1)\n\n- **Deutsches Datumsformat** – Datumsfelder (Geburtstag, Jahrestag, Sterbetag) akzeptieren und zeigen jetzt das deutsche Format `TT.MM.JJJJ`. Ein Formathinweis ist bei allen drei Feldern sichtbar. Das ISO-Format `JJJJ-MM-TT` wird als Fallback weiterhin akzeptiert. (#2)\n\n## Downloads\n\n| Datei | Beschreibung |\n|-------|-------------|\n| [Kater-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.0/Kater-x86_64.AppImage) | Aktuelle Version (empfohlen) |\n| [Kater-1.1.0-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.0/Kater-1.1.0-x86_64.AppImage) | Versioniert |\n| [install.sh](https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/install.sh) | Desktop-Integration |\n\n## Update von einer früheren Version\n\nDas neue AppImage ersetzt die installierte Datei unter `~/.local/bin/`:\n\n```bash\nwget https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.0/Kater-x86_64.AppImage\nchmod +x Kater-x86_64.AppImage\nmv Kater-x86_64.AppImage ~/.local/bin/Kater.AppImage\n```\n\nAb dieser Version übernimmt Kater das Update beim nächsten Start automatisch.\n\n## Erstinstallation\n\n**1. AppImage und install.sh herunterladen** (Links oben) oder per Terminal:\n\n```bash\nwget https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.0/Kater-x86_64.AppImage\nwget https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/install.sh\n```\n\n**2. Desktop-Integration ausführen**\n\n```bash\nchmod +x install.sh\n./install.sh Kater-x86_64.AppImage\n```\n\nDas Skript kopiert das AppImage nach `~/.local/bin/Kater.AppImage`, prüft Abhängigkeiten (`libfuse2`) und erstellt einen Starter für GNOME, KDE, XFCE und MATE.\n\n**Kater startet nicht?**\n\n```bash\n./install.sh --repair\n```\n\n> **Voraussetzung:** Linux x86\\_64\n\n## Lizenz\n\nGNU General Public License v3.0",
+    "publishedAt": "2026-03-31T20:04:35Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/Kater/releases/tag/v1.1.0",
     "assets": [
       {
-        "name": "Kater-1.0.0-x86_64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.0.0/Kater-1.0.0-x86_64.AppImage",
-        "size": 35427520
+        "name": "Kater-1.1.0-x86_64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.0/Kater-1.1.0-x86_64.AppImage",
+        "size": 35484864
       }
     ]
   },
