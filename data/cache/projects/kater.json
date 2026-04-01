@@ -2,11 +2,11 @@
   "repo": "nicolettas-muggelbude/Kater",
   "name": "Kater",
   "description": "Linux-Adressbuch mit vollständiger vCard 4.0-Unterstützung – lokal, ohne Cloud, ohne Konten",
-  "lastUpdate": "2026-04-01T13:01:13.946Z",
+  "lastUpdate": "2026-04-01T18:50:42.809Z",
   "repoInfo": {
     "stars": 2,
     "forks": 0,
-    "openIssues": 0,
+    "openIssues": 1,
     "description": "Linux-Adressbuch mit vCard 4.0 Support",
     "homepage": null,
     "topics": [],
