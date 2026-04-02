@@ -2,11 +2,11 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-04-01T18:50:38.476Z",
+  "lastUpdate": "2026-04-02T01:29:28.756Z",
   "repoInfo": {
     "stars": 23,
     "forks": 2,
-    "openIssues": 7,
+    "openIssues": 3,
     "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
     "homepage": "",
     "topics": [
@@ -34,26 +34,26 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.1.33",
-    "name": "RechnungsFee v0.1.33",
-    "body": "## Was ist neu in v0.1.33\n\n- ✨ MwSt.-Sätze konfigurierbar: eigene Sätze hinzufügen (z.B. 5,5 %), Sätze aktivieren/deaktivieren und einen Standard-Satz festlegen – gilt für Rechnungsformular und Artikelstamm (Issue #23)\n- ✨ Rechnungs-PDF: Standard-Zahlungshinweis (IBAN-Überweisungstext) kann in Unternehmen → Rechnungs-PDF deaktiviert werden – Notizfeld bleibt immer zusätzlich sichtbar (Issue #24)\n- ⚡ Kundenstamm: Split-View mit Suchleiste, vollständiger Tabelle, Stammdaten-Karte bei Klick und schmalem Rechnungspanel rechts\n- 🐛 Kassenbuch: Bar-Ausgabe die den Kassenstand ins Minus treibt wird jetzt abgelehnt – rotes Banner und gesperrter Speichern-Button (gilt nur für Barkasse, nicht für Karte/Bank/PayPal)\n- 🐛 Kundenstamm: Artikel-Typ-Badge in Rechnungspositionen zeigt jetzt korrekt „Artikel\", „Dienstl.\" oder „Fremdl.\" statt immer „Artikel\"\n\n---\n\n## Download & Installation\n\n| Betriebssystem | Download | Hinweis |\n|---|---|---|\n| **Windows** | [⬇ RechnungsFee_0.1.33_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.33/RechnungsFee_0.1.33_x64-setup.exe) | NSIS-Installer, einfach ausführen |\n| **Linux** | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.33/RechnungsFee_amd64.AppImage) | **Empfohlen** – Dateiname bleibt nach Auto-Updates korrekt |\n| **Linux (versioniert)** | [⬇ RechnungsFee_0.1.33_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.33/RechnungsFee_0.1.33_amd64.AppImage) | Alternative mit Versionsnummer im Dateinamen |\n| **Linux: Menü-Integration** | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.33/install-linux.sh) | Einmalig ausführen → Icon + Starter im Anwendungsmenü |\n\n**Auto-Update:** Wer v0.1.3 oder neuer installiert hat, bekommt das Update automatisch beim nächsten App-Start angeboten.\n\n### Linux: Starter ins Anwendungsmenü integrieren\n\n```bash\nchmod +x RechnungsFee_amd64.AppImage\nwget -qO install-linux.sh https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.33/install-linux.sh\nchmod +x install-linux.sh\n./install-linux.sh ./RechnungsFee_amd64.AppImage\n```\n\n> Die Dateien `.tar.gz`, `.nsis.zip` und `.sig` sind für den eingebauten Auto-Updater – nicht manuell herunterladen.\n\n---\n\n## Mitwirken\n\nFehler gefunden oder Feature-Wunsch? → [Issue erstellen](https://github.com/nicolettas-muggelbude/RechnungsFee/issues/new)\n",
-    "publishedAt": "2026-03-08T15:18:35Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.1.33",
+    "tagName": "v0.1.34",
+    "name": "RechnungsFee v0.1.34",
+    "body": "## Was ist neu in v0.1.34\n\n- ✨ Rechnungsvorlagen: Community-Vorlage „Sandra grün\" für Kleinunternehmer – Tabelle mit Pos./Datum/Beschreibung/Saldo, grünes Design, persönliche Anrede und Überweisungsblock mit IBAN – wählbar unter Stammdaten → Rechnungsvorlagen (Issue #33, Dank an @trinity2701)\n- ✨ Rechnungsvorlagen-Auswahl: Standard-Vorlage für alle Ausgangsrechnungen festlegen – mit Vorschau-Funktion direkt in den Stammdaten\n- ✨ Dark Mode: folgt automatisch dem System-Theme – kein manueller Toggle nötig (Issue #29)\n- ✨ Kleinunternehmer-Umsatzwarnung: Dashboard zeigt ab 80.000 € Netto-Jahresumsatz ein Warn-Banner, ab 100.000 € eine kritische Warnung mit Handlungsaufforderung (Issue #30)\n- ⚡ Kleinunternehmer-Infotext in den Stammdaten auf neue Grenzen ab 2025 aktualisiert: Vorjahresumsatz ≤ 25.000 € netto, laufendes Jahr unter 100.000 € netto (Issue #30)\n- 🐛 Info-Tooltips werden nicht mehr am linken Bildschirmrand abgeschnitten (Issue #31)\n- 🐛 USt-IdNr. wird jetzt auf gültiges Format geprüft – deutsche IdNr. muss DE + 9 Ziffern haben (Issue #31)\n- 🐛 Stammdaten: Partial-Updates überschreiben keine anderen gespeicherten Felder mehr\n\n---\n\n## Download & Installation\n\n| Betriebssystem | Download | Hinweis |\n|---|---|---|\n| **Windows** | [⬇ RechnungsFee_0.1.34_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.34/RechnungsFee_0.1.34_x64-setup.exe) | NSIS-Installer, einfach ausführen |\n| **Linux** | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.34/RechnungsFee_amd64.AppImage) | **Empfohlen** – Dateiname bleibt nach Auto-Updates korrekt |\n| **Linux (versioniert)** | [⬇ RechnungsFee_0.1.34_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.34/RechnungsFee_0.1.34_amd64.AppImage) | Alternative mit Versionsnummer im Dateinamen |\n| **Linux: Menü-Integration** | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.34/install-linux.sh) | Einmalig ausführen → Icon + Starter im Anwendungsmenü |\n\n**Auto-Update:** Wer v0.1.3 oder neuer installiert hat, bekommt das Update automatisch beim nächsten App-Start angeboten.\n\n### Linux: Starter ins Anwendungsmenü integrieren\n\n```bash\nchmod +x RechnungsFee_amd64.AppImage\nwget -qO install-linux.sh https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.34/install-linux.sh\nchmod +x install-linux.sh\n./install-linux.sh ./RechnungsFee_amd64.AppImage\n```\n\n> Die Dateien `.tar.gz`, `.nsis.zip` und `.sig` sind für den eingebauten Auto-Updater – nicht manuell herunterladen.\n\n---\n\n## Mitwirken\n\nFehler gefunden oder Feature-Wunsch? → [Issue erstellen](https://github.com/nicolettas-muggelbude/RechnungsFee/issues/new)\n",
+    "publishedAt": "2026-04-01T22:52:37Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.1.34",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.33/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.34/install-linux.sh",
         "size": 10264
       },
       {
-        "name": "RechnungsFee_0.1.33_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.33/RechnungsFee_0.1.33_amd64.AppImage",
-        "size": 51586240
+        "name": "RechnungsFee_0.1.34_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.34/RechnungsFee_0.1.34_amd64.AppImage",
+        "size": 51610816
       },
       {
-        "name": "RechnungsFee_0.1.33_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.33/RechnungsFee_0.1.33_x64-setup.exe",
-        "size": 32728138
+        "name": "RechnungsFee_0.1.34_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.34/RechnungsFee_0.1.34_x64-setup.exe",
+        "size": 32726398
       }
     ]
   },
