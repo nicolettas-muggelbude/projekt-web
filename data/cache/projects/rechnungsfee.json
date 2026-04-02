@@ -2,11 +2,11 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-04-02T12:54:51.783Z",
+  "lastUpdate": "2026-04-02T18:44:29.672Z",
   "repoInfo": {
     "stars": 23,
     "forks": 2,
-    "openIssues": 11,
+    "openIssues": 12,
     "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
     "homepage": "",
     "topics": [
@@ -34,26 +34,26 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.1.36-testing.3",
-    "name": "RechnungsFee-Testing v0.1.36-testing.3 (HTTP-Shutdown-Test)",
-    "body": "## Testing-Build – HTTP-Shutdown-Mechanismus (Issue #35)\n\n⚠️ **Kein Produktiv-Einsatz** – dieser Build dient ausschließlich zum Testen des neuen Backend-Shutdown-Mechanismus.\n\n### Was wird getestet?\n\nStatt `taskkill` direkt aufzurufen sendet Tauri jetzt zuerst einen HTTP-POST an `/api/shutdown`:\n1. `curl.exe POST http://127.0.0.1:{port}/api/shutdown` → uvicorn beendet sich selbst sauber\n2. 1,5s warten\n3. `taskkill /F /T` als Fallback falls noch alive\n\n### Parallele Installation\n\nDieser Build installiert sich als **RechnungsFee-Testing** getrennt von der normalen RechnungsFee-Installation (eigener AppData-Ordner: `%APPDATA%\\de.rechnungsfee.testing`).\n\n### Test-Szenario\n\n1. RechnungsFee-Testing installieren\n2. App öffnen, warten bis Backend läuft\n3. Update simulieren: App schließen und prüfen ob `backend.exe` im Task-Manager verschwindet\n4. Oder: nächsten Testing-Build installieren und prüfen ob der Installer ohne Fehler durchläuft\n\n### Log-Datei\n\n`%APPDATA%\\de.rechnungsfee.testing\\logs\\rechnungsfee.log`",
-    "publishedAt": "2026-04-02T08:52:32Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.1.36-testing.3",
+    "tagName": "v0.1.36",
+    "name": "RechnungsFee v0.1.36",
+    "body": "## Was ist neu in v0.1.36?\n\nBugfix-Release – enthält alle Fixes aus v0.1.35 sowie einen weiteren Bugfix.\n\n### Bugfixes\n\n- **Rechnungsentwurf als PDF öffnen** – Entwürfe konnten bisher nicht als PDF geöffnet oder gedruckt werden. Jetzt möglich – das PDF zeigt „– Entwurf –\" unter dem Titel und setzt kein ausgegeben-Flag.\n- **Vorschau Rechnungsvorlage „Sandra grün\": Interner Fehler 500** – Die Demo-Rechnung in der Vorlagenvorschau hatte kein `position_nr`-Attribut, das die neue Vorlage für die Pos.-Spalte benötigt.\n- **Windows: Rechnungsvorlage „Sandra grün\" im gepackten Binary nicht verfügbar** – PyInstaller-Build-Skripte um die fehlenden Module ergänzt (`api.pdf_vorlagen`, `utils.pdf_rechnung_vorlage1`).\n- **Windows: Update-Installer konnte `backend.exe` nicht überschreiben** – Nach `taskkill` gibt Windows Datei-Handles asynchron frei. 2s Wartezeit verhindert „Datei gesperrt\"-Fehler beim NSIS-Installer.\n\n### Verbesserungen\n\n- **Backup-Seite: Datenpfade für alle Betriebssysteme** – Linux, Windows (`%APPDATA%\\RechnungsFee\\`) und macOS werden jetzt in der Backup-Beschreibung und der Wiederherstellungsanleitung angezeigt. Danke an @Peter1061 für den Hinweis! (Issue #34)\n\n---\n\n> ⚠️ **Hinweis für Nutzer, die am 02.04.2026 ein Update erhalten haben:**\n> Durch einen Fehler wurde vorübergehend ein interner Testing-Build veröffentlicht. Falls in deinen Apps ein Eintrag **„RechnungsFee-Testing\"** erscheint, bitte [Issue #43](https://github.com/nicolettas-muggelbude/RechnungsFee/issues/43) lesen – deine Daten sind sicher, und die Bereinigung ist einfach.\n\n---\n\n**Download:** Siehe Assets unten – `.AppImage` für Linux, `.msi` für Windows.\n",
+    "publishedAt": "2026-04-02T08:06:31Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.1.36",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.36-testing.3/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.36/install-linux.sh",
         "size": 10264
       },
       {
-        "name": "RechnungsFee-Testing_0.1.36-testing.3_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.36-testing.3/RechnungsFee-Testing_0.1.36-testing.3_amd64.AppImage",
+        "name": "RechnungsFee_0.1.36_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.36/RechnungsFee_0.1.36_amd64.AppImage",
         "size": 51610816
       },
       {
-        "name": "RechnungsFee-Testing_0.1.36-testing.3_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.36-testing.3/RechnungsFee-Testing_0.1.36-testing.3_x64-setup.exe",
-        "size": 32736263
+        "name": "RechnungsFee_0.1.36_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.36/RechnungsFee_0.1.36_x64-setup.exe",
+        "size": 32728772
       }
     ]
   },
