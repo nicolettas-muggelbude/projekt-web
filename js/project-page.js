@@ -263,7 +263,7 @@ class ProjectPage {
                 if (name.endsWith('.AppImage')) return { icon: '🐧', label: 'Linux',             sub: 'AppImage (portabel)',          order: 1 };
                 if (name.endsWith('.exe'))      return { icon: '🪟', label: 'Windows',           sub: 'Setup-Installer',             order: 2 };
                 if (name.endsWith('.dmg'))      return { icon: '🍎', label: 'macOS',             sub: 'Disk Image',                  order: 3 };
-                if (name === 'install-linux.sh') return { icon: '🔧', label: 'Linux: Menü-Integration', sub: 'Starter ins Anwendungsmenü', order: 4, secondary: true };
+                if (name === 'install-linux.sh' || name === 'install.sh') return { icon: '🔧', label: 'Linux: Menü-Integration', sub: 'Starter ins Anwendungsmenü', order: 4, secondary: true };
                 return null;
             };
 
