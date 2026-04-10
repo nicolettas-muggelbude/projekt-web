@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/Scrat-Backup",
   "name": "Scrat-Backup",
   "description": "Scrat-Backup ist ein Open-Source-Backup-Tool für Linux und Windows. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups. 🇩🇪",
-  "lastUpdate": "2026-04-09T18:53:08.537Z",
+  "lastUpdate": "2026-04-10T01:50:25.615Z",
   "repoInfo": {
     "stars": 1,
     "forks": 0,
@@ -13,20 +13,20 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.3.15-beta",
-    "name": "v0.3.15-beta",
-    "body": null,
-    "publishedAt": "2026-04-09T18:50:57Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.15-beta",
+    "tagName": "v0.3.24-beta",
+    "name": "v0.3.24-beta",
+    "body": "# 🎉 Scrat-Backup v0.3.24-beta Release Notes\n\n## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ ScratBackup-v0.3.24-beta-Setup.exe](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.24-beta/ScratBackup-v0.3.24-beta-Setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ ScratBackup-v0.3.24-beta-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.24-beta/ScratBackup-v0.3.24-beta-x86_64.AppImage) |\n| 🐧 **Linux** (x86_64, neutral) | [⬇ ScratBackup-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.24-beta/ScratBackup-x86_64.AppImage) |\n| 🐧 **Linux** Desktop-Integration | [⬇ install.sh](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.24-beta/install.sh) |\n\n---\n\n## 🐛 „Vorhandene Dateien überschreiben\" jetzt immer wählbar\n\n**Scrat-Backup v0.3.24-beta** behebt einen Logikfehler bei den Restore-Einstellungen.\n\n**Vorher:** „Vorhandene Dateien überschreiben\" war nur aktivierbar wenn gleichzeitig „In Original-Verzeichnisse wiederherstellen\" gewählt war.  \n**Jetzt:** Die Option ist unabhängig – beim Wiederherstellen in einen beliebigen Ordner kann das Überschreiben vorhandener Dateien frei gewählt werden.\n\n---\n\n## 🔧 Was funktioniert\n\n### Core-Funktionen\n- ✅ **Backup-Engine** – Vollbackups und inkrementelle Backups\n- ✅ **Restore-Engine** – Einzelne Dateien oder komplette Backups\n- ✅ **AES-256-GCM Verschlüsselung** – Alle Backups verschlüsselt (Chunked, 64MB)\n- ✅ **zstd-Komprimierung** – ~5–10× schneller als LZMA, Level 1\n- ✅ **Versionierung** – Konfigurierbare Rotationsanzahl\n- ✅ **metadata.db-Portabilität** – Restore auf beliebigem Gerät\n\n### Storage-Backends\n- ✅ **USB / Lokale Laufwerke** (Win + Linux, inkl. externer Festplatten)\n- ✅ **SFTP (SSH)** – mit sicherer Host-Key-Prüfung\n- ✅ **WebDAV / Nextcloud**\n- ✅ **Rclone** (Google Drive, Dropbox, OneDrive, 40+ Provider)\n- ✅ **SMB/CIFS** (Synology, QNAP, Windows-Freigaben)\n\n### Wizard\n- ✅ Alle Seiten: Start, Quellen, Ziel, Zeitplan, Verschlüsselung, Restore, Finish\n- ✅ **Restore-Seite** scrollbar, „Überschreiben\" unabhängig wählbar\n- ✅ **Einstellungsänderungen aus Tray** werden gespeichert und OS-Zeitplan aktualisiert\n- ✅ **Version in der Kopfzeile** der ersten Wizard-Seite\n\n### System Tray\n- ✅ Einstellungen / Backup / Restore / Expertenansicht / Über / Beenden\n- ✅ **Tray bleibt aktiv** wenn Wizard-Fenster geschlossen wird\n- ✅ **Desktop-Benachrichtigungen** – Start, Erfolg, Fehler (Windows + Linux)\n- ✅ **Auto-Updater** – tägliche Prüfung, Dialog mit Release Notes\n\n### Zeitplanung & Headless-Modus\n- ✅ **Windows Task Scheduler** – daily/weekly/monthly/startup\n- ✅ **Linux crontab** – korrekte Cron-Ausdrücke\n- ✅ **`--backup` Headless-Modus** – mit Desktop-Notification\n\n### Debugging\n- ✅ **Log-Datei** – `%LocalAppData%\\Scrat-Backup\\scrat-backup.log` (Win) / `~/.scrat-backup/scrat-backup.log` (Linux)\n\n---\n\n## ⚠️ Bekannte Limitierungen (Beta)\n\n- ❌ **macOS-Build** – noch kein macOS-Runner in CI\n- ❌ **Internationalisierung** – aktuell nur Deutsch\n- ⚠️ **SFTP:** Unbekannte Hosts werden abgelehnt – vorher `ssh user@host` ausführen\n- ⚠️ **Upgrade von älteren Versionen (Windows):** Config von `%USERPROFILE%\\.scrat-backup\\` nach `%LocalAppData%\\Scrat-Backup\\` verschieben\n\n---\n\n## 📋 Systemanforderungen\n\n| | Minimum | Empfohlen |\n|---|---|---|\n| **Windows** | Windows 10 64-bit | Windows 11 64-bit |\n| **Linux** | Ubuntu 22.04 / vergleichbar | Ubuntu 24.04 |\n| **RAM** | 4 GB | 8 GB |\n| **Speicher** | 500 MB | 1 GB |\n\n---\n\n## 💬 Support & Community\n\n- 🐛 **Bug Reports:** [GitHub Issues](https://github.com/nicolettas-muggelbude/Scrat-Backup/issues)\n- 💡 **Feature Requests:** [GitHub Discussions](https://github.com/nicolettas-muggelbude/Scrat-Backup/discussions)\n\n---\n\n## ⚖️ Lizenz\n\nScrat-Backup ist **Open Source** unter der **GNU General Public License v3.0**.\n\n---\n\n<div align=\"center\">\n\n**Wie ein Eichhörnchen seine Eicheln bewahrt, so bewahren wir deine Daten.** 🐿️🌰\n\n[📥 Download](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.24-beta) • [⭐ Star auf GitHub](https://github.com/nicolettas-muggelbude/Scrat-Backup) • [🐛 Bug melden](https://github.com/nicolettas-muggelbude/Scrat-Backup/issues)\n\n</div>\n\n---\n\n*Erstellt mit ❤️ und [Claude Code](https://claude.com/claude-code)*",
+    "publishedAt": "2026-04-09T21:05:15Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.24-beta",
     "assets": [
       {
-        "name": "ScratBackup-v0.3.15-beta-Setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.15-beta/ScratBackup-v0.3.15-beta-Setup.exe",
-        "size": 38051867
+        "name": "ScratBackup-v0.3.24-beta-Setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.24-beta/ScratBackup-v0.3.24-beta-Setup.exe",
+        "size": 38076832
       },
       {
-        "name": "ScratBackup-v0.3.15-beta-x86_64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.15-beta/ScratBackup-v0.3.15-beta-x86_64.AppImage",
+        "name": "ScratBackup-v0.3.24-beta-x86_64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.24-beta/ScratBackup-v0.3.24-beta-x86_64.AppImage",
         "size": 91546816
       }
     ]
