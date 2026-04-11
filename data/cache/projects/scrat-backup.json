@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/Scrat-Backup",
   "name": "Scrat-Backup",
   "description": "Scrat-Backup ist ein Open-Source-Backup-Tool für Linux und Windows. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups. 🇩🇪",
-  "lastUpdate": "2026-04-10T18:41:10.929Z",
+  "lastUpdate": "2026-04-11T01:28:57.661Z",
   "repoInfo": {
     "stars": 1,
     "forks": 0,
@@ -13,25 +13,25 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.3.27-beta",
-    "name": "v0.3.27-beta",
+    "tagName": "v0.3.31-beta",
+    "name": "v0.3.31-beta",
     "body": null,
-    "publishedAt": "2026-04-10T18:25:24Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.27-beta",
+    "publishedAt": "2026-04-10T23:52:12Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.31-beta",
     "assets": [
       {
         "name": "install.sh",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.27-beta/install.sh",
-        "size": 4525
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.31-beta/install.sh",
+        "size": 4597
       },
       {
-        "name": "ScratBackup-v0.3.27-beta-Setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.27-beta/ScratBackup-v0.3.27-beta-Setup.exe",
-        "size": 38076860
+        "name": "ScratBackup-v0.3.31-beta-Setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.31-beta/ScratBackup-v0.3.31-beta-Setup.exe",
+        "size": 38073937
       },
       {
-        "name": "ScratBackup-v0.3.27-beta-x86_64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.27-beta/ScratBackup-v0.3.27-beta-x86_64.AppImage",
+        "name": "ScratBackup-v0.3.31-beta-x86_64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.31-beta/ScratBackup-v0.3.31-beta-x86_64.AppImage",
         "size": 91550912
       }
     ]
