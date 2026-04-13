@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/quark",
   "name": "Quark",
   "description": "Kostenloser, werbefreier QR-Code-Generator als Desktop-App für Linux und Windows",
-  "lastUpdate": "2026-04-12T18:36:36.038Z",
+  "lastUpdate": "2026-04-13T01:57:54.812Z",
   "repoInfo": {
     "stars": 0,
     "forks": 0,
@@ -13,26 +13,26 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.2.1",
-    "name": "Quark v0.2.1",
-    "body": "## Was ist neu in v0.2.1\n\n- 🐛 Export: Wenn der Datei-Dialog nicht öffnet (z. B. auf KDE Plasma mit Portal-Problemen), wird die PNG automatisch nach `~/Downloads/quark-qr.png` gespeichert — der genaue Pfad wird im UI angezeigt\n- 🔧 Export- und Clipboard-Fehler werden jetzt in die Logdatei geschrieben (`~/.local/share/de.quark.app/logs/quark.log`)\n\n---\n\n## Download & Installation\n\n| Betriebssystem | Download | Hinweis |\n|---|---|---|\n| **Windows** | [⬇ Quark_0.2.1_x64-setup.exe](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.1/Quark_0.2.1_x64-setup.exe) | NSIS-Installer, einfach ausführen |\n| **Linux** | [⬇ Quark_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.1/Quark_amd64.AppImage) | **Empfohlen** – Dateiname bleibt nach Auto-Updates korrekt |\n| **Linux (versioniert)** | [⬇ Quark_0.2.1_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.1/Quark_0.2.1_amd64.AppImage) | Alternative mit Versionsnummer im Dateinamen |\n| **Linux: Menü-Integration** | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.1/install-linux.sh) | Einmalig ausführen → Icon + Starter im Anwendungsmenü |\n\n**Auto-Update:** Wer v0.1.0 oder neuer installiert hat, bekommt das Update automatisch beim nächsten App-Start angeboten.\n\n### Linux: Starter ins Anwendungsmenü integrieren\n\nDamit Quark in GNOME Activities, KDE Launcher, XFCE-Menü usw. erscheint:\n\n```bash\n# 1. AppImage herunterladen und ausführbar machen\nchmod +x Quark_amd64.AppImage\n\n# 2. Integrations-Skript ausführen (einmalig)\nwget -qO install-linux.sh https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.1/install-linux.sh\nchmod +x install-linux.sh\n./install-linux.sh ./Quark_amd64.AppImage\n```\n\n> ℹ️ Die Dateien `.tar.gz`, `.nsis.zip` und `.sig` sind für den eingebauten Auto-Updater – **nicht manuell herunterladen**.\n\n---\n\n## Mitwirken\n\nFehler gefunden oder Feature-Wunsch? → [Issue erstellen](https://github.com/nicolettas-muggelbude/quark/issues/new)",
-    "publishedAt": "2026-04-12T18:21:56Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/quark/releases/tag/v0.2.1",
+    "tagName": "v0.2.2",
+    "name": "Quark v0.2.2",
+    "body": "## Was ist neu in v0.2.2\n\n- 🐛 Export: Auf Systemen wo der Download-Ordner nicht ermittelt werden kann (z. B. bestimmte KDE-Konfigurationen), wird jetzt auf den Home-Ordner zurückgefallen statt mit einem Fehler abzubrechen\n\n---\n\n## Download & Installation\n\n| Betriebssystem | Download | Hinweis |\n|---|---|---|\n| **Windows** | [⬇ Quark_0.2.2_x64-setup.exe](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.2/Quark_0.2.2_x64-setup.exe) | NSIS-Installer, einfach ausführen |\n| **Linux** | [⬇ Quark_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.2/Quark_amd64.AppImage) | **Empfohlen** – Dateiname bleibt nach Auto-Updates korrekt |\n| **Linux (versioniert)** | [⬇ Quark_0.2.2_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.2/Quark_0.2.2_amd64.AppImage) | Alternative mit Versionsnummer im Dateinamen |\n| **Linux: Menü-Integration** | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.2/install-linux.sh) | Einmalig ausführen → Icon + Starter im Anwendungsmenü |\n\n**Auto-Update:** Wer v0.1.0 oder neuer installiert hat, bekommt das Update automatisch beim nächsten App-Start angeboten.\n\n### Linux: Starter ins Anwendungsmenü integrieren\n\nDamit Quark in GNOME Activities, KDE Launcher, XFCE-Menü usw. erscheint:\n\n```bash\n# 1. AppImage herunterladen und ausführbar machen\nchmod +x Quark_amd64.AppImage\n\n# 2. Integrations-Skript ausführen (einmalig)\nwget -qO install-linux.sh https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.2/install-linux.sh\nchmod +x install-linux.sh\n./install-linux.sh ./Quark_amd64.AppImage\n```\n\n> ℹ️ Die Dateien `.tar.gz`, `.nsis.zip` und `.sig` sind für den eingebauten Auto-Updater – **nicht manuell herunterladen**.\n\n---\n\n## Mitwirken\n\nFehler gefunden oder Feature-Wunsch? → [Issue erstellen](https://github.com/nicolettas-muggelbude/quark/issues/new)",
+    "publishedAt": "2026-04-12T18:43:26Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/quark/releases/tag/v0.2.2",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.1/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.2/install-linux.sh",
         "size": 10634
       },
       {
-        "name": "Quark_0.2.1_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.1/Quark_0.2.1_amd64.AppImage",
+        "name": "Quark_0.2.2_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.2/Quark_0.2.2_amd64.AppImage",
         "size": 6096064
       },
       {
-        "name": "Quark_0.2.1_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.1/Quark_0.2.1_x64-setup.exe",
-        "size": 3470515
+        "name": "Quark_0.2.2_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.2/Quark_0.2.2_x64-setup.exe",
+        "size": 3473731
       }
     ]
   },
