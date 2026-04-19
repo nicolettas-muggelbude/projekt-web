@@ -770,6 +770,36 @@ section h2 {
     color: var(--text-primary);
 }
 
+.release-body table,
+.release-notes table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    overflow-x: auto;
+    display: block;
+}
+
+.release-body table th,
+.release-body table td,
+.release-notes table th,
+.release-notes table td {
+    border: 1px solid var(--border);
+    padding: 0.6rem 1rem;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.release-body table th,
+.release-notes table th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+.release-body table tr:hover,
+.release-notes table tr:hover {
+    background: var(--bg-secondary);
+}
+
 .release-link {
     display: inline-block;
     margin-top: var(--spacing-sm);

@@ -7,6 +7,7 @@ export function markdownToHtml(markdown) {
     // Versuche marked.js zu verwenden (wird via CDN geladen)
     if (typeof marked !== 'undefined') {
         try {
+            marked.setOptions({ gfm: true, breaks: false });
             return marked.parse(markdown);
         } catch (e) {
             console.warn('marked.parse failed, using fallback parser:', e);
@@ -61,6 +62,16 @@ export function markdownToHtml(markdown) {
     // Ordered Lists
     html = html.replace(/^\d+\. (.+)$/gim, '<li>$1</li>');
 
+    // GFM Tables
+    html = html.replace(/^(\|.+\|)\n\|[-| :]+\|\n((?:\|.+\|\n?)*)/gm, (match, header, body) => {
+        const headers = header.split('|').filter(c => c.trim()).map(c => `<th>${c.trim()}</th>`).join('');
+        const rows = body.trim().split('\n').map(row => {
+            const cells = row.split('|').filter(c => c.trim()).map(c => `<td>${c.trim()}</td>`).join('');
+            return `<tr>${cells}</tr>`;
+        }).join('');
+        return `<table><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table>`;
+    });
+
     // Blockquotes
     html = html.replace(/^> (.+)$/gim, '<blockquote>$1</blockquote>');
 
@@ -71,7 +82,7 @@ export function markdownToHtml(markdown) {
     // Line Breaks -> Paragraphs
     html = html.split('\n\n').map(para => {
         // Überspringe bereits gerenderte Block-Elemente
-        if (para.match(/^<(h[1-6]|ul|ol|pre|blockquote|hr)/)) {
+        if (para.match(/^<(h[1-6]|ul|ol|pre|blockquote|hr|table)/)) {
             return para;
         }
         if (para.trim()) {
