@@ -2,11 +2,11 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-04-26T07:18:52.090Z",
+  "lastUpdate": "2026-04-26T12:47:23.594Z",
   "repoInfo": {
     "stars": 33,
     "forks": 3,
-    "openIssues": 12,
+    "openIssues": 15,
     "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
     "homepage": "",
     "topics": [
@@ -34,26 +34,26 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.1.57",
-    "name": "RechnungsFee v0.1.57",
-    "body": "## Was ist neu in v0.1.57\n\n- 🐛 ZUGFeRD: Pflichtfeld-Validierung im Kundenstamm – Firmenname, Straße, PLZ und Ort werden bei manuell aktiviertem ZUGFeRD als Pflichtfelder geprüft; Amber-Hinweis wenn keine USt-IdNr. vorhanden\n- 🐛 ZUGFeRD: utils.zugferd und saxonche fehlten im PyInstaller-Build – ZUGFeRD-PDF wurde im AppImage/MSI lautlos durch normales PDF ersetzt\n- 🐛 InfoTooltip bei „Kopie öffnen\" wurde über den rechten Rand hinausgeschoben – öffnet sich jetzt nach links (Issue #74)\n\n---\n\n## Download & Installation\n\n| Betriebssystem | Download | Hinweis |\n|---|---|---|\n| **Windows** | [⬇ RechnungsFee_0.1.57_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.57/RechnungsFee_0.1.57_x64-setup.exe) | NSIS-Installer, einfach ausführen |\n| **Linux** | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.57/RechnungsFee_amd64.AppImage) | **Empfohlen** – Dateiname bleibt nach Auto-Updates korrekt |\n| **Linux (versioniert)** | [⬇ RechnungsFee_0.1.57_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.57/RechnungsFee_0.1.57_amd64.AppImage) | Alternative mit Versionsnummer im Dateinamen |\n| **Linux: Menü-Integration** | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.57/install-linux.sh) | Einmalig ausführen → Icon + Starter im Anwendungsmenü |\n\n**Auto-Update:** Wer v0.1.3 oder neuer installiert hat, bekommt das Update automatisch beim nächsten App-Start angeboten.\n\n### Linux: Starter ins Anwendungsmenü integrieren\n\n```bash\nchmod +x RechnungsFee_amd64.AppImage\nwget -qO install-linux.sh https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.57/install-linux.sh\nchmod +x install-linux.sh\n./install-linux.sh ./RechnungsFee_amd64.AppImage\n```\n\n> ℹ️ Die Dateien `.tar.gz`, `.nsis.zip` und `.sig` sind für den eingebauten Auto-Updater – **nicht manuell herunterladen**.\n\n---\n\n## Mitwirken\n\nFehler gefunden oder Feature-Wunsch? → [Issue erstellen](https://github.com/nicolettas-muggelbude/RechnungsFee/issues/new)",
-    "publishedAt": "2026-04-25T16:20:00Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.1.57",
+    "tagName": "v0.1.58",
+    "name": "RechnungsFee v0.1.58",
+    "body": "## Was ist neu in v0.1.58\r\n\r\n_Keine Einträge gefunden._\r\n\r\n---\r\n\r\n## Download & Installation\r\n\r\n| Betriebssystem | Download | Hinweis |\r\n|---|---|---|\r\n| **Windows** | [⬇ RechnungsFee_0.1.58_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.58/RechnungsFee_0.1.58_x64-setup.exe) | NSIS-Installer, einfach ausführen |\r\n| **Linux** | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.58/RechnungsFee_amd64.AppImage) | **Empfohlen** – Dateiname bleibt nach Auto-Updates korrekt |\r\n| **Linux (versioniert)** | [⬇ RechnungsFee_0.1.58_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.58/RechnungsFee_0.1.58_amd64.AppImage) | Alternative mit Versionsnummer im Dateinamen |\r\n| **Linux: Menü-Integration** | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.58/install-linux.sh) | Einmalig ausführen → Icon + Starter im Anwendungsmenü |\r\n\r\n**Auto-Update:** Wer v0.1.3 oder neuer installiert hat, bekommt das Update automatisch beim nächsten App-Start angeboten.\r\n\r\n### Linux: Starter ins Anwendungsmenü integrieren\r\n\r\nDamit RechnungsFee in GNOME Activities, KDE Launcher, XFCE-Menü usw. erscheint:\r\n\r\n```bash\r\n# 1. AppImage herunterladen und ausführbar machen\r\nchmod +x RechnungsFee_amd64.AppImage\r\n\r\n# 2. Integrations-Skript ausführen (einmalig)\r\nwget -qO install-linux.sh https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.58/install-linux.sh\r\nchmod +x install-linux.sh\r\n./install-linux.sh ./RechnungsFee_amd64.AppImage\r\n```\r\n\r\n> ℹ️ Die Dateien `.tar.gz`, `.nsis.zip` und `.sig` sind für den eingebauten Auto-Updater – **nicht manuell herunterladen**.\r\n\r\n---\r\n\r\n## Mitwirken\r\n\r\nFehler gefunden oder Feature-Wunsch? → [Issue erstellen](https://github.com/nicolettas-muggelbude/RechnungsFee/issues/new)",
+    "publishedAt": "2026-04-26T08:42:47Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.1.58",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.57/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.58/install-linux.sh",
         "size": 30651
       },
       {
-        "name": "RechnungsFee_0.1.57_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.57/RechnungsFee_0.1.57_amd64.AppImage",
+        "name": "RechnungsFee_0.1.58_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.58/RechnungsFee_0.1.58_amd64.AppImage",
         "size": 96957632
       },
       {
-        "name": "RechnungsFee_0.1.57_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.57/RechnungsFee_0.1.57_x64-setup.exe",
-        "size": 73724555
+        "name": "RechnungsFee_0.1.58_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.1.58/RechnungsFee_0.1.58_x64-setup.exe",
+        "size": 73728199
       }
     ]
   },
