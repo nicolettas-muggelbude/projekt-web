@@ -2,26 +2,26 @@
   "repo": "nicolettas-muggelbude/Kater",
   "name": "Kater",
   "description": "Linux-Adressbuch mit vollständiger vCard 4.0-Unterstützung – lokal, ohne Cloud, ohne Konten",
-  "lastUpdate": "2026-04-27T13:22:24.761Z",
+  "lastUpdate": "2026-04-27T19:06:26.241Z",
   "repoInfo": {
     "stars": 2,
     "forks": 0,
-    "openIssues": 3,
+    "openIssues": 0,
     "description": "Linux-Adressbuch mit vCard 4.0 Support",
     "homepage": null,
     "topics": [],
     "defaultBranch": "master"
   },
   "latestRelease": {
-    "tagName": "v1.1.1",
-    "name": "Kater v1.1.1",
-    "body": "## Kater v1.1.1\n\n<img src=\"https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/assets/kater-logo.svg\" width=\"80\" align=\"right\"/>\n\n## Neue Features\n\n- **Thunderbird / vCard Export** – Kontakte lassen sich jetzt gezielt für Thunderbird exportieren. Das neue Untermenü **Datei → Thunderbird / vCard** bietet:\n  - *Importieren…* – `.vcf`-Datei einlesen (Thunderbird-Export oder andere vCard-Quellen)\n  - *Aktuellen Kontakt exportieren…* – den gerade angezeigten Kontakt speichern\n  - *Markierte Kontakte exportieren…* – beliebige Auswahl als eine `.vcf`-Datei exportieren\n  - *Alle Kontakte exportieren…* – komplettes Adressbuch sichern\n\n- **Mehrfachauswahl in der Kontaktliste** – Kontakte können mit **Strg+Klick** (einzeln) oder **Umschalt+Klick** (Bereich) markiert werden. Die Statusleiste zeigt die Anzahl markierter Kontakte an.\n\n## Downloads\n\n| Datei | Beschreibung |\n|-------|-------------|\n| [Kater-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.1/Kater-x86_64.AppImage) | Aktuelle Version (empfohlen) |\n| [Kater-1.1.1-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.1/Kater-1.1.1-x86_64.AppImage) | Versioniert |\n| [install.sh](https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/install.sh) | Desktop-Integration |\n\n## Update von einer früheren Version\n\nAb v1.1.0 übernimmt Kater das Update beim nächsten Start automatisch.\n\nManuelles Update:\n\n```bash\nwget https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.1/Kater-x86_64.AppImage\nchmod +x Kater-x86_64.AppImage\nmv Kater-x86_64.AppImage ~/.local/bin/Kater.AppImage\n```\n\n## Erstinstallation\n\n**1. AppImage und install.sh herunterladen** (Links oben) oder per Terminal:\n\n```bash\nwget https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.1/Kater-x86_64.AppImage\nwget https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/install.sh\n```\n\n**2. Desktop-Integration ausführen**\n\n```bash\nchmod +x install.sh\n./install.sh Kater-x86_64.AppImage\n```\n\nDas Skript kopiert das AppImage nach `~/.local/bin/Kater.AppImage`, prüft Abhängigkeiten (`libfuse2`) und erstellt einen Starter für GNOME, KDE, XFCE und MATE.\n\n**Kater startet nicht?**\n\n```bash\n./install.sh --repair\n```\n\n> **Voraussetzung:** Linux x86\\_64\n\n## Lizenz\n\nGNU General Public License v3.0",
-    "publishedAt": "2026-04-12T10:00:51Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/Kater/releases/tag/v1.1.1",
+    "tagName": "v1.1.3",
+    "name": "Kater v1.1.3",
+    "body": "## Kater v1.1.3\n\n<img src=\"https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/assets/kater-logo.svg\" width=\"80\" align=\"right\"/>\n\n## Neue Features & Fehlerbehebungen\n\n- **Zwischenablage** (Issue #4) – Kontakte lassen sich jetzt direkt als vCard in die Zwischenablage kopieren. Über **Bearbeiten → Als vCard kopieren** oder **Strg+Umschalt+C** wird der aktuelle oder alle markierten Kontakte kopiert.\n\n- **Adress-Tab überarbeitet** (Issue #5) – Privat-, Arbeits- und sonstige Adresse haben jetzt je einen eigenen Tab. Daten konnten sich bisher gegenseitig überschreiben.\n\n- **Änderungswarnung** (Issue #6) – Beim Wechsel zu einem anderen Kontakt, bei Neu-Anlage oder beim Schließen der App erscheint ein Dialog, wenn ungespeicherte Änderungen vorliegen: **Speichern / Verwerfen / Abbrechen**.\n\n- **Ubuntu 26.04 Kompatibilität** – FUSE 2/3 Konflikt behoben. Das AppImage läuft jetzt ohne `libfuse2`.\n\n## Downloads\n\n| Datei | Beschreibung |\n|-------|-------------|\n| [Kater-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.3/Kater-x86_64.AppImage) | Aktuelle Version (empfohlen) |\n| [Kater-1.1.3-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.3/Kater-1.1.3-x86_64.AppImage) | Versioniert |\n| [install.sh](https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/install.sh) | Desktop-Integration |\n\n## Update von einer früheren Version\n\nAb v1.1.0 übernimmt Kater das Update beim nächsten Start automatisch.\n\nManuelles Update:\n\n```bash\nwget https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.3/Kater-x86_64.AppImage\nchmod +x Kater-x86_64.AppImage\nmv Kater-x86_64.AppImage ~/.local/bin/Kater.AppImage\n```\n\n## Erstinstallation\n\n**1. AppImage und install.sh herunterladen** (Links oben) oder per Terminal:\n\n```bash\nwget https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.3/Kater-x86_64.AppImage\nwget https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/install.sh\n```\n\n**2. Desktop-Integration ausführen**\n\n```bash\nchmod +x install.sh\n./install.sh Kater-x86_64.AppImage\n```\n\nDas Skript kopiert das AppImage nach `~/.local/bin/Kater.AppImage` und erstellt einen Starter für GNOME, KDE, XFCE und MATE.\n\n**Kater startet nicht?**\n\n```bash\n./install.sh --repair\n```\n\n> **Voraussetzung:** Linux x86\\_64\n\n## Lizenz\n\nGNU General Public License v3.0",
+    "publishedAt": "2026-04-27T17:27:45Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/Kater/releases/tag/v1.1.3",
     "assets": [
       {
-        "name": "Kater-1.1.1-x86_64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.1/Kater-1.1.1-x86_64.AppImage",
+        "name": "Kater-1.1.3-x86_64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.1.3/Kater-1.1.3-x86_64.AppImage",
         "size": 35538112
       }
     ]
