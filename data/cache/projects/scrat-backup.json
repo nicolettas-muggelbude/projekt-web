@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/Scrat-Backup",
   "name": "Scrat-Backup",
   "description": "Scrat-Backup ist ein Open-Source-Backup-Tool für Linux und Windows. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups. 🇩🇪",
-  "lastUpdate": "2026-04-28T08:10:47.950Z",
+  "lastUpdate": "2026-04-28T19:22:40.863Z",
   "repoInfo": {
     "stars": 1,
     "forks": 0,
@@ -13,26 +13,26 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.3.39-beta",
-    "name": "v0.3.39-beta – Frequenzbasierte Backup-Strategie & Kettenrotation",
-    "body": "## 💾 Downloads\n\n| Plattform | Download | Hinweis |\n|---|---|---|\n| 🪟 **Windows** (x64) | [⬇ ScratBackup-v0.3.39-beta-Setup.exe](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.39-beta/ScratBackup-v0.3.39-beta-Setup.exe) | Installer, einfach ausführen |\n| 🐧 **Linux** (x86_64, neutral) | [⬇ ScratBackup-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.39-beta/ScratBackup-x86_64.AppImage) | **Empfohlen** – stabiler Download-Link |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ ScratBackup-v0.3.39-beta-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.39-beta/ScratBackup-v0.3.39-beta-x86_64.AppImage) | Alternative mit Versionsnummer |\n| 🐧 **Linux** Desktop-Integration | [⬇ install.sh](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.39-beta/install.sh) | Einmalig ausführen → Icon + Starter im Anwendungsmenü |\n\n---\n\n## 🔧 Änderungen in dieser Version\n\n**Scrat-Backup v0.3.39-beta** implementiert die geplante Backup-Strategie aus dem Projektplan (3 Versionen) und behebt einen Fehler bei langen Backup-Ketten.\n\n### Frequenzbasierte Full/Inkrementell-Entscheidung ✅\nDer Backup-Typ wird jetzt automatisch anhand der gewählten Frequenz entschieden:\n- **Täglich** → 1 Vollbackup + 6 Inkrementelle (7-Tage-Zyklus), dann neues Full\n- **Wöchentlich** → 1 Vollbackup + 3 Inkrementelle (4-Wochen-Zyklus), dann neues Full\n- **Monatlich** → immer Vollbackup\n\n### Kettenbasierte Rotation ✅\n`max_versions=3` bedeutet jetzt: die letzten **3 vollständigen Ketten** (je Full + zugehörige Inkrementelle) werden behalten. Ältere Ketten werden vollständig gelöscht (Disk + DB).\n\n### Kumulativer Ketten-Vergleich ✅\nAb dem 3. Backup wurde der Vergleich nur gegen das direkte Vorgänger-Backup durchgeführt – Dateien aus älteren Backups fehlten. `get_cumulative_backup_files()` traversiert jetzt die gesamte Kette rückwärts und liefert den vollständigen Dateistand.\n\n---\n\n## 🔧 Was funktioniert\n\n### Core-Funktionen\n- ✅ **Backup-Engine** – Vollbackups und inkrementelle Backups\n- ✅ **Restore-Engine** – Einzelne Dateien oder komplette Backups\n- ✅ **AES-256-GCM Verschlüsselung** – Alle Backups verschlüsselt (Chunked, 64MB)\n- ✅ **zstd-Komprimierung** – ~5–10× schneller als LZMA, Level 1\n- ✅ **Versionierung** – 3 Ketten (Full + Inkrementelle) werden behalten\n- ✅ **metadata.db-Portabilität** – Restore auf beliebigem Gerät\n\n### Storage-Backends\n- ✅ **USB / Lokale Laufwerke** (Win + Linux, inkl. externer Festplatten)\n- ✅ **SFTP (SSH)** – mit sicherer Host-Key-Prüfung\n- ✅ **WebDAV / Nextcloud**\n- ✅ **Rclone** (Google Drive, Dropbox, OneDrive, 40+ Provider)\n- ✅ **SMB/CIFS** (Synology, QNAP, Windows-Freigaben)\n\n### Wizard\n- ✅ Alle Seiten: Start, Quellen, Ziel, Zeitplan, Verschlüsselung, Restore, Finish\n- ✅ **Einstellungsänderungen aus Tray** werden gespeichert und OS-Zeitplan aktualisiert\n\n### System Tray\n- ✅ Einstellungen / Backup / Restore / Expertenansicht / Über / Beenden\n- ✅ **Desktop-Benachrichtigungen** – Start, Erfolg, Fehler (Windows + Linux)\n- ✅ **Auto-Updater** – tägliche Prüfung, Dialog mit Release Notes\n\n### Zeitplanung & Headless-Modus\n- ✅ **Windows Task Scheduler** – daily/weekly/monthly/startup\n- ✅ **Linux crontab** – korrekte Cron-Ausdrücke, D-Bus-Wrapper, AppImage-Pfad\n- ✅ **`--backup` Headless-Modus** – mit Desktop-Notification\n\n### Debugging\n- ✅ **Log-Datei** – `%LocalAppData%\\Scrat-Backup\\scrat-backup.log` (Win) / `~/.scrat-backup/scrat-backup.log` (Linux)\n\n---\n\n## ⚠️ Bekannte Limitierungen (Beta)\n\n- ❌ **macOS-Build** – noch kein macOS-Runner in CI\n- ❌ **Internationalisierung** – aktuell nur Deutsch\n- ⚠️ **SFTP:** Unbekannte Hosts werden abgelehnt – vorher `ssh user@host` ausführen\n- ⚠️ **Upgrade von älteren Versionen (Windows):** Config von `%USERPROFILE%\\.scrat-backup\\` nach `%LocalAppData%\\Scrat-Backup\\` verschieben\n\n---\n\n## 📋 Systemanforderungen\n\n| | Minimum | Empfohlen |\n|---|---|---|\n| **Windows** | Windows 10 64-bit | Windows 11 64-bit |\n| **Linux** | Ubuntu 22.04 / vergleichbar | Ubuntu 24.04 |\n| **RAM** | 4 GB | 8 GB |\n| **Speicher** | 500 MB | 1 GB |\n\n---\n\n## 🐧 Linux-Installation\n\n```bash\n# AppImage + install.sh herunterladen, dann:\n./install.sh ScratBackup-v0.3.39-beta-x86_64.AppImage\n```\n\nVoraussetzungen: `libnotify-bin` (für Popups), `cron` (für Auto-Backup)\n\n```bash\nsudo apt install libnotify-bin cron\n```\n\n---\n\n## 💬 Support & Community\n\n- 🐛 **Bug Reports:** [GitHub Issues](https://github.com/nicolettas-muggelbude/Scrat-Backup/issues)\n- 💡 **Feature Requests:** [GitHub Discussions](https://github.com/nicolettas-muggelbude/Scrat-Backup/discussions)\n\n---\n\n## ⚖️ Lizenz\n\nScrat-Backup ist **Open Source** unter der **GNU General Public License v3.0**.\n\n---\n\n<div align=\"center\">\n\n**Wie ein Eichhörnchen seine Eicheln bewahrt, so bewahren wir deine Daten.** 🐿️🌰\n\n[📥 Download](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.39-beta) • [⭐ Star auf GitHub](https://github.com/nicolettas-muggelbude/Scrat-Backup) • [🐛 Bug melden](https://github.com/nicolettas-muggelbude/Scrat-Backup/issues)\n\n</div>\n\n---\n\n*Erstellt mit ❤️ und [Claude Code](https://claude.com/claude-code)*",
-    "publishedAt": "2026-04-27T16:18:24Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.39-beta",
+    "tagName": "v0.3.41-beta",
+    "name": "v0.3.41-beta",
+    "body": null,
+    "publishedAt": "2026-04-28T18:57:08Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.41-beta",
     "assets": [
       {
         "name": "install.sh",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.39-beta/install.sh",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.41-beta/install.sh",
         "size": 6289
       },
       {
-        "name": "ScratBackup-v0.3.39-beta-Setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.39-beta/ScratBackup-v0.3.39-beta-Setup.exe",
-        "size": 38197099
+        "name": "ScratBackup-v0.3.41-beta-Setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.41-beta/ScratBackup-v0.3.41-beta-Setup.exe",
+        "size": 38203620
       },
       {
-        "name": "ScratBackup-v0.3.39-beta-x86_64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.39-beta/ScratBackup-v0.3.39-beta-x86_64.AppImage",
-        "size": 91800768
+        "name": "ScratBackup-v0.3.41-beta-x86_64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.41-beta/ScratBackup-v0.3.41-beta-x86_64.AppImage",
+        "size": 91804864
       }
     ]
   },
