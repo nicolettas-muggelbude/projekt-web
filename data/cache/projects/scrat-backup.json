@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/Scrat-Backup",
   "name": "Scrat-Backup",
   "description": "Scrat-Backup ist ein Open-Source-Backup-Tool für Linux und Windows. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups. 🇩🇪",
-  "lastUpdate": "2026-04-28T19:22:40.863Z",
+  "lastUpdate": "2026-04-29T02:10:43.444Z",
   "repoInfo": {
     "stars": 1,
     "forks": 0,
@@ -13,25 +13,25 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.3.41-beta",
-    "name": "v0.3.41-beta",
-    "body": null,
-    "publishedAt": "2026-04-28T18:57:08Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.41-beta",
+    "tagName": "v0.3.45-beta",
+    "name": "v0.3.45-beta – XFCE-Crash Fix (AT-SPI + GNOME-Theme)",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ ScratBackup-v0.3.45-beta-Setup.exe](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.45-beta/ScratBackup-v0.3.45-beta-Setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ ScratBackup-v0.3.45-beta-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.45-beta/ScratBackup-v0.3.45-beta-x86_64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ ScratBackup-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.45-beta/ScratBackup-x86_64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install.sh](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.45-beta/install.sh) |\n\n---\n\n## Bugfixes\n\n### 🐧 Linux: Segfault auf XFCE / Void / CachyOS (zwei Ursachen)\n\nEs gab zwei separate Absturzursachen, die sich überlagert haben:\n\n**1. AT-SPI-Bridge** (behoben in v0.3.43/44, Erkennung jetzt zuverlässiger)\nDie Accessibility-Bridge segfaultet ohne laufenden at-spi2-Daemon.\n\n**2. GNOME-Theme-Plugin** (neu behoben in v0.3.45)\nDas `qt.qpa.theme.gnome`-Plugin versucht `org.freedesktop.portal.Desktop` zu kontaktieren. Auf XFCE existiert dieser Dienst nicht — das Plugin crasht.\n\n**Fix:** Die App erkennt jetzt den Desktop via `XDG_CURRENT_DESKTOP`:\n- **GNOME / KDE / MATE / Cinnamon** → alles bleibt unverändert, volle Barrierefreiheit ✅\n- **XFCE / i3 / Openbox / unbekannt** → AT-SPI-Bridge und GNOME-Theme-Plugin deaktiviert ✅\n\n---\n\n## Bekannte Einschränkungen\n\n- Windows Toast-Benachrichtigungen zeigen \"PowerShell\" statt \"Scrat-Backup\" als App-Name\n- macOS-Build noch nicht verfügbar",
+    "publishedAt": "2026-04-28T20:40:27Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.45-beta",
     "assets": [
       {
         "name": "install.sh",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.41-beta/install.sh",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.45-beta/install.sh",
         "size": 6289
       },
       {
-        "name": "ScratBackup-v0.3.41-beta-Setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.41-beta/ScratBackup-v0.3.41-beta-Setup.exe",
-        "size": 38203620
+        "name": "ScratBackup-v0.3.45-beta-Setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.45-beta/ScratBackup-v0.3.45-beta-Setup.exe",
+        "size": 38206172
       },
       {
-        "name": "ScratBackup-v0.3.41-beta-x86_64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.41-beta/ScratBackup-v0.3.41-beta-x86_64.AppImage",
+        "name": "ScratBackup-v0.3.45-beta-x86_64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.45-beta/ScratBackup-v0.3.45-beta-x86_64.AppImage",
         "size": 91804864
       }
     ]
