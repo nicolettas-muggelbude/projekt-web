@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/quark",
   "name": "Quark",
   "description": "Kostenloser, werbefreier QR-Code-Generator als Desktop-App für Linux und Windows",
-  "lastUpdate": "2026-05-04T08:20:31.308Z",
+  "lastUpdate": "2026-05-04T13:26:19.178Z",
   "repoInfo": {
     "stars": 0,
     "forks": 0,
@@ -13,26 +13,26 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.2.3",
-    "name": "Quark v0.2.3",
-    "body": "## Was ist neu in v0.2.3\n\n- 🐛 Linux: Weißes Fenster / Absturz auf Ubuntu 26.04 behoben (`WEBKIT_DISABLE_COMPOSITING_MODE=1` für webkit2gtk 2.46+)\n- 🐛 Linux: `install-linux.sh` prüft und installiert jetzt automatisch `libfuse2` — ohne FUSE 2 startet das AppImage nicht (Ubuntu 22.04+, Fedora, Arch)\n- 🔧 Linux: `install-linux.sh` bettet das App-Icon direkt ein — kein `curl` oder `wget` mehr erforderlich\n- 🔧 Linux: `.desktop`-Starter setzt jetzt `GDK_BACKEND=x11` und `WEBKIT_DISABLE_COMPOSITING_MODE=1` (Segfault-Fix Mesa 26 + KDE)\n- 🐛 Export: Auf Systemen wo der Download-Ordner nicht ermittelt werden kann (z. B. bestimmte KDE-Konfigurationen), wird jetzt auf den Home-Ordner zurückgefallen statt mit einem Fehler abzubrechen\n\n---\n\n## Download & Installation\n\n| Betriebssystem | Download | Hinweis |\n|---|---|---|\n| **Windows** | [⬇ Quark_0.2.3_x64-setup.exe](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.3/Quark_0.2.3_x64-setup.exe) | NSIS-Installer, einfach ausführen |\n| **Linux** | [⬇ Quark_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.3/Quark_amd64.AppImage) | **Empfohlen** – Dateiname bleibt nach Auto-Updates korrekt |\n| **Linux (versioniert)** | [⬇ Quark_0.2.3_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.3/Quark_0.2.3_amd64.AppImage) | Alternative mit Versionsnummer im Dateinamen |\n| **Linux: Menü-Integration** | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.3/install-linux.sh) | Einmalig ausführen → Icon + Starter im Anwendungsmenü |\n\n**Auto-Update:** Wer v0.1.0 oder neuer installiert hat, bekommt das Update automatisch beim nächsten App-Start angeboten.\n\n### Linux: Starter ins Anwendungsmenü integrieren\n\nDamit Quark in GNOME Activities, KDE Launcher, XFCE-Menü usw. erscheint:\n\n```bash\n# 1. AppImage herunterladen und ausführbar machen\nchmod +x Quark_amd64.AppImage\n\n# 2. Integrations-Skript ausführen (einmalig)\nwget -qO install-linux.sh https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.3/install-linux.sh\nchmod +x install-linux.sh\n./install-linux.sh ./Quark_amd64.AppImage\n```\n\n> ℹ️ Die Dateien `.tar.gz`, `.nsis.zip` und `.sig` sind für den eingebauten Auto-Updater – **nicht manuell herunterladen**.\n\n---\n\n## Mitwirken\n\nFehler gefunden oder Feature-Wunsch? → [Issue erstellen](https://github.com/nicolettas-muggelbude/quark/issues/new)",
-    "publishedAt": "2026-04-25T09:29:03Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/quark/releases/tag/v0.2.3",
+    "tagName": "v0.3.0",
+    "name": "v0.3.0 – Text-Label & aufklappbare Panels",
+    "body": "## Download & Installation\n\n| Betriebssystem | Download | Hinweis |\n|---|---|---|\n| **Windows** | [⬇ Quark_0.3.0_x64-setup.exe](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/Quark_0.3.0_x64-setup.exe) | NSIS-Installer, einfach ausführen |\n| **Linux** | [⬇ Quark_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/Quark_amd64.AppImage) | **Empfohlen** – Dateiname bleibt nach Auto-Updates korrekt |\n| **Linux (versioniert)** | [⬇ Quark_0.3.0_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/Quark_0.3.0_amd64.AppImage) | Alternative mit Versionsnummer im Dateinamen |\n| **Linux: Menü-Integration** | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/install-linux.sh) | Einmalig ausführen → Icon + Starter im Anwendungsmenü |\n\n**Auto-Update:** Wer v0.1.0 oder neuer installiert hat, bekommt das Update automatisch beim nächsten App-Start angeboten.\n\n### Linux: Starter ins Anwendungsmenü integrieren\n\n```bash\n# 1. AppImage herunterladen und ausführbar machen\nchmod +x Quark_amd64.AppImage\n\n# 2. Integrations-Skript ausführen (einmalig)\nwget -qO install-linux.sh https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/install-linux.sh\nchmod +x install-linux.sh\n./install-linux.sh ./Quark_amd64.AppImage\n```\n\n> ℹ️ Die Dateien `.tar.gz`, `.nsis.zip` und `.sig` sind für den eingebauten Auto-Updater – **nicht manuell herunterladen**.\n\n---\n\n## Was ist neu in v0.3.0\n\n- ✨ **Text-Label unter dem QR-Code** — freier Text direkt im QR-Export eingebettet\n  - Schriftart: Sans / Serif / Mono\n  - Ausrichtung: links / mitte / rechts\n  - Farbe frei wählbar\n  - Schriftgröße passt sich automatisch an Zeichenanzahl und QR-Breite an\n- ✨ **Aufklappbare Optionspanels** — Farben, Beschriftung und Export öffnen sich auf Klick, sparen Platz\n- 🐛 Layout: QR-Code bleibt jetzt fest positioniert, linke Seitenleiste scrollbar (Mausrad)\n\n---\n\n## Mitwirken\n\nFehler gefunden oder Feature-Wunsch? → [Issue erstellen](https://github.com/nicolettas-muggelbude/quark/issues/new)",
+    "publishedAt": "2026-05-04T09:08:33Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/quark/releases/tag/v0.3.0",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.3/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/install-linux.sh",
         "size": 36033
       },
       {
-        "name": "Quark_0.2.3_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.3/Quark_0.2.3_amd64.AppImage",
-        "size": 6091968
+        "name": "Quark_0.3.0_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/Quark_0.3.0_amd64.AppImage",
+        "size": 6161600
       },
       {
-        "name": "Quark_0.2.3_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.2.3/Quark_0.2.3_x64-setup.exe",
-        "size": 3473997
+        "name": "Quark_0.3.0_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/Quark_0.3.0_x64-setup.exe",
+        "size": 3487220
       }
     ]
   },
