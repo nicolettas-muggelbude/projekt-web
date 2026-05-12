@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/Scrat-Backup",
   "name": "Scrat-Backup",
   "description": "Scrat-Backup ist ein Open-Source-Backup-Tool für Linux und Windows. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups. 🇩🇪",
-  "lastUpdate": "2026-05-12T08:28:36.675Z",
+  "lastUpdate": "2026-05-12T14:00:42.727Z",
   "repoInfo": {
     "stars": 1,
     "forks": 0,
@@ -13,26 +13,26 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.3.49-beta",
-    "name": "v0.3.49-beta – Backup-Crash + Tray-Start behoben",
-    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ ScratBackup-v0.3.49-beta-Setup.exe](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.49-beta/ScratBackup-v0.3.49-beta-Setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ ScratBackup-v0.3.49-beta-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.49-beta/ScratBackup-v0.3.49-beta-x86_64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ ScratBackup-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.49-beta/ScratBackup-x86_64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install.sh](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.49-beta/install.sh) |\n\n---\n\n## Bugfixes\n\n### Backup-Fehler nach Wizard ohne Zeitplan\n\nWenn im Wizard kein Zeitplan aktiviert wurde, war `schedule` in der Config `None`. `dict.get(\"schedule\", {})` gibt aber den gespeicherten Wert `None` zurück, nicht den Default `{}`. Beim darauf folgenden `.get(\"frequency\")` gab es einen `AttributeError`.\n\n**Fix:** `wizard_config.get(\"schedule\") or {}` — `or {}` greift auch bei `None`.\n\n### System-Tray wurde nach Backup-Fehler nicht gestartet\n\nWenn das Backup nach dem Wizard abstürzte, wurde der System-Tray nie gestartet. Der Fehler propagierte unkontrolliert nach oben.\n\n**Fix:** `start_backup_after_wizard` ist jetzt in try/except eingewickelt — Tray startet auch wenn das Backup fehlschlägt.\n\n---\n\n## Bekannte Einschränkungen\n\n- Windows Toast-Benachrichtigungen zeigen \"PowerShell\" statt \"Scrat-Backup\" als App-Name\n- macOS-Build noch nicht verfügbar",
-    "publishedAt": "2026-04-29T18:31:13Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.49-beta",
+    "tagName": "v0.3.50",
+    "name": "v0.3.50",
+    "body": "﻿## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ ScratBackup-v0.3.50-Setup.exe](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.50/ScratBackup-v0.3.50-Setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ ScratBackup-v0.3.50-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.50/ScratBackup-v0.3.50-x86_64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ ScratBackup-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.50/ScratBackup-x86_64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install.sh](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.50/install.sh) |\n\n---\n\n## ✨ Neues in v0.3.50\n\n### Paralleles Backup auf mehrere Ziele\nEs ist jetzt möglich, Dateien gleichzeitig auf zwei oder mehr Ziele zu sichern – z. B. USB-Laufwerk **und** OneDrive parallel. Jedes Ziel hat seinen eigenen Zeitplan und wird in einem separaten Thread ausgeführt.\n\n### Profil-Auswahl beim Bearbeiten\nWenn mehrere Backup-Ziele konfiguriert sind, erscheint beim Klick auf „Backup-Ziel oder Zeitplan ändern\" eine neue Auswahlseite mit allen konfigurierten Profilen. So lässt sich gezielt nur ein einzelnes Ziel anpassen.\n\n### Neue Option: Quellen getrennt bearbeiten\nDie StartPage bietet jetzt eine eigene Option „📂 Backup-Quellen bearbeiten\", die direkt zur Quellen-Auswahl führt – ohne den gesamten Wizard durchlaufen zu müssen.\n\n---\n\n## 🐛 Verbesserungen\n\n- Rückwärts-Kompatibilität: Bestehende Konfigurationen werden automatisch ins neue Profil-Format migriert\n- Jedes Backup-Profil hat eine eigene Metadaten-Datenbank – keine SQLite-Konflikte bei parallelen Läufen\n\n---\n\n## ⚠️ Bekannte Einschränkungen\n\n- **Windows-Benachrichtigungen** zeigen „PowerShell\" statt „Scrat-Backup\" als Absender\n- **Cron unter WSL** läuft nur wenn der Cron-Daemon manuell gestartet wird (`sudo service cron start`)\r\n",
+    "publishedAt": "2026-05-12T10:02:01Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.50",
     "assets": [
       {
         "name": "install.sh",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.49-beta/install.sh",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.50/install.sh",
         "size": 6289
       },
       {
-        "name": "ScratBackup-v0.3.49-beta-Setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.49-beta/ScratBackup-v0.3.49-beta-Setup.exe",
-        "size": 38207248
+        "name": "ScratBackup-v0.3.50-Setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.50/ScratBackup-v0.3.50-Setup.exe",
+        "size": 38595405
       },
       {
-        "name": "ScratBackup-v0.3.49-beta-x86_64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.49-beta/ScratBackup-v0.3.49-beta-x86_64.AppImage",
-        "size": 91673792
+        "name": "ScratBackup-v0.3.50-x86_64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.50/ScratBackup-v0.3.50-x86_64.AppImage",
+        "size": 91718848
       }
     ]
   },
