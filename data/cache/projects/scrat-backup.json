@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/Scrat-Backup",
   "name": "Scrat-Backup",
   "description": "Scrat-Backup ist ein Open-Source-Backup-Tool für Linux und Windows. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups. 🇩🇪",
-  "lastUpdate": "2026-05-13T02:28:55.412Z",
+  "lastUpdate": "2026-05-13T08:35:23.967Z",
   "repoInfo": {
     "stars": 1,
     "forks": 0,
@@ -13,26 +13,26 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.3.51",
-    "name": "v0.3.51 – Backup-Namen + Quellen pro Profil",
-    "body": "﻿## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ ScratBackup-v0.3.51-Setup.exe](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.51/ScratBackup-v0.3.51-Setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ ScratBackup-v0.3.51-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.51/ScratBackup-v0.3.51-x86_64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ ScratBackup-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.51/ScratBackup-x86_64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install.sh](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.51/install.sh) |\n\n---\n\n## ✨ Neue Features\n\n### Mehrere Backups – jetzt mit Namen und eigenen Quellen\n\nWer mehrere Backup-Ziele (z. B. USB + OneDrive) eingerichtet hat, kann diese jetzt bequem verwalten:\n\n- **Jedes Backup hat einen Namen** – automatisch generiert nach dem Schema `Quellen → Ziel (Frequenz)`, z. B. `Dokumente → USB (täglich)`. Der Name ist auf der letzten Wizard-Seite frei editierbar.\n- **Jedes Backup hat eigene Quellen** – beim Anlegen eines neuen Backups kann ein bestehendes als Vorlage gewählt werden (Quellen werden kopiert und sind dann unabhängig änderbar) oder ganz neu gestartet werden.\n- **„Backup bearbeiten\"** zeigt jetzt alle konfigurierten Backups namentlich an, inkl. Quellen-Schritt.\n\n### Wizard-Routing vereinfacht\n\n- **„Backup-Quellen bearbeiten\"** als eigene Option entfernt – Quellen werden nun beim normalen „Backup bearbeiten\"-Flow mit geändert.\n- **„Neues Backup anlegen\"** → wähle zuerst: Vorlage kopieren oder leer starten.\n\n---\n\n## 🔧 Bugfixes & Verbesserungen\n\n- **Migration:** Bestehende Konfigurationen werden beim Update automatisch migriert – globale Quellen werden in jedes Profil kopiert, Backup-Historie bleibt erhalten.\n- **Automatische Backups:** Jedes Profil verwendet seine eigenen Quellen für den Headless-Backup-Modus (`--backup`).\n\n---\n\n## ⚠️ Bekannte Einschränkungen\n\n- Experten-Modus (MainWindow) noch nicht fertiggestellt\n- macOS Build noch nicht verfügbar\n- Windows-Benachrichtigungen zeigen „PowerShell\" statt „Scrat-Backup\" im Header\r\n",
-    "publishedAt": "2026-05-12T17:27:24Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.51",
+    "tagName": "v0.3.55",
+    "name": "v0.3.55",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ ScratBackup-v0.3.55-Setup.exe](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.55/ScratBackup-v0.3.55-Setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ ScratBackup-v0.3.55-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.55/ScratBackup-v0.3.55-x86_64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ ScratBackup-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.55/ScratBackup-x86_64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install.sh](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.55/install.sh) |\n\n---\n\n## 🔧 Bugfixes\n\n### Backup bearbeiten\n- Beim Bearbeiten eines bestehenden Profils wird jetzt das Profil aktualisiert statt ein neues angelegt\n- Ziel-Seite wird beim Bearbeiten mit den gespeicherten Werten vorbelegt (Template-Auswahl + Formular-Felder)\n\nEnthält alle Fixes aus v0.3.52–v0.3.54:\n- Startseite: bei vorhandenen Backups nur noch relevante Optionen\n- Profil löschen mit Bestätigungsdialog\n- Zeitplan wird beim Bearbeiten korrekt vorgeladen\n- Seite Einrichtung abgeschlossen: scrollbar, kein doppelter Weiter-Button, Duplikat-Prüfung",
+    "publishedAt": "2026-05-13T07:18:55Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.55",
     "assets": [
       {
         "name": "install.sh",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.51/install.sh",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.55/install.sh",
         "size": 6289
       },
       {
-        "name": "ScratBackup-v0.3.51-Setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.51/ScratBackup-v0.3.51-Setup.exe",
-        "size": 38609592
+        "name": "ScratBackup-v0.3.55-Setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.55/ScratBackup-v0.3.55-Setup.exe",
+        "size": 38596565
       },
       {
-        "name": "ScratBackup-v0.3.51-x86_64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.51/ScratBackup-v0.3.51-x86_64.AppImage",
-        "size": 91718848
+        "name": "ScratBackup-v0.3.55-x86_64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.55/ScratBackup-v0.3.55-x86_64.AppImage",
+        "size": 91727040
       }
     ]
   },
