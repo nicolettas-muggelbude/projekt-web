@@ -2,11 +2,11 @@
   "repo": "nicolettas-muggelbude/Automatisiertes-Update-Script-fuer-Linux",
   "name": "Automatisiertes Update-Script fuer Linux",
   "description": "Mehrsprachiges automatisiertes Update & Upgrade-Script fuer verschiedene Linux-Distributionen mit optionaler E-Mail-Benachrichtigung und detailliertem Logging. 🇩🇪 🇬🇧",
-  "lastUpdate": "2026-05-15T08:40:03.156Z",
+  "lastUpdate": "2026-05-15T13:47:13.461Z",
   "repoInfo": {
     "stars": 3,
     "forks": 1,
-    "openIssues": 0,
+    "openIssues": 1,
     "description": "Mehrsprachiges automatisiertes Update & Upgrade-Script fuer verschiedene Linux-Distributionen mit optionaler E-Mail-Benachrichtigung und detailliertem Logging. 🇩🇪 🇬🇧",
     "homepage": "",
     "topics": [
