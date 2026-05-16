@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/quark",
   "name": "Quark",
   "description": "Kostenloser, werbefreier QR-Code-Generator als Desktop-App für Linux und Windows",
-  "lastUpdate": "2026-05-16T13:04:33.024Z",
+  "lastUpdate": "2026-05-16T18:53:15.762Z",
   "repoInfo": {
     "stars": 0,
     "forks": 0,
@@ -13,26 +13,26 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.3.0",
-    "name": "v0.3.0 – Text-Label & aufklappbare Panels",
-    "body": "## Download & Installation\n\n| Betriebssystem | Download | Hinweis |\n|---|---|---|\n| **Windows** | [⬇ Quark_0.3.0_x64-setup.exe](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/Quark_0.3.0_x64-setup.exe) | NSIS-Installer, einfach ausführen |\n| **Linux** | [⬇ Quark_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/Quark_amd64.AppImage) | **Empfohlen** – Dateiname bleibt nach Auto-Updates korrekt |\n| **Linux (versioniert)** | [⬇ Quark_0.3.0_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/Quark_0.3.0_amd64.AppImage) | Alternative mit Versionsnummer im Dateinamen |\n| **Linux: Menü-Integration** | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/install-linux.sh) | Einmalig ausführen → Icon + Starter im Anwendungsmenü |\n\n**Auto-Update:** Wer v0.1.0 oder neuer installiert hat, bekommt das Update automatisch beim nächsten App-Start angeboten.\n\n### Linux: Starter ins Anwendungsmenü integrieren\n\n```bash\n# 1. AppImage herunterladen und ausführbar machen\nchmod +x Quark_amd64.AppImage\n\n# 2. Integrations-Skript ausführen (einmalig)\nwget -qO install-linux.sh https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/install-linux.sh\nchmod +x install-linux.sh\n./install-linux.sh ./Quark_amd64.AppImage\n```\n\n> ℹ️ Die Dateien `.tar.gz`, `.nsis.zip` und `.sig` sind für den eingebauten Auto-Updater – **nicht manuell herunterladen**.\n\n---\n\n## Was ist neu in v0.3.0\n\n- ✨ **Text-Label unter dem QR-Code** — freier Text direkt im QR-Export eingebettet\n  - Schriftart: Sans / Serif / Mono\n  - Ausrichtung: links / mitte / rechts\n  - Farbe frei wählbar\n  - Schriftgröße passt sich automatisch an Zeichenanzahl und QR-Breite an\n- ✨ **Aufklappbare Optionspanels** — Farben, Beschriftung und Export öffnen sich auf Klick, sparen Platz\n- 🐛 Layout: QR-Code bleibt jetzt fest positioniert, linke Seitenleiste scrollbar (Mausrad)\n\n---\n\n## Mitwirken\n\nFehler gefunden oder Feature-Wunsch? → [Issue erstellen](https://github.com/nicolettas-muggelbude/quark/issues/new)",
-    "publishedAt": "2026-05-04T09:08:33Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/quark/releases/tag/v0.3.0",
+    "tagName": "v1.0.1",
+    "name": "Quark v1.0.1",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ Quark_1.0.1_x64-setup.exe](https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/Quark_1.0.1_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ Quark_1.0.1_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/Quark_1.0.1_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ Quark_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/Quark_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/install-linux.sh) |\n\n---\n\n## 🔧 Bugfix v1.0.1\n\n### Flatpak\n- Wayland-Rendering im Flatpak aktiviert — X11-Workaround greift nur noch außerhalb des Flatpak-Sandboxes\n\n---\n\n## ✨ Neu in v1.0.0\n\n### Rahmen (Frame)\n- **Einfacher Rand** — farbiger Rahmen mit einstellbarer Breite und Rundung\n- **Ecken** — vier L-förmige Ecken-Klammern, eckig oder abgerundet per Radius-Schieberegler\n- **Badge oben / Badge unten** — farbiger Textstreifen über oder unter dem QR-Code\n- Rahmenfarbe, Textfarbe, Breite, Innenabstand (eng/weit) und Rundung frei einstellbar\n\n### Export\n- Exportiertes PNG ist pixelgenau proportional zur Vorschau\n- Canvas-Größe (256 / 512 / 1024 px) wird exakt eingehalten — QR und Rahmen skalieren proportional\n- Rundungen und Ecken werden per Canvas-Clipping korrekt gerendert\n\n### Sonstiges\n- Text-Label bleibt bei allen Rahmenstilen innerhalb des Rahmens\n- Badge-Text passt sich automatisch an die verfügbare Breite an",
+    "publishedAt": "2026-05-16T17:55:12Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/quark/releases/tag/v1.0.1",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/install-linux.sh",
         "size": 36033
       },
       {
-        "name": "Quark_0.3.0_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/Quark_0.3.0_amd64.AppImage",
-        "size": 6161600
+        "name": "Quark_1.0.1_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/Quark_1.0.1_amd64.AppImage",
+        "size": 6165696
       },
       {
-        "name": "Quark_0.3.0_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v0.3.0/Quark_0.3.0_x64-setup.exe",
-        "size": 3487220
+        "name": "Quark_1.0.1_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/Quark_1.0.1_x64-setup.exe",
+        "size": 3485303
       }
     ]
   },
