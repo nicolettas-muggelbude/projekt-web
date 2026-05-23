@@ -2,11 +2,11 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-05-23T08:07:45.562Z",
+  "lastUpdate": "2026-05-23T13:06:34.662Z",
   "repoInfo": {
-    "stars": 39,
+    "stars": 40,
     "forks": 4,
-    "openIssues": 11,
+    "openIssues": 13,
     "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
     "homepage": "",
     "topics": [
@@ -34,36 +34,36 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.2.4",
-    "name": "RechnungsFee v0.2.4",
-    "body": "## 💾 Downloads\r\n\r\n| Plattform | Download |\r\n|-----------|----------|\r\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.2.4_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.4/RechnungsFee_0.2.4_x64-setup.exe) |\r\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.2.4_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.4/RechnungsFee_0.2.4_amd64.AppImage) |\r\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.4/RechnungsFee_amd64.AppImage) |\r\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.4/install-linux.sh) |\r\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.2.4_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.4/RechnungsFee_0.2.4_aarch64.dmg) |\r\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.4/RechnungsFee_aarch64.dmg) |\r\n\r\n> 🍎 macOS: kein Apple-Zertifikat – beim ersten Start Rechtsklick → Öffnen, oder \r\n\r\n## Neu\r\n\r\n- **Eingangsrechnungen importieren** – ZUGFeRD und XRechnung werden automatisch erkannt und Felder vorausgefüllt\r\n- **plain PDF Import** – PDF öffnet sich automatisch zum Abschreiben; Originaldatei wird automatisch als Beleganhang gespeichert\r\n- **Kategorien: Kontonummern editierbar** – SKR03/SKR04 im Bearbeitungsmodus anpassen, Reset auf Standardwert möglich\r\n- **Eigene Kategorien** – neue Kategorien anlegen, nicht verwendete löschen\r\n\r\n## Verbesserungen\r\n\r\n- EÜR-Zeilennummern auf **Anlage EÜR 2025** aktualisiert (44 Korrekturen)\r\n- SKR03/SKR04-Kontonummern auf **DATEV-Kontenrahmen 2026** korrigiert (39 Korrekturen)\r\n\r\n## Bugfixes\r\n\r\n- Mausrad-Scrollen im Setup-Wizard unter **Linux Mint Cinnamon** (WebKit2GTK)\r\n- Reset-Button in Kategorien aktualisiert den angezeigten Wert sofort",
-    "publishedAt": "2026-05-21T23:24:25Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.2.4",
+    "tagName": "v0.2.5",
+    "name": "RechnungsFee v0.2.5",
+    "body": "## 💾 Downloads\r\n\r\n| Plattform | Download |\r\n|-----------|----------|\r\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.2.5_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.5/RechnungsFee_0.2.5_x64-setup.exe) |\r\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.2.5_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.5/RechnungsFee_0.2.5_amd64.AppImage) |\r\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.5/RechnungsFee_amd64.AppImage) |\r\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.5/install-linux.sh) |\r\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.2.5_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.5/RechnungsFee_0.2.5_aarch64.dmg) |\r\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.5/RechnungsFee_aarch64.dmg) |\r\n\r\n> 🍎 **macOS-Hinweis:** Die App ist nicht signiert. Beim ersten Start: Rechtsklick → Öffnen, oder `xattr -cr RechnungsFee_0.2.5_aarch64.dmg` im Terminal.\r\n\r\n---\r\n\r\n## ✨ Neu\r\n\r\n- **Journal: USt-Aufteilung** – Buchungen mit Umsatzsteuer erscheinen automatisch als zwei Zeilen: Nettobetrag auf dem Erlös-/Aufwandskonto und USt-Betrag auf dem richtigen Steuerkonto (SKR03: 1776/1771 Einnahme, 1575/1570 Ausgabe). Kein manueller Aufwand.\r\n- **Kategorien bearbeiten** – selbst angelegte Kategorien lassen sich jetzt vollständig bearbeiten (Name, Konten, alle Felder). Der Bearbeiten-Button öffnet das gewohnte Formular vorausgefüllt.\r\n\r\n## 🔧 Bugfixes\r\n\r\n- **XRechnung-Import (UBL-Format)** – Lieferantenname und Fälligkeitsdatum wurden nicht erkannt, wenn der Name in `PartyLegalEntity/RegistrationName` und das Datum als `cbc:DueDate` gespeichert war. Beide Varianten werden jetzt korrekt ausgelesen. (#98)\r\n- **PDF-Import** – das importierte PDF öffnet sich jetzt im systemseitig eingestellten PDF-Viewer (Acrobat, Edge, Evince …) statt im eingebetteten Inline-Viewer. Das Formular bleibt dabei im Hintergrund offen. (#99)\r\n- **Kategorie löschen** – der Bestätigungs-Dialog zeigte fälschlich „tauri.localhost\" im Titel. Ersetzt durch eine eingebettete Bestätigung direkt in der Zeile mit Kategoriename. (#96)\r\n- **Setup-Wizard** – Mausrad-Scrollen funktioniert jetzt unter Linux Cinnamon/Muffin (WebKit2GTK).\r\n",
+    "publishedAt": "2026-05-23T08:16:58Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.2.5",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.4/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.5/install-linux.sh",
         "size": 30651
       },
       {
-        "name": "RechnungsFee_0.2.4_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.4/RechnungsFee_0.2.4_aarch64.dmg",
-        "size": 72466635
+        "name": "RechnungsFee_0.2.5_aarch64.dmg",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.5/RechnungsFee_0.2.5_aarch64.dmg",
+        "size": 72471979
       },
       {
-        "name": "RechnungsFee_0.2.4_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.4/RechnungsFee_0.2.4_amd64.AppImage",
-        "size": 97170624
+        "name": "RechnungsFee_0.2.5_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.5/RechnungsFee_0.2.5_amd64.AppImage",
+        "size": 97178816
       },
       {
-        "name": "RechnungsFee_0.2.4_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.4/RechnungsFee_0.2.4_x64-setup.exe",
-        "size": 73897291
+        "name": "RechnungsFee_0.2.5_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.5/RechnungsFee_0.2.5_x64-setup.exe",
+        "size": 73903522
       },
       {
         "name": "RechnungsFee_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.4/RechnungsFee_aarch64.dmg",
-        "size": 72466635
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.5/RechnungsFee_aarch64.dmg",
+        "size": 72471979
       }
     ]
   },
