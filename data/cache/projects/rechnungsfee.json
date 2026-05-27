@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-05-26T19:59:08.795Z",
+  "lastUpdate": "2026-05-27T02:41:34.832Z",
   "repoInfo": {
     "stars": 42,
     "forks": 4,
@@ -34,36 +34,36 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.2.7",
-    "name": "RechnungsFee v0.2.7",
-    "body": "## 💾 Downloads\r\n\r\n| Plattform | Download |\r\n|-----------|----------|\r\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.2.7_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.7/RechnungsFee_0.2.7_x64-setup.exe) |\r\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.2.7_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.7/RechnungsFee_0.2.7_amd64.AppImage) |\r\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.7/RechnungsFee_amd64.AppImage) |\r\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.7/install-linux.sh) |\r\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.2.7_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.7/RechnungsFee_0.2.7_aarch64.dmg) |\r\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.7/RechnungsFee_aarch64.dmg) |\r\n\r\n> 🍎 macOS: Gatekeeper-Hinweis – beim ersten Start Rechtsklick → Öffnen, oder im Terminal: `xattr -cr RechnungsFee_0.2.7_aarch64.dmg`\r\n\r\n---\r\n\r\n## 🐛 Bugfixes\r\n\r\n- **PDF – Gutschriften / negative Mengen**: Einzelpreis bleibt positiv, Nettospalte zeigt die Positionssumme (Menge × Einzelpreis), USt-Aufschlüsselung und Vorzeichen stimmen jetzt korrekt\r\n- **PDF – USt-Aufschlüsselung (Issue #101)**: Bei gemischten Steuersätzen erscheint die Aufschlüsselung jetzt als einzelne Zeile statt mehrfach wiederholt\r\n- **Kategorien löschen (Issue #96)**: Löschen schlug still fehl wenn die Kategorie noch in Rechnungen, Banktransaktionen oder Automatikregeln verwendet wurde – es erscheint jetzt eine Fehlermeldung\r\n- **Linux Mint Cinnamon – Mausrad-Scrollen**: Scrollen in der Hauptapp funktioniert jetzt (WebKitGTK-Workaround)\r\n- **Kategorien (Issue #106)**: 5 fehlende Einträge ergänzt – AfA (EÜR Z.36), Fahrtkosten Privat-PKW 0,10 €/km (EKS B6_5, EÜR Z.70), Verpflegungsmehraufwand (EKS B7_2, EÜR Z.44), Mitgliedsbeiträge (EKS B14_5, EÜR Z.60), Spenden betrieblich (EKS B14_5)\r\n- **Kategorien (Issue #105)**: Erlös-Kategorie wurde beim Speichern nicht korrekt zugeordnet (`bezeichnung` → `name`)\r\n- **Datenbank-Migration (Issue #102)**: Migration 29 bereinigt übrig gebliebene `bank`-Spalte in der `konten`-Tabelle (betrifft Datenbanken die vor v0.2 angelegt wurden)\r\n- **XML-Import – Einzelpreis**: Positionsnetto wird jetzt korrekt als Einzelpreis (nicht Zeilensumme) übernommen\r\n- **XML-Import – Fälligkeit**: Zahlungstext wird gegenüber `DueDateDateTime` bevorzugt; Fallback auf PDF-Text wenn XML keinen Zahlungstext enthält\r\n- **XML-Import – Summen**: Gesamtbeträge werden direkt aus der Rechnung übernommen wenn alle drei Werte vorhanden sind; USt-Berechnung auf `ROUND_HALF_EVEN` (kaufmännisch) umgestellt\r\n- **XML-Import – USt-Satz**: Wert `19.00` wird zu `19` normalisiert\r\n- **Import-Dialog – Summenanzeige**: Summen im Vorschau-Modus werden direkt aus den XML-Werten angezeigt\r\n\r\n## 🔧 Verbesserungen\r\n\r\n- **Plain-PDF-Import (Stufe 3)**: Texterkennung aus maschinenlesbaren PDFs – Positionen, Artikelnummern und Formularfelder werden automatisch vorausgefüllt\r\n- **PDF-Vorlagen**: Gemeinsame Logik in Basisklasse `RechnungPDFBase` extrahiert – neue Vorlagen lassen sich einfacher hinzufügen\r\n- **Dashboard**: Listen sind jetzt scrollbar und vertikal in der Höhe anpassbar (Issue #104)\r\n",
-    "publishedAt": "2026-05-26T07:19:01Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.2.7",
+    "tagName": "v0.2.8",
+    "name": "RechnungsFee v0.2.8",
+    "body": "## 💾 Downloads\r\n\r\n| Plattform | Download |\r\n|-----------|----------|\r\n| 🖪 **Windows** (x64) | [⬇ RechnungsFee_0.2.8_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.8/RechnungsFee_0.2.8_x64-setup.exe) |\r\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.2.8_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.8/RechnungsFee_0.2.8_amd64.AppImage) |\r\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.8/RechnungsFee_amd64.AppImage) |\r\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.8/install-linux.sh) |\r\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.2.8_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.8/RechnungsFee_0.2.8_aarch64.dmg) |\r\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.8/RechnungsFee_aarch64.dmg) |\r\n\r\n> 🍎 macOS: Gatekeeper-Hinweis – beim ersten Start Rechtsklick → Öffnen, oder im Terminal: `xattr -cr RechnungsFee_0.2.8_aarch64.dmg`\r\n\r\n---\r\n\r\n## ✨ Neu\r\n\r\n- **Leistungszeitraum (Issue #107)**: Statt einem einzelnen Datum kann beim Erstellen einer Rechnung jetzt ein Von–Bis-Zeitraum angegeben werden – ideal für Monats- oder Projektabrechnungen. Auf der PDF erscheint „Leistungszeitraum: 01.05.2026 – 31.05.2026“, ZUGFeRD wird entsprechend befüllt.\r\n- **Kategorie-Zuweisung bei Eingangsrechnungen**: Die Kategorie wird jetzt beim Bezahlen statt beim Anlegen der Rechnung zugewiesen. Bei Rechnungen mit mehreren Kostenstellen ist eine Split-Zahlung mit je eigener Kategorie pro Anteil möglich.\r\n\r\n## 🐛 Bugfixes\r\n\r\n- **PDF-Import – Bilinguale Rechnungen (z. B. Amazon)**: Rechnungen mit zweisprachigen Spaltenüberschriften (`Beschreibung / Description`, `MwSt. / VAT`) und ohne Leerzeichen zwischen Betrag und nächstem Wert (`37,73 EUR44,90`) werden jetzt korrekt erkannt und importiert.\r\n- **Linux Mint Cinnamon – Mausrad-Scrollen im Setup-Wizard**: Der React-`onWheel`-Handler funktioniert unter WebKitGTK nicht; der globale WebKitGTK-Workaround aus der Hauptapp greift jetzt auch im Wizard.\r\n",
+    "publishedAt": "2026-05-26T20:43:54Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.2.8",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.7/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.8/install-linux.sh",
         "size": 30651
       },
       {
-        "name": "RechnungsFee_0.2.7_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.7/RechnungsFee_0.2.7_aarch64.dmg",
-        "size": 72490914
+        "name": "RechnungsFee_0.2.8_aarch64.dmg",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.8/RechnungsFee_0.2.8_aarch64.dmg",
+        "size": 71001241
       },
       {
-        "name": "RechnungsFee_0.2.7_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.7/RechnungsFee_0.2.7_amd64.AppImage",
-        "size": 97191104
+        "name": "RechnungsFee_0.2.8_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.8/RechnungsFee_0.2.8_amd64.AppImage",
+        "size": 95737024
       },
       {
-        "name": "RechnungsFee_0.2.7_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.7/RechnungsFee_0.2.7_x64-setup.exe",
-        "size": 73926259
+        "name": "RechnungsFee_0.2.8_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.8/RechnungsFee_0.2.8_x64-setup.exe",
+        "size": 72675519
       },
       {
         "name": "RechnungsFee_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.7/RechnungsFee_aarch64.dmg",
-        "size": 72490914
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.8/RechnungsFee_aarch64.dmg",
+        "size": 71001241
       }
     ]
   },
