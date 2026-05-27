@@ -743,8 +743,14 @@ class ProjectPage {
                 html += `<div class="wiki-page${i === 0 ? ' active' : ''} markdown-body" `
                       + `role="tabpanel" data-page="${i}">`;
 
+                // Relative Wiki-Links (interne Querverweise) → absolute GitHub-Wiki-URLs
+                let pageHtml = page.html.replace(/href="(?!https?:\/\/)(?!#)([^"]+)"/gi, (match, href) => {
+                    const wikiPage = href.replace(/\.md$/i, '').replace(/^\.\//, '');
+                    return `href="https://github.com/${this.repo}/wiki/${encodeURIComponent(wikiPage)}" target="_blank" rel="noopener noreferrer"`;
+                });
+
                 // Externe Links → neuer Tab
-                let pageHtml = page.html.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
+                pageHtml = pageHtml.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
                     if (match.includes('target=')) return match;
                     return `href="${url}" target="_blank" rel="noopener noreferrer"`;
                 });
