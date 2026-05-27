@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/quark",
   "name": "Quark",
   "description": "Kostenloser, werbefreier QR-Code-Generator als Desktop-App für Linux und Windows",
-  "lastUpdate": "2026-05-27T14:59:03.806Z",
+  "lastUpdate": "2026-05-27T20:03:54.325Z",
   "repoInfo": {
     "stars": 0,
     "forks": 0,
@@ -13,26 +13,26 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v1.0.1",
-    "name": "Quark v1.0.1",
-    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ Quark_1.0.1_x64-setup.exe](https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/Quark_1.0.1_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ Quark_1.0.1_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/Quark_1.0.1_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ Quark_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/Quark_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/install-linux.sh) |\n\n---\n\n## 🔧 Bugfix v1.0.1\n\n### Flatpak\n- Wayland-Rendering im Flatpak aktiviert — X11-Workaround greift nur noch außerhalb des Flatpak-Sandboxes\n\n---\n\n## ✨ Neu in v1.0.0\n\n### Rahmen (Frame)\n- **Einfacher Rand** — farbiger Rahmen mit einstellbarer Breite und Rundung\n- **Ecken** — vier L-förmige Ecken-Klammern, eckig oder abgerundet per Radius-Schieberegler\n- **Badge oben / Badge unten** — farbiger Textstreifen über oder unter dem QR-Code\n- Rahmenfarbe, Textfarbe, Breite, Innenabstand (eng/weit) und Rundung frei einstellbar\n\n### Export\n- Exportiertes PNG ist pixelgenau proportional zur Vorschau\n- Canvas-Größe (256 / 512 / 1024 px) wird exakt eingehalten — QR und Rahmen skalieren proportional\n- Rundungen und Ecken werden per Canvas-Clipping korrekt gerendert\n\n### Sonstiges\n- Text-Label bleibt bei allen Rahmenstilen innerhalb des Rahmens\n- Badge-Text passt sich automatisch an die verfügbare Breite an",
-    "publishedAt": "2026-05-16T17:55:12Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/quark/releases/tag/v1.0.1",
+    "tagName": "v1.0.2",
+    "name": "Quark v1.0.2",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ Quark_1.0.2_x64-setup.exe](https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.2/Quark_1.0.2_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ Quark_1.0.2_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.2/Quark_1.0.2_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ Quark_amd64.AppImage](https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.2/Quark_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install.sh](https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.2/install-linux.sh) |\n\n## Bugfixes\n\n- **Color Picker**: Picker öffnet sich jetzt korrekt auf allen Panels – war zuvor durch `overflow-y-auto` des Scroll-Containers abgeschnitten (Portal-Rendering via `document.body`)\n",
+    "publishedAt": "2026-05-27T19:44:24Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/quark/releases/tag/v1.0.2",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.2/install-linux.sh",
         "size": 36033
       },
       {
-        "name": "Quark_1.0.1_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/Quark_1.0.1_amd64.AppImage",
+        "name": "Quark_1.0.2_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.2/Quark_1.0.2_amd64.AppImage",
         "size": 6165696
       },
       {
-        "name": "Quark_1.0.1_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.1/Quark_1.0.1_x64-setup.exe",
-        "size": 3485303
+        "name": "Quark_1.0.2_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/quark/releases/download/v1.0.2/Quark_1.0.2_x64-setup.exe",
+        "size": 3483457
       }
     ]
   },
