@@ -27,7 +27,8 @@ class ProjectPage {
                 this.loadReadme(),
                 this.loadReleases(),
                 this.loadChangelog(),
-                this.loadRoadmap()
+                this.loadRoadmap(),
+                this.loadHandbuch()
             ]);
         } catch (error) {
             console.error('Fehler beim Laden der Projekt-Daten:', error);
@@ -696,6 +697,87 @@ class ProjectPage {
             console.error('Fehler beim Laden der Roadmap:', error);
             const roadmapSection = document.getElementById('roadmap');
             if (roadmapSection) roadmapSection.style.display = 'none';
+        }
+    }
+
+    async loadHandbuch() {
+        const section = document.getElementById('handbuch');
+        const container = document.getElementById('handbuch-content');
+
+        // Sektion existiert nicht auf dieser Projektseite → nichts tun
+        if (!section || !container) return;
+
+        try {
+            const projectId = document.querySelector('.project-content')?.dataset.projectId
+                || this.repo.split('/')[1].toLowerCase();
+            const cacheResponse = await fetch(`../data/cache/projects/${projectId}.json`);
+
+            if (!cacheResponse.ok) {
+                section.style.display = 'none';
+                return;
+            }
+
+            const cached = await cacheResponse.json();
+            const wikiPages = cached.wikiPages;
+
+            if (!wikiPages || wikiPages.length === 0) {
+                section.style.display = 'none';
+                return;
+            }
+
+            let html = '';
+
+            // Tabs nur bei mehr als einer Seite
+            if (wikiPages.length > 1) {
+                html += '<div class="wiki-tabs" role="tablist">';
+                wikiPages.forEach((page, i) => {
+                    html += `<button class="wiki-tab${i === 0 ? ' active' : ''}" `
+                          + `role="tab" aria-selected="${i === 0}" data-page="${i}">`
+                          + `${page.title}</button>`;
+                });
+                html += '</div>';
+            }
+
+            html += '<div class="wiki-content-wrapper">';
+            wikiPages.forEach((page, i) => {
+                html += `<div class="wiki-page${i === 0 ? ' active' : ''} markdown-body" `
+                      + `role="tabpanel" data-page="${i}">`;
+
+                // Externe Links → neuer Tab
+                let pageHtml = page.html.replace(/href="(https?:\/\/[^"]+)"/gi, (match, url) => {
+                    if (match.includes('target=')) return match;
+                    return `href="${url}" target="_blank" rel="noopener noreferrer"`;
+                });
+
+                html += pageHtml;
+                html += '</div>';
+            });
+            html += '</div>';
+
+            html += `<a href="https://github.com/${this.repo}/wiki" target="_blank" `
+                  + `rel="noopener noreferrer" class="btn-secondary wiki-github-link">`
+                  + `Handbuch auf GitHub ansehen →</a>`;
+
+            container.innerHTML = html;
+
+            // Tab-Wechsel
+            container.querySelectorAll('.wiki-tab').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = btn.dataset.page;
+                    container.querySelectorAll('.wiki-tab').forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-selected', 'false');
+                    });
+                    container.querySelectorAll('.wiki-page').forEach(p => p.classList.remove('active'));
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
+                    container.querySelector(`.wiki-page[data-page="${idx}"]`).classList.add('active');
+                });
+            });
+
+        } catch (error) {
+            console.error('Fehler beim Laden des Handbuchs:', error);
+            section.style.display = 'none';
         }
     }
 }

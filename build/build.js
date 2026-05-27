@@ -12,6 +12,8 @@
 
 const fs = require('fs').promises;
 const path = require('path');
+const { spawnSync } = require('child_process');
+const os = require('os');
 
 // GitHub API Base
 const GITHUB_API = 'https://api.github.com';
@@ -185,6 +187,71 @@ async function buildProjectCache(project) {
             }
         } catch (error) {
             log(`  ⚠ ROADMAP konnte nicht geladen werden: ${error.message}`, 'yellow');
+        }
+
+        // WIKI / HANDBUCH
+        log('  ⬇️  Lade Wiki/Handbuch...');
+        const tmpDir = path.join(os.tmpdir(), `wiki-${project.id}-${Date.now()}`);
+        try {
+            const wikiUrl = GITHUB_TOKEN
+                ? `https://x-access-token:${GITHUB_TOKEN}@github.com/${project.repo}.wiki.git`
+                : `https://github.com/${project.repo}.wiki.git`;
+
+            const cloneResult = spawnSync(
+                'git',
+                ['clone', wikiUrl, tmpDir, '--depth', '1', '--quiet'],
+                { timeout: 30000, encoding: 'utf-8' }
+            );
+
+            if (cloneResult.status === 0) {
+                const { marked } = await import('marked');
+                const files = await fs.readdir(tmpDir);
+
+                // Interne GitHub-Wiki-Dateien (_Sidebar.md, _Footer.md) ausschließen
+                const mdFiles = files
+                    .filter(f => f.endsWith('.md') && !f.startsWith('_'))
+                    .sort((a, b) => {
+                        if (a === 'Home.md') return -1;
+                        if (b === 'Home.md') return 1;
+                        return a.localeCompare(b);
+                    });
+
+                const wikiPages = [];
+                for (const file of mdFiles) {
+                    const content = await fs.readFile(path.join(tmpDir, file), 'utf-8');
+                    const pageName = file.replace('.md', '');
+                    const displayTitle = pageName.replace(/-/g, ' ');
+
+                    // Relative Bild-Pfade auf Wiki-Raw-URLs umschreiben
+                    const processedContent = content.replace(
+                        /!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g,
+                        `![$1](https://raw.githubusercontent.com/wiki/${project.repo}/$2)`
+                    );
+
+                    wikiPages.push({
+                        name: pageName,
+                        title: displayTitle,
+                        html: marked(processedContent),
+                        htmlUrl: `https://github.com/${project.repo}/wiki/${encodeURIComponent(pageName)}`
+                    });
+                }
+
+                if (wikiPages.length > 0) {
+                    cache.wikiPages = wikiPages;
+                    log(`  ✓ Wiki geladen: ${wikiPages.length} Seite(n)`, 'green');
+                } else {
+                    log('  ⚠ Wiki vorhanden, aber keine Seiten gefunden', 'yellow');
+                }
+            } else {
+                log('  ⚠ Kein Wiki gefunden oder nicht aktiviert', 'yellow');
+            }
+        } catch (error) {
+            log(`  ⚠ Wiki konnte nicht geladen werden: ${error.message}`, 'yellow');
+        } finally {
+            // Temp-Verzeichnis aufräumen
+            try {
+                await fs.rm(tmpDir, { recursive: true, force: true });
+            } catch (_) { /* ignorieren */ }
         }
 
         // Speichere Cache
