@@ -2,11 +2,11 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-05-30T13:08:37.779Z",
+  "lastUpdate": "2026-05-30T19:02:03.736Z",
   "repoInfo": {
     "stars": 43,
     "forks": 4,
-    "openIssues": 11,
+    "openIssues": 10,
     "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
     "homepage": "",
     "topics": [
@@ -34,36 +34,36 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.2.14",
-    "name": "RechnungsFee v0.2.14",
-    "body": "## 💾 Downloads\r\n\r\n| Plattform | Download |\r\n|-----------|----------|\r\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.2.14_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.14/RechnungsFee_0.2.14_x64-setup.exe) |\r\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.2.14_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.14/RechnungsFee_0.2.14_amd64.AppImage) |\r\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.14/RechnungsFee_amd64.AppImage) |\r\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.14/install-linux.sh) |\r\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.2.14_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.14/RechnungsFee_0.2.14_aarch64.dmg) |\r\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.14/RechnungsFee_aarch64.dmg) |\r\n\r\n> 🍎 **macOS:** Da keine Apple-Signierung vorliegt, beim ersten Start per Rechtsklick → „Öffnen\" starten oder einmalig `xattr -cr RechnungsFee_0.2.14_aarch64.dmg` im Terminal ausführen.\r\n\r\n---\r\n\r\n## 🐛 Bugfixes\r\n\r\n### Linux: Backend startet nicht (Issue #110)\r\n\r\nZwei unabhängige Fixes für das Problem „Backend nicht erreichbar\" unter Linux:\r\n\r\n**PIL/_avif.so Extraktionsfehler**\r\nPyInstaller bündelte Pillows AVIF- und WebP-Codec, die beim Entpacken auf manchen Linux-Systemen sofort mit „decompression return code -1\" fehlschlugen → Backend-Prozess beendete sich mit Exit 255, bevor der HTTP-Server starten konnte. Beide Codecs werden nicht mehr ins Bundle gepackt (werden von RechnungsFee nicht benötigt).\r\n\r\n**Ghost-Backends häuften sich an**\r\nDer Startup-Cleanup (alte Backend-Prozesse vom letzten Absturz killen) funktionierte nur im Entwickler-Modus. Im AppImage-Modus liegt das Binary unter `/tmp/.mount_*/usr/bin/backend-x86_64-unknown-linux-gnu` – das bisherige Muster `binaries/backend` hat dort nicht gegriffen. Fix: Muster auf den tatsächlichen Binary-Namen korrigiert.\r\n",
-    "publishedAt": "2026-05-29T16:56:03Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.2.14",
+    "tagName": "v0.2.15",
+    "name": "RechnungsFee v0.2.15",
+    "body": "## 💾 Downloads\r\n\r\n| Plattform | Download |\r\n|-----------|----------|\r\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.2.15_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.15/RechnungsFee_0.2.15_x64-setup.exe) |\r\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.2.15_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.15/RechnungsFee_0.2.15_amd64.AppImage) |\r\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.15/RechnungsFee_amd64.AppImage) |\r\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.15/install-linux.sh) |\r\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.2.15_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.15/RechnungsFee_0.2.15_aarch64.dmg) |\r\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.15/RechnungsFee_aarch64.dmg) |\r\n\r\n> **macOS:** Beim ersten Start Rechtsklick → Öffnen, oder im Terminal: `xattr -cr RechnungsFee_0.2.15_aarch64.dmg`\r\n\r\n---\r\n\r\n## ✨ Neu\r\n\r\n- **Buchungen ohne Geldfluss** – neue Checkbox „Kein Geldfluss\" im Buchungsformular für AfA, Sachentnahmen, Eigenverbrauch; kein Kassenstand-Einfluss, kein Tagesabschluss (Issue #55)\r\n- **Forderungsausfall** – Rechnungen als uneinbringlich ausbuchen: Status-Badge, Filter, eigener Eintrag im Journal; für USt-Pflichtige automatisch §17-UStG-Korrekturbuchung (Issue #61)\r\n- **Neue Kategorie „KFZ (Kauf)\"** SKR03 0320 / SKR04 0540 – separates Anlagekonto für Fahrzeuge, fließt korrekt in Anlage AVEUR ein\r\n- **Neue Kategorie „EDV / Software (Sofortabschreibung)\"** SKR03 0650 – Anlagekonto nach BMF 26.02.2021 (Nutzungsdauer 1 Jahr, § 7 Abs. 1 EStG)\r\n- **Neue Kategorie „Bewirtungskosten (nicht abzugsfähig)\"** SKR03 4654 – für den steuerlich nicht abziehbaren 30 %-Anteil nach § 4 Abs. 5 Nr. 2 EStG\r\n- **Neue Kategorien „Gewährte Skonti\" / „Erhaltene Skonti\"** – werden bei Skonto-Zahlung automatisch zugewiesen\r\n- **Fahrtkosten Privat-PKW: km-Eingabe** im Buchungsformular – Betrag wird automatisch auf 0,30 €/km (EÜR) berechnet; gespeicherte km-Anzahl ermöglicht korrekten EKS-Ansatz (0,10 €/km); EKS-Formular: neues Abzugsfeld B6.4 für privat gefahrene km mit Betriebs-KFZ (Schema v43)\r\n\r\n## 🔧 Verbesserungen\r\n\r\n- **Journal:** `vorsteuer_betrag`-Snapshot – tatsächlich abziehbarer Vorsteuer-Anteil wird je Buchung gespeichert (z. B. 70 % bei Bewirtungskosten)\r\n- **Privatentnahme / Privateinlage:** EÜR-Zeilennummern korrigiert auf Zeile 106 / 107 (Anlage EÜR 2025)\r\n- **Kategorien-Seite:** EKS-Felder nur noch sichtbar wenn „Bezieht Transferleistungen\" aktiviert\r\n\r\n## 🐛 Bugfixes\r\n\r\n- **Gutschrift mit Menge > 1** (Issue #112): Einzelpreis wurde durch die Menge geteilt – Positions-Gesamtbetrag und Editformular zeigen jetzt den korrekten Einzelpreis\r\n- **EDV / Software (Sofortabschreibung):** Kategorie war fälschlicherweise als Aufwand angelegt – korrekt ist Anlage (SKR03 0650); BMF 2021 ist kein GWG\r\n- **Bewirtungskosten (nicht abzugsfähig):** EKS-Kategorie korrigiert (war B14_5, jetzt leer)\r\n- **Einkommensteuer-Vorauszahlung:** Fälligkeitsmonate in der Beschreibung korrigiert (März / Juni / September / Dezember)\r\n",
+    "publishedAt": "2026-05-30T17:10:46Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.2.15",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.14/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.15/install-linux.sh",
         "size": 30651
       },
       {
-        "name": "RechnungsFee_0.2.14_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.14/RechnungsFee_0.2.14_aarch64.dmg",
-        "size": 74933658
+        "name": "RechnungsFee_0.2.15_aarch64.dmg",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.15/RechnungsFee_0.2.15_aarch64.dmg",
+        "size": 74939180
       },
       {
-        "name": "RechnungsFee_0.2.14_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.14/RechnungsFee_0.2.14_amd64.AppImage",
-        "size": 97006784
+        "name": "RechnungsFee_0.2.15_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.15/RechnungsFee_0.2.15_amd64.AppImage",
+        "size": 97010880
       },
       {
-        "name": "RechnungsFee_0.2.14_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.14/RechnungsFee_0.2.14_x64-setup.exe",
-        "size": 68202147
+        "name": "RechnungsFee_0.2.15_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.15/RechnungsFee_0.2.15_x64-setup.exe",
+        "size": 68197937
       },
       {
         "name": "RechnungsFee_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.14/RechnungsFee_aarch64.dmg",
-        "size": 74933658
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.2.15/RechnungsFee_aarch64.dmg",
+        "size": 74939180
       }
     ]
   },
