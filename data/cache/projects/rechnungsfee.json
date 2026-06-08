@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-06-07T19:09:03.892Z",
+  "lastUpdate": "2026-06-08T02:50:17.866Z",
   "repoInfo": {
     "stars": 44,
     "forks": 5,
@@ -34,36 +34,36 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.3.1",
-    "name": "RechnungsFee v0.3.1",
-    "body": "## 💾 Downloads\r\n\r\n| Plattform | Download |\r\n|-----------|----------|\r\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.3.1_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.1/RechnungsFee_0.3.1_x64-setup.exe) |\r\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.3.1_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.1/RechnungsFee_0.3.1_amd64.AppImage) |\r\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.1/RechnungsFee_amd64.AppImage) |\r\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.1/install-linux.sh) |\r\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.3.1_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.1/RechnungsFee_0.3.1_aarch64.dmg) |\r\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.1/RechnungsFee_aarch64.dmg) |\r\n\r\n---\r\n\r\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\r\n> `xattr -cr RechnungsFee_0.3.1_aarch64.dmg`\r\n\r\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\r\n> - 🪟 Windows: automatisch durch den Installer\r\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\r\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\r\n>\r\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\r\n\r\n---\r\n\r\n## ✨ Neu in v0.3.1\r\n\r\n### 🇪🇺 Zusammenfassende Meldung (ZM) §18a UStG\r\nNeue Meldehilfe für Unternehmer mit innergemeinschaftlichem Handel:\r\n- **Dashboard-Hinweis** erscheint automatisch wenn eine ZM für das abgelaufene Quartal noch aussteht\r\n- **ZM-Seite** (Exporte → ZM) berechnet ig. Lieferungen und §13b-Dienstleistungen automatisch aus dem Journal, gruppiert nach USt-IdNr. und Land\r\n- Kennzeichen **L** (Lieferung) und **D** (Dienstleistung §13b Abs. 1)\r\n- Anzeige ob monatliche Meldung (≥ 50.000 €) erforderlich ist\r\n- Für §19 Kleinunternehmer vollständig ausgeblendet\r\n\r\n### ✍️ Unterschrift – Datei-Upload & Download (#129)\r\n- **Upload-Tab** im Unterschrift-Dialog: JPG, PNG oder WebP hochladen – für eingescannte Unterschriften oder Grafiktablett-Bilder; Zeichenfläche ist jetzt größer (220 px)\r\n- **⬇ Speichern**-Button: hinterlegte Unterschrift als PNG herunterladen – Backup für die nächste Neuinstallation\r\n\r\n### 🏷️ Steuersätze (#128)\r\n- 0 %, 7 % und 19 % werden bei Neuinstallation automatisch angelegt (waren bisher bei frischer Datenbank leer)\r\n- „MwSt-Sätze\" in Navigation und Seitenüberschrift zu **„Steuersätze\"** umbenannt\r\n\r\n---\r\n\r\n## 🔧 Fehlerbehebungen\r\n\r\n- **§25a Differenzbesteuerung**: Margensteuer wird jetzt korrekt nur auf die Brutto-Marge (VK − EK) berechnet und fließt in KZ 81/83 der UStVA ein. Neue Kategorie **„Wareneinkauf §25a (privat)\"** für steuerfreie Ankäufe von Privatpersonen\r\n- **Rechnungsliste (#125)**: Tastaturfokus (Pfeiltasten-Navigation) deutlich sichtbar – blauer Hintergrund und blauer Balken links an der ausgewählten Zeile\r\n\r\n---\r\n\r\n> ⚠️ **Hinweis §25a:** Rechnungen die vor v0.3.1 mit 0 % USt im Journal gebucht wurden, erscheinen weiterhin nicht in der UStVA. Bitte die betreffende Rechnung stornieren und neu buchen damit die Margensteuer korrekt berechnet wird.\r\n",
-    "publishedAt": "2026-06-07T07:51:08Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.3.1",
+    "tagName": "v0.3.4",
+    "name": "v0.3.4 – Angebote, Lieferscheine, EÜR",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.3.4_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.4/RechnungsFee_0.3.4_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.3.4_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.4/RechnungsFee_0.3.4_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.4/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.4/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.3.4_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.4/RechnungsFee_0.3.4_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.4/RechnungsFee_aarch64.dmg) |\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.3.4_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\nDieses Release bündelt alle Änderungen seit v0.3.1 – Lieferscheine, Angebote und EÜR sind jetzt vollständig.\n\n## ✨ Neu in v0.3.4 – Angebote: Lieferschein & Verlinkung\n\n- **Lieferschein aus Angebot** – direkt aus dem bestätigten Angebot; der Button wandelt sich danach zum Link auf den erstellten Lieferschein\n- **Rechnung aus Angebot** – nur bei Status „Bestätigt\"; ausgegraut solange ein Lieferschein zum Angebot existiert\n- **Rückverlinkung** (Schema 56) – das Angebot speichert welcher Lieferschein aus ihm erstellt wurde; bestehende Links werden beim Update automatisch rekonstruiert\n- Navigation zu verlinktem Dokument filtert die Übersicht automatisch auf genau dieses Dokument\n- Bestätigungsabfragen beim Erstellen von Rechnung/Lieferschein aus Angebot entfernt\n- **Fix:** Deaktivierte Buttons waren optisch nicht erkennbar – `disabled:opacity-50` + `cursor-not-allowed` jetzt einheitlich in allen Aktionsleisten\n\n## ✨ Neu in v0.3.3 – Lieferadressen & Lieferscheine\n\n- **Lieferadressen** im Kundenstamm: beliebig viele Lieferadressen pro Kunde; Standard-Adresse beim Lieferschein automatisch vorgeschlagen\n- **Lieferschein-PDF:** Positionen ohne Preise, Lieferadresse im Kopf, Empfangsbestätigung\n- **Lieferschein → Rechnung:** Ein-Klick erstellt Ausgangsrechnung mit allen Positionen\n- **Sammelrechnung:** mehrere Lieferscheine zusammenfassen; Leistungszeitraum automatisch vorbelegt\n- **Lieferschein aus Rechnung** (Vorkasse): finalisierte RE → Lieferschein; max. 1 LS pro RE\n- **Bidirektionale Navigation:** LS-Detail und RE-Detail verlinken gegenseitig mit Filter\n\n## ✨ Neu in v0.3.2 – EÜR & UStVA\n\n- **EÜR** nach Anlage EÜR 2025; Zeilen A + B, Gewinn/Verlust, PDF-Anzeigehilfe für ELSTER\n- EÜR: Zeile 15 und Zeile 48 automatisch aus Journal befüllt\n- EÜR: Hinweis auf Anlage AVEUR bei Anlagezugängen\n- **UStVA:** Berechnung startet automatisch beim Öffnen – kein „Berechnen\"-Klick mehr nötig\n- **Rechnungsimport:** Positionen nach Steuersatz zusammenfassen\n\n## 🐛 Weitere Fixes & Verbesserungen\n\n**Angebote**\n- Angebot-Preismodus automatisch Netto bei Firmenkunden (B2B)\n- Angebot direkt aus dem Kundenstamm erstellen\n- USt-Default aus konfiguriertem Standard-Steuersatz (nicht mehr hardcoded 19 %)\n- Brutto/Netto-Toggle und Submit-Payload korrigiert\n- Angebot bleibt auch ohne Entwurf-Status editierbar\n\n**Lieferscheine**\n- Lieferschein-Status unterscheidet jetzt zwischen „Rechnungsentwurf\" und „Abgerechnet\"\n- FK-Konflikt beim Löschen/Storno einer Lieferschein-Rechnung behoben\n- Standard-Lieferadresse wird im Formular automatisch vorausgewählt\n- Sammelrechnung-Dialog schließt nach dem Erstellen automatisch; kein versehentliches Schließen per Klick daneben\n- Preisvalidierung für Lieferschein-Positionen deaktiviert (kein Preis erforderlich)\n\n**Navigation & Einstellungen**\n- Unternehmensseite in 5 Tabs aufgeteilt (Firma / Steuer / Rechnungen / E-Mail / Unterschrift)\n- Lieferscheine-Menüpunkt und Nummernkreis-Eintrag nur sichtbar wenn Funktion aktiviert\n- ZM nur sichtbar wenn USt-IdNr vorhanden und tatsächlich ig-Buchungen existieren\n- GoBD-Export unter Auswertungen eingeordnet\n\n## 🐛 Bekannte Einschränkungen\n\n- **macOS:** App ist nicht signiert → Gatekeeper-Bypass per Rechtsklick → Öffnen oder `xattr -cr`\n- **§25a-Journalbuchungen vor v0.3.1** müssen einmalig neu gebucht werden (Margensteuer-Fix)\n",
+    "publishedAt": "2026-06-07T19:09:14Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.3.4",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.1/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.4/install-linux.sh",
         "size": 35639
       },
       {
-        "name": "RechnungsFee_0.3.1_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.1/RechnungsFee_0.3.1_aarch64.dmg",
-        "size": 118005123
+        "name": "RechnungsFee_0.3.4_aarch64.dmg",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.4/RechnungsFee_0.3.4_aarch64.dmg",
+        "size": 118047670
       },
       {
-        "name": "RechnungsFee_0.3.1_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.1/RechnungsFee_0.3.1_amd64.AppImage",
-        "size": 142582976
+        "name": "RechnungsFee_0.3.4_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.4/RechnungsFee_0.3.4_amd64.AppImage",
+        "size": 142623936
       },
       {
-        "name": "RechnungsFee_0.3.1_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.1/RechnungsFee_0.3.1_x64-setup.exe",
-        "size": 105769898
+        "name": "RechnungsFee_0.3.4_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.4/RechnungsFee_0.3.4_x64-setup.exe",
+        "size": 105810164
       },
       {
         "name": "RechnungsFee_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.1/RechnungsFee_aarch64.dmg",
-        "size": 118005123
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.4/RechnungsFee_aarch64.dmg",
+        "size": 118047670
       }
     ]
   },
