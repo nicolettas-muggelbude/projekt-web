@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-06-19T19:28:31.632Z",
+  "lastUpdate": "2026-06-20T02:38:59.146Z",
   "repoInfo": {
     "stars": 45,
     "forks": 5,
@@ -34,36 +34,36 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.3.22",
-    "name": "RechnungsFee v0.3.22",
-    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.3.22_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.22/RechnungsFee_0.3.22_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.3.22_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.22/RechnungsFee_0.3.22_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.22/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.22/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.3.22_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.22/RechnungsFee_0.3.22_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.22/RechnungsFee_aarch64.dmg) |\n\n---\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.3.22_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## ✨ Neu\n\n- **SMB-Backup:** Backup-Ziel kann jetzt ein SMB-Netzwerkpfad sein (`smb://server/freigabe/pfad`); Benutzername und Passwort werden separat gespeichert; kein System-Mount nötig (Issue #176)\n- **Stornorechnung – eigener Nummernkreis:** Jede Stornierung bekommt eine eindeutige Nummer aus dem neuen Nummernkreis `STORNO-JJNNNN` (z. B. `STORNO-260001`); sichtbar im PDF-Titel und Kopfzeile; Format über Einstellungen → Nummernkreise anpassbar (Issue #178)\n- **Gutschrift – eigener Nummernkreis:** Gutschriften haben jetzt einen separaten Zähler `GS-YY####` statt den Ausgangsrechnungs-Zähler zu teilen; Format über Einstellungen → Nummernkreise anpassbar\n\n## 🔧 Verbesserungen\n\n- **Backup:** Pfade auf Systemlaufwerken (C:\\\\, /home, /root, /Users, …) werden beim automatischen Backup übersprungen – ein Backup auf derselben Platte schützt nicht vor Festplattenausfall; das Formular zeigt einen Hinweis beim Eintippen\n- **Stornierte Rechnungen:** Ansehen zeigt die Original-Rechnung (vor dem Storno); neuer Button „Stornorechnung drucken\" für das Stornorechnung-PDF; Mail-Versand als „Stornorechnung senden\" jetzt verfügbar (Issue #178)\n- **Berechnungen:** Zwischenergebnisse (Positionsrabatt, USt pro Position, Summierung) werden auf 4 Dezimalstellen gerundet statt 2 – reduziert Rundungsfehler bei vielen Positionen; gespeicherte Endwerte bleiben 2-stellig\n\n## 🐛 Bugfixes\n\n- **Nummernkreis-Format:** Einzelne Buchstaben N in Präfixen (z. B. STORNO) wurden fälschlich als Nummern-Platzhalter interpretiert – Ausgabe war `STOR10` statt `STORNO-260001`\n- **Lagerführung:** Bestand wurde nicht reduziert wenn ein Entwurf bearbeitet und direkt aus dem Formular finalisiert wurde (Issue #173)\n- **Lagerführung:** Finalisieren direkt aus dem Formular (neuer Entwurf ohne Umweg über Detail-Panel) buchte den Bestand nicht ab (Issue #173)\n",
-    "publishedAt": "2026-06-19T07:00:33Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.3.22",
+    "tagName": "v0.3.23",
+    "name": "v0.3.23",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.3.23_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.23/RechnungsFee_0.3.23_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.3.23_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.23/RechnungsFee_0.3.23_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install-linux.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.23/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.23/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.3.23_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.23/RechnungsFee_0.3.23_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.23/RechnungsFee_aarch64.dmg) |\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.3.23_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## ✨ Neu\n\n- **„Ansehen\"-Button** öffnet das PDF jetzt in einem eigenen Fenster ohne Drucken- und Speichern-Optionen. Bei stornierten Rechnungen wird immer das **Original-Dokument** vor dem Storno angezeigt.\n\n## 🔧 Verbesserungen\n\n- **Detail-Panel (stornierte Rechnungen):** Stornodatum und Stornorechnung-Nr. werden jetzt angezeigt; „Fällig am\" wird bei stornierten Rechnungen ausgeblendet (Issue #178)\n\n## 🐛 Bugfixes\n\n- **Einzelpreis-Rundungsfehler:** Ein Preis von 7,99 € wurde nach dem Speichern als 7,98 € angezeigt – die interne Genauigkeit wurde auf 4 Dezimalstellen erhöht\n- **Entwurf bearbeiten:** Das Preisfeld zeigte beim Öffnen eines gespeicherten Entwurfs den Netto- statt den Brutto-Wert an\n",
+    "publishedAt": "2026-06-19T20:45:39Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.3.23",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.22/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.23/install-linux.sh",
         "size": 36201
       },
       {
-        "name": "RechnungsFee_0.3.22_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.22/RechnungsFee_0.3.22_aarch64.dmg",
-        "size": 120097541
+        "name": "RechnungsFee_0.3.23_aarch64.dmg",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.23/RechnungsFee_0.3.23_aarch64.dmg",
+        "size": 120098542
       },
       {
-        "name": "RechnungsFee_0.3.22_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.22/RechnungsFee_0.3.22_amd64.AppImage",
+        "name": "RechnungsFee_0.3.23_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.23/RechnungsFee_0.3.23_amd64.AppImage",
         "size": 147121344
       },
       {
-        "name": "RechnungsFee_0.3.22_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.22/RechnungsFee_0.3.22_x64-setup.exe",
-        "size": 113477067
+        "name": "RechnungsFee_0.3.23_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.23/RechnungsFee_0.3.23_x64-setup.exe",
+        "size": 113478444
       },
       {
         "name": "RechnungsFee_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.22/RechnungsFee_aarch64.dmg",
-        "size": 120097541
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.3.23/RechnungsFee_aarch64.dmg",
+        "size": 120098542
       }
     ]
   },
