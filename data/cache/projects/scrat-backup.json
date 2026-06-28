@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/Scrat-Backup",
   "name": "Scrat-Backup",
   "description": "Scrat-Backup ist ein Open-Source-Backup-Tool für Linux und Windows. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups. 🇩🇪",
-  "lastUpdate": "2026-06-28T08:42:30.948Z",
+  "lastUpdate": "2026-06-28T13:20:50.139Z",
   "repoInfo": {
     "stars": 1,
     "forks": 0,
@@ -13,26 +13,26 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.3.62",
-    "name": "v0.3.62",
-    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ ScratBackup-v0.3.62-Setup.exe](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.62/ScratBackup-v0.3.62-Setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ ScratBackup-v0.3.62-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.62/ScratBackup-v0.3.62-x86_64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ ScratBackup-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.62/ScratBackup-x86_64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install.sh](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.62/install.sh) |\n\n---\n\n## 🐛 Bugfixes\n\n- **Multi-Profil: Jedes Backup läuft in seinen eigenen Ordner** – Alle Profile schrieben bisher in dasselbe Zielverzeichnis. Jedes Profil hat jetzt einen eigenen OS-Task (Windows: schtasks, Linux: cron) mit der zugehörigen Profil-ID.\n- **Backup bearbeiten legt kein neues Profil mehr an** – \"Backup bearbeiten\" aktualisiert jetzt korrekt das bestehende Profil statt ein neues anzulegen.\n- **Profilname-Konflikt beim Bearbeiten behoben** – Beim Bearbeiten eines Profils wurde der bestehende Name fälschlicherweise als Duplikat gemeldet.\n- **Zielordner wird automatisch angelegt** – Wenn der Zielordner noch nicht existiert (neue Destination oder frisch angestecktes Laufwerk), wird ein Vollbackup erzwungen statt dauerhaft \"Keine Änderungen\" zu melden.\n- **Linux: Cron-Einträge mehrerer Profile überschreiben sich nicht mehr** – Ein Substring-Match-Fehler sorgte dafür, dass beim Speichern eines Profils alle anderen Profil-Einträge aus der crontab gelöscht wurden.\n- **Benachrichtigungen zeigen Profilnamen** – Statt \"1 Backup gestartet\" wird jetzt der Profilname angezeigt, z. B. \"Backup gestartet: Dokumente → USB (täglich)\".",
-    "publishedAt": "2026-05-14T13:04:51Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.62",
+    "tagName": "v0.3.63",
+    "name": "v0.3.63",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ ScratBackup-v0.3.63-Setup.exe](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/ScratBackup-v0.3.63-Setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ ScratBackup-v0.3.63-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/ScratBackup-v0.3.63-x86_64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ ScratBackup-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/ScratBackup-x86_64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install.sh](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/install.sh) |\n\n## Was ist neu\n\n### Eindeutige USB-Laufwerks-Erkennung\n\nScrat-Backup erkennt jetzt das **genau konfigurierte USB-Laufwerk** – nicht mehr einfach irgendein angestecktes USB-Gerät.\n\n**Beim Einrichten:** Eine unsichtbare Datei  mit einer eindeutigen ID wird ins Wurzelverzeichnis des Laufwerks geschrieben.\n\n**Vor jedem Backup:** Das Laufwerk wird anhand dieser ID verifiziert – auch wenn der Laufwerksbuchstabe (Windows) oder der Mount-Punkt (Linux) gewechselt hat. Ist das konfigurierte Laufwerk nicht angesteckt, bricht das Backup mit einer klaren Meldung ab.\n\n## Bekannte Einschränkungen\n\n- Bestehende USB-Profile (eingerichtet vor v0.3.63) erhalten die UUID-Prüfung erst nach einmaligem erneuten Durchlaufen des Wizards.",
+    "publishedAt": "2026-06-28T13:09:22Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.63",
     "assets": [
       {
         "name": "install.sh",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.62/install.sh",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/install.sh",
         "size": 6289
       },
       {
-        "name": "ScratBackup-v0.3.62-Setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.62/ScratBackup-v0.3.62-Setup.exe",
-        "size": 38621818
+        "name": "ScratBackup-v0.3.63-Setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/ScratBackup-v0.3.63-Setup.exe",
+        "size": 38645371
       },
       {
-        "name": "ScratBackup-v0.3.62-x86_64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.62/ScratBackup-v0.3.62-x86_64.AppImage",
-        "size": 91808960
+        "name": "ScratBackup-v0.3.63-x86_64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/ScratBackup-v0.3.63-x86_64.AppImage",
+        "size": 91796672
       }
     ]
   },
