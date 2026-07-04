@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-07-03T19:05:42.384Z",
+  "lastUpdate": "2026-07-04T02:07:24.392Z",
   "repoInfo": {
     "stars": 50,
     "forks": 6,
@@ -48,7 +48,7 @@
       {
         "name": "RechnungsFee_0.4.0_aarch64.dmg",
         "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.0/RechnungsFee_0.4.0_aarch64.dmg",
-        "size": 81612449
+        "size": 82485281
       },
       {
         "name": "RechnungsFee_0.4.0_amd64.AppImage",
@@ -58,12 +58,12 @@
       {
         "name": "RechnungsFee_0.4.0_x64-setup.exe",
         "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.0/RechnungsFee_0.4.0_x64-setup.exe",
-        "size": 75778878
+        "size": 75774180
       },
       {
         "name": "RechnungsFee_aarch64.dmg",
         "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.0/RechnungsFee_aarch64.dmg",
-        "size": 81612449
+        "size": 82485281
       }
     ]
   },
