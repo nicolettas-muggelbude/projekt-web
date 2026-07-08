@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-07-08T01:56:41.011Z",
+  "lastUpdate": "2026-07-08T08:11:26.980Z",
   "repoInfo": {
     "stars": 51,
     "forks": 6,
@@ -205,7 +205,7 @@
     {
       "name": "Tastaturkuerzel",
       "title": "Tastaturkuerzel",
-      "html": "<h1>Tastaturkürzel</h1>\n<p>Alle Tastaturkürzel die innerhalb der App verfügbar sind – funktionieren auf jeder Seite, solange das Anwendungsfenster den Fokus hat.</p>\n<table>\n<thead>\n<tr>\n<th>Kürzel</th>\n<th>Aktion</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>Strg + F</strong></td>\n<td>Suchfeld auf der aktuellen Seite fokussieren (Rechnungen, Angebote, Aufträge, Proforma, Artikel, Kunden, Lieferanten, Kategorien, Buchungsvorlagen, Wiederkehrende Vorlagen)</td>\n</tr>\n<tr>\n<td><strong>Strg + Shift + E</strong></td>\n<td>Direkt zu Eingangsrechnungen springen</td>\n</tr>\n</tbody></table>\n",
+      "html": "<h1>Tastaturkürzel</h1>\n<p>Alle Tastaturkürzel die innerhalb der App verfügbar sind – funktionieren auf jeder Seite, solange das Anwendungsfenster den Fokus hat.</p>\n<table>\n<thead>\n<tr>\n<th>Kürzel</th>\n<th>Aktion</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>Strg + F</strong></td>\n<td>Suchfeld auf der aktuellen Seite fokussieren (Rechnungen, Angebote, Aufträge, Proforma, Artikel, Kunden, Lieferanten, Kategorien, Buchungsvorlagen, Wiederkehrende Vorlagen)</td>\n</tr>\n<tr>\n<td><strong>Strg + Shift + E</strong></td>\n<td>Direkt zu Eingangsrechnungen springen</td>\n</tr>\n<tr>\n<td><strong>Strg + Mausrad</strong></td>\n<td>App-Zoom vergrößern / verkleinern</td>\n</tr>\n<tr>\n<td><strong>Strg + +</strong></td>\n<td>App-Zoom vergrößern (+10 %)</td>\n</tr>\n<tr>\n<td><strong>Strg + –</strong></td>\n<td>App-Zoom verkleinern (−10 %)</td>\n</tr>\n<tr>\n<td><strong>Strg + 0</strong></td>\n<td>App-Zoom zurücksetzen (100 %)</td>\n</tr>\n</tbody></table>\n<blockquote>\n<p>Der Zoom-Level wird automatisch gespeichert und beim nächsten Start wiederhergestellt. Bereich: 50 %–200 %.</p>\n</blockquote>\n",
       "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/wiki/Tastaturkuerzel"
     },
     {
