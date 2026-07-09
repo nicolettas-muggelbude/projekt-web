@@ -2,11 +2,11 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-07-08T19:11:09.792Z",
+  "lastUpdate": "2026-07-09T02:09:24.428Z",
   "repoInfo": {
     "stars": 51,
     "forks": 6,
-    "openIssues": 34,
+    "openIssues": 33,
     "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
     "homepage": "",
     "topics": [
@@ -34,36 +34,36 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.4.5",
-    "name": "RechnungsFee v0.4.5",
-    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.4.5_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.5/RechnungsFee_0.4.5_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.4.5_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.5/RechnungsFee_0.4.5_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.5/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.5/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.4.5_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.5/RechnungsFee_0.4.5_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.5/RechnungsFee_aarch64.dmg) |\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.4.5_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## 🐛 Bugfixes\n\n**Hotfix: Upgrade auf v0.4.4 schlug bei Bestandsinstallationen fehl**\n\nMigration 115 (Kontokorrent-Grundlage) versuchte beim Start in die Tabelle `nummernkreise` mit der Spalte `aktiv` zu schreiben – diese Spalte existierte im SQLAlchemy-Modell, wurde aber nie per Migration zu bestehenden Datenbanken hinzugefügt. Betroffen waren alle Installationen, die vor v0.4.4 angelegt wurden.\n\nMigration 115 rüstet die Spalte jetzt automatisch nach, bevor sie die Nummernkreise für Debitoren und Kreditoren einträgt.\n\nWeitere Robustheitsfixes in Migration 113 (`dashboard_config`) und Migration 114 (`bank_templates CAMT_XML`).\n",
-    "publishedAt": "2026-07-06T20:09:56Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.4.5",
+    "tagName": "v0.4.6",
+    "name": "RechnungsFee v0.4.6",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.4.6_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.6/RechnungsFee_0.4.6_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.4.6_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.6/RechnungsFee_0.4.6_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.6/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.6/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.4.6_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.6/RechnungsFee_0.4.6_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.6/RechnungsFee_aarch64.dmg) |\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.4.6_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## ✨ Neu\n\n- App-Zoom: Strg+Mausrad, Strg++ und Strg+– zoomen die gesamte Oberfläche (50–200 %). Strg+0 setzt den Zoom zurück. Der Zoom-Level wird gespeichert und beim nächsten Start wiederhergestellt.\n\n## 🔧 Verbesserungen\n\n- Fenstergröße und -position werden automatisch gespeichert und beim nächsten Start wiederhergestellt. Standardgröße beim ersten Start: 1548×904 px.\n- Bank-Import: Gebuchte Transaktionen lassen sich jetzt bereinigen – manuell per Knopfdruck oder automatisch nach konfigurierbaren Regeln (älter als X Tage / maximal N Einträge behalten). Ungebuchte Transaktionen können komplett gelöscht werden, um einen fehlerhaften Import rückgängig zu machen.\n- Kontokorrent-PDF zeigt jetzt Adresse und Debitor-/Kreditorennummer des Geschäftspartners im Kopfbereich.\n- Einstellungen → Ansicht: Neue Seite für Darstellungsoptionen. Inhaltsausrichtung wählbar: Linksbündig (Standard) oder Zentriert mit max. 1400 px Breite für breite Bildschirme.\n- Einstellungen → Ansicht: Spaltenbreite in allen Listen mit Detail-Panel (Rechnungen, Kunden, Lieferanten, Angebote, Aufträge, Proforma, Wiederkehrend, Buchungsvorlagen, Artikel, Anlageverzeichnis) jetzt manuell verschiebbar. Die Trennlinie lässt sich per Maus ziehen – die Breite wird pro Seite gespeichert.\n\n## 🐛 Bugfixes\n\n- Kunden- und Lieferantennummer fehlte auf allen PDF-Dokumenten (Rechnungen, Angebote, Aufträge, Proforma, Lieferscheine, Gutschriften). Die Nummer erscheint jetzt im Metadaten-Block rechts über der Dokumentnummer.\n- Kontokorrent-PDF öffnete sich als schwarzes Fenster: Der Endpunkt lieferte Content-Disposition: attachment statt inline – Tauri versuchte die Datei herunterzuladen statt sie anzuzeigen. Betraf Kunden- und Lieferanten-Kontokorrent.\n- Zufluss-Monitor zeigte kurzzeitig 0,00 € während die Buchungsdaten noch geladen wurden (React Query Cache-Timing). Der Monitor zeigt jetzt einen Lade-Spinner und „…\" als Platzhalter bis die Daten vollständig vorliegen.\n- Neuen Kunden oder Lieferanten anlegen schlug mit „Failed to fetch\" fehl wenn die automatisch vergebene Debitor- oder Kreditorennummer bereits belegt war (z. B. nach einer Nummernkreis-Formatänderung). Die nächste freie Nummer wird jetzt automatisch gesucht und vergeben.\n- Kontokorrent-Tab: Der angezeigte Nummernvorschlag (nächste freie Debitor-/Kreditorennummer) konnte eine bereits manuell vergebene Nummer anzeigen. Die Vorschau überspringt jetzt belegte Nummern und zeigt immer die tatsächlich nächste freie Nummer an (Issue #219).\n- App-Zoom: Beim Verkleinern (Strg+–) entstand ein ungenutzter Leerbereich am unteren und rechten Rand – Sidebar und Inhalt rutschten nach oben. Ursache war CSS zoom auf dem HTML-Element, das die Webview-Viewport-Größe nicht anpasst. Zoom nutzt jetzt die native Tauri-Webview-Skalierung (setZoom), die den gesamten Anzeigebereich korrekt füllt.\n\n",
+    "publishedAt": "2026-07-08T22:56:53Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.4.6",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.5/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.6/install-linux.sh",
         "size": 36201
       },
       {
-        "name": "RechnungsFee_0.4.5_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.5/RechnungsFee_0.4.5_aarch64.dmg",
-        "size": 85698274
+        "name": "RechnungsFee_0.4.6_aarch64.dmg",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.6/RechnungsFee_0.4.6_aarch64.dmg",
+        "size": 86217853
       },
       {
-        "name": "RechnungsFee_0.4.5_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.5/RechnungsFee_0.4.5_amd64.AppImage",
-        "size": 111871168
+        "name": "RechnungsFee_0.4.6_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.6/RechnungsFee_0.4.6_amd64.AppImage",
+        "size": 112374976
       },
       {
-        "name": "RechnungsFee_0.4.5_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.5/RechnungsFee_0.4.5_x64-setup.exe",
-        "size": 79852619
+        "name": "RechnungsFee_0.4.6_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.6/RechnungsFee_0.4.6_x64-setup.exe",
+        "size": 80352061
       },
       {
         "name": "RechnungsFee_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.5/RechnungsFee_aarch64.dmg",
-        "size": 85698274
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.4.6/RechnungsFee_aarch64.dmg",
+        "size": 86217853
       }
     ]
   },
