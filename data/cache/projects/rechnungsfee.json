@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-08-05T19:17:31.364Z",
+  "lastUpdate": "2026-08-06T01:50:43.340Z",
   "repoInfo": {
     "stars": 59,
     "forks": 8,
@@ -34,36 +34,36 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.5.2",
-    "name": "RechnungsFee v0.5.2",
-    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.5.2_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.2/RechnungsFee_0.5.2_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.5.2_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.2/RechnungsFee_0.5.2_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.2/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.2/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.5.2_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.2/RechnungsFee_0.5.2_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.2/RechnungsFee_aarch64.dmg) |\n\n> 🐧 **Linux:** `install-linux.sh` lädt die App nicht selbst herunter – zusätzlich die AppImage in denselben Ordner legen (empfohlen: die neutrale `RechnungsFee_amd64.AppImage`, bleibt bei Updates gleich benannt). Dann `bash install-linux.sh` ausführen (kein `chmod +x` nötig).\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.5.2_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## 🐛 Bugfixes\n\n- Mahnwesen – die Kennzahlen „Fällig\", „Entwürfe\" und „Versendet\" oben in der Übersicht zeigten die Anzahl der betroffenen Kunden statt der tatsächlichen Rechnungen/Mahnungen. Hatte z. B. ein einzelner Kunde 5 Mahnungs-Entwürfe, stand oben nur „1 Entwurf\", während die Kundenzeile selbst korrekt „5 Entwurf\" auswies. Die Kennzahlen summieren jetzt die echten Anzahlen pro Kunde.\n- Rechnungsdetails – bei Positionen mit Rabatt und einer Menge größer 1 zeigte die Zwischensumme sowie der Rabattbetrag stark überhöhte bzw. unsinnige Werte (z. B. 899,10 € statt 89,91 €, oder ein negativer Rabatt). Ursache: eine Restberechnung aus der Zeit vor dem Rundungsfix (Issue #332) multiplizierte die bereits fertige Positionssumme nochmal mit der Menge. Die Rechnungsdetails übernehmen die gespeicherten Werte jetzt unverändert, wie in Formular und PDF.\n- Rechnungsdetails und PDF – bei einer Brutto-Rechnung (Eingabe in Brutto-Preisen) wurde der eingegebene Einzelpreis fälschlich nochmal mit dem USt-Satz hochgerechnet, z. B. erschien ein eingegebener Preis von 3,50 € als 4,17 €. Ursache: die Anzeige entschied „Netto- oder Brutto-Darstellung\" anhand des ZUGFeRD-Merkmals des Kunden statt anhand des tatsächlich für die Rechnung gewählten Eingabemodus (Netto/Brutto, Issue #332) – beide sind unabhängig voneinander wählbar. Betrifft beide PDF-Vorlagen und die Rechnungsdetails-Ansicht; die Gesamtsumme unten war davon nicht betroffen, nur die Positionszeilen.\n\n",
-    "publishedAt": "2026-08-04T19:34:49Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.5.2",
+    "tagName": "v0.5.3",
+    "name": "RechnungsFee v0.5.3",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.5.3_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.3/RechnungsFee_0.5.3_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.5.3_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.3/RechnungsFee_0.5.3_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.3/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.3/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.5.3_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.3/RechnungsFee_0.5.3_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.3/RechnungsFee_aarch64.dmg) |\n\n> 🐧 **Linux:** `install-linux.sh` lädt die App nicht selbst herunter – zusätzlich die AppImage in denselben Ordner legen (empfohlen: die neutrale `RechnungsFee_amd64.AppImage`, bleibt bei Updates gleich benannt). Dann `bash install-linux.sh` ausführen (kein `chmod +x` nötig).\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.5.3_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## 🐛 Bugfixes\n\n- PDF und Rechnungsdetails einer Brutto-Rechnung zeigten in der Summenzeile nur den Bruttogesamtbetrag, aber keinen expliziten Nettobetrag – nach §14 Abs. 4 UStG ist das Entgelt je Steuersatz auch auf einer Brutto-Rechnung Pflichtangabe. Vor dem Gesamtbetrag stehen jetzt Nettobetrag (bei mehreren Steuersätzen nach Satz aufgeschlüsselt in einer Zeile, z. B. „Netto 19 %: 88,24 € | 7 %: 25,21 €\") und die enthaltene USt.\n- Artikelstamm – beim Anlegen zeigte die Netto-Vorschau den aus dem Brutto-Preis abgeleiteten Wert auf 2 Nachkommastellen gerundet (z. B. 2,94 €), obwohl im Hintergrund bereits der exakte Wert mit 4 Nachkommastellen (2,9412 €) gespeichert wurde – sichtbar erst beim späteren Bearbeiten. Dadurch wirkte eine Netto-Rechnung mit diesem Artikel bei größeren Mengen wie ein Rechenfehler (z. B. 100 Stück à „2,94 €\" = 294,12 € statt scheinbar 294,00 €). Die Vorschau zeigt jetzt von Anfang an die tatsächliche Präzision – die 4 Nachkommastellen bleiben bewusst erhalten, damit Netto- und Brutto-Rechnung mit demselben Artikel exakt auf denselben Bruttobetrag kommen (Issue #332).\n- Artikelstamm – wurde beim Anlegen direkt der Netto-Preis eingetragen (z. B. 2,94 €), rechnete das Formular korrekt den passenden Brutto-Preis aus (3,50 €). Beim erneuten Bearbeiten wurde der Netto-Preis aber immer wieder frisch aus dem Brutto-Preis abgeleitet statt beibehalten zu werden, wodurch aus 2,94 € plötzlich 2,9412 € wurden. Der Artikelstamm merkt sich jetzt, welcher der beiden Preise ursprünglich eingegeben wurde – der eingegebene Preis bleibt danach unverändert erhalten, nur der jeweils andere wird berechnet. Dabei wird der abgeleitete Preis (in diesem Beispiel der Brutto-Preis) ebenfalls nicht auf den Cent gerundet gespeichert, sonst würde eine Netto-Rechnung und eine Brutto-Rechnung mit demselben Artikel bei größeren Mengen leicht auseinanderlaufen (z. B. 100 Stück netto 294,00 € / brutto 349,86 € gegenüber fälschlich 350,00 € brutto).\n\n",
+    "publishedAt": "2026-08-05T19:46:30Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.5.3",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.2/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.3/install-linux.sh",
         "size": 47005
       },
       {
-        "name": "RechnungsFee_0.5.2_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.2/RechnungsFee_0.5.2_aarch64.dmg",
-        "size": 87039645
+        "name": "RechnungsFee_0.5.3_aarch64.dmg",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.3/RechnungsFee_0.5.3_aarch64.dmg",
+        "size": 87039692
       },
       {
-        "name": "RechnungsFee_0.5.2_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.2/RechnungsFee_0.5.2_amd64.AppImage",
-        "size": 111015104
+        "name": "RechnungsFee_0.5.3_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.3/RechnungsFee_0.5.3_amd64.AppImage",
+        "size": 111019200
       },
       {
-        "name": "RechnungsFee_0.5.2_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.2/RechnungsFee_0.5.2_x64-setup.exe",
-        "size": 81454585
+        "name": "RechnungsFee_0.5.3_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.3/RechnungsFee_0.5.3_x64-setup.exe",
+        "size": 81458117
       },
       {
         "name": "RechnungsFee_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.2/RechnungsFee_aarch64.dmg",
-        "size": 87039645
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.3/RechnungsFee_aarch64.dmg",
+        "size": 87039692
       }
     ]
   },
