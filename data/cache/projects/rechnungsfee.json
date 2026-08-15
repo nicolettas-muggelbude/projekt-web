@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-08-15T06:22:30.238Z",
+  "lastUpdate": "2026-08-15T12:20:51.451Z",
   "repoInfo": {
     "stars": 64,
     "forks": 8,
@@ -34,36 +34,36 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.5.5",
-    "name": "RechnungsFee v0.5.5",
-    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.5.5_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.5/RechnungsFee_0.5.5_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.5.5_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.5/RechnungsFee_0.5.5_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.5/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.5/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.5.5_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.5/RechnungsFee_0.5.5_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.5/RechnungsFee_aarch64.dmg) |\n\n> 🐧 **Linux:** `install-linux.sh` lädt die App nicht selbst herunter – zusätzlich die AppImage in denselben Ordner legen (empfohlen: die neutrale `RechnungsFee_amd64.AppImage`, bleibt bei Updates gleich benannt). Dann `bash install-linux.sh` ausführen (kein `chmod +x` nötig).\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.5.5_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## 🔧 Verbesserungen\n\n- Feld „Fällig am\" heißt jetzt „Fällig bis\" (Rechnungsformular, Rechnungsliste, Detail-Panel, Dashboard, Mahnungs-/Inkasso-PDF, CSV-Export, Standard-Mailtext) – eindeutiger, da es sich um eine Zahlungsfrist handelt, nicht um ein festes Zahlungsdatum. Danke an gitmacer für den Vorschlag (Issue #345).\n\n## 🐛 Bugfixes\n\n- UStVA – das Stornieren einer Buchung mit steuerlichem Sonderfall (ig. Erwerb, §13b Abs. 1/2) verdoppelte statt sie aufzuheben: Bemessungsgrundlage und Steuer (z. B. KZ 46/47) addierten sich, nur die Vorsteuer (KZ 67/61) hob sich korrekt auf – die Zahllast stieg dadurch nach einem Storno an, statt auf 0,00 € zurückzugehen. Ursache: Der Storno-Endpunkt legt sein Vorzeichen nur in der Buchungsart ab (Einnahme/Ausgabe invertiert), die Sonderfall-Auswertung in der UStVA prüfte diese aber nicht und behandelte Original- und Stornobetrag gleich. Sichtbar wurde der seit Langem bestehende Fehler erst mit v0.5.4, weil die Vorsteuer bei diesen Kategorien vorher meist 0 war (Issue #339) und dadurch nicht auffiel, dass auch die Bemessungsgrundlage sich nicht aufhob. Danke an flole für den sehr präzisen Report inkl. vollständig durchgetesteter Szenarien (Issue #344).\n- Journal – sechs mitgelieferte Privat-Kategorien für „Absetzungen vom Einkommen\" (Einkommensteuer-Vorauszahlung, Kranken-/Pflege-/Rentenversicherung, Riester-Beiträge, Sonstige Absetzungen) hatten keine EÜR-Zeile hinterlegt und erschienen dadurch seit der letzten Version im Buchungsformular sowohl unter „Einnahme\" als auch „Ausgabe\", obwohl sie wirtschaftlich immer Privatentnahmen sind. Jetzt korrekt auf Zeile 106 (Privatentnahme) eingeordnet und nur noch unter „Ausgabe\" sichtbar. Danke an flole fürs Weitertesten (Issue #341-Folgefund).\n- Skonto war beim Bezahlen einer Eingangsrechnung nicht auswählbar – weder das Skonto-%/Frist-Feld im Rechnungsformular noch die Skonto-Option im Zahlungsdialog waren dafür vorgesehen, obwohl das Backend mit einem eigenen „Erhaltene Skonti\"-Konto längst dafür ausgelegt ist. Wer den Zahlbetrag deshalb von Hand um den Skonto-Abzug reduziert hat, blieb mit einem dauerhaft offenen Restbetrag zurück, weil kein Skonto-Buchungseintrag den fehlenden Betrag ausgeglichen hat. Danke an Peter1061 fürs Nachfragen (Issue #343-Folgefund).\n- Vorsteuerabzug nach Soll-Prinzip (§15 UStG, v0.5.4) wurde nur erfasst, wenn eine Eingangsrechnung über den eigenständigen „Finalisieren\"-Button bei einem bereits gespeicherten Entwurf abgeschlossen wurde. Die beiden anderen, mindestens genauso gängigen Wege – eine Rechnung direkt beim Anlegen fertigstellen, oder einen Entwurf über „Speichern & Finalisieren\" abschließen – lösten die Vorsteuer-Erfassung gar nicht erst aus, ohne dass irgendein Fehler sichtbar wurde. Betraf nur Eingangsrechnungen mit Datum ab dem 01.10.2026. Danke an Peter1061 für das sehr gründliche gemeinsame Eingrenzen über mehrere Schritte (Issue #343-Folgefund).\n- PDF-/Datei-Downloads (z. B. „Mail senden\" ohne SMTP, DATEV-/GoBD-/Buchhalter-Export, Inkasso-Paket, Mahnungs-PDF) waren unter Linux nicht zuverlässig – je nach Distribution löste der Klick gar keinen sichtbaren Download aus (beobachtet z. B. unter CachyOS), während er auf anderen Systemen funktionierte (z. B. Linux Mint). Ursache: Der bisherige Browser-Download-Mechanismus hängt von der jeweiligen WebKitGTK-Version/Desktop-Umgebung ab und verhält sich dadurch uneinheitlich. Alle Downloads laufen jetzt distributionsunabhängig über denselben nativen Speichern-Dialog, wie er bereits beim Backup-Download zuverlässig funktionierte.\n\n",
-    "publishedAt": "2026-08-14T06:27:38Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.5.5",
+    "tagName": "v0.5.6",
+    "name": "RechnungsFee v0.5.6",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.5.6_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.6/RechnungsFee_0.5.6_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.5.6_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.6/RechnungsFee_0.5.6_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.6/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.6/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.5.6_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.6/RechnungsFee_0.5.6_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.6/RechnungsFee_aarch64.dmg) |\n\n> 🐧 **Linux:** `install-linux.sh` lädt die App nicht selbst herunter – zusätzlich die AppImage in denselben Ordner legen (empfohlen: die neutrale `RechnungsFee_amd64.AppImage`, bleibt bei Updates gleich benannt). Dann `bash install-linux.sh` ausführen (kein `chmod +x` nötig).\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.5.6_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## 🐛 Bugfixes\n\n- Backup-Wiederherstellung aus ZIP-Dateien war komplett unbenutzbar – jeder Versuch brach mit „Failed to fetch\" bzw. einem internen Serverfehler ab. Ursache: ein Tippfehler auf eine nie definierte Variable, seit sehr langer Zeit im Code vorhanden. Die Wiederherstellung aus einem lokal gewählten Backup (ZIP, auch verschlüsselt als .zip.enc) funktioniert jetzt wieder zuverlässig. Danke an gitmacer für den Report inkl. Log-Datei (Issue #347).\n- App-Zoom (Strg+Mausrad / Strg+/-) hat in der echten Desktop-App gar nicht mehr funktioniert. Ursache Nummer eins: der dafür nötigen Tauri-Berechtigung „Webview-Zoom setzen\" fehlte der Freigabe-Eintrag, wodurch der Aufruf lautlos abgewiesen wurde. Ursache Nummer zwei: selbst mit Freigabe wäre der Zoom nie über einen einzelnen Schritt hinausgekommen, weil der aktuelle Zoomstand beim Nachlesen aus einer CSS-Eigenschaft gelesen wurde, die die Desktop-App gar nicht mehr befüllt (seit der Umstellung auf den nativen Zoom-Mechanismus). Zusätzlich scrollte während des Zoomens der Inhalt darunter mit, weil ein separater Mausrad-Handler (Linux-Scroll-Workaround) Strg+Mausrad nicht von normalem Scrollen unterschied. Alle drei Ursachen behoben.\n\n",
+    "publishedAt": "2026-08-15T07:11:56Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.5.6",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.5/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.6/install-linux.sh",
         "size": 47005
       },
       {
-        "name": "RechnungsFee_0.5.5_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.5/RechnungsFee_0.5.5_aarch64.dmg",
-        "size": 87266077
+        "name": "RechnungsFee_0.5.6_aarch64.dmg",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.6/RechnungsFee_0.5.6_aarch64.dmg",
+        "size": 87266825
       },
       {
-        "name": "RechnungsFee_0.5.5_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.5/RechnungsFee_0.5.5_amd64.AppImage",
+        "name": "RechnungsFee_0.5.6_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.6/RechnungsFee_0.5.6_amd64.AppImage",
         "size": 111273152
       },
       {
-        "name": "RechnungsFee_0.5.5_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.5/RechnungsFee_0.5.5_x64-setup.exe",
-        "size": 81796917
+        "name": "RechnungsFee_0.5.6_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.6/RechnungsFee_0.5.6_x64-setup.exe",
+        "size": 81843451
       },
       {
         "name": "RechnungsFee_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.5/RechnungsFee_aarch64.dmg",
-        "size": 87266077
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.6/RechnungsFee_aarch64.dmg",
+        "size": 87266825
       }
     ]
   },
