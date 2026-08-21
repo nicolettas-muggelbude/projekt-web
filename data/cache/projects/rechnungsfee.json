@@ -2,11 +2,11 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-08-20T18:26:37.511Z",
+  "lastUpdate": "2026-08-21T00:50:49.795Z",
   "repoInfo": {
     "stars": 65,
     "forks": 8,
-    "openIssues": 26,
+    "openIssues": 28,
     "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
     "homepage": "",
     "topics": [
@@ -34,36 +34,36 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.5.8",
-    "name": "RechnungsFee v0.5.8",
-    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.5.8_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.8/RechnungsFee_0.5.8_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.5.8_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.8/RechnungsFee_0.5.8_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.8/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.8/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.5.8_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.8/RechnungsFee_0.5.8_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.8/RechnungsFee_aarch64.dmg) |\n\n> 🐧 **Linux:** `install-linux.sh` lädt die App nicht selbst herunter – zusätzlich die AppImage in denselben Ordner legen (empfohlen: die neutrale `RechnungsFee_amd64.AppImage`, bleibt bei Updates gleich benannt). Dann `bash install-linux.sh` ausführen (kein `chmod +x` nötig).\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.5.8_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## ✨ Neu\n\n- Backup beim Beenden – lokale Ordner sind jetzt möglich, wenn sie per Sync-Client (Dropbox, Google Drive, Proton Drive o. ä.) automatisch extern gesichert werden. Bisher lehnte RechnungsFee jeden Pfad auf dem Systemlaufwerk pauschal ab, mit Verweis auf externes Laufwerk/NAS/SMB. Neue Bestätigungs-Checkbox direkt bei der Warnung: „Dieser Ordner wird extern gesichert (z. B. per Sync-Client) – trotzdem verwenden\" – die Systemlaufwerk-Prüfung greift ohne diese bewusste Bestätigung weiterhin wie bisher. Danke an CodeBrauer für den Vorschlag (Issue #348).\n\n## 🔧 Verbesserungen\n\n- Eingangsrechnung ohne Kategorie finalisieren – vorher warnt jetzt ein Hinweisfenster, statt es kommentarlos zuzulassen. Ab dem 01.10.2026 braucht der Vorsteuerabzug nach Soll-Prinzip bereits bei der Finalisierung eine Kategorie; fehlt sie, taucht die Rechnung sonst nicht in der UStVA auf und lässt sich nachträglich nicht mehr korrigieren, da finalisierte Rechnungen GoBD-bedingt unveränderbar sind. Danke an Peter1061 für den Vorschlag (Issue #343-Folgefund).\n- USA zur Länderauswahl bei Kunden, Lieferanten und Rechnungen hinzugefügt – bisher war die Liste auf die EU-Staaten plus Schweiz, Vereinigtes Königreich und China begrenzt. Danke an gitmacer für den Vorschlag (Issue #350).\n- Status-Filter bei Rechnungen/Lieferscheinen erlaubt jetzt Mehrfachauswahl statt nur eines einzelnen Status – z. B. „Offen\" und „Teilweise bezahlt\" lassen sich jetzt gleichzeitig anzeigen, auch im PDF-/CSV-Export. Danke an gitmacer für den Vorschlag (Issue #351).\n\n## 🐛 Bugfixes\n\n- macOS speicherte Datenbank, Belege und Backups am falschen Ort – statt der macOS-üblichen `~/Library/Application Support/RechnungsFee/` wurde fälschlich die Linux-Konvention `~/.local/share/RechnungsFee/` verwendet. Bestehende macOS-Installationen werden beim ersten Start mit diesem Update automatisch und einmalig in den korrekten Ordner umgezogen (nur wenn dort noch keine Datenbank liegt) – keine Daten gehen dabei verloren. Danke an CodeBrauer fürs Auffallen (Issue #348).\n- Rechnungslisten-Export (PDF und CSV, „Offene-Posten-Liste\") führte stornierte Rechnungen weiterhin als „offen\" inkl. offenem Betrag auf, statt als storniert – der Export las nur den Zahlungsstatus, der nach einem Storno unverändert auf dem alten Stand stehen bleibt. Betraf ebenso Entwürfe. Danke an gitmacer für den Report (Issue #352).\n\n",
-    "publishedAt": "2026-08-16T09:34:15Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.5.8",
+    "tagName": "v0.5.9",
+    "name": "RechnungsFee v0.5.9",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.5.9_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.9/RechnungsFee_0.5.9_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.5.9_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.9/RechnungsFee_0.5.9_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.9/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.9/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.5.9_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.9/RechnungsFee_0.5.9_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.9/RechnungsFee_aarch64.dmg) |\n\n> 🐧 **Linux:** `install-linux.sh` lädt die App nicht selbst herunter – zusätzlich die AppImage in denselben Ordner legen (empfohlen: die neutrale `RechnungsFee_amd64.AppImage`, bleibt bei Updates gleich benannt). Dann `bash install-linux.sh` ausführen (kein `chmod +x` nötig).\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.5.9_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## ✨ Neu\n\n- UStVA – Anzeigehilfe aufschlüsselbar: Jede Kennziffer mit Wert lässt sich jetzt aufklappen und zeigt die einzelnen Journaleinträge bzw. Vorsteuer-Ansprüche, aus denen sich die Summe zusammensetzt – inkl. Link direkt zur verknüpften Rechnung. Erleichtert Abstimm- und Prüfarbeiten erheblich. Danke an gitmacer für den Vorschlag (Issue #353).\n- USt-IdNr.-Prüfung bei Kunden und Lieferanten: Warnung bei einem Format, das nicht zum gewählten Land passt, plus Link zur BZSt-eVatR-Online-Abfrage und eine „Über BZSt bestätigt\"-Markierung mit Datum. Danke an Peter1061 für den Vorschlag (Issue #358).\n\n## 🔧 Verbesserungen\n\n- Backup wiederherstellen – der Unterschied zwischen „Lokales Backup wiederherstellen\" (Snapshot, schnell, kein Passwort/Upload nötig) und „ZIP-Backup hochladen\" (vollständig inkl. Belege, z. B. nach Hardware-Wechsel) steht jetzt direkt im Fenster, plus Link zum passenden Handbuch-Abschnitt (Issue #354).\n- Buchungsvorlagen – beim direkten „Jetzt buchen\" (Dauerauftrag/SEPA) lässt sich jetzt optional ein Beleg anhängen (z. B. Kontoauszug-Ausschnitt), genau wie bei jeder anderen Journalbuchung. Bisher entstand dabei ein Journal-Eintrag komplett ohne Beleg-Möglichkeit. Danke an gitmacer für den Vorschlag (Issue #355).\n- Journal – Taste „+\" öffnet jetzt „Neue Buchung\", ganz ohne Maus (solange kein Eingabefeld fokussiert ist). Danke an Peter1061 für den Vorschlag (Issue #356).\n- Journal – Spaltenüberschrift „Datum\" ist jetzt klickbar und wechselt zwischen absteigend (neueste oben, Standard) und aufsteigend (älteste oben, wie ein Kontoauszug) – erleichtert den Abgleich mit Bankunterlagen. Danke an Peter1061 für den Vorschlag (Issue #357).\n\n## 🐛 Bugfixes\n\n- EÜR-Berechnung: Buchungen in den Kategorien \"Fortbildung & Fachliteratur\" (Zeile 45), \"Reparatur Anlagevermögen\" (Zeile 48) und \"Software & Abonnements\" (Zeile 50) wurden falsch summiert – eine versehentlich als Einnahme statt Ausgabe gebuchte Position wurde addiert statt gegengerechnet, und der Zeilenbetrag fehlte komplett in der Summe Betriebsausgaben. Ursache: diese drei Zeilennummern fehlten in der internen Bezeichnungs-Tabelle, wodurch weder die Vorzeichen-Korrektur nach Buchungsart noch die Summenbildung griff. Danke an l1fecoach für den sehr präzisen Report mit Reproduktionsschritten (Issue #362).\n\n",
+    "publishedAt": "2026-08-20T21:19:56Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.5.9",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.8/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.9/install-linux.sh",
         "size": 47005
       },
       {
-        "name": "RechnungsFee_0.5.8_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.8/RechnungsFee_0.5.8_aarch64.dmg",
-        "size": 87270118
+        "name": "RechnungsFee_0.5.9_aarch64.dmg",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.9/RechnungsFee_0.5.9_aarch64.dmg",
+        "size": 87333773
       },
       {
-        "name": "RechnungsFee_0.5.8_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.8/RechnungsFee_0.5.8_amd64.AppImage",
-        "size": 111277248
+        "name": "RechnungsFee_0.5.9_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.9/RechnungsFee_0.5.9_amd64.AppImage",
+        "size": 111310016
       },
       {
-        "name": "RechnungsFee_0.5.8_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.8/RechnungsFee_0.5.8_x64-setup.exe",
-        "size": 81845213
+        "name": "RechnungsFee_0.5.9_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.9/RechnungsFee_0.5.9_x64-setup.exe",
+        "size": 81879593
       },
       {
         "name": "RechnungsFee_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.8/RechnungsFee_aarch64.dmg",
-        "size": 87270118
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.5.9/RechnungsFee_aarch64.dmg",
+        "size": 87333773
       }
     ]
   },
