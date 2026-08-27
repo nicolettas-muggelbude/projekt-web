@@ -17,7 +17,7 @@
   "author": "Nicoletta",
   "license": "MIT",
   "dependencies": {
-    "js-yaml": "^4.3.1",
+    "js-yaml": "^4.3.2",
     "marked": "^11.2.0"
   },
   "devDependencies": {
