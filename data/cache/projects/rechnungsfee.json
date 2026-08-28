@@ -2,11 +2,11 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-08-28T08:14:22.192Z",
+  "lastUpdate": "2026-08-28T21:36:47.955Z",
   "repoInfo": {
     "stars": 65,
     "forks": 8,
-    "openIssues": 29,
+    "openIssues": 31,
     "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
     "homepage": "",
     "topics": [
@@ -34,36 +34,36 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.6.1",
-    "name": "RechnungsFee v0.6.1",
-    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.6.1_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.1/RechnungsFee_0.6.1_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.6.1_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.1/RechnungsFee_0.6.1_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.1/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.1/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.6.1_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.1/RechnungsFee_0.6.1_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.1/RechnungsFee_aarch64.dmg) |\n\n> 🐧 **Linux:** `install-linux.sh` lädt die App nicht selbst herunter – zusätzlich die AppImage in denselben Ordner legen (empfohlen: die neutrale `RechnungsFee_amd64.AppImage`, bleibt bei Updates gleich benannt). Dann `bash install-linux.sh` ausführen (kein `chmod +x` nötig).\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.6.1_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## ✨ Neu\n\n- Profile umbenennen, archivieren und wiederherstellen: Auf der Seite „Profile\" lässt sich jedes Profil jetzt umbenennen (✏️) und archivieren (📥) – Archivieren blendet es nur aus der Liste aus, Datenbank, Belege und Backups bleiben dabei unangetastet und lassen sich jederzeit über „Archivierte Profile\" wiederherstellen. Erst von dort aus ist ein Profil zusätzlich endgültig löschbar, mit Sicherheitsabfrage per Eingabe des Profilnamens (das aktive Profil lässt sich weder archivieren noch löschen).\n- Einleitungs- und Schlusstext getrennt je Dokumenttyp: Bisher galt ein einziger Standardtext für alle Dokumente – ein für Rechnungen passender Satz (\"...stellen wir folgende Leistungen in Rechnung\") erschien dadurch fälschlich auch auf Angeboten, Aufträgen, Proformarechnungen und Lieferscheinen. Unter Einstellungen → Unternehmen → Funktionen lässt sich jetzt für jeden aktivierten Dokumenttyp ein eigener Standard-Einleitungs- und -Schlusstext hinterlegen; zusätzlich weiterhin frei überschreibbar pro einzelnem Dokument in Angebot, Auftrag, Proforma und Rechnung.\n\n## 🔧 Verbesserungen\n\n- Profile: Der Menüpunkt „Profile\" ist jetzt standardmäßig ausgeblendet und lässt sich unter Einstellungen → Unternehmen → Funktionen aktivieren – die meisten Installationen brauchen nur ein einziges Profil, ein permanent sichtbarer Menüpunkt dafür stiftet nur Verwirrung. Sobald mehr als ein Profil existiert, bleibt der Menüpunkt unabhängig vom Schalter sichtbar, damit man jederzeit zwischen Profilen wechseln kann.\n\n## 🐛 Bugfixes\n\n- Ein bereits als Entwurf gespeicherter Einleitungstext auf einer Rechnung ging beim erneuten Bearbeiten verloren, da das Update-Formular das Feld nicht kannte – nur beim Neuanlegen wurde es korrekt übernommen.\n- Ein aus einem Angebot erstellter Auftrag übernahm dessen Einleitungstext nicht.\n- Angebot, Auftrag und Proformarechnung erkannten den Kleinunternehmer-Status nicht: Neue Positionen bekamen immer 19 % USt als Vorschlag, und der USt-Satz ließ sich pro Position frei umstellen, obwohl nach § 19 UStG gar keine Umsatzsteuer berechnet werden darf. Das USt-Feld ist dort jetzt wie bei Rechnungen fest auf 0 % gesperrt.\n- Die Option „Profile aktivieren\" unter Einstellungen → Unternehmen → Funktionen ließ sich anscheinend ausschalten, obwohl der Menüpunkt „Profile\" ab dem zweiten Profil ohnehin dauerhaft sichtbar bleibt. Der Haken ist jetzt in diesem Fall fest gesetzt und ausgegraut, damit kein falscher Eindruck entsteht.\n- Profilnamen mit Umlauten (z. B. „Müller GmbH\", „Bäckerei\") wurden als ungültig abgelehnt, obwohl die Fehlermeldung „nur Buchstaben, Zahlen, …\" etwas anderes vermuten ließ. Umlaute und ß sind jetzt zulässig.\n\n",
-    "publishedAt": "2026-08-26T20:56:55Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.6.1",
+    "tagName": "v0.6.2",
+    "name": "RechnungsFee v0.6.2",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.6.2_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.2/RechnungsFee_0.6.2_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.6.2_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.2/RechnungsFee_0.6.2_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.2/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.2/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.6.2_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.2/RechnungsFee_0.6.2_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.2/RechnungsFee_aarch64.dmg) |\n\n> 🐧 **Linux:** `install-linux.sh` lädt die App nicht selbst herunter – zusätzlich die AppImage in denselben Ordner legen (empfohlen: die neutrale `RechnungsFee_amd64.AppImage`, bleibt bei Updates gleich benannt). Dann `bash install-linux.sh` ausführen (kein `chmod +x` nötig).\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.6.2_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## ✨ Neu\n\n- Kontokorrent-Übersicht: neuer Menüpunkt „Kontokorrent\" zeigt alle Kunden und Lieferanten mit offenem Saldo auf einen Blick, statt jeden Partner einzeln öffnen zu müssen – inklusive Summenübersicht (offene Salden gesamt / Guthaben gesamt) und Filter nach Offen/Guthaben. Klick auf einen Partner öffnet direkt dessen Kontokorrent-Tab.\n- Guthaben-Verrechnung direkt im Kontokorrent: Ein offenes Kunden- oder Lieferantenguthaben lässt sich jetzt direkt im Kontokorrent-Tab des Partners gegen eine offene Rechnung verrechnen, statt den Umweg über das Rechnungsformular zu benötigen.\n- Offene Verbindlichkeiten: neuer Menüpunkt zeigt alle unbezahlten Eingangsrechnungen mit Fälligkeits- und Skonto-Frist auf einen Blick – inklusive Zahlungsvorschlag „diese Woche fällig\" und Filtern nach Überfällig/Diese Woche/Skonto noch möglich. Klick auf eine Zeile öffnet die jeweilige Rechnung direkt.\n\n## 🔧 Verbesserungen\n\n- „Bürgergeld\" heißt jetzt „Grundsicherung\" – an allen Stellen zu Transferleistungen (Unternehmen-Einstellungen, Setup-Assistent, Dashboard-Zufluss-Monitor, Anlage EKS) ergänzt, mit Hinweis auf den bisherigen Namen zum Wiedererkennen.\n\n## 🐛 Bugfixes\n\n- Im Dokumentkopf stand bei jedem Dokumenttyp „Rechnungsdatum\" – auch auf Angeboten, Aufträgen, Proforma-Rechnungen und Lieferscheinen. Heißt jetzt passend zum Dokument Angebotsdatum, Auftragsdatum, Proformadatum, Lieferdatum bzw. Gutschriftdatum (Issue #369).\n- Wiederkehrende Rechnungen: Der „Erstellt\"-Zähler einer Vorlage sank nicht, wenn ein daraus erzeugter Entwurf ohne Finalisierung wieder gelöscht wurde – die Vorlage ließ sich dadurch dauerhaft nicht mehr löschen, nur noch beenden. Der Zähler zeigt jetzt immer die tatsächlich noch vorhandene Anzahl an Rechnungen (Issue #370).\n- „Ansehen\" einer Rechnung zeigte im internen PDF-Fenster eine weiße Seite, insbesondere unter Linux (WebKitGTK) – eine im Hauptfenster erzeugte blob:-URL kann von einem separaten nativen Fenster nicht aufgelöst werden. Das Fenster lädt das Dokument jetzt über eine echte URL, die es eigenständig lädt (Issue #371).\n\n",
+    "publishedAt": "2026-08-28T20:40:29Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.6.2",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.1/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.2/install-linux.sh",
         "size": 47005
       },
       {
-        "name": "RechnungsFee_0.6.1_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.1/RechnungsFee_0.6.1_aarch64.dmg",
-        "size": 87443800
+        "name": "RechnungsFee_0.6.2_aarch64.dmg",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.2/RechnungsFee_0.6.2_aarch64.dmg",
+        "size": 87428056
       },
       {
-        "name": "RechnungsFee_0.6.1_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.1/RechnungsFee_0.6.1_amd64.AppImage",
-        "size": 111416512
+        "name": "RechnungsFee_0.6.2_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.2/RechnungsFee_0.6.2_amd64.AppImage",
+        "size": 111400128
       },
       {
-        "name": "RechnungsFee_0.6.1_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.1/RechnungsFee_0.6.1_x64-setup.exe",
-        "size": 82394962
+        "name": "RechnungsFee_0.6.2_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.2/RechnungsFee_0.6.2_x64-setup.exe",
+        "size": 82376004
       },
       {
         "name": "RechnungsFee_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.1/RechnungsFee_aarch64.dmg",
-        "size": 87443800
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.2/RechnungsFee_aarch64.dmg",
+        "size": 87428056
       }
     ]
   },
