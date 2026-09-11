@@ -2,9 +2,9 @@
   "repo": "nicolettas-muggelbude/RechnungsFee",
   "name": "RechnungsFee",
   "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
-  "lastUpdate": "2026-09-10T20:16:05.926Z",
+  "lastUpdate": "2026-09-11T02:17:44.420Z",
   "repoInfo": {
-    "stars": 70,
+    "stars": 72,
     "forks": 8,
     "openIssues": 32,
     "description": "Open-Source Buchhaltungssoftware für Freiberufler, Selbstständige und Vereine. Offline-first, datenschutzfreundlich, GoBD-konform. Made for Germany 🇩🇪",
@@ -34,36 +34,36 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.6.11",
-    "name": "RechnungsFee v0.6.11",
-    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.6.11_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.11/RechnungsFee_0.6.11_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.6.11_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.11/RechnungsFee_0.6.11_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.11/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.11/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.6.11_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.11/RechnungsFee_0.6.11_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.11/RechnungsFee_aarch64.dmg) |\n\n> 🐧 **Linux:** `install-linux.sh` lädt die App nicht selbst herunter – zusätzlich die AppImage in denselben Ordner legen (empfohlen: die neutrale `RechnungsFee_amd64.AppImage`, bleibt bei Updates gleich benannt). Dann `bash install-linux.sh` ausführen (kein `chmod +x` nötig).\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.6.11_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## ✨ Neu\n\n- Neues Feld „Bestellnummer des Kunden\" bei Ausgangsrechnungen (und Angebot/Auftrag/Proforma/Lieferschein, wandert bei Umwandlung automatisch mit) – erscheint im PDF, sofern ausgefüllt, und wird im ZUGFeRD-Export als Referenzfeld BT-13 abgebildet. Vorschlag von ask4it (Issue #387).\n- Beim Bank-Import-Abgleich lässt sich eine Transaktion jetzt direkt als „Privat\" oder „Ignorieren\" markieren – hilfreich bei Mischkonten, z. B. für private Buchungen oder interne Umbuchungen zwischen eigenen Konten, die nicht in die Verbuchung übernommen werden sollen. Vorschlag von pstirnberg (Issue #379).\n- Journal: neue Spalte „Belegdatum\" zeigt bei rechnungsverknüpften Buchungen das Rechnungsdatum getrennt vom Buchungsdatum – hilfreich wenn Zahlungen rückwirkend erfasst werden. Beide Spalten lassen sich per Klick auf den Spaltenkopf auf-/absteigend sortieren. Vorschlag von pstirnberg (Issue #380).\n\n## 🐛 Bugfixes\n\n- GoBD-Integritätsprüfung meldete bei völlig unveränderten, normal über die Oberfläche angelegten Buchungen teils fälschlich „ungültige Signatur\" – Ursache war eine Formatierungs-Inkonsistenz bei Geldbeträgen zwischen frisch erstellten und aus der Datenbank geladenen Buchungen. Zusätzlich sind die GoBD-Schutzmaßnahmen jetzt robuster gegen einen fehlgeschlagenen Start abgesichert. Danke an Jesu3003 für die sehr gründliche Analyse (Issue #384).\n- UStVA-Anzeige berücksichtigte die Kennzahl 62 (Einfuhrumsatzsteuer) bei der angezeigten Zahllast nicht – der PDF-Export war korrekt, die Bildschirmanzeige und der gespeicherte Wert dagegen zu hoch (Issue #384).\n- Kategorie „Drittland-Dienstleistungen (§13b Abs. 2)\" wurde im Buchungsformular fälschlich als §13b Abs. 1 vorbelegt und landete dadurch in der falschen UStVA-Kennzahl (Issue #384).\n- Split-Buchungen mit einer Position auf „Drittland-Dienstleistungen (§13b Abs. 2)\" bekamen gar keinen steuerlichen Sonderfall zugeordnet und fielen komplett aus der UStVA heraus, zusätzlich wurde fälschlich eine Steuerbefreiung für Ausgangslieferungen gesetzt; dieselbe Verwechslung betraf auch Einfuhrumsatzsteuer-Positionen in Split-Buchungen (Issue #384).\n- E-Rechnungs-Import: Beim Import einer reinen XML-Rechnungsdatei per Drag & Drop (ohne begleitendes PDF) tat der Button „Rechnung erstellen\" nichts, ohne jede Fehlermeldung (Issue #384).\n- ZUGFeRD-Export: Ist bei einer Rechnung ein Leistungszeitraum (Von/Bis) hinterlegt, wird er jetzt zusätzlich als Rechnungsperiode (BT-73/BT-74) im XML abgebildet – bisher landete nur ein einzelnes Leistungsdatum im Lieferdatum-Feld, der Zeitraum selbst fehlte komplett. Danke an ask4it für den Hinweis (Issue #383).\n\n",
-    "publishedAt": "2026-09-05T09:28:27Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.6.11",
+    "tagName": "v0.6.12",
+    "name": "RechnungsFee v0.6.12",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ RechnungsFee_0.6.12_x64-setup.exe](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.12/RechnungsFee_0.6.12_x64-setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ RechnungsFee_0.6.12_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.12/RechnungsFee_0.6.12_amd64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ RechnungsFee_amd64.AppImage](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.12/RechnungsFee_amd64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install-linux.sh](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.12/install-linux.sh) |\n| 🍎 **macOS** (Apple Silicon, versioniert) | [⬇ RechnungsFee_0.6.12_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.12/RechnungsFee_0.6.12_aarch64.dmg) |\n| 🍎 **macOS** (Apple Silicon) | [⬇ RechnungsFee_aarch64.dmg](https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.12/RechnungsFee_aarch64.dmg) |\n\n> 🐧 **Linux:** `install-linux.sh` lädt die App nicht selbst herunter – zusätzlich die AppImage in denselben Ordner legen (empfohlen: die neutrale `RechnungsFee_amd64.AppImage`, bleibt bei Updates gleich benannt). Dann `bash install-linux.sh` ausführen (kein `chmod +x` nötig).\n\n> 🍎 **macOS:** Nicht signiert – beim ersten Start Rechtsklick → Öffnen, oder:\n> `xattr -cr RechnungsFee_0.6.12_aarch64.dmg`\n\n> 🔍 **OCR für gescannte Belege & Kassenbons** (Tesseract OCR):\n> - 🪟 Windows: automatisch durch den Installer\n> - 🐧 Linux: wird vom `install-linux.sh`-Skript angeboten; manuell: `sudo apt install tesseract-ocr tesseract-ocr-deu`\n> - 🍎 macOS: `brew install tesseract tesseract-lang`\n>\n> Ohne Tesseract zeigt RechnungsFee einen Installationshinweis sobald ein gescannter Beleg importiert wird.\n\n---\n\n## ✨ Neu\n\n- GoBD-Änderungsprotokoll: Nachträgliche Software-Eingriffe (Migrationen) auf bereits versiegelte Journalbuchungen werden jetzt in einer eigenen, geschützten Tabelle protokolliert und im GoBD-Export als eigene Datei mitgeliefert – Nachweis gegenüber einer Betriebsprüfung, dass ein Eingriff ein dokumentierter Software-Fix war (Issue #385).\n- GoBD-Prüfbericht: neuer, eigenständiger Abschnitt „Lückenprüfung\" weist nach, ob in der Journal- oder Tagesabschluss-Nummernfolge ein Datensatz fehlt – ein Hinweis auf eine Löschung außerhalb der Anwendung (Issue #385).\n- ZUGFeRD-Anhänge (optional, in den Unternehmenseinstellungen aktivierbar): rechnungsbegleitende Dokumente wie Stundennachweis oder Vertrag lassen sich bei Entwürfen direkt an die Rechnung anhängen und werden beim Export automatisch in die ZUGFeRD-PDF/A-3 eingebettet, statt separat verschickt werden zu müssen. Vorschlag von ask4it (Issue #383).\n\n## 🔧 Verbesserungen\n\n- Das beim ersten Drucken/Mailen archivierte Original-PDF heißt jetzt nach der Rechnungsnummer statt nach der internen Datenbank-ID (z. B. „RE-260103_42.pdf\" statt „42.pdf\") – dadurch auf Anhieb erkennbar und zwischen Eingang (ER-) und Ausgang (RE-) unterscheidbar. Frei wählbarer Speicherort bleibt auf der Roadmap. Vorschlag von Micha (Issue #390).\n\n## 🐛 Bugfixes\n\n- Der Kalender-Button bei Datumsfeldern öffnete unter Linux (Tauri/WebKitGTK) einen nativen Kalender, der sich nach der Auswahl nicht mehr schloss. Ersetzt durch eine eigene Kalender-Ansicht, die auf allen Plattformen identisch funktioniert (Issue #386).\n- ZUGFeRD-Export: Bei Rechnungspositionen mit einer Menge ungleich 1 wurde im XML fälschlich der Nettoeinzelpreis statt der Positionssumme (Menge × Einzelpreis) verwendet – betraf den Zeilenpreis (BT-146) sowie sämtliche Kopfsummen (BT-106, BT-109, BT-112, BT-115), die dadurch bei größeren Mengen deutlich zu niedrig ausfielen. Danke an ask4it für die sehr genaue Analyse anhand der BT-Feldnummern (Issue #389).\n- Automatische Erlöskonto-/Kategoriewahl bei Rechnungen mit gemischten USt-Sätzen (19 % und 7 % in derselben Rechnung) konnte bei unterschiedlichen Mengen den falschen Satz als „dominant\" auswählen, da die Ermittlung auf Stückpreisen statt auf den tatsächlichen Positionssummen beruhte – betraf sowohl die Zahlungsbuchung als auch den DATEV-Export-Fallback (Nebenfund zu Issue #389).\n- UStVA-Anzeigehilfe: §13b-/innergemeinschaftliche Alt-Buchungen aus der Zeit vor der Sonderfall-Erkennung (Migration 375) erschienen weiterhin nicht in KZ 46/47, 84/85 oder 67, obwohl ihre Kategorie längst korrekt zugeordnet war – ein früherer Datenfix hatte nur bereits falsch getaggte, nicht aber komplett ungetaggte Alt-Buchungen erfasst. Danke an UweKoslowski für die sehr genaue Ursachenanalyse (Issue #372).\n\n",
+    "publishedAt": "2026-09-10T20:54:49Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/tag/v0.6.12",
     "assets": [
       {
         "name": "install-linux.sh",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.11/install-linux.sh",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.12/install-linux.sh",
         "size": 47005
       },
       {
-        "name": "RechnungsFee_0.6.11_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.11/RechnungsFee_0.6.11_aarch64.dmg",
-        "size": 87579893
+        "name": "RechnungsFee_0.6.12_aarch64.dmg",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.12/RechnungsFee_0.6.12_aarch64.dmg",
+        "size": 87651269
       },
       {
-        "name": "RechnungsFee_0.6.11_amd64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.11/RechnungsFee_0.6.11_amd64.AppImage",
-        "size": 111695040
+        "name": "RechnungsFee_0.6.12_amd64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.12/RechnungsFee_0.6.12_amd64.AppImage",
+        "size": 111764672
       },
       {
-        "name": "RechnungsFee_0.6.11_x64-setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.11/RechnungsFee_0.6.11_x64-setup.exe",
-        "size": 82507343
+        "name": "RechnungsFee_0.6.12_x64-setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.12/RechnungsFee_0.6.12_x64-setup.exe",
+        "size": 82566390
       },
       {
         "name": "RechnungsFee_aarch64.dmg",
-        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.11/RechnungsFee_aarch64.dmg",
-        "size": 87579893
+        "url": "https://github.com/nicolettas-muggelbude/RechnungsFee/releases/download/v0.6.12/RechnungsFee_aarch64.dmg",
+        "size": 87651269
       }
     ]
   },
