@@ -22,17 +22,24 @@ async function loadAllPosts() {
                 ? `<div class="post-tags">${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`
                 : '';
 
+            const thumbHtml = post.image
+                ? `<a href="blog/posts/${post.slug}.html"><img class="blog-post-thumb" src="${post.image}" alt="${post.title}" loading="lazy"></a>`
+                : '';
+
             const article = document.createElement('article');
             article.className = 'blog-post';
             article.innerHTML = `
-                <h3><a href="blog/posts/${post.slug}.html">${post.title}</a></h3>
-                <div class="post-meta">
-                    <time datetime="${post.date}">${formattedDate}</time>
-                    ${post.author ? `<span>von ${post.author}</span>` : ''}
+                ${thumbHtml}
+                <div class="blog-post-body">
+                    <h3><a href="blog/posts/${post.slug}.html">${post.title}</a></h3>
+                    <div class="post-meta">
+                        <time datetime="${post.date}">${formattedDate}</time>
+                        ${post.author ? `<span>von ${post.author}</span>` : ''}
+                    </div>
+                    ${post.excerpt ? `<p class="excerpt">${post.excerpt}</p>` : ''}
+                    ${tagsHtml}
+                    <a href="blog/posts/${post.slug}.html" class="read-more">Weiterlesen &rarr;</a>
                 </div>
-                ${post.excerpt ? `<p class="excerpt">${post.excerpt}</p>` : ''}
-                ${tagsHtml}
-                <a href="blog/posts/${post.slug}.html" class="read-more">Weiterlesen &rarr;</a>
             `;
             container.appendChild(article);
         });

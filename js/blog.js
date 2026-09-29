@@ -50,11 +50,13 @@ class BlogManager {
         if (this.posts.length === 0) {
             this.container.innerHTML = `
                 <div class="blog-post">
-                    <h3>Noch keine Blog-Posts</h3>
-                    <p class="excerpt">
-                        Blog-Posts werden in <code>blog/posts/</code> als Markdown-Dateien erstellt.
-                        Nach dem nächsten Build erscheinen sie hier automatisch.
-                    </p>
+                    <div class="blog-post-body">
+                        <h3>Noch keine Blog-Posts</h3>
+                        <p class="excerpt">
+                            Blog-Posts werden in <code>blog/posts/</code> als Markdown-Dateien erstellt.
+                            Nach dem nächsten Build erscheinen sie hier automatisch.
+                        </p>
+                    </div>
                 </div>
             `;
             return;
@@ -98,15 +100,22 @@ class BlogManager {
             tagsHtml = `<div class="post-tags">${tagsList}</div>`;
         }
 
+        const thumbHtml = post.image
+            ? `<a href="blog/posts/${post.slug}.html"><img class="blog-post-thumb" src="${post.image}" alt="${post.title}" loading="lazy"></a>`
+            : '';
+
         article.innerHTML = `
-            <h3><a href="blog/posts/${post.slug}.html">${post.title}</a></h3>
-            <div class="post-meta">
-                <time datetime="${post.date}">${formattedDate}</time>
-                ${post.author ? `<span>von ${post.author}</span>` : ''}
+            ${thumbHtml}
+            <div class="blog-post-body">
+                <h3><a href="blog/posts/${post.slug}.html">${post.title}</a></h3>
+                <div class="post-meta">
+                    <time datetime="${post.date}">${formattedDate}</time>
+                    ${post.author ? `<span>von ${post.author}</span>` : ''}
+                </div>
+                ${post.excerpt ? `<p class="excerpt">${post.excerpt}</p>` : ''}
+                ${tagsHtml}
+                <a href="blog/posts/${post.slug}.html" class="read-more">Weiterlesen →</a>
             </div>
-            ${post.excerpt ? `<p class="excerpt">${post.excerpt}</p>` : ''}
-            ${tagsHtml}
-            <a href="blog/posts/${post.slug}.html" class="read-more">Weiterlesen →</a>
         `;
 
         return article;

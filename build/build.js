@@ -367,6 +367,7 @@ async function buildBlogIndex() {
                 author: frontmatter.author || '',
                 tags: frontmatter.tags || [],
                 excerpt: frontmatter.excerpt || '',
+                image: frontmatter.image || null,
                 content: content.replace(/^---\n[\s\S]*?\n---\n/, '') // Content ohne Frontmatter
             });
 
