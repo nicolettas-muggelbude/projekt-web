@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "slug": "2026-09-28-kater-v140",
+      "title": "Kater 1.4.0 – Dubletten finden, CSV-Export nach eigenen Regeln",
+      "date": "2026-09-28",
+      "author": "Nicoletta",
+      "tags": [
+        "release",
+        "linux",
+        "kater",
+        "kontakte",
+        "csv"
+      ],
+      "excerpt": "Kater 1.4.0 bringt eine waschechte Dubletten-Erkennung mit Seite-an-Seite-Vergleich und einen CSV-Export, bei dem du Felder, Reihenfolge und Trennzeichen selbst bestimmst."
+    },
+    {
       "slug": "2026-03-29-kater-v100",
       "title": "Kater – Adressbuch für Linux, das einfach funktioniert",
       "date": "2026-03-29",
