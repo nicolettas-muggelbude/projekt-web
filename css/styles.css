@@ -491,17 +491,20 @@ section h2 {
    ======================================== */
 
 .blog-posts {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: var(--spacing-md);
+    align-items: start;
 }
 
 .blog-post {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
-    padding: var(--spacing-md);
+    overflow: hidden;
     transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-post:hover {
@@ -509,8 +512,21 @@ section h2 {
     border-color: var(--accent);
 }
 
+.blog-post-thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1200 / 630;
+    object-fit: cover;
+    background: var(--bg-secondary);
+}
+
+.blog-post-body {
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+}
+
 .blog-post h3 {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
+    line-height: 1.35;
     margin-bottom: var(--spacing-xs);
 }
 
@@ -549,6 +565,11 @@ section h2 {
 .blog-post .excerpt {
     color: var(--text-secondary);
     margin-bottom: var(--spacing-sm);
+    font-size: 0.92rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .blog-post .read-more {

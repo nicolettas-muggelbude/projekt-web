@@ -12,7 +12,8 @@
         "kontakte",
         "csv"
       ],
-      "excerpt": "Kater 1.4.0 bringt eine waschechte Dubletten-Erkennung mit Seite-an-Seite-Vergleich und einen CSV-Export, bei dem du Felder, Reihenfolge und Trennzeichen selbst bestimmst."
+      "excerpt": "Kater 1.4.0 bringt eine waschechte Dubletten-Erkennung mit Seite-an-Seite-Vergleich und einen CSV-Export, bei dem du Felder, Reihenfolge und Trennzeichen selbst bestimmst.",
+      "image": "images/blog/kater-v140-title.svg"
     },
     {
       "slug": "2026-03-29-kater-v100",
@@ -26,7 +27,8 @@
         "kontakte",
         "vcard"
       ],
-      "excerpt": "Kontakte verwalten unter Linux? Entweder Cloud-Zwang oder veraltete Tools. Kater macht es anders: lokal, vollständig, vCard 4.0 – ohne Kompromisse."
+      "excerpt": "Kontakte verwalten unter Linux? Entweder Cloud-Zwang oder veraltete Tools. Kater macht es anders: lokal, vollständig, vCard 4.0 – ohne Kompromisse.",
+      "image": null
     },
     {
       "slug": "2026-03-25-quark-v010",
@@ -40,7 +42,8 @@
         "quark",
         "qr-code"
       ],
-      "excerpt": "QR-Code-Generatoren im Web sind voll mit Werbung, Tracking und nervigen Registrierungen. Quark macht das anders: kostenlos, offline, Open Source."
+      "excerpt": "QR-Code-Generatoren im Web sind voll mit Werbung, Tracking und nervigen Registrierungen. Quark macht das anders: kostenlos, offline, Open Source.",
+      "image": null
     },
     {
       "slug": "2026-03-13-update-script-v170",
@@ -54,7 +57,8 @@
         "update-script",
         "hooks"
       ],
-      "excerpt": "v1.7.0 bringt ein vollständiges Hooks-System: Eigene Skripte vor und nach dem Update ausführen – automatisch, konfigurierbar."
+      "excerpt": "v1.7.0 bringt ein vollständiges Hooks-System: Eigene Skripte vor und nach dem Update ausführen – automatisch, konfigurierbar.",
+      "image": null
     },
     {
       "slug": "2026-02-08-myapps-v024",
@@ -67,7 +71,8 @@
         "myapps",
         "performance"
       ],
-      "excerpt": "Kennst du das? Du klickst auf 'Nächste Seite' und... wartest. Und wartest. Mit v0.2.4 ist Schluss damit - MyApps ist jetzt bis zu 100x schneller!"
+      "excerpt": "Kennst du das? Du klickst auf 'Nächste Seite' und... wartest. Und wartest. Mit v0.2.4 ist Schluss damit - MyApps ist jetzt bis zu 100x schneller!",
+      "image": null
     },
     {
       "slug": "2026-02-07-myapps-v023",
@@ -80,7 +85,8 @@
         "myapps",
         "gtk4"
       ],
-      "excerpt": "MyApps zeigt dir auf einen Blick, welche Anwendungen auf deinem Linux-System installiert sind - ohne System-Clutter. Version 0.2.3 behebt wichtige Bugs für OBS- und AUR-Installationen."
+      "excerpt": "MyApps zeigt dir auf einen Blick, welche Anwendungen auf deinem Linux-System installiert sind - ohne System-Clutter. Version 0.2.3 behebt wichtige Bugs für OBS- und AUR-Installationen.",
+      "image": null
     },
     {
       "slug": "2026-01-26-update-script-v16",
@@ -93,7 +99,8 @@
         "automation",
         "update-script"
       ],
-      "excerpt": "Zwei neue Major-Releases des Linux-Update-Scripts bringen XDG-Konformität, NVIDIA Secure Boot Support, kritische Bugfixes und ein revolutionäres Hybrid-Config-System. Endlich: AUTO_REBOOT funktioniert!"
+      "excerpt": "Zwei neue Major-Releases des Linux-Update-Scripts bringen XDG-Konformität, NVIDIA Secure Boot Support, kritische Bugfixes und ein revolutionäres Hybrid-Config-System. Endlich: AUTO_REBOOT funktioniert!",
+      "image": null
     },
     {
       "slug": "2025-12-31-rss-feed-verfuegbar",
@@ -105,7 +112,8 @@
         "rss",
         "tutorial"
       ],
-      "excerpt": "Ab sofort kannst du meinen Blog per RSS-Feed abonnieren und verpasst keinen neuen Beitrag mehr. Hier erfährst du, wie's geht!"
+      "excerpt": "Ab sofort kannst du meinen Blog per RSS-Feed abonnieren und verpasst keinen neuen Beitrag mehr. Hier erfährst du, wie's geht!",
+      "image": null
     },
     {
       "slug": "2025-12-30-apt-get-vs-apt",
@@ -118,7 +126,8 @@
         "ubuntu",
         "best-practices"
       ],
-      "excerpt": "Eine häufige Frage: Ist apt-get veraltet? Warum nutzen wir es im Update-Script statt apt?"
+      "excerpt": "Eine häufige Frage: Ist apt-get veraltet? Warum nutzen wir es im Update-Script statt apt?",
+      "image": null
     },
     {
       "slug": "2025-01-28-willkommen",
@@ -129,7 +138,8 @@
         "announcement",
         "web"
       ],
-      "excerpt": "Meine neue Portfolio-Website ist jetzt live! Hier stelle ich meine Projekte vor und teile Gedanken zu Entwicklung und Technologie."
+      "excerpt": "Meine neue Portfolio-Website ist jetzt live! Hier stelle ich meine Projekte vor und teile Gedanken zu Entwicklung und Technologie.",
+      "image": null
     },
     {
       "slug": "2025-01-15-github-integration",
@@ -141,7 +151,8 @@
         "github",
         "automation"
       ],
-      "excerpt": "Wie ich meine Portfolio-Website automatisch mit GitHub-Daten synchronisiere, ohne Backend oder Datenbank."
+      "excerpt": "Wie ich meine Portfolio-Website automatisch mit GitHub-Daten synchronisiere, ohne Backend oder Datenbank.",
+      "image": null
     }
   ]
 }
