@@ -368,6 +368,7 @@ async function buildBlogIndex() {
                 tags: frontmatter.tags || [],
                 excerpt: frontmatter.excerpt || '',
                 image: frontmatter.image || null,
+                ogImage: frontmatter.ogImage || null,
                 content: content.replace(/^---\n[\s\S]*?\n---\n/, '') // Content ohne Frontmatter
             });
 
@@ -429,6 +430,11 @@ async function generateBlogPostPages(posts) {
             // Author HTML
             const authorHtml = post.author ? `<span>von ${post.author}</span>` : '';
 
+            // OG-Bild: post-spezifisch falls gesetzt, sonst generisches Standardbild
+            const ogImage = post.ogImage
+                ? `https://muggelbude.it/${post.ogImage}`
+                : 'https://muggelbude.it/images/og-image.png';
+
             // Markdown zu HTML
             let contentHtml = marked(post.content || '');
 
@@ -462,6 +468,7 @@ async function generateBlogPostPages(posts) {
             html = html.replace(/\{\{POST_TAGS\}\}/g, tagsHtml);
             html = html.replace(/\{\{POST_CONTENT\}\}/g, contentHtml);
             html = html.replace(/\{\{POST_SLUG\}\}/g, post.slug);
+            html = html.replace(/\{\{POST_OG_IMAGE\}\}/g, ogImage);
 
             // Speichern
             const outputPath = path.join(__dirname, '..', 'blog', 'posts', `${post.slug}.html`);
