@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/Kater",
   "name": "Kater",
   "description": "Linux-Adressbuch mit vollständiger vCard 4.0-Unterstützung – lokal, ohne Cloud, ohne Konten",
-  "lastUpdate": "2026-09-30T06:35:35.297Z",
+  "lastUpdate": "2026-09-30T11:40:11.501Z",
   "repoInfo": {
     "stars": 2,
     "forks": 0,
@@ -15,7 +15,7 @@
   "latestRelease": {
     "tagName": "v1.4.0",
     "name": "Kater v1.4.0",
-    "body": "**Full Changelog**: https://github.com/nicolettas-muggelbude/Kater/compare/v1.3.0...v1.4.0",
+    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ Kater-1.4.0-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.4.0/Kater-1.4.0-x86_64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ Kater-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.4.0/Kater-x86_64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install.sh](https://github.com/nicolettas-muggelbude/Kater/releases/download/v1.4.0/install.sh) |\n\n## ✨ Neue Features\n\n### Dubletten-Erkennung\n- Findet Kontakte mit gleichem Namen, gleicher E-Mail oder gleicher Telefonnummer (Menü „Extras → Dubletten finden...“)\n- Seite-an-Seite-Vergleich beim Zusammenführen – abweichende Felder einzeln auswählbar\n- Telefonnummern, E-Mails und Adressen werden automatisch dedupliziert vereint, Gruppenzugehörigkeit bleibt erhalten\n\n### Konfigurierbarer CSV-Export\n- Felder frei auswählen und die Spaltenreihenfolge per ↑/↓ anordnen\n- Trennzeichen wählbar (Semikolon oder Komma)\n\n## 🔄 Geändert\n\n- Menüstruktur überarbeitet: neuer Menüpunkt „Export“ bündelt vCard-, CSV-, Fritzbox- und Speedport-Export; Importfunktionen jetzt unter „Datei → Import“\n\n**Full Changelog**: https://github.com/nicolettas-muggelbude/Kater/compare/v1.3.0...v1.4.0\n",
     "publishedAt": "2026-09-28T18:07:38Z",
     "htmlUrl": "https://github.com/nicolettas-muggelbude/Kater/releases/tag/v1.4.0",
     "assets": [
