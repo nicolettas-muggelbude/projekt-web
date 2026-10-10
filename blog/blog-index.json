@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "slug": "2026-10-10-rechnungsfee-v070",
+      "title": "RechnungsFee 0.7.0 – Abschlagsrechnungen, die sich von selbst verrechnen",
+      "date": "2026-10-10",
+      "author": "Nicoletta",
+      "tags": [
+        "release",
+        "rechnungsfee",
+        "buchhaltung",
+        "open-source",
+        "rechnung"
+      ],
+      "excerpt": "RechnungsFee 0.7.0 bringt Abschlagsrechnungen, die sich beim Schreiben der Schlussrechnung automatisch verrechnen – dazu 47 Bugfixes und 12 Verbesserungen aus 15 Zwischenversionen seit v0.6.0.",
+      "image": "images/blog/rechnungsfee-v070-title.svg",
+      "ogImage": "images/blog/rechnungsfee-v070-title.jpg"
+    },
+    {
       "slug": "2026-09-28-kater-v140",
       "title": "Kater 1.4.0 – Dubletten finden, CSV-Export nach eigenen Regeln",
       "date": "2026-09-28",

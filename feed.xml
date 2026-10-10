@@ -5,8 +5,21 @@
     <link>https://muggelbude.it/</link>
     <description>Portfolio &amp; Blog von Nicoletta - Linux, Automation, Entwicklung</description>
     <language>de</language>
-    <lastBuildDate>Sat, 10 Oct 2026 03:37:59 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 08:35:41 GMT</lastBuildDate>
     <atom:link href="https://muggelbude.it/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>RechnungsFee 0.7.0 – Abschlagsrechnungen, die sich von selbst verrechnen</title>
+      <link>https://muggelbude.it/blog/posts/2026-10-10-rechnungsfee-v070.html</link>
+      <guid>https://muggelbude.it/blog/posts/2026-10-10-rechnungsfee-v070.html</guid>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate>
+      <author>noreply@muggelbude.it (Nicoletta)</author>
+      <description>RechnungsFee 0.7.0 bringt Abschlagsrechnungen, die sich beim Schreiben der Schlussrechnung automatisch verrechnen – dazu 47 Bugfixes und 12 Verbesserungen aus 15 Zwischenversionen seit v0.6.0.</description>
+      <category>release</category>
+      <category>rechnungsfee</category>
+      <category>buchhaltung</category>
+      <category>open-source</category>
+      <category>rechnung</category>
+    </item>
     <item>
       <title>Kater 1.4.0 – Dubletten finden, CSV-Export nach eigenen Regeln</title>
       <link>https://muggelbude.it/blog/posts/2026-09-28-kater-v140.html</link>
