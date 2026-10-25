@@ -745,6 +745,31 @@ pre code {
     font-style: italic;
 }
 
+.blog-post-full .post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-md) 0;
+    display: block;
+    overflow-x: auto;
+}
+
+.blog-post-full .post-content th,
+.blog-post-full .post-content td {
+    border: 1px solid var(--border);
+    padding: 0.6rem 1rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.blog-post-full .post-content th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+.blog-post-full .post-content tr:hover {
+    background: var(--bg-secondary);
+}
+
 /* Zurück-Button oben (nur Desktop) */
 .post-nav-top {
     display: none;
