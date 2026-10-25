@@ -72,6 +72,15 @@
       "logoUrl": "https://raw.githubusercontent.com/nicolettas-muggelbude/Kater/master/assets/kater-logo.svg",
       "featured": true,
       "customPage": true
+    },
+    {
+      "id": "flohh",
+      "repo": "nicolettas-muggelbude/flohh",
+      "name": "flohh",
+      "description": "Daten springen von Rechner zu Rechner – portabler Daten-Umzug für Windows, Linux und macOS, per Kabel oder WLAN, ohne Installation, ohne Cloud",
+      "logoUrl": "https://raw.githubusercontent.com/nicolettas-muggelbude/flohh/main/assets/logo/flohh-icon.svg",
+      "featured": true,
+      "customPage": true
     }
   ]
 }

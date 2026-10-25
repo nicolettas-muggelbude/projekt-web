@@ -138,6 +138,10 @@ Noch nicht definiert - nach Bedarf hinzufügen.
 
 ## Changelog
 
+### 2026-10-25 - Projekt flohh hinzugefügt
+- `projects/flohh.html` (customPage, nach Kater-Muster), Eintrag in `data/projects.json` und `sitemap.html`
+- Download-Buttons verlinken auf `releases/latest`, da flohh-Assets versionierte Dateinamen haben (`flohh-vX.Y.Z-...`) und `latest/download/` deshalb nicht funktioniert
+
 ### 2025-12-30 - Link-Handling & Code-Block-Fixes
 - **Comprehensive Link-Handling**: Alle Repository-Datei-Links (claude.md, fragen.md, etc.) verlinken jetzt zu GitHub
 - **Page Anchors**: ROADMAP.md und CHANGELOG.md verlinken zu Seiten-Ankerpunkten (#roadmap, #changelog)
