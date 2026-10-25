@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="flohh 0.2.0 – Daten springen vom alten auf den neuen Rechner, jetzt auch von Windows zu Windows">
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="flohh 0.2.0 – Daten springen vom alten auf den neuen Rechner, Windows, Linux und macOS in alle Richtungen">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F6F3EC"/>
@@ -108,12 +108,12 @@
 
   <!-- Pille unten in der Mitte: Neu in v0.2.0 -->
   <g font-family="DM Sans, Arial, sans-serif">
-    <rect x="610" y="522" width="400" height="46" rx="23" fill="#FFFFFF" stroke="#E2DCD0" stroke-width="1.5"/>
-    <g transform="translate(628,535)">
+    <rect x="572" y="522" width="476" height="46" rx="23" fill="#FFFFFF" stroke="#E2DCD0" stroke-width="1.5"/>
+    <g transform="translate(590,535)">
       <circle cx="10" cy="10" r="10" fill="#E2552B"/>
       <path d="M10 4 L11.6 8.4 L16 10 L11.6 11.6 L10 16 L8.4 11.6 L4 10 L8.4 8.4 Z" fill="white"/>
     </g>
-    <text x="658" y="551" font-size="16" font-weight="700" fill="#C4441D">Windows ↔ Windows</text>
-    <text x="852" y="551" font-size="13" fill="#5E5A53">· per LAN &amp; WLAN</text>
+    <text x="620" y="551" font-size="16" font-weight="700" fill="#C4441D">Windows ↔ Linux ↔ macOS</text>
+    <text x="878" y="551" font-size="13" fill="#5E5A53">· in alle Richtungen</text>
   </g>
 </svg>
