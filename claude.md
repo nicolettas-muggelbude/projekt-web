@@ -140,7 +140,7 @@ Noch nicht definiert - nach Bedarf hinzufügen.
 
 ### 2026-10-25 - Blogpost flohh 0.2.0
 - `blog/posts/2026-10-25-flohh-v020.md` nach Muster des RechnungsFee-0.7.0-Posts
-- Titelbild `images/blog/flohh-v020-title.svg` im flohh-App-Look (Farben aus `web/style.css` im flohh-Repo), JPG für OG via `rsvg-convert` + `convert` in WSL gerendert
+- Titelbild `images/blog/flohh-v020-title.svg`: zwei gezeichnete Laptops (alter/neuer Rechner), gestrichelter Sprungbogen, Floh-Figur in der Mitte; Farben aus `web/style.css` im flohh-Repo, JPG für OG via `rsvg-convert` + `convert` in WSL gerendert
 
 ### 2026-10-25 - Projekt flohh hinzugefügt
 - `projects/flohh.html` (customPage, nach Kater-Muster), Eintrag in `data/projects.json` und `sitemap.html`
