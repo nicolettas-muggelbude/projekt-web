@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "slug": "2026-10-25-flohh-v020",
+      "title": "flohh 0.2.0 – Daten springen von Rechner zu Rechner",
+      "date": "2026-10-25",
+      "author": "Nicoletta",
+      "tags": [
+        "release",
+        "flohh",
+        "umzug",
+        "windows",
+        "linux",
+        "macos",
+        "open-source"
+      ],
+      "excerpt": "Neues Projekt: flohh zieht Dokumente, Bilder & Co. vom alten auf den neuen Rechner – per Kabel oder WLAN, ohne Installation, ohne Cloud, ohne Konto. Version 0.2.0 schafft jetzt auch den Umzug von Windows zu Windows.",
+      "image": "images/blog/flohh-v020-title.svg",
+      "ogImage": "images/blog/flohh-v020-title.jpg"
+    },
+    {
       "slug": "2026-10-10-rechnungsfee-v070",
       "title": "RechnungsFee 0.7.0 – Abschlagsrechnungen, die sich von selbst verrechnen",
       "date": "2026-10-10",
