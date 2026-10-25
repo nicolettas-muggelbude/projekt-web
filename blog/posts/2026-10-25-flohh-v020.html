@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Neues Projekt: flohh zieht Dokumente, Bilder & Co. vom alten auf den neuen Rechner – per Kabel oder WLAN, ohne Installation, ohne Cloud, ohne Konto. Version 0.2.0 schafft jetzt auch den Umzug von Windows zu Windows.">
+    <meta name="description" content="Neues Projekt: flohh zieht Dokumente, Bilder & Co. vom alten auf den neuen Rechner – zwischen Windows, Linux und macOS in alle Richtungen, per Kabel oder WLAN, ohne Installation, ohne Cloud, ohne Konto.">
     <meta name="author" content="Nicoletta">
 
     <!-- Content Security Policy -->
@@ -18,7 +18,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://muggelbude.it/blog/posts/2026-10-25-flohh-v020.html">
     <meta property="og:title" content="flohh 0.2.0 – Daten springen von Rechner zu Rechner">
-    <meta property="og:description" content="Neues Projekt: flohh zieht Dokumente, Bilder & Co. vom alten auf den neuen Rechner – per Kabel oder WLAN, ohne Installation, ohne Cloud, ohne Konto. Version 0.2.0 schafft jetzt auch den Umzug von Windows zu Windows.">
+    <meta property="og:description" content="Neues Projekt: flohh zieht Dokumente, Bilder & Co. vom alten auf den neuen Rechner – zwischen Windows, Linux und macOS in alle Richtungen, per Kabel oder WLAN, ohne Installation, ohne Cloud, ohne Konto.">
     <meta property="og:image" content="https://muggelbude.it/images/blog/flohh-v020-title.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://muggelbude.it/blog/posts/2026-10-25-flohh-v020.html">
     <meta name="twitter:title" content="flohh 0.2.0 – Daten springen von Rechner zu Rechner">
-    <meta name="twitter:description" content="Neues Projekt: flohh zieht Dokumente, Bilder & Co. vom alten auf den neuen Rechner – per Kabel oder WLAN, ohne Installation, ohne Cloud, ohne Konto. Version 0.2.0 schafft jetzt auch den Umzug von Windows zu Windows.">
+    <meta name="twitter:description" content="Neues Projekt: flohh zieht Dokumente, Bilder & Co. vom alten auf den neuen Rechner – zwischen Windows, Linux und macOS in alle Richtungen, per Kabel oder WLAN, ohne Installation, ohne Cloud, ohne Konto.">
     <meta name="twitter:image" content="https://muggelbude.it/images/blog/flohh-v020-title.jpg">
 
     <!-- Canonical URL -->
@@ -47,7 +47,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "flohh 0.2.0 – Daten springen von Rechner zu Rechner",
-        "description": "Neues Projekt: flohh zieht Dokumente, Bilder & Co. vom alten auf den neuen Rechner – per Kabel oder WLAN, ohne Installation, ohne Cloud, ohne Konto. Version 0.2.0 schafft jetzt auch den Umzug von Windows zu Windows.",
+        "description": "Neues Projekt: flohh zieht Dokumente, Bilder & Co. vom alten auf den neuen Rechner – zwischen Windows, Linux und macOS in alle Richtungen, per Kabel oder WLAN, ohne Installation, ohne Cloud, ohne Konto.",
         "author": {
             "@type": "Person",
             "name": "Nicoletta",
@@ -110,7 +110,7 @@
             </div>
 
             <div class="post-content">
-                <p><img src="../../images/blog/flohh-v020-title.svg" alt="flohh 0.2.0 – Daten springen von Rechner zu Rechner, jetzt auch von Windows zu Windows"></p>
+                <p><img src="../../images/blog/flohh-v020-title.svg" alt="flohh 0.2.0 – Daten springen von Rechner zu Rechner, zwischen Windows, Linux und macOS in alle Richtungen"></p>
 <h1>flohh 0.2.0 – Daten springen von Rechner zu Rechner</h1>
 <p><strong>25. Oktober 2026</strong></p>
 <p>Ein neuer Rechner ist schnell ausgepackt – aber dann kommt der Umzug. Dokumente, Fotos, Musik,
@@ -139,21 +139,13 @@ landet unter macOS in „Pictures“, ohne dass man sich darum kümmern muss.</l
 <p>Dabei wird <strong>nichts überschrieben</strong> – gibt es eine Datei schon, heißt die neue „Name (2).ext“.
 Bricht die Übertragung ab, setzt ein erneuter Start einfach dort fort, wo sie aufgehört hat.</p>
 <hr>
-<h2>Neu in 0.2.0: Windows ↔ Windows</h2>
-<p>Version 0.1.0 hat heute Vormittag den Anfang gemacht, 0.2.0 schafft am Nachmittag den
-häufigsten Umzug überhaupt: <strong>vom alten auf den neuen Windows-PC</strong>. Ein Windows-Rechner kann
-jetzt auch Empfänger sein. Beim ersten Mal fragt die Windows-Firewall einmal nach – „Zugriff
-zulassen“ klicken, fertig. Und blockt sie doch, sagt flohh das klar und mit Lösung, statt nur
-„nicht erreichbar“ zu melden.</p>
-<p>Getestet ist das <strong>über LAN und über WLAN</strong>.</p>
-<p>Außerdem neu: <strong>Verbinden per Adresse.</strong> Manche Router trennen LAN und WLAN voneinander oder
-filtern die Rundrufe, mit denen sich die Rechner sonst von selbst finden. Dann zeigt der neue
-Rechner seine Adresse unter dem Code an, und am alten Rechner tippt man sie unter <strong>„Rechner
-nicht dabei? Adresse eingeben“</strong> einfach ein.</p>
-<blockquote>
-<p><strong>Wichtig:</strong> Beide Seiten stellen sich beim Verbinden jetzt gegenseitig vor – v0.2.0 arbeitet
-deshalb nicht mit v0.1.0 zusammen. Bitte auf beiden Rechnern dieselbe Version nehmen.</p>
-</blockquote>
+<h2>Wenn sich die Rechner nicht auf Anhieb finden</h2>
+<p>Unter <strong>Windows</strong> fragt die Firewall beim ersten Mal einmal nach, ob flohh ins Netzwerk darf –
+„Zugriff zulassen“ klicken, danach nie wieder. Und blockt sie doch, sagt flohh das klar und mit
+Lösung, statt nur „nicht erreichbar“ zu melden.</p>
+<p>Manche Router trennen LAN und WLAN voneinander oder filtern die Rundrufe, mit denen sich die
+Rechner sonst von selbst finden. Dann zeigt der neue Rechner seine <strong>Adresse</strong> unter dem Code an,
+und am alten Rechner tippt man sie unter <strong>„Rechner nicht dabei? Adresse eingeben“</strong> einfach ein.</p>
 <hr>
 <h2>Kabel, Router oder WLAN – was ist am schnellsten?</h2>
 <table>
@@ -203,7 +195,7 @@ flohh direkt, im Browser heruntergeladen einmal unter <em>Systemeinstellungen �
 Sicherheit</em> „Dennoch öffnen“ klicken. Die Mac-Versionen sind bisher <strong>ungetestet</strong> – über
 Rückmeldungen freue ich mich besonders.</li>
 </ul>
-<p>Alle Downloads gibt&#39;s auf der <a href="https://github.com/nicolettas-muggelbude/flohh/releases/latest" target="_blank" rel="noopener noreferrer">Release-Seite bei GitHub</a>.</p>
+<p>Alle Downloads gibt&#39;s auf der <a href="https://muggelbude.it/projects/flohh.html" target="_blank" rel="noopener noreferrer">flohh-Projektseite</a>.</p>
 <hr>
 <h2>Open Source</h2>
 <p>flohh steht unter der <strong>GPLv3</strong>, das Logo und die Floh-Figur unter <strong>CC BY-SA 4.0</strong>. flohh ist
