@@ -2,7 +2,7 @@
   "repo": "nicolettas-muggelbude/Scrat-Backup",
   "name": "Scrat-Backup",
   "description": "Scrat-Backup ist ein Open-Source-Backup-Tool für Linux und Windows. Wie ein Eichhörnchen seine Eicheln für den Winter sichert, schützt Scrat-Backup deine wertvollen Daten mit verschlüsselten, komprimierten Backups. 🇩🇪",
-  "lastUpdate": "2026-11-17T15:16:19.552Z",
+  "lastUpdate": "2026-11-18T00:17:04.539Z",
   "repoInfo": {
     "stars": 2,
     "forks": 0,
@@ -13,26 +13,26 @@
     "defaultBranch": "main"
   },
   "latestRelease": {
-    "tagName": "v0.3.63",
-    "name": "v0.3.63",
-    "body": "## 💾 Downloads\n\n| Plattform | Download |\n|-----------|----------|\n| 🪟 **Windows** (x64) | [⬇ ScratBackup-v0.3.63-Setup.exe](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/ScratBackup-v0.3.63-Setup.exe) |\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ ScratBackup-v0.3.63-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/ScratBackup-v0.3.63-x86_64.AppImage) |\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ ScratBackup-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/ScratBackup-x86_64.AppImage) |\n| 🐧 **Linux** Installer | [⬇ install.sh](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/install.sh) |\n\n## Was ist neu\n\n### Eindeutige USB-Laufwerks-Erkennung\n\nScrat-Backup erkennt jetzt das **genau konfigurierte USB-Laufwerk** – nicht mehr einfach irgendein angestecktes USB-Gerät.\n\n**Beim Einrichten:** Eine unsichtbare Datei  mit einer eindeutigen ID wird ins Wurzelverzeichnis des Laufwerks geschrieben.\n\n**Vor jedem Backup:** Das Laufwerk wird anhand dieser ID verifiziert – auch wenn der Laufwerksbuchstabe (Windows) oder der Mount-Punkt (Linux) gewechselt hat. Ist das konfigurierte Laufwerk nicht angesteckt, bricht das Backup mit einer klaren Meldung ab.\n\n## Bekannte Einschränkungen\n\n- Bestehende USB-Profile (eingerichtet vor v0.3.63) erhalten die UUID-Prüfung erst nach einmaligem erneuten Durchlaufen des Wizards.",
-    "publishedAt": "2026-06-28T13:09:22Z",
-    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.63",
+    "tagName": "v0.3.64",
+    "name": "v0.3.64",
+    "body": "## 💾 Downloads\r\n\r\n| Plattform | Download |\r\n|-----------|----------|\r\n| 🪟 **Windows** (x64) | [⬇ ScratBackup-v0.3.64-Setup.exe](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.64/ScratBackup-v0.3.64-Setup.exe) |\r\n| 🐧 **Linux** (x86_64, versioniert) | [⬇ ScratBackup-v0.3.64-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.64/ScratBackup-v0.3.64-x86_64.AppImage) |\r\n| 🐧 **Linux** (x86_64, via install.sh) | [⬇ ScratBackup-x86_64.AppImage](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.64/ScratBackup-x86_64.AppImage) |\r\n| 🐧 **Linux** Installer | [⬇ install.sh](https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.64/install.sh) |\r\n\r\n## ✨ Neu: Verpasste Backups werden nachgeholt\r\n\r\nWar beim geplanten Backup die externe Festplatte nicht angeschlossen (oder ist das Backup aus einem anderen Grund fehlgeschlagen), versucht Scrat-Backup es **jeden Tag zur gleichen Uhrzeit erneut**, bis es geklappt hat.\r\n\r\n- Gilt für **wöchentliche und monatliche** Zeitpläne. Bei täglichen Backups ist der nächste Versuch ohnehin der nächste reguläre Termin.\r\n- Fällt ein Nachholtermin auf einen regulären Backup-Tag, übernimmt das reguläre Backup – es wird nichts doppelt gesichert.\r\n- Die Fehlermeldung nennt jetzt den Grund und den nächsten Versuch, z. B.: *USB-Laufwerk \"MeinStick\" nicht angeschlossen. Neuer Versuch morgen um 10:00.*\r\n- Bestehende Zeitpläne werden beim nächsten Start der App automatisch ergänzt – der Assistent muss nicht neu durchlaufen werden.\r\n\r\n## 🐛 Bugfixes\r\n\r\n- **Windows: Backup des Home-Ordners** – `AppData`, versteckte Systemordner und die alten Verknüpfungsordner („Anwendungsdaten\", „Eigene Dateien\" …) werden nicht mehr mitgesichert. Das behebt die Berechtigungsfehler bei der Auswahl „Home\".\r\n- **Unnötige Daten im Home-Backup** – Caches, Editor-Erweiterungen (z. B. VS Code), Paket-Caches, Toolchains und KI-Modelle werden übersprungen. Einstellungen und Schlüssel (`.ssh`, `.config`, `.gitconfig` …) bleiben im Backup.\r\n- **Ausschluss-Muster** wie `AppData/Local/Temp/` oder `node_modules/` greifen jetzt (wurden vorher ignoriert).\r\n- **Gesperrte Dateien** (z. B. von einem laufenden Programm geöffnet) werden übersprungen, statt das ganze Backup abzubrechen. Beim nächsten Backup wird es erneut versucht.\r\n- **Automatisches Backup abschalten** entfernt jetzt auch die geplante Aufgabe im Betriebssystem; beim Löschen eines Profils ebenso.\r\n- **Windows-Benachrichtigungen** mit Anführungszeichen oder Apostroph werden korrekt angezeigt.\r\n\r\n## ⚠️ Bekannte Einschränkungen\r\n\r\n- Das Nachholen setzt voraus, dass der Rechner zur geplanten Uhrzeit eingeschaltet ist.\r\n- macOS: Automatische Zeitpläne sind weiterhin nicht verfügbar.\r\n",
+    "publishedAt": "2026-11-17T20:08:14Z",
+    "htmlUrl": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/tag/v0.3.64",
     "assets": [
       {
         "name": "install.sh",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/install.sh",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.64/install.sh",
         "size": 6289
       },
       {
-        "name": "ScratBackup-v0.3.63-Setup.exe",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/ScratBackup-v0.3.63-Setup.exe",
-        "size": 38645371
+        "name": "ScratBackup-v0.3.64-Setup.exe",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.64/ScratBackup-v0.3.64-Setup.exe",
+        "size": 39100792
       },
       {
-        "name": "ScratBackup-v0.3.63-x86_64.AppImage",
-        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.63/ScratBackup-v0.3.63-x86_64.AppImage",
-        "size": 91796672
+        "name": "ScratBackup-v0.3.64-x86_64.AppImage",
+        "url": "https://github.com/nicolettas-muggelbude/Scrat-Backup/releases/download/v0.3.64/ScratBackup-v0.3.64-x86_64.AppImage",
+        "size": 92177600
       }
     ]
   },
